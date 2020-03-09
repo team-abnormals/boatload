@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "extraboats:oak_furnace_boat"
+    ]
+  },
+  "criteria": {
+    "has_oak_boat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:oak_boat"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "extraboats:oak_furnace_boat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_oak_boat",
+      "has_the_recipe"
+    ]
+  ]
+}

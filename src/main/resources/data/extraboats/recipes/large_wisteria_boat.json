@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "bloomful"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "bloomful:wisteria_planks"
+    },
+    "W": {
+      "item": "bloomful:wisteria_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:large_wisteria_boat"
+  }
+}

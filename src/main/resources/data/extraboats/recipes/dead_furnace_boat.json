@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "biomesoplenty"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "furnace_boat",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:furnace"
+    },
+    "B": {
+      "item": "biomesoplenty:dead_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:dead_furnace_boat"
+  }
+}

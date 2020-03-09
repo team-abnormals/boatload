@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "atmospheric"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "chest_boat",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:chest"
+    },
+    "B": {
+      "item": "atmospheric:kousa_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:kousa_chest_boat"
+  }
+}

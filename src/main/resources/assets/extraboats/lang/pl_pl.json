@@ -1,0 +1,29 @@
+{
+  "entity.extraboats.chest_boat": "Łódka ze skrzynią",
+  "entity.extraboats.furnace_boat": "Łódka z piecem",
+  "entity.extraboats.large_boat": "Wielka łódka",
+  
+  "item.extraboats.oak_chest_boat": "Dębowa łódka ze skrzynią",
+  "item.extraboats.spruce_chest_boat": "Świerkowa łódka ze skrzynią",
+  "item.extraboats.birch_chest_boat": "Brzozowa łódka ze skrzynią",
+  "item.extraboats.jungle_chest_boat": "Tropikalna łódka ze skrzynią",
+  "item.extraboats.acacia_chest_boat": "Akacjowa łódka ze skrzynią",
+  "item.extraboats.dark_oak_chest_boat": "Ciemnodębowa łódka ze skrzynią",
+  
+  "item.extraboats.oak_furnace_boat": "Dębowa łódka z piecem",
+  "item.extraboats.spruce_furnace_boat": "Świerkowa łódka z piecem",
+  "item.extraboats.birch_furnace_boat": "Brzozowa łódka z piecem",
+  "item.extraboats.jungle_furnace_boat": "Tropikalna łódka z piecem",
+  "item.extraboats.acacia_furnace_boat": "Akacjowa łódka z piecem",
+  "item.extraboats.dark_oak_furnace_boat": "Ciemnodębowa łódka z piecem",
+  
+  "item.extraboats.large_oak_boat": "Wielka łódka dębowa",
+  "item.extraboats.large_spruce_boat": "Wielka łódka świerkowa",
+  "item.extraboats.large_birch_boat": "Wielka łódka brzozowa",
+  "item.extraboats.large_jungle_boat": "Wielka łódka tropikalna",
+  "item.extraboats.large_acacia_boat": "Wielka łódka akacjowa",
+  "item.extraboats.large_dark_oak_boat": "Wielka łódka ciemnodębowa",
+  
+  "advancements.adventure.get_in_the_boat.title": "Właź do łodzi!",
+  "advancements.adventure.get_in_the_boat.description": "Wsiądź do wielkej łódki z trzema osadnikami"
+}

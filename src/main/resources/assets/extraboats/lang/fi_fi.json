@@ -1,0 +1,37 @@
+{
+  "entity.extraboats.chest_boat": "Arkullinen vene",
+  "entity.extraboats.furnace_boat": "Moottoroitu vene",
+  "entity.extraboats.large_boat": "Suuri vene",
+  
+  "item.extraboats.oak_chest_boat": "Arkullinen tammivene",
+  "item.extraboats.spruce_chest_boat": "Arkullinen kuusivene",
+  "item.extraboats.birch_chest_boat": "Arkullinen koivuvene",
+  "item.extraboats.jungle_chest_boat": "Arkullinen viidakkopuuvene",
+  "item.extraboats.acacia_chest_boat": "Arkullinen akaasiavene",
+  "item.extraboats.dark_oak_chest_boat": "Arkullinen tumma tammivene",
+  
+  "item.extraboats.oak_furnace_boat": "Moottoroitu tammivene",
+  "item.extraboats.spruce_furnace_boat": "Moottoroitu kuusivene",
+  "item.extraboats.birch_furnace_boat": "Moottoroitu koivuvene",
+  "item.extraboats.jungle_furnace_boat": "Moottoroitu viidakkopuuvene",
+  "item.extraboats.acacia_furnace_boat": "Moottoroitu akaasiavene",
+  "item.extraboats.dark_oak_furnace_boat": "Moottoroitu tumma tammivene",
+  
+  "item.extraboats.large_oak_boat": "Suuri tammivene",
+  "item.extraboats.large_spruce_boat": "Suuri kuusivene",
+  "item.extraboats.large_birch_boat": "Suuri koivuvene",
+  "item.extraboats.large_jungle_boat": "Suuri viidakkopuuvene",
+  "item.extraboats.large_acacia_boat": "Suuri akaasiavene",
+  "item.extraboats.large_dark_oak_boat": "Suuri tumma tammivene",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.extraboats.maple_chest_boat": "Arkullinen vaahteravene",
+  "item.extraboats.maple_furnace_boat": "Moottoroitu vaahteravene",
+  "item.extraboats.large_maple_boat": "Suuri vaahteravene",
+  
+  
+  "advancements.adventure.get_in_the_boat.title": "Mene veneeseen!",
+  "advancements.adventure.get_in_the_boat.description": "Ole suuressa veneessä kolmen kyläläisen kanssa"
+}

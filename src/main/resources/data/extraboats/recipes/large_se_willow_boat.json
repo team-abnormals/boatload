@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "swampexpansion"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "swampexpansion:willow_planks"
+    },
+    "W": {
+      "item": "swampexpansion:willow_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:large_se_willow_boat"
+  }
+}

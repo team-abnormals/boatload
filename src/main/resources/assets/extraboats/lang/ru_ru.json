@@ -1,0 +1,29 @@
+{
+  "entity.extraboats.chest_boat": "Лодка с сундуком",
+  "entity.extraboats.furnace_boat": "Лодка с печкой",
+  "entity.extraboats.large_boat": "Большая лодка",
+  
+  "item.extraboats.oak_chest_boat": "Дубовая лодка с сундуком",
+  "item.extraboats.spruce_chest_boat": "Еловая лодка с сундуком",
+  "item.extraboats.birch_chest_boat": "Березовая лодка с сундуком",
+  "item.extraboats.jungle_chest_boat": "Джунгли лодка с сундуком",
+  "item.extraboats.acacia_chest_boat": "Акация лодка с сундуком",
+  "item.extraboats.dark_oak_chest_boat": "Темная дубовая лодка с сундуком",
+  
+  "item.extraboats.oak_furnace_boat": "Дубовая лодка с печкой",
+  "item.extraboats.spruce_furnace_boat": "Еловая лодка с печкой",
+  "item.extraboats.birch_furnace_boat": "Березовая лодка с печкой",
+  "item.extraboats.jungle_furnace_boat": "Лодка джунглей с печкой",
+  "item.extraboats.acacia_furnace_boat": "Лодка акации с печкой",
+  "item.extraboats.dark_oak_furnace_boat": "Темная дубовая лодка с печкой",
+  
+  "item.extraboats.large_oak_boat": "Большая дубовая лодка",
+  "item.extraboats.large_spruce_boat": "Большая еловая лодка",
+  "item.extraboats.large_birch_boat": "Большая березовая лодка",
+  "item.extraboats.large_jungle_boat": "Большая лодка джунглей",
+  "item.extraboats.large_acacia_boat": "Большая лодка акации",
+  "item.extraboats.large_dark_oak_boat": "Большая лодка тёмного дуба",
+  
+  "advancements.adventure.get_in_the_boat.title": "Садись в лодку!",
+  "advancements.adventure.get_in_the_boat.description": "Прокатитесь на большой лодке с тремя жителями"
+}

@@ -1,0 +1,36 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "biomesoplenty"
+  }],
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "extraboats:mahogany_furnace_boat"
+    ]
+  },
+  "criteria": {
+    "has_mahogany_boat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "biomesoplenty:mahogany_boat"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "extraboats:mahogany_furnace_boat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mahogany_boat",
+      "has_the_recipe"
+    ]
+  ]
+}

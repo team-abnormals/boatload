@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:jungle_planks"
+    },
+    "W": {
+      "item": "minecraft:jungle_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:large_jungle_boat"
+  }
+}

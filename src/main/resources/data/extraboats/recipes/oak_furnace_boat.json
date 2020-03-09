@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "furnace_boat",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:furnace"
+    },
+    "B": {
+      "item": "minecraft:oak_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:oak_furnace_boat"
+  }
+}

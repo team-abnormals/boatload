@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "autumnity"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "autumnity:maple_planks"
+    },
+    "W": {
+      "item": "autumnity:maple_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:large_maple_boat"
+  }
+}

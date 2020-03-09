@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:spruce_planks"
+    },
+    "W": {
+      "item": "minecraft:spruce_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:large_spruce_boat"
+  }
+}

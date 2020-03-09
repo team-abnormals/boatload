@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "bambooblocks"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "furnace_boat",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:furnace"
+    },
+    "B": {
+      "item": "bambooblocks:bamboo_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:bamboo_furnace_boat"
+  }
+}

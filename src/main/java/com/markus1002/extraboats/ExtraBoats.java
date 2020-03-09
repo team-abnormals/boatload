@@ -39,65 +39,77 @@ public class ExtraBoats
 	private void setup(final FMLCommonSetupEvent event)
 	{
 		DispenserBlock.registerDispenseBehavior(ModItems.OAK_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.OAK));
-		DispenserBlock.registerDispenseBehavior(ModItems.SPRUCE_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.SPRUCE));
-		DispenserBlock.registerDispenseBehavior(ModItems.BIRCH_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.BIRCH));
-		DispenserBlock.registerDispenseBehavior(ModItems.JUNGLE_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.JUNGLE));
-		DispenserBlock.registerDispenseBehavior(ModItems.DARK_OAK_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.DARK_OAK));
-		DispenserBlock.registerDispenseBehavior(ModItems.ACACIA_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.ACACIA));
-
 		DispenserBlock.registerDispenseBehavior(ModItems.OAK_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.OAK));
-		DispenserBlock.registerDispenseBehavior(ModItems.SPRUCE_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.SPRUCE));
-		DispenserBlock.registerDispenseBehavior(ModItems.BIRCH_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.BIRCH));
-		DispenserBlock.registerDispenseBehavior(ModItems.JUNGLE_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.JUNGLE));
-		DispenserBlock.registerDispenseBehavior(ModItems.DARK_OAK_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.DARK_OAK));
-		DispenserBlock.registerDispenseBehavior(ModItems.ACACIA_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.ACACIA));
-
 		DispenserBlock.registerDispenseBehavior(ModItems.LARGE_OAK_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.OAK));
+		
+		DispenserBlock.registerDispenseBehavior(ModItems.SPRUCE_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.SPRUCE));
+		DispenserBlock.registerDispenseBehavior(ModItems.SPRUCE_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.SPRUCE));
 		DispenserBlock.registerDispenseBehavior(ModItems.LARGE_SPRUCE_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.SPRUCE));
+		
+		DispenserBlock.registerDispenseBehavior(ModItems.BIRCH_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.BIRCH));
+		DispenserBlock.registerDispenseBehavior(ModItems.BIRCH_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.BIRCH));
 		DispenserBlock.registerDispenseBehavior(ModItems.LARGE_BIRCH_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.BIRCH));
+		
+		DispenserBlock.registerDispenseBehavior(ModItems.JUNGLE_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.JUNGLE));
+		DispenserBlock.registerDispenseBehavior(ModItems.JUNGLE_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.JUNGLE));
 		DispenserBlock.registerDispenseBehavior(ModItems.LARGE_JUNGLE_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.JUNGLE));
+		
+		DispenserBlock.registerDispenseBehavior(ModItems.DARK_OAK_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.DARK_OAK));
+		DispenserBlock.registerDispenseBehavior(ModItems.DARK_OAK_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.DARK_OAK));
 		DispenserBlock.registerDispenseBehavior(ModItems.LARGE_DARK_OAK_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.DARK_OAK));
+		
+		DispenserBlock.registerDispenseBehavior(ModItems.ACACIA_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.ACACIA));
+		DispenserBlock.registerDispenseBehavior(ModItems.ACACIA_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.ACACIA));
 		DispenserBlock.registerDispenseBehavior(ModItems.LARGE_ACACIA_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.ACACIA));
 
 		if (BiomesOPlenty.isInstalled())
 		{
 			DispenserBlock.registerDispenseBehavior(ModItems.CHERRY_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.CHERRY));
-			DispenserBlock.registerDispenseBehavior(ModItems.DEAD_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.DEAD));
-			DispenserBlock.registerDispenseBehavior(ModItems.ETHEREAL_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.ETHEREAL));
-			DispenserBlock.registerDispenseBehavior(ModItems.FIR_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.FIR));
-			DispenserBlock.registerDispenseBehavior(ModItems.HELLBARK_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.HELLBARK));
-			DispenserBlock.registerDispenseBehavior(ModItems.JACARANDA_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.JACARANDA));
-			DispenserBlock.registerDispenseBehavior(ModItems.MAGIC_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.MAGIC));
-			DispenserBlock.registerDispenseBehavior(ModItems.MAHOGANY_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.MAHOGANY));
-			DispenserBlock.registerDispenseBehavior(ModItems.PALM_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.PALM));
-			DispenserBlock.registerDispenseBehavior(ModItems.REDWOOD_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.REDWOOD));
-			DispenserBlock.registerDispenseBehavior(ModItems.UMBRAN_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.UMBRAN));
-			DispenserBlock.registerDispenseBehavior(ModItems.WILLOW_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.WILLOW));
-
 			DispenserBlock.registerDispenseBehavior(ModItems.CHERRY_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.CHERRY));
-			DispenserBlock.registerDispenseBehavior(ModItems.DEAD_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.DEAD));
-			DispenserBlock.registerDispenseBehavior(ModItems.ETHEREAL_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.ETHEREAL));
-			DispenserBlock.registerDispenseBehavior(ModItems.FIR_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.FIR));
-			DispenserBlock.registerDispenseBehavior(ModItems.HELLBARK_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.HELLBARK));
-			DispenserBlock.registerDispenseBehavior(ModItems.JACARANDA_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.JACARANDA));
-			DispenserBlock.registerDispenseBehavior(ModItems.MAGIC_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.MAGIC));
-			DispenserBlock.registerDispenseBehavior(ModItems.MAHOGANY_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.MAHOGANY));
-			DispenserBlock.registerDispenseBehavior(ModItems.PALM_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.PALM));
-			DispenserBlock.registerDispenseBehavior(ModItems.REDWOOD_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.REDWOOD));
-			DispenserBlock.registerDispenseBehavior(ModItems.UMBRAN_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.UMBRAN));
-			DispenserBlock.registerDispenseBehavior(ModItems.WILLOW_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.WILLOW));
-
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_CHERRY_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.CHERRY));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.DEAD_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.DEAD));
+			DispenserBlock.registerDispenseBehavior(ModItems.DEAD_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.DEAD));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_DEAD_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.DEAD));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.ETHEREAL_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.ETHEREAL));
+			DispenserBlock.registerDispenseBehavior(ModItems.ETHEREAL_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.ETHEREAL));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_ETHEREAL_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.ETHEREAL));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.FIR_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.FIR));
+			DispenserBlock.registerDispenseBehavior(ModItems.FIR_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.FIR));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_FIR_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.FIR));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.HELLBARK_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.HELLBARK));
+			DispenserBlock.registerDispenseBehavior(ModItems.HELLBARK_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.HELLBARK));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_HELLBARK_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.HELLBARK));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.JACARANDA_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.JACARANDA));
+			DispenserBlock.registerDispenseBehavior(ModItems.JACARANDA_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.JACARANDA));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_JACARANDA_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.JACARANDA));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.MAGIC_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.MAGIC));
+			DispenserBlock.registerDispenseBehavior(ModItems.MAGIC_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.MAGIC));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_MAGIC_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.MAGIC));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.MAHOGANY_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.MAHOGANY));
+			DispenserBlock.registerDispenseBehavior(ModItems.MAHOGANY_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.MAHOGANY));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_MAHOGANY_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.MAHOGANY));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.PALM_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.PALM));
+			DispenserBlock.registerDispenseBehavior(ModItems.PALM_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.PALM));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_PALM_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.PALM));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.REDWOOD_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.REDWOOD));
+			DispenserBlock.registerDispenseBehavior(ModItems.REDWOOD_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.REDWOOD));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_REDWOOD_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.REDWOOD));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.UMBRAN_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.UMBRAN));
+			DispenserBlock.registerDispenseBehavior(ModItems.UMBRAN_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.UMBRAN));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_UMBRAN_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.UMBRAN));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.WILLOW_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.WILLOW));
+			DispenserBlock.registerDispenseBehavior(ModItems.WILLOW_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.WILLOW));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_WILLOW_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.WILLOW));
 		}
 		

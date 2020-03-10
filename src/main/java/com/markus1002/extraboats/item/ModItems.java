@@ -21,127 +21,125 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModItems
 {
-	public static final ItemGroupExtraBoats EXTRA_BOATS = new ItemGroupExtraBoats(ItemGroup.GROUPS.length, Reference.MOD_ID);
-
-	public static final Item OAK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item OAK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_OAK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item OAK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item OAK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_OAK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item SPRUCE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item SPRUCE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_SPRUCE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item SPRUCE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item SPRUCE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_SPRUCE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item BIRCH_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item BIRCH_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_BIRCH_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item BIRCH_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item BIRCH_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_BIRCH_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item JUNGLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item JUNGLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_JUNGLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item JUNGLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item JUNGLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_JUNGLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item ACACIA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item ACACIA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_ACACIA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item ACACIA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item ACACIA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_ACACIA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item DARK_OAK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item DARK_OAK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_DARK_OAK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item DARK_OAK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item DARK_OAK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_DARK_OAK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Biomes O' Plenty
-	public static final Item CHERRY_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item CHERRY_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_CHERRY_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item CHERRY_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item CHERRY_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_CHERRY_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item DEAD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item DEAD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_DEAD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item DEAD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item DEAD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_DEAD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item ETHEREAL_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item ETHEREAL_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_ETHEREAL_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item ETHEREAL_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item ETHEREAL_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_ETHEREAL_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item FIR_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item FIR_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_FIR_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item FIR_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item FIR_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_FIR_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item HELLBARK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item HELLBARK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_HELLBARK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item HELLBARK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item HELLBARK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_HELLBARK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item JACARANDA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item JACARANDA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_JACARANDA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item JACARANDA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item JACARANDA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_JACARANDA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item MAGIC_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item MAGIC_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_MAGIC_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item MAGIC_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item MAGIC_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_MAGIC_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item MAHOGANY_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item MAHOGANY_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_MAHOGANY_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item MAHOGANY_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item MAHOGANY_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_MAHOGANY_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item PALM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item PALM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_PALM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item PALM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item PALM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_PALM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item REDWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item REDWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_REDWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item REDWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item REDWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_REDWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item UMBRAN_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item UMBRAN_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_UMBRAN_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item UMBRAN_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item UMBRAN_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_UMBRAN_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item WILLOW_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item WILLOW_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_WILLOW_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item WILLOW_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item WILLOW_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_WILLOW_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Upgrade Aquatic
-	public static final Item DRIFTWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item DRIFTWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_DRIFTWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item DRIFTWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item DRIFTWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_DRIFTWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Bamboo Blocks
-	public static final Item BAMBOO_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item BAMBOO_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_BAMBOO_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item BAMBOO_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item BAMBOO_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_BAMBOO_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Endergetic Expansion
-	public static final Item POISE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item POISE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_POISE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item POISE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item POISE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_POISE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Bloomful
-	public static final Item WISTERIA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item WISTERIA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_WISTERIA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item WISTERIA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item WISTERIA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_WISTERIA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Swamp Expansion
-	public static final Item SE_WILLOW_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item SE_WILLOW_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_SE_WILLOW_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item SE_WILLOW_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item SE_WILLOW_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_SE_WILLOW_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Atmospheric
-	public static final Item ROSEWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item ROSEWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_ROSEWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item ROSEWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item ROSEWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_ROSEWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item ASPEN_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item ASPEN_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_ASPEN_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item ASPEN_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item ASPEN_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_ASPEN_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item KOUSA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item KOUSA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_KOUSA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item KOUSA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item KOUSA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_KOUSA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
-	public static final Item YUCCA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item YUCCA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_YUCCA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item YUCCA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item YUCCA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_YUCCA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
 	// Autumnity
-	public static final Item MAPLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item MAPLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
-	public static final Item LARGE_MAPLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(EXTRA_BOATS));
+	public static final Item MAPLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item MAPLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_MAPLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)

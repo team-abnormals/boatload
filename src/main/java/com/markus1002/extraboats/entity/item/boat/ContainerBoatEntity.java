@@ -7,10 +7,10 @@ import com.markus1002.extraboats.compatibility.Autumnity;
 import com.markus1002.extraboats.compatibility.BambooBlocks;
 import com.markus1002.extraboats.compatibility.BiomesOPlenty;
 import com.markus1002.extraboats.compatibility.Bloomful;
+import com.markus1002.extraboats.compatibility.BuzzierBees;
 import com.markus1002.extraboats.compatibility.EndergeticExpansion;
 import com.markus1002.extraboats.compatibility.SwampExpansion;
 import com.markus1002.extraboats.compatibility.UpgradeAquatic;
-import com.markus1002.extraboats.item.ModItems;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -199,7 +199,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 
 	public boolean processInitialInteract(PlayerEntity player, Hand hand)
 	{
-		if (player.isSneaking())
+		if (player.isShiftKeyDown())
 		{
 			player.openContainer(this);
 			return true;
@@ -339,6 +339,9 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 			
 		case MAPLE:
 			return Autumnity.MAPLE_BOAT;
+			
+		case HIVE:
+			return BuzzierBees.HIVE_BOAT;
 		}
 	}
 
@@ -349,7 +352,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
 
 			Vec3d vec3d = (new Vec3d((double)0.2F, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
-			passenger.setPosition(this.posX + vec3d.x, this.posY + (double)f1, this.posZ + vec3d.z);
+			passenger.setPosition(this.getPosX() + vec3d.x, this.getPosY() + (double)f1, this.getPosZ() + vec3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);

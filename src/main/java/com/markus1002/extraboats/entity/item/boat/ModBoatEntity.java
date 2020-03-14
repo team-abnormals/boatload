@@ -5,6 +5,7 @@ import com.markus1002.extraboats.compatibility.Autumnity;
 import com.markus1002.extraboats.compatibility.BambooBlocks;
 import com.markus1002.extraboats.compatibility.BiomesOPlenty;
 import com.markus1002.extraboats.compatibility.Bloomful;
+import com.markus1002.extraboats.compatibility.BuzzierBees;
 import com.markus1002.extraboats.compatibility.EndergeticExpansion;
 import com.markus1002.extraboats.compatibility.SwampExpansion;
 import com.markus1002.extraboats.compatibility.UpgradeAquatic;
@@ -83,7 +84,7 @@ public abstract class ModBoatEntity extends BoatEntity
 						return;
 					}
 
-					this.fall(this.fallDistance, 1.0F);
+					this.onLivingFall(this.fallDistance, 1.0F);
 					if (!this.world.isRemote && !this.removed)
 					{
 						this.remove();
@@ -240,6 +241,9 @@ public abstract class ModBoatEntity extends BoatEntity
 			
 		case MAPLE:
 			return Autumnity.MAPLE_BOAT;
+			
+		case HIVE:
+			return BuzzierBees.HIVE_BOAT;
 		}
 	}
 
@@ -317,6 +321,9 @@ public abstract class ModBoatEntity extends BoatEntity
 			
 		case MAPLE:
 			return Autumnity.MAPLE_PLANKS;
+			
+		case HIVE:
+			return BuzzierBees.HIVE_PLANKS;
 		}
 	}
 
@@ -357,7 +364,9 @@ public abstract class ModBoatEntity extends BoatEntity
 		KOUSA("kousa"),
 		YUCCA("yucca"),
 		
-		MAPLE("maple");
+		MAPLE("maple"),
+	
+		HIVE("hive");
 
 		private final String name;
 

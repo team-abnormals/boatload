@@ -53,10 +53,10 @@ public class ModEntities
 
 	public static void setupEntitiesClient()
 	{
-		RenderingRegistry.registerEntityRenderingHandler(ChestBoatEntity.class, ModBoatRenderer::new);
-
-		RenderingRegistry.registerEntityRenderingHandler(FurnaceBoatEntity.class, ModBoatRenderer::new);
-
-		RenderingRegistry.registerEntityRenderingHandler(LargeBoatEntity.class, LargeBoatRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler((EntityType<? extends ChestBoatEntity>)CHEST_BOAT, ModBoatRenderer::new);
+        
+        RenderingRegistry.registerEntityRenderingHandler((EntityType<? extends FurnaceBoatEntity>)FURNACE_BOAT, ModBoatRenderer::new);
+        
+        RenderingRegistry.registerEntityRenderingHandler((EntityType<? extends LargeBoatEntity>)LARGE_BOAT, LargeBoatRenderer::new);
 	}
 }

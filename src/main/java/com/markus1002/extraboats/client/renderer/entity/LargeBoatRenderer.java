@@ -3,10 +3,18 @@ package com.markus1002.extraboats.client.renderer.entity;
 import com.markus1002.extraboats.Reference;
 import com.markus1002.extraboats.client.renderer.entity.model.LargeBoatModel;
 import com.markus1002.extraboats.entity.item.boat.LargeBoatEntity;
-import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.Quaternion;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.api.distmarker.Dist;
@@ -43,8 +51,9 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			Reference.location("textures/entity/large_boat/aspen.png"),
 			Reference.location("textures/entity/large_boat/kousa.png"),
 			Reference.location("textures/entity/large_boat/yucca.png"),
-			Reference.location("textures/entity/large_boat/maple.png")};
-	protected final LargeBoatModel largeBoatModel = new LargeBoatModel();
+			Reference.location("textures/entity/large_boat/maple.png"),
+			Reference.location("textures/entity/large_boat/hive.png")};
+	protected final LargeBoatModel modelLargeBoat = new LargeBoatModel();
 
 	public LargeBoatRenderer(EntityRendererManager renderManagerIn)
 	{
@@ -52,75 +61,46 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 		this.shadowSize = 0.8F;
 	}
 
-	public void doRender(LargeBoatEntity entity, double x, double y, double z, float entityYaw, float partialTicks)
+	public void render(LargeBoatEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn)
 	{
-		GlStateManager.pushMatrix();
-		this.setupTranslation(x, y, z);
-		this.setupRotation(entity, entityYaw, partialTicks);
-		this.bindEntityTexture(entity);
-		if (this.renderOutlines)
-		{
-			GlStateManager.enableColorMaterial();
-			GlStateManager.setupSolidRenderingTextureCombine(this.getTeamColor(entity));
-		}
-
-		this.largeBoatModel.render(entity, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
-		if (this.renderOutlines)
-		{
-			GlStateManager.tearDownSolidRenderingTextureCombine();
-			GlStateManager.disableColorMaterial();
-		}
-
-		GlStateManager.popMatrix();
-		super.doRender(entity, x, y, z, entityYaw, partialTicks);
-	}
-
-	public void setupRotation(LargeBoatEntity entityIn, float entityYaw, float partialTicks)
-	{
-		GlStateManager.rotatef(180.0F - entityYaw, 0.0F, 1.0F, 0.0F);
+		matrixStackIn.push();
+		matrixStackIn.translate(0.0D, 0.375D, 0.0D);
+		matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
 		float f = (float)entityIn.getTimeSinceHit() - partialTicks;
 		float f1 = entityIn.getDamageTaken() - partialTicks;
-		if (f1 < 0.0F)
-		{
+		if (f1 < 0.0F) {
 			f1 = 0.0F;
 		}
 
 		if (f > 0.0F)
 		{
-			GlStateManager.rotatef(MathHelper.sin(f) * f * f1 / 10.0F * (float)entityIn.getForwardDirection(), 1.0F, 0.0F, 0.0F);
+			matrixStackIn.rotate(Vector3f.XP.rotationDegrees(MathHelper.sin(f) * f * f1 / 10.0F * (float)entityIn.getForwardDirection()));
 		}
 
 		float f2 = entityIn.getRockingAngle(partialTicks);
 		if (!MathHelper.epsilonEquals(f2, 0.0F))
 		{
-			GlStateManager.rotatef(entityIn.getRockingAngle(partialTicks), 1.0F, 0.0F, 1.0F);
+			matrixStackIn.rotate(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), entityIn.getRockingAngle(partialTicks), true));
 		}
 
-		GlStateManager.scalef(-1.0F, -1.0F, 1.0F);
+		matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
+		matrixStackIn.rotate(Vector3f.YP.rotationDegrees(90.0F));
+		this.modelLargeBoat.setRotationAngles(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
+		IVertexBuilder ivertexbuilder = bufferIn.getBuffer(this.modelLargeBoat.getRenderType(this.getEntityTexture(entityIn)));
+		this.modelLargeBoat.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+		IVertexBuilder ivertexbuilder1 = bufferIn.getBuffer(RenderType.getWaterMask());
+		this.modelLargeBoat.func_228245_c_().render(matrixStackIn, ivertexbuilder1, packedLightIn, OverlayTexture.NO_OVERLAY);
+		matrixStackIn.pop();
+		super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
 	}
 
-	public void setupTranslation(double x, double y, double z)
-	{
-		GlStateManager.translatef((float)x, (float)y + 0.375F, (float)z);
-	}
-
-	protected ResourceLocation getEntityTexture(LargeBoatEntity entity)
+	public ResourceLocation getEntityTexture(LargeBoatEntity entity)
 	{
 		return LARGE_BOAT_TEXTURES[entity.getModBoatType().ordinal()];
 	}
 
-	public boolean isMultipass()
+	protected void renderBlockState(LargeBoatEntity entityIn, float partialTicks, BlockState stateIn, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn)
 	{
-		return true;
-	}
-
-	public void renderMultipass(LargeBoatEntity entityIn, double x, double y, double z, float entityYaw, float partialTicks)
-	{
-		GlStateManager.pushMatrix();
-		this.setupTranslation(x, y, z);
-		this.setupRotation(entityIn, entityYaw, partialTicks);
-		this.bindEntityTexture(entityIn);
-		this.largeBoatModel.renderMultipass(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
-		GlStateManager.popMatrix();
+		Minecraft.getInstance().getBlockRendererDispatcher().renderBlock(stateIn, matrixStackIn, bufferIn, packedLightIn, OverlayTexture.NO_OVERLAY);
 	}
 }

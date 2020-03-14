@@ -6,6 +6,7 @@ import com.markus1002.extraboats.compatibility.Autumnity;
 import com.markus1002.extraboats.compatibility.BambooBlocks;
 import com.markus1002.extraboats.compatibility.BiomesOPlenty;
 import com.markus1002.extraboats.compatibility.Bloomful;
+import com.markus1002.extraboats.compatibility.BuzzierBees;
 import com.markus1002.extraboats.compatibility.EndergeticExpansion;
 import com.markus1002.extraboats.compatibility.SwampExpansion;
 import com.markus1002.extraboats.compatibility.UpgradeAquatic;
@@ -140,6 +141,11 @@ public class ModItems
 	public static final Item MAPLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item MAPLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item LARGE_MAPLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	
+	// Buzzier Bees
+	public static final Item HIVE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.HIVE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item HIVE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.HIVE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_HIVE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.HIVE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event)
@@ -278,6 +284,13 @@ public class ModItems
 			registerItem(MAPLE_CHEST_BOAT, "maple_chest_boat");
 			registerItem(MAPLE_FURNACE_BOAT, "maple_furnace_boat");
 			registerItem(LARGE_MAPLE_BOAT, "large_maple_boat");
+		}
+		
+		if (BuzzierBees.isInstalled())
+		{
+			registerItem(HIVE_CHEST_BOAT, "hive_chest_boat");
+			registerItem(HIVE_FURNACE_BOAT, "hive_furnace_boat");
+			registerItem(LARGE_HIVE_BOAT, "large_hive_boat");
 		}
 	}
 

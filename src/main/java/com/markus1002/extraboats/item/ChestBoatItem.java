@@ -65,7 +65,7 @@ public class ChestBoatItem extends Item implements IForgeItem
 				ChestBoatEntity chestboatentity = new ChestBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
 				chestboatentity.setModBoatType(this.type);
 				chestboatentity.rotationYaw = playerIn.rotationYaw;
-				if (!worldIn.isCollisionBoxesEmpty(chestboatentity, chestboatentity.getBoundingBox().grow(-0.1D)))
+				if (!worldIn.func_226665_a__(chestboatentity, chestboatentity.getBoundingBox().grow(-0.1D)))
 				{
 					return new ActionResult<>(ActionResultType.FAIL, itemstack);
 				}

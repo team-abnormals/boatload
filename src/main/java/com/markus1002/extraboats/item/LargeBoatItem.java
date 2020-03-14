@@ -65,7 +65,7 @@ public class LargeBoatItem extends Item implements IForgeItem
 				LargeBoatEntity largeboatentity = new LargeBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
 				largeboatentity.setModBoatType(this.type);
 				largeboatentity.rotationYaw = playerIn.rotationYaw;
-				if (!worldIn.isCollisionBoxesEmpty(largeboatentity, largeboatentity.getBoundingBox().grow(-0.1D)))
+				if (!worldIn.func_226665_a__(largeboatentity, largeboatentity.getBoundingBox().grow(-0.1D)))
 				{
 					return new ActionResult<>(ActionResultType.FAIL, itemstack);
 				}

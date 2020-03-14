@@ -65,7 +65,7 @@ public class FurnaceBoatItem extends Item implements IForgeItem
 				FurnaceBoatEntity furnaceboatentity = new FurnaceBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
 				furnaceboatentity.setModBoatType(this.type);
 				furnaceboatentity.rotationYaw = playerIn.rotationYaw;
-				if (!worldIn.isCollisionBoxesEmpty(furnaceboatentity, furnaceboatentity.getBoundingBox().grow(-0.1D)))
+				if (!worldIn.func_226665_a__(furnaceboatentity, furnaceboatentity.getBoundingBox().grow(-0.1D)))
 				{
 					return new ActionResult<>(ActionResultType.FAIL, itemstack);
 				}

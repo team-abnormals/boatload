@@ -1,0 +1,36 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "buzzierbees"
+  }],
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "extraboats:hive_furnace_boat"
+    ]
+  },
+  "criteria": {
+    "has_hive_boat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "buzzierbees:hive_boat"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "extraboats:hive_furnace_boat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_hive_boat",
+      "has_the_recipe"
+    ]
+  ]
+}

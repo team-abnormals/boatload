@@ -131,6 +131,14 @@
   "item.extraboats.maple_chest_boat": "Maple Boat with Chest",
   "item.extraboats.maple_furnace_boat": "Maple Boat with Furnace",
   "item.extraboats.large_maple_boat": "Large Maple Boat",
+  
+  
+  
+  "_comment": "Buzzier Bees",
+  
+  "item.extraboats.hive_chest_boat": "Hive Boat with Chest",
+  "item.extraboats.hive_furnace_boat": "Hive Boat with Furnace",
+  "item.extraboats.large_hive_boat": "Large Hive Boat",
 
   
   "advancements.adventure.get_in_the_boat.title": "Get in the Boat!",

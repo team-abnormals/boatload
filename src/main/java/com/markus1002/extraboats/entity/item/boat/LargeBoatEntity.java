@@ -192,7 +192,7 @@ public class LargeBoatEntity extends ModBoatEntity
 			}
 
 			Vec3d vec3d = (new Vec3d((double)f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
-			passenger.setPosition(this.posX + vec3d.x, this.posY + (double)f1, this.posZ + vec3d.z);
+			passenger.setPosition(this.getPosX() + vec3d.x, this.getPosY() + (double)f1, this.getPosZ() + vec3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);
@@ -278,6 +278,9 @@ public class LargeBoatEntity extends ModBoatEntity
 			
 		case MAPLE:
 			return ModItems.LARGE_MAPLE_BOAT;
+			
+		case HIVE:
+			return ModItems.LARGE_HIVE_BOAT;
 		}
 	}
 

@@ -119,6 +119,9 @@ public class ChestBoatEntity extends ContainerBoatEntity
 			
 		case MAPLE:
 			return ModItems.MAPLE_CHEST_BOAT;
+			
+		case HIVE:
+			return ModItems.HIVE_CHEST_BOAT;
 		}
 	}
 

@@ -7,6 +7,7 @@ import com.markus1002.extraboats.compatibility.Autumnity;
 import com.markus1002.extraboats.compatibility.BambooBlocks;
 import com.markus1002.extraboats.compatibility.BiomesOPlenty;
 import com.markus1002.extraboats.compatibility.Bloomful;
+import com.markus1002.extraboats.compatibility.BuzzierBees;
 import com.markus1002.extraboats.compatibility.EndergeticExpansion;
 import com.markus1002.extraboats.compatibility.SwampExpansion;
 import com.markus1002.extraboats.compatibility.UpgradeAquatic;
@@ -77,7 +78,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 	public boolean processInitialInteract(PlayerEntity player, Hand hand)
 	{
-		if (player.isSneaking())
+		if (player.isShiftKeyDown())
 		{
 			ItemStack itemstack = player.getHeldItem(hand);
 			if (FUEL_ITEMS.test(itemstack) && this.getFuel() + 3600 <= 32000)
@@ -111,7 +112,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 			float f = (this.rotationYaw - 90.0F) * ((float)Math.PI / 180F);
 			float f1 = MathHelper.cos(f);
 			float f2 = MathHelper.sin(f);
-			this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.posX + (double)f1 * 0.5D, this.posY + 1.0D, this.posZ + (double)f2 * 0.5D, 0.0D, 0.0D, 0.0D);
+			this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.getPosX() + (double)f1 * 0.5D, this.getPosY() + 1.0D, this.getPosZ() + (double)f2 * 0.5D, 0.0D, 0.0D, 0.0D);
 		}
 	}
 
@@ -161,7 +162,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 				float f3 = MathHelper.sin(f1);
 				for(int i = 0; i < 10; ++i)
 				{
-					this.world.addParticle(ParticleTypes.SPLASH, this.posX + (double)f2 * 0.8D + (this.rand.nextDouble() - 0.5D), this.posY + 0.2F, this.posZ + (double)f3 * 0.8D + (this.rand.nextDouble()- 0.5D), 0.0D, 0.05D, 0.0D);
+					this.world.addParticle(ParticleTypes.SPLASH, this.getPosX() + (double)f2 * 0.8D + (this.rand.nextDouble() - 0.5D), this.getPosY() + 0.2F, this.getPosZ() + (double)f3 * 0.8D + (this.rand.nextDouble()- 0.5D), 0.0D, 0.05D, 0.0D);
 				}
 			}
 		}
@@ -259,6 +260,9 @@ public class FurnaceBoatEntity extends ModBoatEntity
 			
 		case MAPLE:
 			return ModItems.MAPLE_FURNACE_BOAT;
+			
+		case HIVE:
+			return ModItems.HIVE_FURNACE_BOAT;
 		}
 	}
 
@@ -331,6 +335,9 @@ public class FurnaceBoatEntity extends ModBoatEntity
 			
 		case MAPLE:
 			return Autumnity.MAPLE_BOAT;
+			
+		case HIVE:
+			return BuzzierBees.HIVE_BOAT;
 		}
 	}
 
@@ -346,7 +353,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
 
 			Vec3d vec3d = (new Vec3d((double)0.2F, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
-			passenger.setPosition(this.posX + vec3d.x, this.posY + (double)f1, this.posZ + vec3d.z);
+			passenger.setPosition(this.getPosX() + vec3d.x, this.getPosY() + (double)f1, this.getPosZ() + vec3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);

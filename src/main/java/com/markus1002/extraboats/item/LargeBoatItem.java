@@ -12,7 +12,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
 import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -20,9 +19,8 @@ import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.common.extensions.IForgeItem;
 
-public class LargeBoatItem extends Item implements IForgeItem
+public class LargeBoatItem extends Item
 {
 	private static final Predicate<Entity> field_219989_a = EntityPredicates.NOT_SPECTATING.and(Entity::canBeCollidedWith);
 	private final ModBoatEntity.BoatType type;
@@ -39,12 +37,11 @@ public class LargeBoatItem extends Item implements IForgeItem
 		RayTraceResult raytraceresult = rayTrace(worldIn, playerIn, RayTraceContext.FluidMode.ANY);
 		if (raytraceresult.getType() == RayTraceResult.Type.MISS)
 		{
-			return new ActionResult<>(ActionResultType.PASS, itemstack);
+			return ActionResult.resultPass(itemstack);
 		}
 		else
 		{
 			Vec3d vec3d = playerIn.getLook(1.0F);
-			double d0 = 5.0D;
 			List<Entity> list = worldIn.getEntitiesInAABBexcluding(playerIn, playerIn.getBoundingBox().expand(vec3d.scale(5.0D)).grow(1.0D), field_219989_a);
 			if (!list.isEmpty())
 			{
@@ -55,45 +52,44 @@ public class LargeBoatItem extends Item implements IForgeItem
 					AxisAlignedBB axisalignedbb = entity.getBoundingBox().grow((double)entity.getCollisionBorderSize());
 					if (axisalignedbb.contains(vec3d1))
 					{
-						return new ActionResult<>(ActionResultType.PASS, itemstack);
+						return ActionResult.resultPass(itemstack);
 					}
 				}
 			}
 
 			if (raytraceresult.getType() == RayTraceResult.Type.BLOCK)
 			{
-				LargeBoatEntity largeboatentity = new LargeBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
-				largeboatentity.setModBoatType(this.type);
-				largeboatentity.rotationYaw = playerIn.rotationYaw;
-				if (!worldIn.func_226665_a__(largeboatentity, largeboatentity.getBoundingBox().grow(-0.1D)))
+				LargeBoatEntity boatentity = new LargeBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
+				boatentity.setModBoatType(this.type);
+				boatentity.rotationYaw = playerIn.rotationYaw;
+				if (!worldIn.func_226665_a__(boatentity, boatentity.getBoundingBox().grow(-0.1D)))
 				{
-					return new ActionResult<>(ActionResultType.FAIL, itemstack);
+					return ActionResult.resultFail(itemstack);
 				}
 				else
 				{
 					if (!worldIn.isRemote)
 					{
-						worldIn.addEntity(largeboatentity);
-					}
-
-					if (!playerIn.abilities.isCreativeMode)
-					{
-						itemstack.shrink(1);
+						worldIn.addEntity(boatentity);
+						if (!playerIn.abilities.isCreativeMode)
+						{
+							itemstack.shrink(1);
+						}
 					}
 
 					playerIn.addStat(Stats.ITEM_USED.get(this));
-					return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
+					return ActionResult.resultSuccess(itemstack);
 				}
 			}
 			else
 			{
-				return new ActionResult<>(ActionResultType.PASS, itemstack);
+				return ActionResult.resultPass(itemstack);
 			}
 		}
 	}
 	
     public int getBurnTime(ItemStack itemStack)
     {
-        return 400;
+        return 2400;
     }
 }

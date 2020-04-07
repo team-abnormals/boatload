@@ -11,7 +11,7 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:chest"
+      "tag": "forge:chests/wooden"
     },
     "B": {
       "item": "atmospheric:kousa_boat"

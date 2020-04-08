@@ -3,7 +3,7 @@ loaderVersion="[29,)"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/extra-boats/issues"
 [[mods]]
 modId="extraboats"
-version="1.3.1"
+version="1.3.2"
 displayName="Extra Boats"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/extra-boats"
 logoFile="logo.png"

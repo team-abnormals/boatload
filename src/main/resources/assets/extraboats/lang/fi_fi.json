@@ -25,6 +25,13 @@
   "item.extraboats.large_dark_oak_boat": "Suuri tumma tammivene",
   
   
+  "_comment": "Swamp Expansion",
+  
+  "item.extraboats.se_willow_chest_boat": "Arkullinen pajuvene",
+  "item.extraboats.se_willow_furnace_boat": "Moottoroitu pajuvene",
+  "item.extraboats.large_se_willow_boat": "Suuri pajuvene",
+  
+  
   "_comment": "Autumnity",
   
   "item.extraboats.maple_chest_boat": "Arkullinen vaahteravene",

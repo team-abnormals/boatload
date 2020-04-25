@@ -1,0 +1,146 @@
+{
+  "itemGroup.extraboats": "Extra Boats",
+  
+
+  "entity.extraboats.chest_boat": "Barca con cofre",
+  "entity.extraboats.furnace_boat": "Barca con horno",
+  "entity.extraboats.large_boat": "Barca grande",
+  
+  
+  "_comment": "Vanilla",
+  
+  "item.extraboats.oak_chest_boat": "Barca de roble con cofre",
+  "item.extraboats.spruce_chest_boat": "Barca de abeto con cofre",
+  "item.extraboats.birch_chest_boat": "Barca de abedul con cofre",
+  "item.extraboats.jungle_chest_boat": "Barca de jungla con cofre",
+  "item.extraboats.acacia_chest_boat": "Barca de acacia con cofre",
+  "item.extraboats.dark_oak_chest_boat": "Barca de roble oscuro con cofre",
+  
+  "item.extraboats.oak_furnace_boat": "Barca de roble con horno",
+  "item.extraboats.spruce_furnace_boat": "Barca de abeto con horno",
+  "item.extraboats.birch_furnace_boat": "Barca de abedul con horno",
+  "item.extraboats.jungle_furnace_boat": "Barca de jungla con horno",
+  "item.extraboats.acacia_furnace_boat": "Barca de acacia con horno",
+  "item.extraboats.dark_oak_furnace_boat": "Barca de roble oscuro con horno",
+  
+  "item.extraboats.large_oak_boat": "Barca grande de roble",
+  "item.extraboats.large_spruce_boat": "Barca grande de abeto",
+  "item.extraboats.large_birch_boat": "Barca grande de abedul",
+  "item.extraboats.large_jungle_boat": "Barca grande de jungla",
+  "item.extraboats.large_acacia_boat": "Barca grande de acacia",
+  "item.extraboats.large_dark_oak_boat": "Barca grande de roble oscuro",
+  
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.extraboats.cherry_chest_boat": "Barca de cerezo con cofre",
+  "item.extraboats.dead_chest_boat": "Barca de madera muerta con cofre",
+  "item.extraboats.ethereal_chest_boat": "Barca de madera etérea con cofre",
+  "item.extraboats.fir_chest_boat": "Barca de abeto blanco con cofre",
+  "item.extraboats.hellbark_chest_boat": "Barca de corteza infernal con cofre",
+  "item.extraboats.jacaranda_chest_boat": "Barca de jacarandá con cofre",
+  "item.extraboats.magic_chest_boat": "Barca de madera mágica con cofre",
+  "item.extraboats.mahogany_chest_boat": "Barca de caoba con cofre",
+  "item.extraboats.palm_chest_boat": "Barca de palmera con cofre",
+  "item.extraboats.redwood_chest_boat": "Barca de secoya con cofre",
+  "item.extraboats.umbran_chest_boat": "Barca de madera sombría con cofre",
+  "item.extraboats.willow_chest_boat": "Barca de sauce con cofre",
+  
+  "item.extraboats.cherry_furnace_boat": "Barca de cerezo con horno",
+  "item.extraboats.dead_furnace_boat": "Barca de madera muerta con horno",
+  "item.extraboats.ethereal_furnace_boat": "Barca de madera etérea con horno",
+  "item.extraboats.fir_furnace_boat": "Fir Barca de abeto blanco con horno",
+  "item.extraboats.hellbark_furnace_boat": "Barca de corteza infernal con horno",
+  "item.extraboats.jacaranda_furnace_boat": "Barca de jacarandá con horno",
+  "item.extraboats.magic_furnace_boat": "Barca de madera mágica con horno",
+  "item.extraboats.mahogany_furnace_boat": "Barca de caoba con horno",
+  "item.extraboats.palm_furnace_boat": "Barca de palmera con horno",
+  "item.extraboats.redwood_furnace_boat": "Barca de secoya con horno",
+  "item.extraboats.umbran_furnace_boat": "Barca de madera sombría con horno",
+  "item.extraboats.willow_furnace_boat": "Barca de sauce con horno",
+  
+  "item.extraboats.large_cherry_boat": "Barca grande de cerezo",
+  "item.extraboats.large_dead_boat": "Barca grande de madera muerta",
+  "item.extraboats.large_ethereal_boat": "Barca grande de madera etérea",
+  "item.extraboats.large_fir_boat": "Barca grande de abeto blanco",
+  "item.extraboats.large_hellbark_boat": "Barca grande de corteza infernal",
+  "item.extraboats.large_jacaranda_boat": "Barca grande de jacarandá",
+  "item.extraboats.large_magic_boat": "Barca grande de madera mágica",
+  "item.extraboats.large_mahogany_boat": "Barca grande de caoba",
+  "item.extraboats.large_palm_boat": "Barca grande de palmera",
+  "item.extraboats.large_redwood_boat": "Barca grande de secoya",
+  "item.extraboats.large_umbran_boat": "Barca grande de madera sombría",
+  "item.extraboats.large_willow_boat": "Barca grande de sauce",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.extraboats.driftwood_chest_boat": "Barca de deriva con cofre",
+  "item.extraboats.driftwood_furnace_boat": "Barca de deriva con horno",
+  "item.extraboats.large_driftwood_boat": "Barca grande de deriva",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.extraboats.bamboo_chest_boat": "Barca de bambú con cofre",
+  "item.extraboats.bamboo_furnace_boat": "Barca de bambú con horno",
+  "item.extraboats.large_bamboo_boat": "Barca grande de bambú",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.extraboats.poise_chest_boat": "Barca equilibrada con cofre",
+  "item.extraboats.poise_furnace_boat": "Barca equilibrada con horno",
+  "item.extraboats.large_poise_boat": "Barca grande equilibrada",
+  
+  
+  "_comment": "Bloomful",
+  
+  "item.extraboats.wisteria_chest_boat": "Barca de glicina con cofre",
+  "item.extraboats.wisteria_furnace_boat": "Barca de glicina con horno",
+  "item.extraboats.large_wisteria_boat": "Barca grande de glicina",
+  
+  
+  "_comment": "Swamp Expansion",
+  
+  "item.extraboats.se_willow_chest_boat": "Barca de sauce con cofre",
+  "item.extraboats.se_willow_furnace_boat": "Barca de sauce con horno",
+  "item.extraboats.large_se_willow_boat": "Barca grande de sauce",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.extraboats.rosewood_chest_boat": "Barca de palisandro con cofre",
+  "item.extraboats.aspen_chest_boat": "Barca de álamo temblón con cofre",
+  "item.extraboats.kousa_chest_boat": "Barca de kousa con cofre",
+  "item.extraboats.yucca_chest_boat": "Barca de yuca con cofre",
+  
+  "item.extraboats.rosewood_furnace_boat": "Barca de palisandro con horno",
+  "item.extraboats.aspen_furnace_boat": "Barca de álamo temblón con horno",
+  "item.extraboats.kousa_furnace_boat": "Barca de kousa con horno",
+  "item.extraboats.yucca_furnace_boat": "Barca de yuca con horno",
+  
+  "item.extraboats.large_rosewood_boat": "Barca grande de palisandro",
+  "item.extraboats.large_aspen_boat": "Barca grande de álamo temblón",
+  "item.extraboats.large_kousa_boat": "Barca grande de kousa",
+  "item.extraboats.large_yucca_boat": "Barca grande de yuca",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.extraboats.maple_chest_boat": "Barca de arce con cofre",
+  "item.extraboats.maple_furnace_boat": "Barca de arce con horno",
+  "item.extraboats.large_maple_boat": "Barca grande de arce",
+  
+  
+  
+  "_comment": "Buzzier Bees",
+  
+  "item.extraboats.hive_chest_boat": "Barca de panal con cofre",
+  "item.extraboats.hive_furnace_boat": "Barca de panal con horno",
+  "item.extraboats.large_hive_boat": "Barca grande de panal",
+
+  
+  "advancements.adventure.get_in_the_boat.title": "¡Todos a bordo!",
+  "advancements.adventure.get_in_the_boat.description": "Sube a una barca grande junto a tres aldeanos"
+}

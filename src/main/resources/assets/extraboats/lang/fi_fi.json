@@ -25,6 +25,20 @@
   "item.extraboats.large_dark_oak_boat": "Suuri tumma tammivene",
   
   
+  "_comment": "Bamboo Blocks",
+  
+  "item.extraboats.bamboo_chest_boat": "Arkullinen bambuvene",
+  "item.extraboats.bamboo_furnace_boat": "Moottoroitu bambuvene",
+  "item.extraboats.large_bamboo_boat": "Suuri bambuvene",
+  
+  
+  "_comment": "Bloomful",
+  
+  "item.extraboats.wisteria_chest_boat": "Arkullinen sinisadevene",
+  "item.extraboats.wisteria_furnace_boat": "Moottoroitu sinisadevene",
+  "item.extraboats.large_wisteria_boat": "Suuri sinisadevene",
+  
+  
   "_comment": "Swamp Expansion",
   
   "item.extraboats.se_willow_chest_boat": "Arkullinen pajuvene",

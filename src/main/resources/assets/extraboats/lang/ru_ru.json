@@ -1,7 +1,13 @@
 {
+  "itemGroup.extraboats": "Extra Boats",
+  
+  
   "entity.extraboats.chest_boat": "Лодка с сундуком",
   "entity.extraboats.furnace_boat": "Лодка с печкой",
   "entity.extraboats.large_boat": "Большая лодка",
+  
+  
+  "_comment": "Vanilla",
   
   "item.extraboats.oak_chest_boat": "Дубовая лодка с сундуком",
   "item.extraboats.spruce_chest_boat": "Еловая лодка с сундуком",
@@ -23,6 +29,117 @@
   "item.extraboats.large_jungle_boat": "Большая лодка джунглей",
   "item.extraboats.large_acacia_boat": "Большая лодка акации",
   "item.extraboats.large_dark_oak_boat": "Большая лодка тёмного дуба",
+  
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.extraboats.cherry_chest_boat": "Cherry Boat with Chest",
+  "item.extraboats.dead_chest_boat": "Dead Boat with Chest",
+  "item.extraboats.ethereal_chest_boat": "Ethereal Boat with Chest",
+  "item.extraboats.fir_chest_boat": "Fir Boat with Chest",
+  "item.extraboats.hellbark_chest_boat": "Hellbark Boat with Chest",
+  "item.extraboats.jacaranda_chest_boat": "Jacaranda Boat with Chest",
+  "item.extraboats.magic_chest_boat": "Magic Boat with Chest",
+  "item.extraboats.mahogany_chest_boat": "Mahogany Boat with Chest",
+  "item.extraboats.palm_chest_boat": "Palm Boat with Chest",
+  "item.extraboats.redwood_chest_boat": "Redwood Boat with Chest",
+  "item.extraboats.umbran_chest_boat": "Umbran Boat with Chest",
+  "item.extraboats.willow_chest_boat": "Willow Boat with Chest",
+  
+  "item.extraboats.cherry_furnace_boat": "Cherry Boat with Furnace",
+  "item.extraboats.dead_furnace_boat": "Dead Boat with Furnace",
+  "item.extraboats.ethereal_furnace_boat": "Ethereal Boat with Furnace",
+  "item.extraboats.fir_furnace_boat": "Fir Boat with Furnace",
+  "item.extraboats.hellbark_furnace_boat": "Hellbark Boat with Furnace",
+  "item.extraboats.jacaranda_furnace_boat": "Jacaranda Boat with Furnace",
+  "item.extraboats.magic_furnace_boat": "Magic Boat with Furnace",
+  "item.extraboats.mahogany_furnace_boat": "Mahogany Boat with Furnace",
+  "item.extraboats.palm_furnace_boat": "Palm Boat with Furnace",
+  "item.extraboats.redwood_furnace_boat": "Redwood Boat with Furnace",
+  "item.extraboats.umbran_furnace_boat": "Umbran Boat with Furnace",
+  "item.extraboats.willow_furnace_boat": "Willow Boat with Furnace",
+  
+  "item.extraboats.large_cherry_boat": "Large Cherry Boat",
+  "item.extraboats.large_dead_boat": "Large Dead Boat",
+  "item.extraboats.large_ethereal_boat": "Large Ethereal Boat",
+  "item.extraboats.large_fir_boat": "Large Fir Boat",
+  "item.extraboats.large_hellbark_boat": "Large Hellbark Boat",
+  "item.extraboats.large_jacaranda_boat": "Large Jacaranda Boat",
+  "item.extraboats.large_magic_boat": "Large Magic Boat",
+  "item.extraboats.large_mahogany_boat": "Large Mahogany Boat",
+  "item.extraboats.large_palm_boat": "Large Palm Boat",
+  "item.extraboats.large_redwood_boat": "Large Redwood Boat",
+  "item.extraboats.large_umbran_boat": "Large Umbran Boat",
+  "item.extraboats.large_willow_boat": "Large Willow Boat",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.extraboats.driftwood_chest_boat": "Плавниковая лодка с сундуком",
+  "item.extraboats.driftwood_furnace_boat": "Плавниковая лодка с печкой",
+  "item.extraboats.large_driftwood_boat": "Большая плавниковая лодка",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.extraboats.bamboo_chest_boat": "Бамбуковая лодка с сундуком",
+  "item.extraboats.bamboo_furnace_boat": "Бамбуковая лодка с печкой",
+  "item.extraboats.large_bamboo_boat": "Большая бамбуковая лодка",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.extraboats.poise_chest_boat": "Пуазовая лодка с сундуком",
+  "item.extraboats.poise_furnace_boat": "Пуазовая лодка с печкой",
+  "item.extraboats.large_poise_boat": "Большая пуазовая лодка",
+  
+  
+  "_comment": "Bloomful",
+  
+  "item.extraboats.wisteria_chest_boat": "Глициниевая лодка с сундуком",
+  "item.extraboats.wisteria_furnace_boat": "Глициниевая лодка с печкой",
+  "item.extraboats.large_wisteria_boat": "Большая глициниевая лодка",
+  
+  
+  "_comment": "Swamp Expansion",
+  
+  "item.extraboats.se_willow_chest_boat": "Ивовая лодка с сундуком",
+  "item.extraboats.se_willow_furnace_boat": "Ивовая лодка с печкой",
+  "item.extraboats.large_se_willow_boat": "Большая ивовая лодка",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.extraboats.rosewood_chest_boat": "Розовая лодка с сундуком",
+  "item.extraboats.aspen_chest_boat": "Осиновая лодка с сундуком",
+  "item.extraboats.kousa_chest_boat": "Цветущая лодка с сундуком",
+  "item.extraboats.yucca_chest_boat": "Юккавая лодка с сундуком",
+  
+  "item.extraboats.rosewood_furnace_boat": "Розовая лодка с печкой",
+  "item.extraboats.aspen_furnace_boat": "Основая лодка с печкой",
+  "item.extraboats.kousa_furnace_boat": "Цветущая лодка с печкой",
+  "item.extraboats.yucca_furnace_boat": "Юкковая лодка с печкой",
+  
+  "item.extraboats.large_rosewood_boat": "Большая розовая лодка",
+  "item.extraboats.large_aspen_boat": "Большая осиновая лодка",
+  "item.extraboats.large_kousa_boat": "Большая цветущая лодка",
+  "item.extraboats.large_yucca_boat": "Большая юкковая лодка",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.extraboats.maple_chest_boat": "Кленовая лодка с сундуком",
+  "item.extraboats.maple_furnace_boat": "Кленовая лодка с Печкой",
+  "item.extraboats.large_maple_boat": "Большая кленовая лодка",
+  
+  
+  
+  "_comment": "Buzzier Bees",
+  
+  "item.extraboats.hive_chest_boat": "Ульевая лодка с сундуком",
+  "item.extraboats.hive_furnace_boat": "Ульвая лодка с печкой",
+  "item.extraboats.large_hive_boat": "Большая ульевая лодка",
+
   
   "advancements.adventure.get_in_the_boat.title": "Садись в лодку!",
   "advancements.adventure.get_in_the_boat.description": "Прокатитесь на большой лодке с тремя жителями"

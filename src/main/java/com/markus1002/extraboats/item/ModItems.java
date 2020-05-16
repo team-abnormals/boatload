@@ -99,6 +99,10 @@ public class ModItems
 	public static final Item DRIFTWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item DRIFTWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item LARGE_DRIFTWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	
+	public static final Item RIVER_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.RIVER, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item RIVER_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.RIVER, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_RIVER_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.RIVER, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Bamboo Blocks
 	public static final Item BAMBOO_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
@@ -230,6 +234,9 @@ public class ModItems
 			registerItem(DRIFTWOOD_CHEST_BOAT, "driftwood_chest_boat");
 			registerItem(DRIFTWOOD_FURNACE_BOAT, "driftwood_furnace_boat");
 			registerItem(LARGE_DRIFTWOOD_BOAT, "large_driftwood_boat");
+			registerItem(RIVER_CHEST_BOAT, "river_chest_boat");
+			registerItem(RIVER_FURNACE_BOAT, "river_furnace_boat");
+			registerItem(LARGE_RIVER_BOAT, "large_river_boat");
 		}
 
 		if (BambooBlocks.isInstalled())

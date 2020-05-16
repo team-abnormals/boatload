@@ -3,6 +3,7 @@ package com.markus1002.extraboats.entity.item.boat;
 import java.util.List;
 
 import com.markus1002.extraboats.advancements.criterion.ModCriteriaTriggers;
+import com.markus1002.extraboats.compatibility.UpgradeAquatic;
 import com.markus1002.extraboats.entity.ModEntities;
 import com.markus1002.extraboats.item.ModItems;
 
@@ -254,6 +255,8 @@ public class LargeBoatEntity extends ModBoatEntity
 			
 		case DRIFTWOOD:
 			return ModItems.LARGE_DRIFTWOOD_BOAT;
+		case RIVER:
+			return ModItems.LARGE_RIVER_BOAT;
 			
 		case BAMBOO:
 			return ModItems.LARGE_BAMBOO_BOAT;

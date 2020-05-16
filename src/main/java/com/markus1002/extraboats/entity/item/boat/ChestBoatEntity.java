@@ -95,6 +95,8 @@ public class ChestBoatEntity extends ContainerBoatEntity
 			
 		case DRIFTWOOD:
 			return ModItems.DRIFTWOOD_CHEST_BOAT;
+		case RIVER:
+			return ModItems.RIVER_CHEST_BOAT;
 			
 		case BAMBOO:
 			return ModItems.BAMBOO_CHEST_BOAT;

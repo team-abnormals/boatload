@@ -217,6 +217,8 @@ public abstract class ModBoatEntity extends BoatEntity
 			
 		case DRIFTWOOD:
 			return UpgradeAquatic.DRIFTWOOD_BOAT;
+		case RIVER:
+			return UpgradeAquatic.RIVER_BOAT;
 			
 		case BAMBOO:
 			return BambooBlocks.BAMBOO_BOAT;
@@ -297,6 +299,8 @@ public abstract class ModBoatEntity extends BoatEntity
 			
 		case DRIFTWOOD:
 			return UpgradeAquatic.DRIFTWOOD_PLANKS;
+		case RIVER:
+			return UpgradeAquatic.RIVER_PLANKS;
 			
 		case BAMBOO:
 			return BambooBlocks.BAMBOO_PLANKS;
@@ -350,6 +354,7 @@ public abstract class ModBoatEntity extends BoatEntity
 		WILLOW("willow"),
 		
 		DRIFTWOOD("driftwood"),
+		RIVER("river"),
 		
 		BAMBOO("bamboo"),
 		

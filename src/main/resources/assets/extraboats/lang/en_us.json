@@ -76,8 +76,13 @@
   "_comment": "Upgrade Aquatic",
   
   "item.extraboats.driftwood_chest_boat": "Driftwood Boat with Chest",
+  "item.extraboats.river_chest_boat": "River Boat with Chest",
+  
   "item.extraboats.driftwood_furnace_boat": "Driftwood Boat with Furnace",
+  "item.extraboats.river_furnace_boat": "River Boat with Furnace",
+  
   "item.extraboats.large_driftwood_boat": "Large Driftwood Boat",
+  "item.extraboats.large_river_boat": "Large River Boat",
   
   
   "_comment": "Bamboo Blocks",

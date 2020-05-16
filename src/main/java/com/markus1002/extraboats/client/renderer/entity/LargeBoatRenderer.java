@@ -43,6 +43,7 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			Reference.location("textures/entity/large_boat/umbran.png"),
 			Reference.location("textures/entity/large_boat/willow.png"),
 			Reference.location("textures/entity/large_boat/driftwood.png"),
+			Reference.location("textures/entity/large_boat/river.png"),
 			Reference.location("textures/entity/large_boat/bamboo.png"),
 			Reference.location("textures/entity/large_boat/poise.png"),
 			Reference.location("textures/entity/large_boat/wisteria.png"),

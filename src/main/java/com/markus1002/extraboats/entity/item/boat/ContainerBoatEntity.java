@@ -315,6 +315,8 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 			
 		case DRIFTWOOD:
 			return UpgradeAquatic.DRIFTWOOD_BOAT;
+		case RIVER:
+			return UpgradeAquatic.RIVER_BOAT;
 			
 		case BAMBOO:
 			return BambooBlocks.BAMBOO_BOAT;

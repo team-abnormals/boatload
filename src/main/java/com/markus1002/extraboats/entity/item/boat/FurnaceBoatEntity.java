@@ -236,6 +236,8 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 		case DRIFTWOOD:
 			return ModItems.DRIFTWOOD_FURNACE_BOAT;
+		case RIVER:
+			return ModItems.RIVER_FURNACE_BOAT;
 
 		case BAMBOO:
 			return ModItems.BAMBOO_FURNACE_BOAT;
@@ -311,6 +313,8 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 		case DRIFTWOOD:
 			return UpgradeAquatic.DRIFTWOOD_BOAT;
+		case RIVER:
+			return UpgradeAquatic.RIVER_BOAT;
 
 		case BAMBOO:
 			return BambooBlocks.BAMBOO_BOAT;

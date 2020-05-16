@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "upgrade_aquatic"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "furnace_boat",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:furnace"
+    },
+    "B": {
+      "item": "upgrade_aquatic:river_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:river_furnace_boat"
+  }
+}

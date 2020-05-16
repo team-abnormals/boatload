@@ -23,89 +23,94 @@
   "item.extraboats.acacia_furnace_boat": "Bote de acacia con horno",
   "item.extraboats.dark_oak_furnace_boat": "Bote de roble oscuro con horno",
   
-  "item.extraboats.large_oak_boat": "Bote grande de roble",
-  "item.extraboats.large_spruce_boat": "Bote grande de abeto",
-  "item.extraboats.large_birch_boat": "Bote grande de abedul",
-  "item.extraboats.large_jungle_boat": "Bote grande de jungla",
-  "item.extraboats.large_acacia_boat": "Bote grande de acacia",
-  "item.extraboats.large_dark_oak_boat": "Bote grande de roble oscuro",
+  "item.extraboats.large_oak_boat": "Bote de roble grande",
+  "item.extraboats.large_spruce_boat": "Bote de abeto grande",
+  "item.extraboats.large_birch_boat": "Bote de abedul grande",
+  "item.extraboats.large_jungle_boat": "Bote de jungla grande",
+  "item.extraboats.large_acacia_boat": "Bote de acacia grande",
+  "item.extraboats.large_dark_oak_boat": "Bote de roble oscuro grande",
   
   
   "_comment": "Biomes O' Plenty",
   
   "item.extraboats.cherry_chest_boat": "Bote de cerezo con cofre",
-  "item.extraboats.dead_chest_boat": "Bote de madera muerta con cofre",
-  "item.extraboats.ethereal_chest_boat": "Bote de madera etérea con cofre",
+  "item.extraboats.dead_chest_boat": "Bote muerto con cofre",
+  "item.extraboats.ethereal_chest_boat": "Bote etéreo con cofre",
   "item.extraboats.fir_chest_boat": "Bote de abeto blanco con cofre",
   "item.extraboats.hellbark_chest_boat": "Bote de corteza infernal con cofre",
   "item.extraboats.jacaranda_chest_boat": "Bote de jacarandá con cofre",
-  "item.extraboats.magic_chest_boat": "Bote de madera mágica con cofre",
+  "item.extraboats.magic_chest_boat": "Bote mágico con cofre",
   "item.extraboats.mahogany_chest_boat": "Bote de caoba con cofre",
   "item.extraboats.palm_chest_boat": "Bote de palmera con cofre",
   "item.extraboats.redwood_chest_boat": "Bote de secoya con cofre",
-  "item.extraboats.umbran_chest_boat": "Bote de madera sombría con cofre",
+  "item.extraboats.umbran_chest_boat": "Bote sombrío con cofre",
   "item.extraboats.willow_chest_boat": "Bote de sauce con cofre",
   
   "item.extraboats.cherry_furnace_boat": "Bote de cerezo con horno",
-  "item.extraboats.dead_furnace_boat": "Bote de madera muerta con horno",
-  "item.extraboats.ethereal_furnace_boat": "Bote de madera etérea con horno",
-  "item.extraboats.fir_furnace_boat": "Fir Bote de abeto blanco con horno",
+  "item.extraboats.dead_furnace_boat": "Bote muerto con horno",
+  "item.extraboats.ethereal_furnace_boat": "Bote etéreo con horno",
+  "item.extraboats.fir_furnace_boat": "Bote de abeto blanco con horno",
   "item.extraboats.hellbark_furnace_boat": "Bote de corteza infernal con horno",
   "item.extraboats.jacaranda_furnace_boat": "Bote de jacarandá con horno",
-  "item.extraboats.magic_furnace_boat": "Bote de madera mágica con horno",
+  "item.extraboats.magic_furnace_boat": "Bote mágico con horno",
   "item.extraboats.mahogany_furnace_boat": "Bote de caoba con horno",
   "item.extraboats.palm_furnace_boat": "Bote de palmera con horno",
   "item.extraboats.redwood_furnace_boat": "Bote de secoya con horno",
-  "item.extraboats.umbran_furnace_boat": "Bote de madera sombría con horno",
+  "item.extraboats.umbran_furnace_boat": "Bote sombrío con horno",
   "item.extraboats.willow_furnace_boat": "Bote de sauce con horno",
   
-  "item.extraboats.large_cherry_boat": "Bote grande de cerezo",
-  "item.extraboats.large_dead_boat": "Bote grande de madera muerta",
-  "item.extraboats.large_ethereal_boat": "Bote grande de madera etérea",
-  "item.extraboats.large_fir_boat": "Bote grande de abeto blanco",
-  "item.extraboats.large_hellbark_boat": "Bote grande de corteza infernal",
-  "item.extraboats.large_jacaranda_boat": "Bote grande de jacarandá",
-  "item.extraboats.large_magic_boat": "Bote grande de madera mágica",
-  "item.extraboats.large_mahogany_boat": "Bote grande de caoba",
-  "item.extraboats.large_palm_boat": "Bote grande de palmera",
-  "item.extraboats.large_redwood_boat": "Bote grande de secoya",
-  "item.extraboats.large_umbran_boat": "Bote grande de madera sombría",
-  "item.extraboats.large_willow_boat": "Bote grande de sauce",
+  "item.extraboats.large_cherry_boat": "Bote de cerezo grande",
+  "item.extraboats.large_dead_boat": "Bote muerto grande",
+  "item.extraboats.large_ethereal_boat": "Bote etéreo grande",
+  "item.extraboats.large_fir_boat": "Bote de abeto blanco grande",
+  "item.extraboats.large_hellbark_boat": "Bote de corteza infernal grande",
+  "item.extraboats.large_jacaranda_boat": "Bote de jacarandá grande",
+  "item.extraboats.large_magic_boat": "Bote mágico grande",
+  "item.extraboats.large_mahogany_boat": "Bote de caoba grande",
+  "item.extraboats.large_palm_boat": "Bote de palmera grande",
+  "item.extraboats.large_redwood_boat": "Bote de secoya grande",
+  "item.extraboats.large_umbran_boat": "Bote sombrío grande",
+  "item.extraboats.large_willow_boat": "Bote de sauce grande",
   
   
   "_comment": "Upgrade Aquatic",
   
   "item.extraboats.driftwood_chest_boat": "Bote de deriva con cofre",
+  "item.extraboats.river_chest_boat": "Bote fluvial con cofre",
+  
   "item.extraboats.driftwood_furnace_boat": "Bote de deriva con horno",
-  "item.extraboats.large_driftwood_boat": "Bote grande de deriva",
+  "item.extraboats.river_furnace_boat": "Bote fluvial con horno",
+  
+  "item.extraboats.large_driftwood_boat": "Bote de deriva grande",
+  "item.extraboats.large_river_boat": "Bote fluvial grande",
   
   
   "_comment": "Bamboo Blocks",
   
   "item.extraboats.bamboo_chest_boat": "Bote de bambú con cofre",
   "item.extraboats.bamboo_furnace_boat": "Bote de bambú con horno",
-  "item.extraboats.large_bamboo_boat": "Bote grande de bambú",
+  "item.extraboats.large_bamboo_boat": "Bote de bambú grande",
   
   
   "_comment": "Endergetic Expansion",
   
   "item.extraboats.poise_chest_boat": "Bote equilibrado con cofre",
   "item.extraboats.poise_furnace_boat": "Bote equilibrado con horno",
-  "item.extraboats.large_poise_boat": "Bote grande equilibrado",
+  "item.extraboats.large_poise_boat": "Bote equilibrado grande",
   
   
   "_comment": "Bloomful",
   
   "item.extraboats.wisteria_chest_boat": "Bote de glicina con cofre",
   "item.extraboats.wisteria_furnace_boat": "Bote de glicina con horno",
-  "item.extraboats.large_wisteria_boat": "Bote grande de glicina",
+  "item.extraboats.large_wisteria_boat": "Bote de glicina grande",
   
   
   "_comment": "Swamp Expansion",
   
   "item.extraboats.se_willow_chest_boat": "Bote de sauce con cofre",
   "item.extraboats.se_willow_furnace_boat": "Bote de sauce con horno",
-  "item.extraboats.large_se_willow_boat": "Bote grande de sauce",
+  "item.extraboats.large_se_willow_boat": "Bote de sauce grande",
   
   
   "_comment": "Atmospheric",
@@ -120,27 +125,26 @@
   "item.extraboats.kousa_furnace_boat": "Bote de kousa con horno",
   "item.extraboats.yucca_furnace_boat": "Bote de yuca con horno",
   
-  "item.extraboats.large_rosewood_boat": "Bote grande de palisandro",
-  "item.extraboats.large_aspen_boat": "Bote grande de álamo temblón",
-  "item.extraboats.large_kousa_boat": "Bote grande de kousa",
-  "item.extraboats.large_yucca_boat": "Bote grande de yuca",
+  "item.extraboats.large_rosewood_boat": "Bote de palisandro grande",
+  "item.extraboats.large_aspen_boat": "Bote de álamo temblón grande",
+  "item.extraboats.large_kousa_boat": "Bote de kousa grande",
+  "item.extraboats.large_yucca_boat": "Bote de yuca grande",
   
   
   "_comment": "Autumnity",
   
   "item.extraboats.maple_chest_boat": "Bote de arce con cofre",
   "item.extraboats.maple_furnace_boat": "Bote de arce con horno",
-  "item.extraboats.large_maple_boat": "Bote grande de arce",
-  
+  "item.extraboats.large_maple_boat": "Bote de arce grande",
   
   
   "_comment": "Buzzier Bees",
   
   "item.extraboats.hive_chest_boat": "Bote de panal con cofre",
   "item.extraboats.hive_furnace_boat": "Bote de panal con horno",
-  "item.extraboats.large_hive_boat": "Bote grande de panal",
+  "item.extraboats.large_hive_boat": "Bote de panal grande",
 
   
   "advancements.adventure.get_in_the_boat.title": "¡Todos a bordo!",
-  "advancements.adventure.get_in_the_boat.description": "Sube a un bote grande junto a tres aldeanos"
+  "advancements.adventure.get_in_the_boat.description": "Sube a un bote grande acompañado de tres aldeanos"
 }

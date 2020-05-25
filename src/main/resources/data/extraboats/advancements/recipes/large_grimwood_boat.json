@@ -1,0 +1,36 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "atmospheric"
+  }],
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "extraboats:large_grimwood_boat"
+    ]
+  },
+  "criteria": {
+    "has_grimwood_boat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "atmospheric:grimwood_boat"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "extraboats:large_grimwood_boat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_grimwood_boat",
+      "has_the_recipe"
+    ]
+  ]
+}

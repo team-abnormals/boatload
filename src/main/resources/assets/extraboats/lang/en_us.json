@@ -145,9 +145,5 @@
   
   "item.extraboats.hive_chest_boat": "Hive Boat with Chest",
   "item.extraboats.hive_furnace_boat": "Hive Boat with Furnace",
-  "item.extraboats.large_hive_boat": "Large Hive Boat",
-
-  
-  "advancements.adventure.get_in_the_boat.title": "Get in the Boat!",
-  "advancements.adventure.get_in_the_boat.description": "Ride a large boat with three villagers"
+  "item.extraboats.large_hive_boat": "Large Hive Boat"
 }

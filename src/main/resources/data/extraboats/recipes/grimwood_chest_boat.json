@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "atmospheric"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "chest_boat",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:chests/wooden"
+    },
+    "B": {
+      "item": "atmospheric:grimwood_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:grimwood_chest_boat"
+  }
+}

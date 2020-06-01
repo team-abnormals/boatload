@@ -50,9 +50,5 @@
   
   "item.extraboats.maple_chest_boat": "Arkullinen vaahteravene",
   "item.extraboats.maple_furnace_boat": "Moottoroitu vaahteravene",
-  "item.extraboats.large_maple_boat": "Suuri vaahteravene",
-  
-  
-  "advancements.adventure.get_in_the_boat.title": "Mene veneeseen!",
-  "advancements.adventure.get_in_the_boat.description": "Ole suuressa veneessä kolmen kyläläisen kanssa"
+  "item.extraboats.large_maple_boat": "Suuri vaahteravene"
 }

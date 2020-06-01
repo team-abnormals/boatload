@@ -1,8 +1,8 @@
 package com.markus1002.extraboats.client.renderer.entity;
 
-import com.markus1002.extraboats.Reference;
 import com.markus1002.extraboats.client.renderer.entity.model.LargeBoatModel;
-import com.markus1002.extraboats.entity.item.boat.LargeBoatEntity;
+import com.markus1002.extraboats.common.entity.item.boat.LargeBoatEntity;
+import com.markus1002.extraboats.core.Reference;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
@@ -52,6 +52,7 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			Reference.location("textures/entity/large_boat/aspen.png"),
 			Reference.location("textures/entity/large_boat/kousa.png"),
 			Reference.location("textures/entity/large_boat/yucca.png"),
+			Reference.location("textures/entity/large_boat/grimwood.png"),
 			Reference.location("textures/entity/large_boat/maple.png"),
 			Reference.location("textures/entity/large_boat/hive.png")};
 	protected final LargeBoatModel modelLargeBoat = new LargeBoatModel();

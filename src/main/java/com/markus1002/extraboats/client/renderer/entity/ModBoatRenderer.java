@@ -1,6 +1,6 @@
 package com.markus1002.extraboats.client.renderer.entity;
 
-import com.markus1002.extraboats.entity.item.boat.ModBoatEntity;
+import com.markus1002.extraboats.common.entity.item.boat.ModBoatEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
@@ -52,6 +52,7 @@ public class ModBoatRenderer<T extends ModBoatEntity> extends EntityRenderer<T>
 			new ResourceLocation("atmospheric", "textures/entity/boat/aspen.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/kousa.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/yucca.png"),
+			new ResourceLocation("atmospheric", "textures/entity/boat/grimwood.png"),
 			new ResourceLocation("autumnity", "textures/entity/boat/maple.png"),
 			new ResourceLocation("buzzierbees", "textures/entity/boat/hive.png")};
 	protected final BoatModel modelBoat = new BoatModel();

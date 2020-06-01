@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
-import com.markus1002.extraboats.entity.item.boat.LargeBoatEntity;
+import com.markus1002.extraboats.common.entity.item.boat.LargeBoatEntity;
 
 import net.minecraft.client.renderer.entity.model.SegmentedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;

@@ -116,19 +116,22 @@
   "_comment": "Atmospheric",
   
   "item.extraboats.rosewood_chest_boat": "Bote de palisandro con cofre",
-  "item.extraboats.aspen_chest_boat": "Bote de álamo temblón con cofre",
+  "item.extraboats.aspen_chest_boat": "Bote de álamo con cofre",
   "item.extraboats.kousa_chest_boat": "Bote de kousa con cofre",
   "item.extraboats.yucca_chest_boat": "Bote de yuca con cofre",
+  "item.extraboats.grimwood_chest_boat": "Bote siniestro con cofre",
   
   "item.extraboats.rosewood_furnace_boat": "Bote de palisandro con horno",
-  "item.extraboats.aspen_furnace_boat": "Bote de álamo temblón con horno",
+  "item.extraboats.aspen_furnace_boat": "Bote de álamo con horno",
   "item.extraboats.kousa_furnace_boat": "Bote de kousa con horno",
   "item.extraboats.yucca_furnace_boat": "Bote de yuca con horno",
+  "item.extraboats.grimwood_furnace_boat": "Bote siniestro con horno",
   
   "item.extraboats.large_rosewood_boat": "Bote de palisandro grande",
-  "item.extraboats.large_aspen_boat": "Bote de álamo temblón grande",
+  "item.extraboats.large_aspen_boat": "Bote de álamo grande",
   "item.extraboats.large_kousa_boat": "Bote de kousa grande",
   "item.extraboats.large_yucca_boat": "Bote de yuca grande",
+  "item.extraboats.large_grimwood_boat": "Bote siniestro grande",
   
   
   "_comment": "Autumnity",
@@ -142,9 +145,5 @@
   
   "item.extraboats.hive_chest_boat": "Bote de panal con cofre",
   "item.extraboats.hive_furnace_boat": "Bote de panal con horno",
-  "item.extraboats.large_hive_boat": "Bote de panal grande",
-
-  
-  "advancements.adventure.get_in_the_boat.title": "¡Todos a bordo!",
-  "advancements.adventure.get_in_the_boat.description": "Sube a un bote grande acompañado de tres aldeanos"
+  "item.extraboats.large_hive_boat": "Bote de panal grande"
 }

@@ -13,7 +13,7 @@ import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.Item;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 
@@ -28,7 +28,7 @@ public class ChestBoatEntity extends ContainerBoatEntity
 	{
 		this(ModEntities.CHEST_BOAT, worldIn);
 		this.setPosition(x, y, z);
-		this.setMotion(Vec3d.ZERO);
+		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
 		this.prevPosY = y;
 		this.prevPosZ = z;
@@ -60,8 +60,8 @@ public class ChestBoatEntity extends ContainerBoatEntity
 		return Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.NORTH);
 	}
 
-	public Container func_213968_a(int p_213968_1_, PlayerInventory p_213968_2_)
+	public Container createContainer(int id, PlayerInventory playerInventoryIn)
 	{
-		return ChestContainer.createGeneric9X3(p_213968_1_, p_213968_2_, this);
+		return ChestContainer.createGeneric9X3(id, playerInventoryIn, this);
 	}
 }

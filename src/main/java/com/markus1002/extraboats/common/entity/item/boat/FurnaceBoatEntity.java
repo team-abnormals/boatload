@@ -23,10 +23,11 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 
@@ -44,7 +45,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 	{
 		this(ModEntities.FURNACE_BOAT, worldIn);
 		this.setPosition(x, y, z);
-		this.setMotion(Vec3d.ZERO);
+		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
 		this.prevPosY = y;
 		this.prevPosZ = z;
@@ -67,9 +68,9 @@ public class FurnaceBoatEntity extends ModBoatEntity
 		this.entityDropItem(Blocks.FURNACE);
 	}
 
-	public boolean processInitialInteract(PlayerEntity player, Hand hand)
+	public ActionResultType processInitialInteract(PlayerEntity player, Hand hand)
 	{
-		if (player.isShiftKeyDown())
+		if (player.isSneaking())
 		{
 			ItemStack itemstack = player.getHeldItem(hand);
 			if (FUEL_ITEMS.test(itemstack) && this.getFuel() + 3600 <= 32000)
@@ -82,7 +83,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 				this.setFuel(this.getFuel() + 3600);
 			}
 
-			return true;
+			return ActionResultType.func_233537_a_(this.world.isRemote);
 		}
 		else
 		{
@@ -203,8 +204,8 @@ public class FurnaceBoatEntity extends ModBoatEntity
 		{
 			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
 
-			Vec3d vec3d = (new Vec3d((double)0.2F, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
-			passenger.setPosition(this.getPosX() + vec3d.x, this.getPosY() + (double)f1, this.getPosZ() + vec3d.z);
+			Vector3d vector3d = (new Vector3d((double)0.2F, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
+			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double)f1, this.getPosZ() + vector3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);

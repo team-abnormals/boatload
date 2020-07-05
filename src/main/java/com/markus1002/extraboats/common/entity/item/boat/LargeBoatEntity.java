@@ -17,7 +17,7 @@ import net.minecraft.item.Items;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 
@@ -32,7 +32,7 @@ public class LargeBoatEntity extends ModBoatEntity
 	{
 		this(ModEntities.LARGE_BOAT, worldIn);
 		this.setPosition(x, y, z);
-		this.setMotion(Vec3d.ZERO);
+		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
 		this.prevPosY = y;
 		this.prevPosZ = z;
@@ -189,8 +189,8 @@ public class LargeBoatEntity extends ModBoatEntity
 				}
 			}
 
-			Vec3d vec3d = (new Vec3d((double)f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
-			passenger.setPosition(this.getPosX() + vec3d.x, this.getPosY() + (double)f1, this.getPosZ() + vec3d.z);
+			Vector3d vector3d = (new Vector3d((double)f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
+			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double)f1, this.getPosZ() + vector3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);

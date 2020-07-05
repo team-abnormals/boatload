@@ -17,21 +17,20 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootParameterSets;
+import net.minecraft.loot.LootParameters;
+import net.minecraft.loot.LootTable;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.storage.loot.LootParameterSets;
-import net.minecraft.world.storage.loot.LootParameters;
-import net.minecraft.world.storage.loot.LootTable;
 
 public abstract class ContainerBoatEntity extends ModBoatEntity implements IInventory, INamedContainerProvider
 {
@@ -54,7 +53,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 			InventoryHelper.dropInventoryItems(this.world, this, this);
 		}
 	}
-	
+
 	public void killBoat()
 	{
 		super.killBoat();
@@ -142,12 +141,14 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	/*
 	@Nullable
 	public Entity changeDimension(DimensionType destination)
 	{
 		this.dropContentsWhenDead = false;
 		return super.changeDimension(destination);
 	}
+	*/
 
 	@Override
 	public void remove(boolean keepData)
@@ -188,12 +189,12 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
-	public boolean processInitialInteract(PlayerEntity player, Hand hand)
+	public ActionResultType processInitialInteract(PlayerEntity player, Hand hand)
 	{
-		if (player.isShiftKeyDown())
+		if (player.isSneaking())
 		{
 			player.openContainer(this);
-			return true;
+			return ActionResultType.func_233537_a_(this.world.isRemote);
 		}
 		else
 		{
@@ -207,7 +208,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		{
 			LootTable loottable = this.world.getServer().getLootTableManager().getLootTableFromLocation(this.lootTable);
 			this.lootTable = null;
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld)this.world)).withParameter(LootParameters.POSITION, new BlockPos(this)).withSeed(this.lootTableSeed);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld)this.world)).withParameter(LootParameters.POSITION, this.func_233580_cy_()).withSeed(this.lootTableSeed);
 			lootcontext$builder.withParameter(LootParameters.KILLER_ENTITY, this);
 			if (player != null)
 			{
@@ -240,11 +241,11 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		else
 		{
 			this.addLoot(p_createMenu_2_.player);
-			return this.func_213968_a(p_createMenu_1_, p_createMenu_2_);
+			return this.createContainer(p_createMenu_1_, p_createMenu_2_);
 		}
 	}
 
-	protected abstract Container func_213968_a(int p_213968_1_, PlayerInventory p_213968_2_);
+	protected abstract Container createContainer(int id, PlayerInventory playerInventoryIn);
 
 	private net.minecraftforge.common.util.LazyOptional<?> itemHandler = net.minecraftforge.common.util.LazyOptional.of(() -> new net.minecraftforge.items.wrapper.InvWrapper(this));
 
@@ -272,8 +273,8 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		{
 			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
 
-			Vec3d vec3d = (new Vec3d((double)0.2F, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
-			passenger.setPosition(this.getPosX() + vec3d.x, this.getPosY() + (double)f1, this.getPosZ() + vec3d.z);
+			Vector3d vector3d = (new Vector3d((double)0.2F, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
+			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double)f1, this.getPosZ() + vector3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);

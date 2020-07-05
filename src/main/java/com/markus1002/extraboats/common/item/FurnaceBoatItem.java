@@ -17,7 +17,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
 public class FurnaceBoatItem extends Item
@@ -41,16 +41,16 @@ public class FurnaceBoatItem extends Item
 		}
 		else
 		{
-			Vec3d vec3d = playerIn.getLook(1.0F);
-			List<Entity> list = worldIn.getEntitiesInAABBexcluding(playerIn, playerIn.getBoundingBox().expand(vec3d.scale(5.0D)).grow(1.0D), field_219989_a);
+			Vector3d vector3d = playerIn.getLook(1.0F);
+			List<Entity> list = worldIn.getEntitiesInAABBexcluding(playerIn, playerIn.getBoundingBox().expand(vector3d.scale(5.0D)).grow(1.0D), field_219989_a);
 			if (!list.isEmpty())
 			{
-				Vec3d vec3d1 = playerIn.getEyePosition(1.0F);
+				Vector3d vector3d1 = playerIn.getEyePosition(1.0F);
 
 				for(Entity entity : list)
 				{
 					AxisAlignedBB axisalignedbb = entity.getBoundingBox().grow((double)entity.getCollisionBorderSize());
-					if (axisalignedbb.contains(vec3d1))
+					if (axisalignedbb.contains(vector3d1))
 					{
 						return ActionResult.resultPass(itemstack);
 					}
@@ -62,7 +62,7 @@ public class FurnaceBoatItem extends Item
 				FurnaceBoatEntity boatentity = new FurnaceBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
 				boatentity.setModBoatType(this.type);
 				boatentity.rotationYaw = playerIn.rotationYaw;
-				if (!worldIn.func_226665_a__(boatentity, boatentity.getBoundingBox().grow(-0.1D)))
+				if (!worldIn.hasNoCollisions(boatentity, boatentity.getBoundingBox().grow(-0.1D)))
 				{
 					return ActionResult.resultFail(itemstack);
 				}

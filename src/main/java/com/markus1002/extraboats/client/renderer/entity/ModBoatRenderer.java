@@ -32,7 +32,6 @@ public class ModBoatRenderer<T extends ModBoatEntity> extends EntityRenderer<T>
 			new ResourceLocation("textures/entity/boat/dark_oak.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/cherry.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/dead.png"),
-			new ResourceLocation("biomesoplenty", "textures/entity/boat/ethereal.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/fir.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/hellbark.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/jacaranda.png"),
@@ -44,7 +43,7 @@ public class ModBoatRenderer<T extends ModBoatEntity> extends EntityRenderer<T>
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/willow.png"),
 			new ResourceLocation("upgrade_aquatic", "textures/entity/boat/driftwood.png"),
 			new ResourceLocation("upgrade_aquatic", "textures/entity/boat/river.png"),
-			new ResourceLocation("bambooblocks", "textures/entity/boat/bamboo.png"),
+			new ResourceLocation("bamboo_blocks", "textures/entity/boat/bamboo.png"),
 			new ResourceLocation("endergetic", "textures/entity/boat/poise.png"),
 			new ResourceLocation("bloomful", "textures/entity/boat/wisteria.png"),
 			new ResourceLocation("swampexpansion", "textures/entity/boat/willow.png"),
@@ -53,8 +52,7 @@ public class ModBoatRenderer<T extends ModBoatEntity> extends EntityRenderer<T>
 			new ResourceLocation("atmospheric", "textures/entity/boat/kousa.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/yucca.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/grimwood.png"),
-			new ResourceLocation("autumnity", "textures/entity/boat/maple.png"),
-			new ResourceLocation("buzzierbees", "textures/entity/boat/hive.png")};
+			new ResourceLocation("autumnity", "textures/entity/boat/maple.png")};
 	protected final BoatModel modelBoat = new BoatModel();
 
 	public ModBoatRenderer(EntityRendererManager renderManagerIn)

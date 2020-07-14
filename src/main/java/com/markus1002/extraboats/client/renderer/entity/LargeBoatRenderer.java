@@ -32,7 +32,6 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			Reference.location("textures/entity/large_boat/dark_oak.png"),
 			Reference.location("textures/entity/large_boat/cherry.png"),
 			Reference.location("textures/entity/large_boat/dead.png"),
-			Reference.location("textures/entity/large_boat/ethereal.png"),
 			Reference.location("textures/entity/large_boat/fir.png"),
 			Reference.location("textures/entity/large_boat/hellbark.png"),
 			Reference.location("textures/entity/large_boat/jacaranda.png"),
@@ -53,8 +52,7 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			Reference.location("textures/entity/large_boat/kousa.png"),
 			Reference.location("textures/entity/large_boat/yucca.png"),
 			Reference.location("textures/entity/large_boat/grimwood.png"),
-			Reference.location("textures/entity/large_boat/maple.png"),
-			Reference.location("textures/entity/large_boat/hive.png")};
+			Reference.location("textures/entity/large_boat/maple.png")};
 	protected final LargeBoatModel modelLargeBoat = new LargeBoatModel();
 
 	public LargeBoatRenderer(EntityRendererManager renderManagerIn)

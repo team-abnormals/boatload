@@ -13,9 +13,6 @@ public class BiomesOPlenty
 	@ObjectHolder("biomesoplenty:dead_planks")
 	public static final Block DEAD_PLANKS = null;
 	
-	@ObjectHolder("biomesoplenty:ethereal_planks")
-	public static final Block ETHEREAL_PLANKS = null;
-	
 	@ObjectHolder("biomesoplenty:fir_planks")
 	public static final Block FIR_PLANKS = null;
 	
@@ -49,9 +46,6 @@ public class BiomesOPlenty
 	
 	@ObjectHolder("biomesoplenty:dead_boat")
 	public static final Item DEAD_BOAT = null;
-	
-	@ObjectHolder("biomesoplenty:ethereal_boat")
-	public static final Item ETHEREAL_BOAT = null;
 	
 	@ObjectHolder("biomesoplenty:fir_boat")
 	public static final Item FIR_BOAT = null;

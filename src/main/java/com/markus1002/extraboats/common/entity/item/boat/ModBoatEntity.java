@@ -190,7 +190,6 @@ public abstract class ModBoatEntity extends BoatEntity
 
 		CHERRY("cherry"),
 		DEAD("dead"),
-		ETHEREAL("ethereal"),
 		FIR("fir"),
 		HELLBARK("hellbark"),
 		JACARANDA("jacaranda"),
@@ -218,9 +217,7 @@ public abstract class ModBoatEntity extends BoatEntity
 		YUCCA("yucca"),
 		GRIMWOOD("grimwood"),
 		
-		MAPLE("maple"),
-	
-		HIVE("hive");
+		MAPLE("maple");
 
 		private final String name;
 

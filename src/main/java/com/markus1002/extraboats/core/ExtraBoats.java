@@ -9,7 +9,6 @@ import com.markus1002.extraboats.core.compatibility.Autumnity;
 import com.markus1002.extraboats.core.compatibility.BambooBlocks;
 import com.markus1002.extraboats.core.compatibility.BiomesOPlenty;
 import com.markus1002.extraboats.core.compatibility.Bloomful;
-import com.markus1002.extraboats.core.compatibility.BuzzierBees;
 import com.markus1002.extraboats.core.compatibility.EndergeticExpansion;
 import com.markus1002.extraboats.core.compatibility.SwampExpansion;
 import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
@@ -72,10 +71,6 @@ public class ExtraBoats
 			DispenserBlock.registerDispenseBehavior(ModItems.DEAD_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.DEAD));
 			DispenserBlock.registerDispenseBehavior(ModItems.DEAD_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.DEAD));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_DEAD_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.DEAD));
-			
-			DispenserBlock.registerDispenseBehavior(ModItems.ETHEREAL_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.ETHEREAL));
-			DispenserBlock.registerDispenseBehavior(ModItems.ETHEREAL_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.ETHEREAL));
-			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_ETHEREAL_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.ETHEREAL));
 			
 			DispenserBlock.registerDispenseBehavior(ModItems.FIR_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.FIR));
 			DispenserBlock.registerDispenseBehavior(ModItems.FIR_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.FIR));
@@ -177,13 +172,6 @@ public class ExtraBoats
 			DispenserBlock.registerDispenseBehavior(ModItems.MAPLE_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.MAPLE));
 			DispenserBlock.registerDispenseBehavior(ModItems.MAPLE_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.MAPLE));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_MAPLE_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.MAPLE));
-		}
-		
-		if (BuzzierBees.isInstalled())
-		{
-			DispenserBlock.registerDispenseBehavior(ModItems.HIVE_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.HIVE));
-			DispenserBlock.registerDispenseBehavior(ModItems.HIVE_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.HIVE));
-			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_HIVE_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.HIVE));
 		}
 	}
 

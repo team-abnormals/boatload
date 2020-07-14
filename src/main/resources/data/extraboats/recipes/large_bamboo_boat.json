@@ -1,7 +1,7 @@
 {
   "conditions": [{
   "type": "forge:mod_loaded",
-  "modid": "bambooblocks"
+  "modid": "bamboo_blocks"
   }],
   "type": "minecraft:crafting_shaped",
   "group": "large_boat",
@@ -11,10 +11,10 @@
   ],
   "key": {
     "#": {
-      "item": "bambooblocks:bamboo_planks"
+      "item": "bamboo_blocks:bamboo_planks"
     },
     "W": {
-      "item": "bambooblocks:bamboo_boat"
+      "item": "bamboo_blocks:bamboo_boat"
     }
   },
   "result": {

@@ -7,14 +7,14 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class BambooBlocks
 {
-	@ObjectHolder("bambooblocks:bamboo_planks")
+	@ObjectHolder("bamboo_blocks:bamboo_planks")
 	public static final Block BAMBOO_PLANKS = null;
 	
-	@ObjectHolder("bambooblocks:bamboo_boat")
+	@ObjectHolder("bamboo_blocks:bamboo_boat")
 	public static final Item BAMBOO_BOAT = null;
 	
 	public static boolean isInstalled()
 	{
-		return ModList.get() != null && ModList.get().getModContainerById("bambooblocks").isPresent();
+		return ModList.get() != null && ModList.get().getModContainerById("bamboo_blocks").isPresent();
 	}
 }

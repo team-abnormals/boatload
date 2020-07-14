@@ -6,7 +6,6 @@ import com.markus1002.extraboats.core.compatibility.Autumnity;
 import com.markus1002.extraboats.core.compatibility.BambooBlocks;
 import com.markus1002.extraboats.core.compatibility.BiomesOPlenty;
 import com.markus1002.extraboats.core.compatibility.Bloomful;
-import com.markus1002.extraboats.core.compatibility.BuzzierBees;
 import com.markus1002.extraboats.core.compatibility.EndergeticExpansion;
 import com.markus1002.extraboats.core.compatibility.SwampExpansion;
 import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
@@ -16,7 +15,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-
 
 public class BoatHelper
 {
@@ -42,8 +40,6 @@ public class BoatHelper
 			return BiomesOPlenty.CHERRY_PLANKS;
 		case DEAD:
 			return BiomesOPlenty.DEAD_PLANKS;
-		case ETHEREAL:
-			return BiomesOPlenty.ETHEREAL_PLANKS;
 		case FIR:
 			return BiomesOPlenty.FIR_PLANKS;
 		case HELLBARK:
@@ -93,9 +89,6 @@ public class BoatHelper
 			
 		case MAPLE:
 			return Autumnity.MAPLE_PLANKS;
-			
-		case HIVE:
-			return BuzzierBees.HIVE_PLANKS;
 		}
 	}
 	
@@ -121,8 +114,6 @@ public class BoatHelper
 			return BiomesOPlenty.CHERRY_BOAT;
 		case DEAD:
 			return BiomesOPlenty.DEAD_BOAT;
-		case ETHEREAL:
-			return BiomesOPlenty.ETHEREAL_BOAT;
 		case FIR:
 			return BiomesOPlenty.FIR_BOAT;
 		case HELLBARK:
@@ -172,9 +163,6 @@ public class BoatHelper
 			
 		case MAPLE:
 			return Autumnity.MAPLE_BOAT;
-			
-		case HIVE:
-			return BuzzierBees.HIVE_BOAT;
 		}
 	}
 	
@@ -200,8 +188,6 @@ public class BoatHelper
 			return ModItems.CHERRY_CHEST_BOAT;
 		case DEAD:
 			return ModItems.DEAD_CHEST_BOAT;
-		case ETHEREAL:
-			return ModItems.ETHEREAL_CHEST_BOAT;
 		case FIR:
 			return ModItems.FIR_CHEST_BOAT;
 		case HELLBARK:
@@ -251,9 +237,6 @@ public class BoatHelper
 			
 		case MAPLE:
 			return ModItems.MAPLE_CHEST_BOAT;
-			
-		case HIVE:
-			return ModItems.HIVE_CHEST_BOAT;
 		}
 	}
 	
@@ -279,8 +262,6 @@ public class BoatHelper
 			return ModItems.CHERRY_FURNACE_BOAT;
 		case DEAD:
 			return ModItems.DEAD_FURNACE_BOAT;
-		case ETHEREAL:
-			return ModItems.ETHEREAL_FURNACE_BOAT;
 		case FIR:
 			return ModItems.FIR_FURNACE_BOAT;
 		case HELLBARK:
@@ -330,9 +311,6 @@ public class BoatHelper
 			
 		case MAPLE:
 			return ModItems.MAPLE_FURNACE_BOAT;
-			
-		case HIVE:
-			return ModItems.HIVE_FURNACE_BOAT;
 		}
 	}
 	
@@ -358,8 +336,6 @@ public class BoatHelper
 			return ModItems.LARGE_CHERRY_BOAT;
 		case DEAD:
 			return ModItems.LARGE_DEAD_BOAT;
-		case ETHEREAL:
-			return ModItems.LARGE_ETHEREAL_BOAT;
 		case FIR:
 			return ModItems.LARGE_FIR_BOAT;
 		case HELLBARK:
@@ -409,9 +385,6 @@ public class BoatHelper
 			
 		case MAPLE:
 			return ModItems.LARGE_MAPLE_BOAT;
-			
-		case HIVE:
-			return ModItems.LARGE_HIVE_BOAT;
 		}
 	}
 }

@@ -10,7 +10,6 @@ import com.markus1002.extraboats.core.compatibility.Autumnity;
 import com.markus1002.extraboats.core.compatibility.BambooBlocks;
 import com.markus1002.extraboats.core.compatibility.BiomesOPlenty;
 import com.markus1002.extraboats.core.compatibility.Bloomful;
-import com.markus1002.extraboats.core.compatibility.BuzzierBees;
 import com.markus1002.extraboats.core.compatibility.EndergeticExpansion;
 import com.markus1002.extraboats.core.compatibility.SwampExpansion;
 import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
@@ -58,10 +57,6 @@ public class ModItems
 	public static final Item DEAD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item DEAD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item LARGE_DEAD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	
-	public static final Item ETHEREAL_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item ETHEREAL_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_ETHEREAL_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ETHEREAL, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	
 	public static final Item FIR_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item FIR_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
@@ -153,11 +148,6 @@ public class ModItems
 	public static final Item MAPLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item MAPLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item LARGE_MAPLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	
-	// Buzzier Bees
-	public static final Item HIVE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.HIVE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item HIVE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.HIVE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_HIVE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.HIVE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void registerItems(RegistryEvent.Register<Item> event)
@@ -195,10 +185,6 @@ public class ModItems
 			registerItem(DEAD_CHEST_BOAT, "dead_chest_boat");
 			registerItem(DEAD_FURNACE_BOAT, "dead_furnace_boat");
 			registerItem(LARGE_DEAD_BOAT, "large_dead_boat");
-			
-			registerItem(ETHEREAL_CHEST_BOAT, "ethereal_chest_boat");
-			registerItem(ETHEREAL_FURNACE_BOAT, "ethereal_furnace_boat");
-			registerItem(LARGE_ETHEREAL_BOAT, "large_ethereal_boat");
 			
 			registerItem(FIR_CHEST_BOAT, "fir_chest_boat");
 			registerItem(FIR_FURNACE_BOAT, "fir_furnace_boat");
@@ -303,13 +289,6 @@ public class ModItems
 			registerItem(MAPLE_CHEST_BOAT, "maple_chest_boat");
 			registerItem(MAPLE_FURNACE_BOAT, "maple_furnace_boat");
 			registerItem(LARGE_MAPLE_BOAT, "large_maple_boat");
-		}
-		
-		if (BuzzierBees.isInstalled())
-		{
-			registerItem(HIVE_CHEST_BOAT, "hive_chest_boat");
-			registerItem(HIVE_FURNACE_BOAT, "hive_furnace_boat");
-			registerItem(LARGE_HIVE_BOAT, "large_hive_boat");
 		}
 	}
 

@@ -35,7 +35,6 @@
   
   "item.extraboats.cherry_chest_boat": "Cherry Boat with Chest",
   "item.extraboats.dead_chest_boat": "Dead Boat with Chest",
-  "item.extraboats.ethereal_chest_boat": "Ethereal Boat with Chest",
   "item.extraboats.fir_chest_boat": "Fir Boat with Chest",
   "item.extraboats.hellbark_chest_boat": "Hellbark Boat with Chest",
   "item.extraboats.jacaranda_chest_boat": "Jacaranda Boat with Chest",
@@ -48,7 +47,6 @@
   
   "item.extraboats.cherry_furnace_boat": "Cherry Boat with Furnace",
   "item.extraboats.dead_furnace_boat": "Dead Boat with Furnace",
-  "item.extraboats.ethereal_furnace_boat": "Ethereal Boat with Furnace",
   "item.extraboats.fir_furnace_boat": "Fir Boat with Furnace",
   "item.extraboats.hellbark_furnace_boat": "Hellbark Boat with Furnace",
   "item.extraboats.jacaranda_furnace_boat": "Jacaranda Boat with Furnace",
@@ -61,7 +59,6 @@
   
   "item.extraboats.large_cherry_boat": "Large Cherry Boat",
   "item.extraboats.large_dead_boat": "Large Dead Boat",
-  "item.extraboats.large_ethereal_boat": "Large Ethereal Boat",
   "item.extraboats.large_fir_boat": "Large Fir Boat",
   "item.extraboats.large_hellbark_boat": "Large Hellbark Boat",
   "item.extraboats.large_jacaranda_boat": "Large Jacaranda Boat",
@@ -138,12 +135,5 @@
   
   "item.extraboats.maple_chest_boat": "Maple Boat with Chest",
   "item.extraboats.maple_furnace_boat": "Maple Boat with Furnace",
-  "item.extraboats.large_maple_boat": "Large Maple Boat",
-  
-  
-  "_comment": "Buzzier Bees",
-  
-  "item.extraboats.hive_chest_boat": "Hive Boat with Chest",
-  "item.extraboats.hive_furnace_boat": "Hive Boat with Furnace",
-  "item.extraboats.large_hive_boat": "Large Hive Boat"
+  "item.extraboats.large_maple_boat": "Large Maple Boat"
 }

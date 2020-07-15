@@ -26,6 +26,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -97,14 +98,20 @@ public class FurnaceBoatEntity extends ModBoatEntity
 		if (this.getFuel() > 0)
 		{
 			this.setFuel(this.getFuel() - 1);
-		}
 
-		if (this.world.isRemote && this.getFuel() > 0 && this.rand.nextInt(4) == 0)
-		{
 			float f = (this.rotationYaw - 90.0F) * ((float)Math.PI / 180F);
 			float f1 = MathHelper.cos(f);
 			float f2 = MathHelper.sin(f);
-			this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.getPosX() + (double)f1 * 0.5D, this.getPosY() + 1.0D, this.getPosZ() + (double)f2 * 0.5D, 0.0D, 0.0D, 0.0D);
+
+			if (this.world.isRemote && this.rand.nextInt(4) == 0)
+			{
+				this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.getPosX() + (double)f1 * 0.5D, this.getPosY() + 1.0D, this.getPosZ() + (double)f2 * 0.5D, 0.0D, 0.0D, 0.0D);
+			}
+
+			if (rand.nextDouble() < 0.1D)
+			{
+				this.world.playSound(this.getPosX() + (double)f1 * 0.5D, this.getPosY(), this.getPosZ() + (double)f2 * 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, this.getSoundCategory(), 1.0F, 1.0F, false);
+			}
 		}
 	}
 

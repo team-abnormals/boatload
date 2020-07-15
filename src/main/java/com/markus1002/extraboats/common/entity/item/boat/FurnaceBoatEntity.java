@@ -147,7 +147,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 			this.setMotion(this.getMotion().add((double)(MathHelper.sin(-this.rotationYaw * ((float)Math.PI / 180F)) * f), 0.0D, (double)(MathHelper.cos(this.rotationYaw * ((float)Math.PI / 180F)) * f)));
 			this.setPaddleState(this.rightInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown && !this.rightInputDown || this.forwardInputDown);
 
-			if (this.getFuel() > 0)
+			if (this.getFuel() > 0 && this.status == BoatEntity.Status.IN_WATER)
 			{
 				float f1 = (this.rotationYaw - 90.0F) * ((float)Math.PI / 180F);
 				float f2 = MathHelper.cos(f1);

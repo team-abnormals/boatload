@@ -108,7 +108,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 				this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.getPosX() + (double)f1 * 0.5D, this.getPosY() + 1.0D, this.getPosZ() + (double)f2 * 0.5D, 0.0D, 0.0D, 0.0D);
 			}
 
-			if (rand.nextDouble() < 0.1D)
+			if (this.rand.nextInt(40) == 0)
 			{
 				this.world.playSound(this.getPosX() + (double)f1 * 0.5D, this.getPosY(), this.getPosZ() + (double)f2 * 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, this.getSoundCategory(), 1.0F, 1.0F, false);
 			}

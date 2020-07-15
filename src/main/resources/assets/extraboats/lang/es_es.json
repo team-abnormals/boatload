@@ -35,7 +35,6 @@
   
   "item.extraboats.cherry_chest_boat": "Barca de cerezo con cofre",
   "item.extraboats.dead_chest_boat": "Barca muerta con cofre",
-  "item.extraboats.ethereal_chest_boat": "Barca etérea con cofre",
   "item.extraboats.fir_chest_boat": "Barca de abeto blanco con cofre",
   "item.extraboats.hellbark_chest_boat": "Barca de corteza infernal con cofre",
   "item.extraboats.jacaranda_chest_boat": "Barca de jacarandá con cofre",
@@ -48,7 +47,6 @@
   
   "item.extraboats.cherry_furnace_boat": "Barca de cerezo con horno",
   "item.extraboats.dead_furnace_boat": "Barca muerta con horno",
-  "item.extraboats.ethereal_furnace_boat": "Barca etérea con horno",
   "item.extraboats.fir_furnace_boat": "Barca de abeto blanco con horno",
   "item.extraboats.hellbark_furnace_boat": "Barca de corteza infernal con horno",
   "item.extraboats.jacaranda_furnace_boat": "Barca de jacarandá con horno",
@@ -61,7 +59,6 @@
   
   "item.extraboats.large_cherry_boat": "Barca de cerezo grande",
   "item.extraboats.large_dead_boat": "Barca muerta grande",
-  "item.extraboats.large_ethereal_boat": "Barca etérea grande",
   "item.extraboats.large_fir_boat": "Barca de abeto blanco grande",
   "item.extraboats.large_hellbark_boat": "Barca de corteza infernal grande",
   "item.extraboats.large_jacaranda_boat": "Barca de jacarandá grande",
@@ -138,12 +135,5 @@
   
   "item.extraboats.maple_chest_boat": "Barca de arce con cofre",
   "item.extraboats.maple_furnace_boat": "Barca de arce con horno",
-  "item.extraboats.large_maple_boat": "Barca de arce grande",
-  
-  
-  "_comment": "Buzzier Bees",
-  
-  "item.extraboats.hive_chest_boat": "Barca de panal con cofre",
-  "item.extraboats.hive_furnace_boat": "Barca de panal con horno",
-  "item.extraboats.large_hive_boat": "Barca de panal grande"
+  "item.extraboats.large_maple_boat": "Barca de arce grande"
 }

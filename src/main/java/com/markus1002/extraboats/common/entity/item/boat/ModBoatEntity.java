@@ -1,10 +1,14 @@
 package com.markus1002.extraboats.common.entity.item.boat;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.markus1002.extraboats.core.BoatHelper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -107,10 +111,10 @@ public abstract class ModBoatEntity extends BoatEntity
 		{
 			this.entityDropItem(Items.STICK);
 		}
-		
+
 		this.entityDropItem(this.getDisplayTile().getBlock());
 	}
-	
+
 	public boolean attackEntityFrom(DamageSource source, float amount)
 	{
 		if (this.isInvulnerableTo(source))
@@ -158,7 +162,7 @@ public abstract class ModBoatEntity extends BoatEntity
 	{
 		return Blocks.AIR.getDefaultState();
 	}
-	
+
 	public Item getItemDropBoat()
 	{
 		return this.getItemBoat();
@@ -177,6 +181,16 @@ public abstract class ModBoatEntity extends BoatEntity
 	protected Block getPlanks()
 	{
 		return BoatHelper.getPlanks(this.getModBoatType());
+	}
+
+	protected int getPassengerAmount()
+	{
+		return this.getNonBalloonPassengers().size();
+	}
+
+	protected List<Entity> getNonBalloonPassengers()
+	{
+		return this.getPassengers().stream().filter(entity -> !entity.getType().getRegistryName().toString().equals("endergetic:bolloom_balloon")).collect(Collectors.toList());
 	}
 
 	public static enum BoatType
@@ -199,24 +213,24 @@ public abstract class ModBoatEntity extends BoatEntity
 		REDWOOD("redwood"),
 		UMBRAN("umbran"),
 		WILLOW("willow"),
-		
+
 		DRIFTWOOD("driftwood"),
 		RIVER("river"),
-		
+
 		BAMBOO("bamboo"),
-		
+
 		POISE("poise"),
-		
+
 		WISTERIA("wisteria"),
-		
+
 		SE_WILLOW("se_willow"),
-		
+
 		ROSEWOOD("rosewood"),
 		ASPEN("aspen"),
 		KOUSA("kousa"),
 		YUCCA("yucca"),
 		GRIMWOOD("grimwood"),
-		
+
 		MAPLE("maple");
 
 		private final String name;

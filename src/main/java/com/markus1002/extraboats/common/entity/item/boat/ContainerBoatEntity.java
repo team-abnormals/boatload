@@ -289,6 +289,6 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 
 	protected boolean canFitPassenger(Entity passenger)
 	{
-		return !this.isBeingRidden() && !this.areEyesInFluid(FluidTags.WATER);
+		return this.getPassengerAmount() < 1 && !this.areEyesInFluid(FluidTags.WATER);
 	}
 }

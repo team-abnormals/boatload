@@ -227,6 +227,6 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 	protected boolean canFitPassenger(Entity passenger)
 	{
-		return !this.isBeingRidden() && !this.areEyesInFluid(FluidTags.WATER);
+		return this.getPassengerAmount() < 1 && !this.areEyesInFluid(FluidTags.WATER);
 	}
 }

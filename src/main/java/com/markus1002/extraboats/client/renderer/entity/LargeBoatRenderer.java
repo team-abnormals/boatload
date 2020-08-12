@@ -83,7 +83,7 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			matrixStackIn.rotate(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), entityIn.getRockingAngle(partialTicks), true));
 		}
 
-		matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
+		matrixStackIn.scale(-1.05F, -1.05F, 1.05F);
 		matrixStackIn.rotate(Vector3f.YP.rotationDegrees(90.0F));
 		this.modelLargeBoat.setRotationAngles(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
 		IVertexBuilder ivertexbuilder = bufferIn.getBuffer(this.modelLargeBoat.getRenderType(this.getEntityTexture(entityIn)));

@@ -31,7 +31,7 @@ public class ModEntities
 			.build(Reference.location("furnace_boat").toString());
 
 	public static final EntityType<LargeBoatEntity> LARGE_BOAT = EntityType.Builder.<LargeBoatEntity>create(LargeBoatEntity::new, EntityClassification.MISC)
-			.size(2.4F, 0.5625F)
+			.size(2.5F, 0.5625F)
 			.setCustomClientFactory((FMLPlayMessages.SpawnEntity spawnEntity, World worldIn) -> new LargeBoatEntity(spawnEntity, worldIn))
 			.build(Reference.location("large_boat").toString());
 

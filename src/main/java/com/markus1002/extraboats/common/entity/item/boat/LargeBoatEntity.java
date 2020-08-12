@@ -170,24 +170,24 @@ public class LargeBoatEntity extends ModBoatEntity
 				{
 					if (passenger instanceof AnimalEntity)
 					{
-						f = 1.025F - 0.085F;
+						f = 0.95F;
 					}
 					else
 					{
-						f = 0.9F - 0.085F;
+						f = 0.875F;
 					}
 				}
 				else if (i == 1)
 				{
-					f = 0.275F - 0.085F;
+					f = 0.2F;
 				}
 				else if (i == 2)
 				{
-					f = -0.475F - 0.085F;
+					f = -0.55F;
 				}
 				else
 				{
-					f = -1.225F - 0.085F;
+					f = -1.3F;
 				}
 
 				if (passenger instanceof AnimalEntity)

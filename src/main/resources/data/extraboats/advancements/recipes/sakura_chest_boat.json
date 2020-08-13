@@ -1,0 +1,36 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "hanami"
+  }],
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "extraboats:sakura_chest_boat"
+    ]
+  },
+  "criteria": {
+    "has_sakura_boat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "atmospheric:sakura_boat"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "extraboats:sakura_chest_boat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sakura_boat",
+      "has_the_recipe"
+    ]
+  ]
+}

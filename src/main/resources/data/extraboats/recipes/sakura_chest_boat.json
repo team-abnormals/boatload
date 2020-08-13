@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "hanami"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "chest_boat",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:chests/wooden"
+    },
+    "B": {
+      "item": "hanami:sakura_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:sakura_chest_boat"
+  }
+}

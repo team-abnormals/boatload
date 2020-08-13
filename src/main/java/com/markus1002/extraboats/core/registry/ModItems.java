@@ -5,14 +5,7 @@ import com.markus1002.extraboats.common.item.ChestBoatItem;
 import com.markus1002.extraboats.common.item.FurnaceBoatItem;
 import com.markus1002.extraboats.common.item.LargeBoatItem;
 import com.markus1002.extraboats.core.Reference;
-import com.markus1002.extraboats.core.compatibility.Atmospheric;
-import com.markus1002.extraboats.core.compatibility.Autumnity;
-import com.markus1002.extraboats.core.compatibility.BambooBlocks;
-import com.markus1002.extraboats.core.compatibility.BiomesOPlenty;
-import com.markus1002.extraboats.core.compatibility.Bloomful;
-import com.markus1002.extraboats.core.compatibility.EndergeticExpansion;
-import com.markus1002.extraboats.core.compatibility.SwampExpansion;
-import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
+import com.markus1002.extraboats.core.compatibility.*;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -148,6 +141,25 @@ public class ModItems
 	public static final Item MAPLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item MAPLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item LARGE_MAPLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+
+	// Enhanced Mushrooms
+	public static final Item RED_MUSHROOM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.RED_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item RED_MUSHROOM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.RED_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_RED_MUSHROOM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.RED_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+
+	public static final Item BROWN_MUSHROOM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BROWN_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item BROWN_MUSHROOM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.BROWN_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_BROWN_MUSHROOM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.BROWN_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+
+	public static final Item GLOWSHROOM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.GLOWSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item GLOWSHROOM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.GLOWSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_GLOWSHROOM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.GLOWSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+
+	// Hanami
+	public static final Item SAKURA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.SAKURA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item SAKURA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.SAKURA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_SAKURA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.SAKURA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void registerItems(RegistryEvent.Register<Item> event)
@@ -289,6 +301,31 @@ public class ModItems
 			registerItem(MAPLE_CHEST_BOAT, "maple_chest_boat");
 			registerItem(MAPLE_FURNACE_BOAT, "maple_furnace_boat");
 			registerItem(LARGE_MAPLE_BOAT, "large_maple_boat");
+		}
+
+		if (EnhancedMushrooms.isInstalled())
+		{
+			registerItem(RED_MUSHROOM_CHEST_BOAT, "red_mushroom_chest_boat");
+			registerItem(RED_MUSHROOM_FURNACE_BOAT, "red_mushroom_furnace_boat");
+			registerItem(LARGE_RED_MUSHROOM_BOAT, "large_red_mushroom_boat");
+
+			registerItem(BROWN_MUSHROOM_CHEST_BOAT, "brown_mushroom_chest_boat");
+			registerItem(BROWN_MUSHROOM_FURNACE_BOAT, "brown_mushroom_furnace_boat");
+			registerItem(LARGE_BROWN_MUSHROOM_BOAT, "large_brown_mushroom_boat");
+		}
+
+		if (EnhancedMushrooms.isInstalledWQuark())
+		{
+			registerItem(GLOWSHROOM_CHEST_BOAT, "glowshroom_chest_boat");
+			registerItem(GLOWSHROOM_FURNACE_BOAT, "glowshroom_furnace_boat");
+			registerItem(LARGE_GLOWSHROOM_BOAT, "large_glowshroom_boat");
+		}
+
+		if (Hanami.isInstalled())
+		{
+			registerItem(SAKURA_CHEST_BOAT, "sakura_chest_boat");
+			registerItem(SAKURA_FURNACE_BOAT, "sakura_furnace_boat");
+			registerItem(LARGE_SAKURA_BOAT, "large_sakura_boat");
 		}
 	}
 

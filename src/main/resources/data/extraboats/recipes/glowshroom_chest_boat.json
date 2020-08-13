@@ -1,0 +1,29 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enhanced_mushrooms"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "chest_boat",
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:chests/wooden"
+    },
+    "B": {
+      "item": "enhanced_mushrooms:glowshroom_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:glowshroom_chest_boat"
+  }
+}

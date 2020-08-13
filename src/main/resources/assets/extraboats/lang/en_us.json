@@ -135,5 +135,27 @@
   
   "item.extraboats.maple_chest_boat": "Maple Boat with Chest",
   "item.extraboats.maple_furnace_boat": "Maple Boat with Furnace",
-  "item.extraboats.large_maple_boat": "Large Maple Boat"
+  "item.extraboats.large_maple_boat": "Large Maple Boat",
+
+
+  "_comment": "Enhanced Mushrooms",
+
+  "item.extraboats.red_mushroom_chest_boat": "Red Mushroom Boat with Chest",
+  "item.extraboats.brown_mushroom_chest_boat": "Brown Mushroom Boat with Chest",
+  "item.extraboats.glowshroom_chest_boat": "Glowshroom Boat with Chest",
+
+  "item.extraboats.red_mushroom_furnace_boat": "Red Mushroom Boat with Furnace",
+  "item.extraboats.brown_mushroom_furnace_boat": "Brown Mushroom Boat with Furnace",
+  "item.extraboats.glowshroom_furnace_boat": "Glowshroom Boat with Furnace",
+
+  "item.extraboats.large_red_mushroom_boat": "Large Red Mushroom Boat",
+  "item.extraboats.large_brown_mushroom_boat": "Large Brown Mushroom Boat",
+  "item.extraboats.large_glowshroom_boat": "Large Glowshroom Boat",
+
+
+  "_comment": "Hanami",
+
+  "item.extraboats.sakura_chest_boat": "Sakura Boat with Chest",
+  "item.extraboats.sakura_furnace_boat": "Sakura Boat with Furnace",
+  "item.extraboats.large_sakura_boat": "Large Sakura Boat"
 }

@@ -52,7 +52,11 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			Reference.location("textures/entity/large_boat/kousa.png"),
 			Reference.location("textures/entity/large_boat/yucca.png"),
 			Reference.location("textures/entity/large_boat/grimwood.png"),
-			Reference.location("textures/entity/large_boat/maple.png")};
+			Reference.location("textures/entity/large_boat/maple.png"),
+			Reference.location("textures/entity/large_boat/red_mushroom.png"),
+			Reference.location("textures/entity/large_boat/brown_mushroom.png"),
+			Reference.location("textures/entity/large_boat/glowshroom.png"),
+			Reference.location("textures/entity/large_boat/sakura.png")};
 	protected final LargeBoatModel modelLargeBoat = new LargeBoatModel();
 
 	public LargeBoatRenderer(EntityRendererManager renderManagerIn)

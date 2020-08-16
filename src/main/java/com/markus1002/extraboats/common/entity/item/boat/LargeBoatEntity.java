@@ -3,6 +3,7 @@ package com.markus1002.extraboats.common.entity.item.boat;
 import java.util.List;
 
 import com.markus1002.extraboats.core.BoatHelper;
+import com.markus1002.extraboats.core.ModTags;
 import com.markus1002.extraboats.core.registry.ModEntities;
 
 import net.minecraft.entity.Entity;
@@ -50,13 +51,13 @@ public class LargeBoatEntity extends ModBoatEntity
 		{
 			this.entityDropItem(this.getPlanks());
 		}
-		
+
 		for(int j = 0; j < 2; ++j)
 		{
 			this.entityDropItem(Items.STICK);
 		}
 	}
-	
+
 	public void tick()
 	{
 		super.tick();
@@ -119,13 +120,14 @@ public class LargeBoatEntity extends ModBoatEntity
 			this.setPaddleState(this.rightInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown && !this.rightInputDown || this.forwardInputDown);
 		}
 	}
-	
+
 	public void updatePassenger(Entity passenger)
 	{
 		if (this.isPassenger(passenger))
 		{
 			float f = 0.0F;
 			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
+			
 			if (this.getPassengerAmount() == 2)
 			{
 				int i = this.getNonBalloonPassengers().indexOf(passenger);
@@ -137,65 +139,65 @@ public class LargeBoatEntity extends ModBoatEntity
 				{
 					f = -0.8F;
 				}
-
-				if (passenger instanceof AnimalEntity) {
-					f = (float)((double)f + 0.2D);
-				}
 			}
 			else if (this.getPassengerAmount() == 3)
 			{
 				int i = this.getNonBalloonPassengers().indexOf(passenger);
 				if (i == 0)
 				{
-					f = 0.7F;
+					f = 0.8F;
 				}
 				else if (i == 1)
 				{
-					f = -0.2F;
+					f = -0.1F;
 				}
 				else
 				{
-					f = -1.1F;
-				}
-
-				if (passenger instanceof AnimalEntity)
-				{
-					f = (float)((double)f + 0.2D);
+					f = -1.0F;
 				}
 			}
 			else if (this.getPassengerAmount() > 3)
 			{
 				int i = this.getNonBalloonPassengers().indexOf(passenger);
+				
+				Entity firstpassenger = this.getPassengers().get(0);
+				boolean flag = firstpassenger.getType().isContained(ModTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
+				
 				if (i == 0)
 				{
-					if (passenger instanceof AnimalEntity)
-					{
-						f = 0.95F;
-					}
-					else
+					if (flag)
 					{
 						f = 0.875F;
 					}
-				}
-				else if (i == 1)
-				{
-					f = 0.2F;
-				}
-				else if (i == 2)
-				{
-					f = -0.55F;
+					else
+					{
+						f = 1.0F;
+					}
 				}
 				else
 				{
-					f = -1.3F;
-				}
-
-				if (passenger instanceof AnimalEntity)
-				{
-					f = (float)((double)f + 0.1D);
+					if (i == 1)
+					{
+						f = 0.2F;
+					}
+					else if (i == 2)
+					{
+						f = -0.55F;
+					}
+					else
+					{
+						f = -1.3F;
+					}
+					
+					f += flag ? 0.0F : 0.05F;
 				}
 			}
 
+			if (passenger instanceof AnimalEntity)
+			{
+				f = (float)((double)f + 0.1D);
+			}
+			
 			Vector3d vector3d = (new Vector3d((double)f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
 			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double)f1, this.getPosZ() + vector3d.z);
 			passenger.rotationYaw += this.deltaRotation;

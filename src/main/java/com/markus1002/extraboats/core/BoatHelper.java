@@ -1,14 +1,7 @@
 package com.markus1002.extraboats.core;
 
 import com.markus1002.extraboats.common.entity.item.boat.ModBoatEntity;
-import com.markus1002.extraboats.core.compatibility.Atmospheric;
-import com.markus1002.extraboats.core.compatibility.Autumnity;
-import com.markus1002.extraboats.core.compatibility.BambooBlocks;
-import com.markus1002.extraboats.core.compatibility.BiomesOPlenty;
-import com.markus1002.extraboats.core.compatibility.Bloomful;
-import com.markus1002.extraboats.core.compatibility.EndergeticExpansion;
-import com.markus1002.extraboats.core.compatibility.SwampExpansion;
-import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
+import com.markus1002.extraboats.core.compatibility.*;
 import com.markus1002.extraboats.core.registry.ModItems;
 
 import net.minecraft.block.Block;
@@ -89,6 +82,16 @@ public class BoatHelper
 			
 		case MAPLE:
 			return Autumnity.MAPLE_PLANKS;
+
+		case RED_MUSHROOM:
+			return EnhancedMushrooms.RED_MUSHROOM_PLANKS;
+		case BROWN_MUSHROOM:
+			return EnhancedMushrooms.BROWN_MUSHROOM_PLANKS;
+		case GLOWSHROOM:
+			return EnhancedMushrooms.GLOWSHROOM_PLANKS;
+
+		case SAKURA:
+			return Hanami.SAKURA_PLANKS;
 		}
 	}
 	
@@ -163,6 +166,16 @@ public class BoatHelper
 			
 		case MAPLE:
 			return Autumnity.MAPLE_BOAT;
+
+		case RED_MUSHROOM:
+			return EnhancedMushrooms.RED_MUSHROOM_BOAT;
+		case BROWN_MUSHROOM:
+			return EnhancedMushrooms.BROWN_MUSHROOM_BOAT;
+		case GLOWSHROOM:
+			return EnhancedMushrooms.GLOWSHROOM_BOAT;
+
+		case SAKURA:
+			return Hanami.SAKURA_BOAT;
 		}
 	}
 	
@@ -237,6 +250,16 @@ public class BoatHelper
 			
 		case MAPLE:
 			return ModItems.MAPLE_CHEST_BOAT;
+
+		case RED_MUSHROOM:
+			return ModItems.RED_MUSHROOM_CHEST_BOAT;
+		case BROWN_MUSHROOM:
+			return ModItems.BROWN_MUSHROOM_CHEST_BOAT;
+		case GLOWSHROOM:
+			return ModItems.GLOWSHROOM_CHEST_BOAT;
+
+		case SAKURA:
+			return ModItems.SAKURA_CHEST_BOAT;
 		}
 	}
 	
@@ -311,6 +334,16 @@ public class BoatHelper
 			
 		case MAPLE:
 			return ModItems.MAPLE_FURNACE_BOAT;
+
+		case RED_MUSHROOM:
+			return ModItems.RED_MUSHROOM_FURNACE_BOAT;
+		case BROWN_MUSHROOM:
+			return ModItems.BROWN_MUSHROOM_FURNACE_BOAT;
+		case GLOWSHROOM:
+			return ModItems.GLOWSHROOM_FURNACE_BOAT;
+
+		case SAKURA:
+			return ModItems.SAKURA_FURNACE_BOAT;
 		}
 	}
 	
@@ -385,6 +418,16 @@ public class BoatHelper
 			
 		case MAPLE:
 			return ModItems.LARGE_MAPLE_BOAT;
+
+		case RED_MUSHROOM:
+			return ModItems.LARGE_RED_MUSHROOM_BOAT;
+		case BROWN_MUSHROOM:
+			return ModItems.LARGE_BROWN_MUSHROOM_BOAT;
+		case GLOWSHROOM:
+			return ModItems.LARGE_GLOWSHROOM_BOAT;
+
+		case SAKURA:
+			return ModItems.LARGE_SAKURA_BOAT;
 		}
 	}
 }

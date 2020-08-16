@@ -4,14 +4,7 @@ import com.markus1002.extraboats.common.dispenser.DispenseChestBoatBehavior;
 import com.markus1002.extraboats.common.dispenser.DispenseFurnaceBoatBehavior;
 import com.markus1002.extraboats.common.dispenser.DispenseLargeBoatBehavior;
 import com.markus1002.extraboats.common.entity.item.boat.ModBoatEntity;
-import com.markus1002.extraboats.core.compatibility.Atmospheric;
-import com.markus1002.extraboats.core.compatibility.Autumnity;
-import com.markus1002.extraboats.core.compatibility.BambooBlocks;
-import com.markus1002.extraboats.core.compatibility.BiomesOPlenty;
-import com.markus1002.extraboats.core.compatibility.Bloomful;
-import com.markus1002.extraboats.core.compatibility.EndergeticExpansion;
-import com.markus1002.extraboats.core.compatibility.SwampExpansion;
-import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
+import com.markus1002.extraboats.core.compatibility.*;
 import com.markus1002.extraboats.core.registry.ModEntities;
 import com.markus1002.extraboats.core.registry.ModItems;
 
@@ -172,6 +165,31 @@ public class ExtraBoats
 			DispenserBlock.registerDispenseBehavior(ModItems.MAPLE_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.MAPLE));
 			DispenserBlock.registerDispenseBehavior(ModItems.MAPLE_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.MAPLE));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_MAPLE_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.MAPLE));
+		}
+
+		if (EnhancedMushrooms.isInstalled())
+		{
+			DispenserBlock.registerDispenseBehavior(ModItems.RED_MUSHROOM_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.RED_MUSHROOM));
+			DispenserBlock.registerDispenseBehavior(ModItems.RED_MUSHROOM_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.RED_MUSHROOM));
+			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_RED_MUSHROOM_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.RED_MUSHROOM));
+
+			DispenserBlock.registerDispenseBehavior(ModItems.BROWN_MUSHROOM_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.BROWN_MUSHROOM));
+			DispenserBlock.registerDispenseBehavior(ModItems.BROWN_MUSHROOM_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.BROWN_MUSHROOM));
+			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_BROWN_MUSHROOM_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.BROWN_MUSHROOM));
+		}
+
+		if (EnhancedMushrooms.isInstalledWQuark())
+		{
+			DispenserBlock.registerDispenseBehavior(ModItems.GLOWSHROOM_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.GLOWSHROOM));
+			DispenserBlock.registerDispenseBehavior(ModItems.GLOWSHROOM_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.GLOWSHROOM));
+			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_GLOWSHROOM_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.GLOWSHROOM));
+		}
+
+		if (Hanami.isInstalled())
+		{
+			DispenserBlock.registerDispenseBehavior(ModItems.SAKURA_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.SAKURA));
+			DispenserBlock.registerDispenseBehavior(ModItems.SAKURA_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.SAKURA));
+			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_SAKURA_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.SAKURA));
 		}
 	}
 

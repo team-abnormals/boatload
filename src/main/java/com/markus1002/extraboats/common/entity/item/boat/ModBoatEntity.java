@@ -231,7 +231,13 @@ public abstract class ModBoatEntity extends BoatEntity
 		YUCCA("yucca"),
 		GRIMWOOD("grimwood"),
 
-		MAPLE("maple");
+		MAPLE("maple"),
+
+		RED_MUSHROOM("red_mushroom"),
+		BROWN_MUSHROOM("brown_mushroom"),
+		GLOWSHROOM("glowshroom"),
+
+		SAKURA("sakura");
 
 		private final String name;
 

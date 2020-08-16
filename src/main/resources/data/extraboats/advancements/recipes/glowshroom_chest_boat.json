@@ -1,0 +1,42 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enhanced_mushrooms"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "extraboats:glowshroom_chest_boat"
+    ]
+  },
+  "criteria": {
+    "has_glowshroom_boat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "enhanced_mushrooms:glowshroom_boat"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "extraboats:glowshroom_chest_boat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_glowshroom_boat",
+      "has_the_recipe"
+    ]
+  ]
+}

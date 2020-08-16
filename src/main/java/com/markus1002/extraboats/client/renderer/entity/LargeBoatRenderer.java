@@ -30,6 +30,7 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			Reference.location("textures/entity/large_boat/jungle.png"),
 			Reference.location("textures/entity/large_boat/acacia.png"),
 			Reference.location("textures/entity/large_boat/dark_oak.png"),
+			
 			Reference.location("textures/entity/large_boat/cherry.png"),
 			Reference.location("textures/entity/large_boat/dead.png"),
 			Reference.location("textures/entity/large_boat/fir.png"),
@@ -41,21 +42,30 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity>
 			Reference.location("textures/entity/large_boat/redwood.png"),
 			Reference.location("textures/entity/large_boat/umbran.png"),
 			Reference.location("textures/entity/large_boat/willow.png"),
+			
 			Reference.location("textures/entity/large_boat/driftwood.png"),
 			Reference.location("textures/entity/large_boat/river.png"),
+			
 			Reference.location("textures/entity/large_boat/bamboo.png"),
+			
 			Reference.location("textures/entity/large_boat/poise.png"),
+			
 			Reference.location("textures/entity/large_boat/wisteria.png"),
+			
 			Reference.location("textures/entity/large_boat/se_willow.png"),
+			
 			Reference.location("textures/entity/large_boat/rosewood.png"),
 			Reference.location("textures/entity/large_boat/aspen.png"),
 			Reference.location("textures/entity/large_boat/kousa.png"),
 			Reference.location("textures/entity/large_boat/yucca.png"),
 			Reference.location("textures/entity/large_boat/grimwood.png"),
+			
 			Reference.location("textures/entity/large_boat/maple.png"),
+			
 			Reference.location("textures/entity/large_boat/red_mushroom.png"),
 			Reference.location("textures/entity/large_boat/brown_mushroom.png"),
 			Reference.location("textures/entity/large_boat/glowshroom.png"),
+			
 			Reference.location("textures/entity/large_boat/sakura.png")};
 	protected final LargeBoatModel modelLargeBoat = new LargeBoatModel();
 

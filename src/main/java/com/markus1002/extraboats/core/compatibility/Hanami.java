@@ -5,10 +5,10 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ObjectHolder;
 
-public class Hanami {
+public class Hanami
+{
     @ObjectHolder("hanami:sakura_planks")
     public static final Block SAKURA_PLANKS = null;
-
 
     @ObjectHolder("hanami:sakura_boat")
     public static final Item SAKURA_BOAT = null;

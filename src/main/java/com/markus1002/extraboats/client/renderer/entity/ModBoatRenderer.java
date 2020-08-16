@@ -30,6 +30,7 @@ public class ModBoatRenderer<T extends ModBoatEntity> extends EntityRenderer<T>
 			new ResourceLocation("textures/entity/boat/jungle.png"),
 			new ResourceLocation("textures/entity/boat/acacia.png"),
 			new ResourceLocation("textures/entity/boat/dark_oak.png"),
+			
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/cherry.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/dead.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/fir.png"),
@@ -41,21 +42,30 @@ public class ModBoatRenderer<T extends ModBoatEntity> extends EntityRenderer<T>
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/redwood.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/umbran.png"),
 			new ResourceLocation("biomesoplenty", "textures/entity/boat/willow.png"),
+			
 			new ResourceLocation("upgrade_aquatic", "textures/entity/boat/driftwood.png"),
 			new ResourceLocation("upgrade_aquatic", "textures/entity/boat/river.png"),
+			
 			new ResourceLocation("bamboo_blocks", "textures/entity/boat/bamboo.png"),
+			
 			new ResourceLocation("endergetic", "textures/entity/boat/poise.png"),
+			
 			new ResourceLocation("bloomful", "textures/entity/boat/wisteria.png"),
+			
 			new ResourceLocation("swampexpansion", "textures/entity/boat/willow.png"),
+			
 			new ResourceLocation("atmospheric", "textures/entity/boat/rosewood.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/aspen.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/kousa.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/yucca.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/grimwood.png"),
+			
 			new ResourceLocation("autumnity", "textures/entity/boat/maple.png"),
+			
 			new ResourceLocation("enhanced_mushrooms", "textures/entity/boat/red_mushroom.png"),
 			new ResourceLocation("enhanced_mushrooms", "textures/entity/boat/brown_mushroom.png"),
 			new ResourceLocation("enhanced_mushrooms", "textures/entity/boat/glowshroom.png"),
+			
 			new ResourceLocation("hanami", "textures/entity/boat/sakura.png")};
 	protected final BoatModel modelBoat = new BoatModel();
 

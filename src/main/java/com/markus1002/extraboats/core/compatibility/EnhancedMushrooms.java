@@ -5,7 +5,8 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ObjectHolder;
 
-public class EnhancedMushrooms {
+public class EnhancedMushrooms
+{
     @ObjectHolder("enhanced_mushrooms:red_mushroom_planks")
     public static final Block RED_MUSHROOM_PLANKS = null;
 

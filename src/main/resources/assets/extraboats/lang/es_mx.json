@@ -135,5 +135,27 @@
   
   "item.extraboats.maple_chest_boat": "Bote de arce con cofre",
   "item.extraboats.maple_furnace_boat": "Bote de arce con horno",
-  "item.extraboats.large_maple_boat": "Bote de arce grande"
+  "item.extraboats.large_maple_boat": "Bote de arce grande",
+
+
+  "_comment": "Enhanced Mushrooms",
+
+  "item.extraboats.red_mushroom_chest_boat": "Bote de hongo rojo con cofre",
+  "item.extraboats.brown_mushroom_chest_boat": "Bote de hongo marrón con cofre",
+  "item.extraboats.glowshroom_chest_boat": "Bote de luminongo con cofre",
+
+  "item.extraboats.red_mushroom_furnace_boat": "Bote de hongo rojo con horno",
+  "item.extraboats.brown_mushroom_furnace_boat": "Bote de hongo marrón con horno",
+  "item.extraboats.glowshroom_furnace_boat": "Bote de luminongo con horno",
+
+  "item.extraboats.large_red_mushroom_boat": "Bote de hongo rojo grande",
+  "item.extraboats.large_brown_mushroom_boat": "Bote de hongo marrón grande",
+  "item.extraboats.large_glowshroom_boat": "Bote de luminongo grande",
+
+
+  "_comment": "Hanami",
+
+  "item.extraboats.sakura_chest_boat": "Bote de sakura con cofre",
+  "item.extraboats.sakura_furnace_boat": "Bote de sakura con horno",
+  "item.extraboats.large_sakura_boat": "Bote de sakura grande"
 }

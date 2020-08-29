@@ -1,7 +1,6 @@
 {
   "itemGroup.extraboats": "Extra Boats",
   
-
   "entity.extraboats.chest_boat": "Barca con cofre",
   "entity.extraboats.furnace_boat": "Barca con horno",
   "entity.extraboats.large_boat": "Barca grande",
@@ -96,18 +95,19 @@
   "item.extraboats.large_poise_boat": "Barca equilibrada grande",
   
   
-  "_comment": "Bloomful",
+  "_comment": "Environmental",
   
   "item.extraboats.wisteria_chest_boat": "Barca de glicina con cofre",
   "item.extraboats.wisteria_furnace_boat": "Barca de glicina con horno",
   "item.extraboats.large_wisteria_boat": "Barca de glicina grande",
+
+  "item.extraboats.env_willow_chest_boat": "Barca de sauce con cofre",
+  "item.extraboats.env_willow_furnace_boat": "Barca de sauce con horno",
+  "item.extraboats.large_env_willow_boat": "Barca de sauce grande",
   
-  
-  "_comment": "Swamp Expansion",
-  
-  "item.extraboats.se_willow_chest_boat": "Barca de sauce con cofre",
-  "item.extraboats.se_willow_furnace_boat": "Barca de sauce con horno",
-  "item.extraboats.large_se_willow_boat": "Barca de sauce grande",
+  "item.extraboats.env_cherry_chest_boat": "Barca de cerezo con cofre",
+  "item.extraboats.env_cherry_furnace_boat": "Barca de cerezo con horno",
+  "item.extraboats.large_env_cherry_boat": "Barca de cerezo grande",
   
   
   "_comment": "Atmospheric",

@@ -1,7 +1,7 @@
 {
   "conditions": [{
   "type": "forge:mod_loaded",
-  "modid": "bloomful"
+  "modid": "environmental"
   }],
   "type": "minecraft:crafting_shaped",
   "group": "chest_boat",
@@ -14,7 +14,7 @@
       "tag": "forge:chests/wooden"
     },
     "B": {
-      "item": "bloomful:wisteria_boat"
+      "item": "environmental:wisteria_boat"
     }
   },
   "result": {

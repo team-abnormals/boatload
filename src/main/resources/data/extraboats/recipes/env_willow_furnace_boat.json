@@ -14,10 +14,10 @@
       "item": "minecraft:furnace"
     },
     "B": {
-      "item": "environmental:wisteria_boat"
+      "item": "environmental:willow_boat"
     }
   },
   "result": {
-    "item": "extraboats:wisteria_furnace_boat"
+    "item": "extraboats:env_willow_furnace_boat"
   }
 }

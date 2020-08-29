@@ -1,12 +1,12 @@
 {
   "conditions": [{
   "type": "forge:mod_loaded",
-  "modid": "swampexpansion"
+  "modid": "environmental"
   }],
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "extraboats:se_willow_furnace_boat"
+      "extraboats:large_env_willow_boat"
     ]
   },
   "criteria": {
@@ -15,7 +15,7 @@
       "conditions": {
         "items": [
           {
-            "item": "swampexpansion:willow_boat"
+            "item": "environmental:willow_boat"
           }
         ]
       }
@@ -23,7 +23,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "extraboats:se_willow_furnace_boat"
+        "recipe": "extraboats:large_env_willow_boat"
       }
     }
   },

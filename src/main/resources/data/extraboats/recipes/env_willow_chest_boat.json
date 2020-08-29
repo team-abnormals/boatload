@@ -1,7 +1,7 @@
 {
   "conditions": [{
   "type": "forge:mod_loaded",
-  "modid": "swampexpansion"
+  "modid": "environmental"
   }],
   "type": "minecraft:crafting_shaped",
   "group": "chest_boat",
@@ -14,10 +14,10 @@
       "tag": "forge:chests/wooden"
     },
     "B": {
-      "item": "swampexpansion:willow_boat"
+      "item": "environmental:willow_boat"
     }
   },
   "result": {
-    "item": "extraboats:se_willow_chest_boat"
+    "item": "extraboats:env_willow_chest_boat"
   }
 }

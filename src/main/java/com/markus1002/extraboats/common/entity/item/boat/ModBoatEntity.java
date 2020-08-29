@@ -222,8 +222,8 @@ public abstract class ModBoatEntity extends BoatEntity
 		POISE("poise"),
 
 		WISTERIA("wisteria"),
-
-		SE_WILLOW("se_willow"),
+		ENV_WILLOW("env_willow"),
+		ENV_CHERRY("env_cherry"),
 
 		ROSEWOOD("rosewood"),
 		ASPEN("aspen"),

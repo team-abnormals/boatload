@@ -11,13 +11,13 @@
   ],
   "key": {
     "#": {
-      "item": "environmental:wisteria_planks"
+      "item": "environmental:willow_planks"
     },
     "W": {
-      "item": "environmental:wisteria_boat"
+      "item": "environmental:willow_boat"
     }
   },
   "result": {
-    "item": "extraboats:large_wisteria_boat"
+    "item": "extraboats:large_env_willow_boat"
   }
 }

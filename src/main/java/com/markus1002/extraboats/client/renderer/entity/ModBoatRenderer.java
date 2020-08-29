@@ -50,9 +50,9 @@ public class ModBoatRenderer<T extends ModBoatEntity> extends EntityRenderer<T>
 			
 			new ResourceLocation("endergetic", "textures/entity/boat/poise.png"),
 			
-			new ResourceLocation("bloomful", "textures/entity/boat/wisteria.png"),
-			
-			new ResourceLocation("swampexpansion", "textures/entity/boat/willow.png"),
+			new ResourceLocation("environmental", "textures/entity/boat/wisteria.png"),
+			new ResourceLocation("environmental", "textures/entity/boat/willow.png"),
+			new ResourceLocation("environmental", "textures/entity/boat/cherry.png"),
 			
 			new ResourceLocation("atmospheric", "textures/entity/boat/rosewood.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/aspen.png"),

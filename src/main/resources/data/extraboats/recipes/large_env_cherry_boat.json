@@ -1,7 +1,7 @@
 {
   "conditions": [{
   "type": "forge:mod_loaded",
-  "modid": "swampexpansion"
+  "modid": "environmental"
   }],
   "type": "minecraft:crafting_shaped",
   "group": "large_boat",
@@ -11,13 +11,13 @@
   ],
   "key": {
     "#": {
-      "item": "swampexpansion:willow_planks"
+      "item": "environmental:cherry_planks"
     },
     "W": {
-      "item": "swampexpansion:willow_boat"
+      "item": "environmental:cherry_boat"
     }
   },
   "result": {
-    "item": "extraboats:large_se_willow_boat"
+    "item": "extraboats:large_env_cherry_boat"
   }
 }

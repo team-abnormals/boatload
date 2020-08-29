@@ -123,18 +123,19 @@ public class ExtraBoats
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_POISE_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.POISE));
 		}
 		
-		if (Bloomful.isInstalled())
+		if (Environmental.isInstalled())
 		{
 			DispenserBlock.registerDispenseBehavior(ModItems.WISTERIA_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.WISTERIA));
 			DispenserBlock.registerDispenseBehavior(ModItems.WISTERIA_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.WISTERIA));
 			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_WISTERIA_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.WISTERIA));
-		}
-		
-		if (SwampExpansion.isInstalled())
-		{
-			DispenserBlock.registerDispenseBehavior(ModItems.SE_WILLOW_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.SE_WILLOW));
-			DispenserBlock.registerDispenseBehavior(ModItems.SE_WILLOW_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.SE_WILLOW));
-			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_SE_WILLOW_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.SE_WILLOW));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.ENV_WILLOW_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.ENV_WILLOW));
+			DispenserBlock.registerDispenseBehavior(ModItems.ENV_WILLOW_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.ENV_WILLOW));
+			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_ENV_WILLOW_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.ENV_WILLOW));
+			
+			DispenserBlock.registerDispenseBehavior(ModItems.ENV_CHERRY_CHEST_BOAT, new DispenseChestBoatBehavior(ModBoatEntity.BoatType.ENV_CHERRY));
+			DispenserBlock.registerDispenseBehavior(ModItems.ENV_CHERRY_FURNACE_BOAT, new DispenseFurnaceBoatBehavior(ModBoatEntity.BoatType.ENV_CHERRY));
+			DispenserBlock.registerDispenseBehavior(ModItems.LARGE_ENV_CHERRY_BOAT, new DispenseLargeBoatBehavior(ModBoatEntity.BoatType.ENV_CHERRY));
 		}
 		
 		if (Atmospheric.isInstalled())

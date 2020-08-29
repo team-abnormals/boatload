@@ -5,7 +5,15 @@ import com.markus1002.extraboats.common.item.ChestBoatItem;
 import com.markus1002.extraboats.common.item.FurnaceBoatItem;
 import com.markus1002.extraboats.common.item.LargeBoatItem;
 import com.markus1002.extraboats.core.Reference;
-import com.markus1002.extraboats.core.compatibility.*;
+import com.markus1002.extraboats.core.compatibility.Atmospheric;
+import com.markus1002.extraboats.core.compatibility.Autumnity;
+import com.markus1002.extraboats.core.compatibility.BambooBlocks;
+import com.markus1002.extraboats.core.compatibility.BiomesOPlenty;
+import com.markus1002.extraboats.core.compatibility.EndergeticExpansion;
+import com.markus1002.extraboats.core.compatibility.EnhancedMushrooms;
+import com.markus1002.extraboats.core.compatibility.Environmental;
+import com.markus1002.extraboats.core.compatibility.Hanami;
+import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -106,15 +114,18 @@ public class ModItems
 	public static final Item POISE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item LARGE_POISE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
-	// Bloomful
+	// Environmental
 	public static final Item WISTERIA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item WISTERIA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 	public static final Item LARGE_WISTERIA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-
-	// Swamp Expansion
-	public static final Item SE_WILLOW_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item SE_WILLOW_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_SE_WILLOW_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.SE_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	
+	public static final Item ENV_WILLOW_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ENV_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item ENV_WILLOW_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ENV_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_ENV_WILLOW_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ENV_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	
+	public static final Item ENV_CHERRY_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ENV_CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item ENV_CHERRY_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ENV_CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final Item LARGE_ENV_CHERRY_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ENV_CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
 
 	// Atmospheric
 	public static final Item ROSEWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
@@ -259,18 +270,19 @@ public class ModItems
 			registerItem(LARGE_POISE_BOAT, "large_poise_boat");
 		}
 
-		if (Bloomful.isInstalled())
+		if (Environmental.isInstalled())
 		{
 			registerItem(WISTERIA_CHEST_BOAT, "wisteria_chest_boat");
 			registerItem(WISTERIA_FURNACE_BOAT, "wisteria_furnace_boat");
 			registerItem(LARGE_WISTERIA_BOAT, "large_wisteria_boat");
-		}
-
-		if (SwampExpansion.isInstalled())
-		{
-			registerItem(SE_WILLOW_CHEST_BOAT, "se_willow_chest_boat");
-			registerItem(SE_WILLOW_FURNACE_BOAT, "se_willow_furnace_boat");
-			registerItem(LARGE_SE_WILLOW_BOAT, "large_se_willow_boat");
+			
+			registerItem(ENV_WILLOW_CHEST_BOAT, "env_willow_chest_boat");
+			registerItem(ENV_WILLOW_FURNACE_BOAT, "env_willow_furnace_boat");
+			registerItem(LARGE_ENV_WILLOW_BOAT, "large_env_willow_boat");
+			
+			registerItem(ENV_CHERRY_CHEST_BOAT, "env_cherry_chest_boat");
+			registerItem(ENV_CHERRY_FURNACE_BOAT, "env_cherry_furnace_boat");
+			registerItem(LARGE_ENV_CHERRY_BOAT, "large_env_cherry_boat");
 		}
 
 		if (Atmospheric.isInstalled())

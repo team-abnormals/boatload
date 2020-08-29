@@ -1,7 +1,6 @@
 {
   "itemGroup.extraboats": "Extra Boats",
   
-
   "entity.extraboats.chest_boat": "Boat with Chest",
   "entity.extraboats.furnace_boat": "Boat with Furnace",
   "entity.extraboats.large_boat": "Large Boat",
@@ -96,18 +95,19 @@
   "item.extraboats.large_poise_boat": "Large Poise Boat",
   
   
-  "_comment": "Bloomful",
+  "_comment": "Environmental",
   
   "item.extraboats.wisteria_chest_boat": "Wisteria Boat with Chest",
   "item.extraboats.wisteria_furnace_boat": "Wisteria Boat with Furnace",
   "item.extraboats.large_wisteria_boat": "Large Wisteria Boat",
   
+  "item.extraboats.env_willow_chest_boat": "Willow Boat with Chest",
+  "item.extraboats.env_willow_furnace_boat": "Willow Boat with Furnace",
+  "item.extraboats.large_env_willow_boat": "Large Willow Boat",
   
-  "_comment": "Swamp Expansion",
-  
-  "item.extraboats.se_willow_chest_boat": "Willow Boat with Chest",
-  "item.extraboats.se_willow_furnace_boat": "Willow Boat with Furnace",
-  "item.extraboats.large_se_willow_boat": "Large Willow Boat",
+  "item.extraboats.env_cherry_chest_boat": "Cherry Boat with Chest",
+  "item.extraboats.env_cherry_furnace_boat": "Cherry Boat with Furnace",
+  "item.extraboats.large_env_cherry_boat": "Large Cherry Boat",
   
   
   "_comment": "Atmospheric",

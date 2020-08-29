@@ -5,11 +5,11 @@ license="https://creativecommons.org/licenses/by-nc-nd/4.0/"
 
 [[mods]]
 modId="extraboats"
-version="1.4.1"
+version="1.4.2"
 displayName="Extra Boats"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/extra-boats"
 logoFile="logo.png"
-credits="Creator: Markus1002, Translators: asthyr, Pandory_, kubajzzz, rio192al, kemiuu, peehpeh, F4zzer, Rye, feliclaria, Estellarium"
+credits="Creator: Markus1002, Translators: asthyr, Pandory_, kubajzzz, rio192al, kemiuu, peehpeh, F4zzer, Rye, feliclaria, Estellarium, EltrutLikes"
 authors="Markus1002"
 description='''Adds some new kinds of boats to make ocean exploration more interesting.'''
 

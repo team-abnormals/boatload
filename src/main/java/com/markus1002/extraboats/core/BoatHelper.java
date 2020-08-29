@@ -1,7 +1,15 @@
 package com.markus1002.extraboats.core;
 
 import com.markus1002.extraboats.common.entity.item.boat.ModBoatEntity;
-import com.markus1002.extraboats.core.compatibility.*;
+import com.markus1002.extraboats.core.compatibility.Atmospheric;
+import com.markus1002.extraboats.core.compatibility.Autumnity;
+import com.markus1002.extraboats.core.compatibility.BambooBlocks;
+import com.markus1002.extraboats.core.compatibility.BiomesOPlenty;
+import com.markus1002.extraboats.core.compatibility.EndergeticExpansion;
+import com.markus1002.extraboats.core.compatibility.EnhancedMushrooms;
+import com.markus1002.extraboats.core.compatibility.Environmental;
+import com.markus1002.extraboats.core.compatibility.Hanami;
+import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
 import com.markus1002.extraboats.core.registry.ModItems;
 
 import net.minecraft.block.Block;
@@ -64,10 +72,11 @@ public class BoatHelper
 			return EndergeticExpansion.POISE_PLANKS;
 			
 		case WISTERIA:
-			return Bloomful.WISTERIA_PLANKS;
-			
-		case SE_WILLOW:
-			return SwampExpansion.WILLOW_PLANKS;
+			return Environmental.WISTERIA_PLANKS;
+		case ENV_WILLOW:
+			return Environmental.WILLOW_PLANKS;
+		case ENV_CHERRY:
+			return Environmental.CHERRY_PLANKS;
 			
 		case ROSEWOOD:
 			return Atmospheric.ROSEWOOD_PLANKS;
@@ -148,10 +157,11 @@ public class BoatHelper
 			return EndergeticExpansion.POISE_BOAT;
 			
 		case WISTERIA:
-			return Bloomful.WISTERIA_BOAT;
-			
-		case SE_WILLOW:
-			return SwampExpansion.WILLOW_BOAT;
+			return Environmental.WISTERIA_BOAT;
+		case ENV_WILLOW:
+			return Environmental.WILLOW_BOAT;
+		case ENV_CHERRY:
+			return Environmental.CHERRY_BOAT;
 			
 		case ROSEWOOD:
 			return Atmospheric.ROSEWOOD_BOAT;
@@ -233,9 +243,10 @@ public class BoatHelper
 			
 		case WISTERIA:
 			return ModItems.WISTERIA_CHEST_BOAT;
-			
-		case SE_WILLOW:
-			return ModItems.SE_WILLOW_CHEST_BOAT;
+		case ENV_WILLOW:
+			return ModItems.ENV_WILLOW_CHEST_BOAT;
+		case ENV_CHERRY:
+			return ModItems.ENV_CHERRY_CHEST_BOAT;
 			
 		case ROSEWOOD:
 			return ModItems.ROSEWOOD_CHEST_BOAT;
@@ -317,9 +328,10 @@ public class BoatHelper
 
 		case WISTERIA:
 			return ModItems.WISTERIA_FURNACE_BOAT;
-
-		case SE_WILLOW:
-			return ModItems.SE_WILLOW_FURNACE_BOAT;
+		case ENV_WILLOW:
+			return ModItems.ENV_WILLOW_FURNACE_BOAT;
+		case ENV_CHERRY:
+			return ModItems.ENV_CHERRY_FURNACE_BOAT;
 			
 		case ROSEWOOD:
 			return ModItems.ROSEWOOD_FURNACE_BOAT;
@@ -401,9 +413,10 @@ public class BoatHelper
 			
 		case WISTERIA:
 			return ModItems.LARGE_WISTERIA_BOAT;
-			
-		case SE_WILLOW:
-			return ModItems.LARGE_SE_WILLOW_BOAT;
+		case ENV_WILLOW:
+			return ModItems.LARGE_ENV_WILLOW_BOAT;
+		case ENV_CHERRY:
+			return ModItems.LARGE_ENV_CHERRY_BOAT;
 			
 		case ROSEWOOD:
 			return ModItems.LARGE_ROSEWOOD_BOAT;

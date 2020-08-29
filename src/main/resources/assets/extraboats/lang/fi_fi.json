@@ -1,7 +1,12 @@
 {
+  "itemGroup.extraboats": "Extra Boats",
+  
   "entity.extraboats.chest_boat": "Arkullinen vene",
   "entity.extraboats.furnace_boat": "Moottoroitu vene",
   "entity.extraboats.large_boat": "Suuri vene",
+  
+  
+  "_comment": "Vanilla",
   
   "item.extraboats.oak_chest_boat": "Arkullinen tammivene",
   "item.extraboats.spruce_chest_boat": "Arkullinen kuusivene",
@@ -39,11 +44,11 @@
   "item.extraboats.large_wisteria_boat": "Suuri sinisadevene",
   
   
-  "_comment": "Swamp Expansion",
+  "_comment": "Environmental",
   
-  "item.extraboats.se_willow_chest_boat": "Arkullinen pajuvene",
-  "item.extraboats.se_willow_furnace_boat": "Moottoroitu pajuvene",
-  "item.extraboats.large_se_willow_boat": "Suuri pajuvene",
+  "item.extraboats.env_willow_chest_boat": "Arkullinen pajuvene",
+  "item.extraboats.env_willow_furnace_boat": "Moottoroitu pajuvene",
+  "item.extraboats.large_env_willow_boat": "Suuri pajuvene",
   
   
   "_comment": "Autumnity",

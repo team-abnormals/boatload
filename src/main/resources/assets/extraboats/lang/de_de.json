@@ -96,18 +96,19 @@
   "item.extraboats.large_poise_boat": "Großes Fassungsholzboot",
   
   
-  "_comment": "Bloomful",
+  "_comment": "Environmental",
   
   "item.extraboats.wisteria_chest_boat": "Glyzinienholzgüterboot",
   "item.extraboats.wisteria_furnace_boat": "Glyzinienholzantriebsboot",
   "item.extraboats.large_wisteria_boat": "Großes Glyzinienholzboot",
   
+  "item.extraboats.env_willow_chest_boat": "Weidenholzgüterboot",
+  "item.extraboats.env_willow_furnace_boat": "Weidenholzantriebsboot",
+  "item.extraboats.large_env_willow_boat": "Großes Weidenholzboot",
   
-  "_comment": "Swamp Expansion",
-  
-  "item.extraboats.se_willow_chest_boat": "Weidenholzgüterboot",
-  "item.extraboats.se_willow_furnace_boat": "Weidenholzantriebsboot",
-  "item.extraboats.large_se_willow_boat": "Großes Weidenholzboot",
+  "item.extraboats.env_cherry_chest_boat": "Kirschholzgüterboot",
+  "item.extraboats.env_cherry_furnace_boat": "Kirschholzantriebsboot",
+  "item.extraboats.large_env_cherry_boat": "Großes Kirschholzboot",
   
   
   "_comment": "Atmospheric",

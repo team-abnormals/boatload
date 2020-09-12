@@ -31,7 +31,7 @@ public class LargeBoatEntity extends ModBoatEntity
 
 	public LargeBoatEntity(World worldIn, double x, double y, double z)
 	{
-		this(ModEntities.LARGE_BOAT, worldIn);
+		this(ModEntities.LARGE_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -41,7 +41,7 @@ public class LargeBoatEntity extends ModBoatEntity
 
 	public LargeBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn)
 	{
-		super(ModEntities.LARGE_BOAT, worldIn);
+		super(ModEntities.LARGE_BOAT.get(), worldIn);
 	}
 
 	protected void dropBreakItems()

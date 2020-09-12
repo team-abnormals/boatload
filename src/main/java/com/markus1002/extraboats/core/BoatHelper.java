@@ -195,82 +195,82 @@ public class BoatHelper
 		{
 		case OAK:
 		default:
-			return ModItems.OAK_CHEST_BOAT;
+			return ModItems.OAK_CHEST_BOAT.get();
 		case SPRUCE:
-			return ModItems.SPRUCE_CHEST_BOAT;
+			return ModItems.SPRUCE_CHEST_BOAT.get();
 		case BIRCH:
-			return ModItems.BIRCH_CHEST_BOAT;
+			return ModItems.BIRCH_CHEST_BOAT.get();
 		case JUNGLE:
-			return ModItems.JUNGLE_CHEST_BOAT;
+			return ModItems.JUNGLE_CHEST_BOAT.get();
 		case ACACIA:
-			return ModItems.ACACIA_CHEST_BOAT;
+			return ModItems.ACACIA_CHEST_BOAT.get();
 		case DARK_OAK:
-			return ModItems.DARK_OAK_CHEST_BOAT;
+			return ModItems.DARK_OAK_CHEST_BOAT.get();
 			
 		case CHERRY:
-			return ModItems.CHERRY_CHEST_BOAT;
+			return ModItems.CHERRY_CHEST_BOAT.get();
 		case DEAD:
-			return ModItems.DEAD_CHEST_BOAT;
+			return ModItems.DEAD_CHEST_BOAT.get();
 		case FIR:
-			return ModItems.FIR_CHEST_BOAT;
+			return ModItems.FIR_CHEST_BOAT.get();
 		case HELLBARK:
-			return ModItems.HELLBARK_CHEST_BOAT;
+			return ModItems.HELLBARK_CHEST_BOAT.get();
 		case JACARANDA:
-			return ModItems.JACARANDA_CHEST_BOAT;
+			return ModItems.JACARANDA_CHEST_BOAT.get();
 		case MAGIC:
-			return ModItems.MAGIC_CHEST_BOAT;
+			return ModItems.MAGIC_CHEST_BOAT.get();
 		case MAHOGANY:
-			return ModItems.MAHOGANY_CHEST_BOAT;
+			return ModItems.MAHOGANY_CHEST_BOAT.get();
 		case PALM:
-			return ModItems.PALM_CHEST_BOAT;
+			return ModItems.PALM_CHEST_BOAT.get();
 		case REDWOOD:
-			return ModItems.REDWOOD_CHEST_BOAT;
+			return ModItems.REDWOOD_CHEST_BOAT.get();
 		case UMBRAN:
-			return ModItems.UMBRAN_CHEST_BOAT;
+			return ModItems.UMBRAN_CHEST_BOAT.get();
 		case WILLOW:
-			return ModItems.WILLOW_CHEST_BOAT;
+			return ModItems.WILLOW_CHEST_BOAT.get();
 			
 		case DRIFTWOOD:
-			return ModItems.DRIFTWOOD_CHEST_BOAT;
+			return ModItems.DRIFTWOOD_CHEST_BOAT.get();
 		case RIVER:
-			return ModItems.RIVER_CHEST_BOAT;
+			return ModItems.RIVER_CHEST_BOAT.get();
 			
 		case BAMBOO:
-			return ModItems.BAMBOO_CHEST_BOAT;
+			return ModItems.BAMBOO_CHEST_BOAT.get();
 			
 		case POISE:
-			return ModItems.POISE_CHEST_BOAT;
+			return ModItems.POISE_CHEST_BOAT.get();
 			
 		case WISTERIA:
-			return ModItems.WISTERIA_CHEST_BOAT;
+			return ModItems.WISTERIA_CHEST_BOAT.get();
 		case ENV_WILLOW:
-			return ModItems.ENV_WILLOW_CHEST_BOAT;
+			return ModItems.ENV_WILLOW_CHEST_BOAT.get();
 		case ENV_CHERRY:
-			return ModItems.ENV_CHERRY_CHEST_BOAT;
+			return ModItems.ENV_CHERRY_CHEST_BOAT.get();
 			
 		case ROSEWOOD:
-			return ModItems.ROSEWOOD_CHEST_BOAT;
+			return ModItems.ROSEWOOD_CHEST_BOAT.get();
 		case ASPEN:
-			return ModItems.ASPEN_CHEST_BOAT;
+			return ModItems.ASPEN_CHEST_BOAT.get();
 		case KOUSA:
-			return ModItems.KOUSA_CHEST_BOAT;
+			return ModItems.KOUSA_CHEST_BOAT.get();
 		case YUCCA:
-			return ModItems.YUCCA_CHEST_BOAT;
+			return ModItems.YUCCA_CHEST_BOAT.get();
 		case GRIMWOOD:
-			return ModItems.GRIMWOOD_CHEST_BOAT;
+			return ModItems.GRIMWOOD_CHEST_BOAT.get();
 			
 		case MAPLE:
-			return ModItems.MAPLE_CHEST_BOAT;
+			return ModItems.MAPLE_CHEST_BOAT.get();
 
 		case RED_MUSHROOM:
-			return ModItems.RED_MUSHROOM_CHEST_BOAT;
+			return ModItems.RED_MUSHROOM_CHEST_BOAT.get();
 		case BROWN_MUSHROOM:
-			return ModItems.BROWN_MUSHROOM_CHEST_BOAT;
+			return ModItems.BROWN_MUSHROOM_CHEST_BOAT.get();
 		case GLOWSHROOM:
-			return ModItems.GLOWSHROOM_CHEST_BOAT;
+			return ModItems.GLOWSHROOM_CHEST_BOAT.get();
 
 		case SAKURA:
-			return ModItems.SAKURA_CHEST_BOAT;
+			return ModItems.SAKURA_CHEST_BOAT.get();
 		}
 	}
 	
@@ -280,82 +280,82 @@ public class BoatHelper
 		{
 		case OAK:
 		default:
-			return ModItems.OAK_FURNACE_BOAT;
+			return ModItems.OAK_FURNACE_BOAT.get();
 		case SPRUCE:
-			return ModItems.SPRUCE_FURNACE_BOAT;
+			return ModItems.SPRUCE_FURNACE_BOAT.get();
 		case BIRCH:
-			return ModItems.BIRCH_FURNACE_BOAT;
+			return ModItems.BIRCH_FURNACE_BOAT.get();
 		case JUNGLE:
-			return ModItems.JUNGLE_FURNACE_BOAT;
+			return ModItems.JUNGLE_FURNACE_BOAT.get();
 		case ACACIA:
-			return ModItems.ACACIA_FURNACE_BOAT;
+			return ModItems.ACACIA_FURNACE_BOAT.get();
 		case DARK_OAK:
-			return ModItems.DARK_OAK_FURNACE_BOAT;
+			return ModItems.DARK_OAK_FURNACE_BOAT.get();
 
 		case CHERRY:
-			return ModItems.CHERRY_FURNACE_BOAT;
+			return ModItems.CHERRY_FURNACE_BOAT.get();
 		case DEAD:
-			return ModItems.DEAD_FURNACE_BOAT;
+			return ModItems.DEAD_FURNACE_BOAT.get();
 		case FIR:
-			return ModItems.FIR_FURNACE_BOAT;
+			return ModItems.FIR_FURNACE_BOAT.get();
 		case HELLBARK:
-			return ModItems.HELLBARK_FURNACE_BOAT;
+			return ModItems.HELLBARK_FURNACE_BOAT.get();
 		case JACARANDA:
-			return ModItems.JACARANDA_FURNACE_BOAT;
+			return ModItems.JACARANDA_FURNACE_BOAT.get();
 		case MAGIC:
-			return ModItems.MAGIC_FURNACE_BOAT;
+			return ModItems.MAGIC_FURNACE_BOAT.get();
 		case MAHOGANY:
-			return ModItems.MAHOGANY_FURNACE_BOAT;
+			return ModItems.MAHOGANY_FURNACE_BOAT.get();
 		case PALM:
-			return ModItems.PALM_FURNACE_BOAT;
+			return ModItems.PALM_FURNACE_BOAT.get();
 		case REDWOOD:
-			return ModItems.REDWOOD_FURNACE_BOAT;
+			return ModItems.REDWOOD_FURNACE_BOAT.get();
 		case UMBRAN:
-			return ModItems.UMBRAN_FURNACE_BOAT;
+			return ModItems.UMBRAN_FURNACE_BOAT.get();
 		case WILLOW:
-			return ModItems.WILLOW_FURNACE_BOAT;
+			return ModItems.WILLOW_FURNACE_BOAT.get();
 
 		case DRIFTWOOD:
-			return ModItems.DRIFTWOOD_FURNACE_BOAT;
+			return ModItems.DRIFTWOOD_FURNACE_BOAT.get();
 		case RIVER:
-			return ModItems.RIVER_FURNACE_BOAT;
+			return ModItems.RIVER_FURNACE_BOAT.get();
 
 		case BAMBOO:
-			return ModItems.BAMBOO_FURNACE_BOAT;
+			return ModItems.BAMBOO_FURNACE_BOAT.get();
 
 		case POISE:
-			return ModItems.POISE_FURNACE_BOAT;
+			return ModItems.POISE_FURNACE_BOAT.get();
 
 		case WISTERIA:
-			return ModItems.WISTERIA_FURNACE_BOAT;
+			return ModItems.WISTERIA_FURNACE_BOAT.get();
 		case ENV_WILLOW:
-			return ModItems.ENV_WILLOW_FURNACE_BOAT;
+			return ModItems.ENV_WILLOW_FURNACE_BOAT.get();
 		case ENV_CHERRY:
-			return ModItems.ENV_CHERRY_FURNACE_BOAT;
+			return ModItems.ENV_CHERRY_FURNACE_BOAT.get();
 			
 		case ROSEWOOD:
-			return ModItems.ROSEWOOD_FURNACE_BOAT;
+			return ModItems.ROSEWOOD_FURNACE_BOAT.get();
 		case ASPEN:
-			return ModItems.ASPEN_FURNACE_BOAT;
+			return ModItems.ASPEN_FURNACE_BOAT.get();
 		case KOUSA:
-			return ModItems.KOUSA_FURNACE_BOAT;
+			return ModItems.KOUSA_FURNACE_BOAT.get();
 		case YUCCA:
-			return ModItems.YUCCA_FURNACE_BOAT;
+			return ModItems.YUCCA_FURNACE_BOAT.get();
 		case GRIMWOOD:
-			return ModItems.GRIMWOOD_FURNACE_BOAT;
+			return ModItems.GRIMWOOD_FURNACE_BOAT.get();
 			
 		case MAPLE:
-			return ModItems.MAPLE_FURNACE_BOAT;
+			return ModItems.MAPLE_FURNACE_BOAT.get();
 
 		case RED_MUSHROOM:
-			return ModItems.RED_MUSHROOM_FURNACE_BOAT;
+			return ModItems.RED_MUSHROOM_FURNACE_BOAT.get();
 		case BROWN_MUSHROOM:
-			return ModItems.BROWN_MUSHROOM_FURNACE_BOAT;
+			return ModItems.BROWN_MUSHROOM_FURNACE_BOAT.get();
 		case GLOWSHROOM:
-			return ModItems.GLOWSHROOM_FURNACE_BOAT;
+			return ModItems.GLOWSHROOM_FURNACE_BOAT.get();
 
 		case SAKURA:
-			return ModItems.SAKURA_FURNACE_BOAT;
+			return ModItems.SAKURA_FURNACE_BOAT.get();
 		}
 	}
 	
@@ -365,82 +365,82 @@ public class BoatHelper
 		{
 		case OAK:
 		default:
-			return ModItems.LARGE_OAK_BOAT;
+			return ModItems.LARGE_OAK_BOAT.get();
 		case SPRUCE:
-			return ModItems.LARGE_SPRUCE_BOAT;
+			return ModItems.LARGE_SPRUCE_BOAT.get();
 		case BIRCH:
-			return ModItems.LARGE_BIRCH_BOAT;
+			return ModItems.LARGE_BIRCH_BOAT.get();
 		case JUNGLE:
-			return ModItems.LARGE_JUNGLE_BOAT;
+			return ModItems.LARGE_JUNGLE_BOAT.get();
 		case ACACIA:
-			return ModItems.LARGE_ACACIA_BOAT;
+			return ModItems.LARGE_ACACIA_BOAT.get();
 		case DARK_OAK:
-			return ModItems.LARGE_DARK_OAK_BOAT;
+			return ModItems.LARGE_DARK_OAK_BOAT.get();
 			
 		case CHERRY:
-			return ModItems.LARGE_CHERRY_BOAT;
+			return ModItems.LARGE_CHERRY_BOAT.get();
 		case DEAD:
-			return ModItems.LARGE_DEAD_BOAT;
+			return ModItems.LARGE_DEAD_BOAT.get();
 		case FIR:
-			return ModItems.LARGE_FIR_BOAT;
+			return ModItems.LARGE_FIR_BOAT.get();
 		case HELLBARK:
-			return ModItems.LARGE_HELLBARK_BOAT;
+			return ModItems.LARGE_HELLBARK_BOAT.get();
 		case JACARANDA:
-			return ModItems.LARGE_JACARANDA_BOAT;
+			return ModItems.LARGE_JACARANDA_BOAT.get();
 		case MAGIC:
-			return ModItems.LARGE_MAGIC_BOAT;
+			return ModItems.LARGE_MAGIC_BOAT.get();
 		case MAHOGANY:
-			return ModItems.LARGE_MAHOGANY_BOAT;
+			return ModItems.LARGE_MAHOGANY_BOAT.get();
 		case PALM:
-			return ModItems.LARGE_PALM_BOAT;
+			return ModItems.LARGE_PALM_BOAT.get();
 		case REDWOOD:
-			return ModItems.LARGE_REDWOOD_BOAT;
+			return ModItems.LARGE_REDWOOD_BOAT.get();
 		case UMBRAN:
-			return ModItems.LARGE_UMBRAN_BOAT;
+			return ModItems.LARGE_UMBRAN_BOAT.get();
 		case WILLOW:
-			return ModItems.LARGE_WILLOW_BOAT;
+			return ModItems.LARGE_WILLOW_BOAT.get();
 			
 		case DRIFTWOOD:
-			return ModItems.LARGE_DRIFTWOOD_BOAT;
+			return ModItems.LARGE_DRIFTWOOD_BOAT.get();
 		case RIVER:
-			return ModItems.LARGE_RIVER_BOAT;
+			return ModItems.LARGE_RIVER_BOAT.get();
 			
 		case BAMBOO:
-			return ModItems.LARGE_BAMBOO_BOAT;
+			return ModItems.LARGE_BAMBOO_BOAT.get();
 			
 		case POISE:
-			return ModItems.LARGE_POISE_BOAT;
+			return ModItems.LARGE_POISE_BOAT.get();
 			
 		case WISTERIA:
-			return ModItems.LARGE_WISTERIA_BOAT;
+			return ModItems.LARGE_WISTERIA_BOAT.get();
 		case ENV_WILLOW:
-			return ModItems.LARGE_ENV_WILLOW_BOAT;
+			return ModItems.LARGE_ENV_WILLOW_BOAT.get();
 		case ENV_CHERRY:
-			return ModItems.LARGE_ENV_CHERRY_BOAT;
+			return ModItems.LARGE_ENV_CHERRY_BOAT.get();
 			
 		case ROSEWOOD:
-			return ModItems.LARGE_ROSEWOOD_BOAT;
+			return ModItems.LARGE_ROSEWOOD_BOAT.get();
 		case ASPEN:
-			return ModItems.LARGE_ASPEN_BOAT;
+			return ModItems.LARGE_ASPEN_BOAT.get();
 		case KOUSA:
-			return ModItems.LARGE_KOUSA_BOAT;
+			return ModItems.LARGE_KOUSA_BOAT.get();
 		case YUCCA:
-			return ModItems.LARGE_YUCCA_BOAT;
+			return ModItems.LARGE_YUCCA_BOAT.get();
 		case GRIMWOOD:
-			return ModItems.LARGE_GRIMWOOD_BOAT;
+			return ModItems.LARGE_GRIMWOOD_BOAT.get();
 			
 		case MAPLE:
-			return ModItems.LARGE_MAPLE_BOAT;
+			return ModItems.LARGE_MAPLE_BOAT.get();
 
 		case RED_MUSHROOM:
-			return ModItems.LARGE_RED_MUSHROOM_BOAT;
+			return ModItems.LARGE_RED_MUSHROOM_BOAT.get();
 		case BROWN_MUSHROOM:
-			return ModItems.LARGE_BROWN_MUSHROOM_BOAT;
+			return ModItems.LARGE_BROWN_MUSHROOM_BOAT.get();
 		case GLOWSHROOM:
-			return ModItems.LARGE_GLOWSHROOM_BOAT;
+			return ModItems.LARGE_GLOWSHROOM_BOAT.get();
 
 		case SAKURA:
-			return ModItems.LARGE_SAKURA_BOAT;
+			return ModItems.LARGE_SAKURA_BOAT.get();
 		}
 	}
 }

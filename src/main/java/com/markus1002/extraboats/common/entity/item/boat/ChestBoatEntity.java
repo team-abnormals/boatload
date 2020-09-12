@@ -26,7 +26,7 @@ public class ChestBoatEntity extends ContainerBoatEntity
 
 	public ChestBoatEntity(World worldIn, double x, double y, double z)
 	{
-		this(ModEntities.CHEST_BOAT, worldIn);
+		this(ModEntities.CHEST_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -36,7 +36,7 @@ public class ChestBoatEntity extends ContainerBoatEntity
 
 	public ChestBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn)
 	{
-		super(ModEntities.CHEST_BOAT, worldIn);
+		super(ModEntities.CHEST_BOAT.get(), worldIn);
 	}
 	
 	public void killBoat()

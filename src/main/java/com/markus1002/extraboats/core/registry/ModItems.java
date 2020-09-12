@@ -17,333 +17,173 @@ import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModItems
 {
-	public static final Item OAK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item OAK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_OAK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 	
-	public static final Item SPRUCE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item SPRUCE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_SPRUCE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.SPRUCE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> OAK_CHEST_BOAT = createChestBoat("oak_chest_boat", ModBoatEntity.BoatType.OAK, true);
+	public static RegistryObject<Item> OAK_FURNACE_BOAT = createFurnaceBoat("oak_furnace_boat", ModBoatEntity.BoatType.OAK, true);
+	public static RegistryObject<Item> LARGE_OAK_BOAT = createLargeBoat("large_oak_boat", ModBoatEntity.BoatType.OAK, true);
 	
-	public static final Item BIRCH_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item BIRCH_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_BIRCH_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.BIRCH, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> SPRUCE_CHEST_BOAT = createChestBoat("spruce_chest_boat", ModBoatEntity.BoatType.SPRUCE, true);
+	public static RegistryObject<Item> SPRUCE_FURNACE_BOAT = createFurnaceBoat("spruce_furnace_boat", ModBoatEntity.BoatType.SPRUCE, true);
+	public static RegistryObject<Item> LARGE_SPRUCE_BOAT = createLargeBoat("large_spruce_boat", ModBoatEntity.BoatType.SPRUCE, true);
 	
-	public static final Item JUNGLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item JUNGLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_JUNGLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.JUNGLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> BIRCH_CHEST_BOAT = createChestBoat("birch_chest_boat", ModBoatEntity.BoatType.BIRCH, true);
+	public static RegistryObject<Item> BIRCH_FURNACE_BOAT = createFurnaceBoat("birch_furnace_boat", ModBoatEntity.BoatType.BIRCH, true);
+	public static RegistryObject<Item> LARGE_BIRCH_BOAT = createLargeBoat("large_birch_boat", ModBoatEntity.BoatType.BIRCH, true);
 	
-	public static final Item ACACIA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item ACACIA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_ACACIA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ACACIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> JUNGLE_CHEST_BOAT = createChestBoat("jungle_chest_boat", ModBoatEntity.BoatType.JUNGLE, true);
+	public static RegistryObject<Item> JUNGLE_FURNACE_BOAT = createFurnaceBoat("jungle_furnace_boat", ModBoatEntity.BoatType.JUNGLE, true);
+	public static RegistryObject<Item> LARGE_JUNGLE_BOAT = createLargeBoat("large_jungle_boat", ModBoatEntity.BoatType.JUNGLE, true);
 	
-	public static final Item DARK_OAK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item DARK_OAK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_DARK_OAK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DARK_OAK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> ACACIA_CHEST_BOAT = createChestBoat("acacia_chest_boat", ModBoatEntity.BoatType.ACACIA, true);
+	public static RegistryObject<Item> ACACIA_FURNACE_BOAT = createFurnaceBoat("acacia_furnace_boat", ModBoatEntity.BoatType.ACACIA, true);
+	public static RegistryObject<Item> LARGE_ACACIA_BOAT = createLargeBoat("large_acacia_boat", ModBoatEntity.BoatType.ACACIA, true);
+	
+	public static RegistryObject<Item> DARK_OAK_CHEST_BOAT = createChestBoat("dark_oak_chest_boat", ModBoatEntity.BoatType.DARK_OAK, true);
+	public static RegistryObject<Item> DARK_OAK_FURNACE_BOAT = createFurnaceBoat("dark_oak_furnace_boat", ModBoatEntity.BoatType.DARK_OAK, true);
+	public static RegistryObject<Item> LARGE_DARK_OAK_BOAT = createLargeBoat("large_dark_oak_boat", ModBoatEntity.BoatType.DARK_OAK, true);
 
 	// Biomes O' Plenty
-	public static final Item CHERRY_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item CHERRY_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_CHERRY_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> CHERRY_CHEST_BOAT = createChestBoat("cherry_chest_boat", ModBoatEntity.BoatType.CHERRY, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> CHERRY_FURNACE_BOAT = createFurnaceBoat("cherry_furnace_boat", ModBoatEntity.BoatType.CHERRY, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_CHERRY_BOAT = createLargeBoat("large_cherry_boat", ModBoatEntity.BoatType.CHERRY, BiomesOPlenty.isInstalled());
 	
-	public static final Item DEAD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item DEAD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_DEAD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DEAD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> DEAD_CHEST_BOAT = createChestBoat("dead_chest_boat", ModBoatEntity.BoatType.DEAD, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> DEAD_FURNACE_BOAT = createFurnaceBoat("dead_furnace_boat", ModBoatEntity.BoatType.DEAD, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_DEAD_BOAT = createLargeBoat("large_dead_boat", ModBoatEntity.BoatType.DEAD, BiomesOPlenty.isInstalled());
 	
-	public static final Item FIR_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item FIR_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_FIR_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.FIR, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> FIR_CHEST_BOAT = createChestBoat("fir_chest_boat", ModBoatEntity.BoatType.FIR, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> FIR_FURNACE_BOAT = createFurnaceBoat("fir_furnace_boat", ModBoatEntity.BoatType.FIR, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_FIR_BOAT = createLargeBoat("large_fir_boat", ModBoatEntity.BoatType.FIR, BiomesOPlenty.isInstalled());
 	
-	public static final Item HELLBARK_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item HELLBARK_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_HELLBARK_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.HELLBARK, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> HELLBARK_CHEST_BOAT = createChestBoat("hellbark_chest_boat", ModBoatEntity.BoatType.HELLBARK, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> HELLBARK_FURNACE_BOAT = createFurnaceBoat("hellbark_furnace_boat", ModBoatEntity.BoatType.HELLBARK, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_HELLBARK_BOAT = createLargeBoat("large_hellbark_boat", ModBoatEntity.BoatType.HELLBARK, BiomesOPlenty.isInstalled());
 	
-	public static final Item JACARANDA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item JACARANDA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_JACARANDA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.JACARANDA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> JACARANDA_CHEST_BOAT = createChestBoat("jacaranda_chest_boat", ModBoatEntity.BoatType.JACARANDA, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> JACARANDA_FURNACE_BOAT = createFurnaceBoat("jacaranda_furnace_boat", ModBoatEntity.BoatType.JACARANDA, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_JACARANDA_BOAT = createLargeBoat("large_jacaranda_boat", ModBoatEntity.BoatType.JACARANDA, BiomesOPlenty.isInstalled());
 	
-	public static final Item MAGIC_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item MAGIC_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_MAGIC_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAGIC, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> MAGIC_CHEST_BOAT = createChestBoat("magic_chest_boat", ModBoatEntity.BoatType.MAGIC, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> MAGIC_FURNACE_BOAT = createFurnaceBoat("magic_furnace_boat", ModBoatEntity.BoatType.MAGIC, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_MAGIC_BOAT = createLargeBoat("large_magic_boat", ModBoatEntity.BoatType.MAGIC, BiomesOPlenty.isInstalled());
 	
-	public static final Item MAHOGANY_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item MAHOGANY_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_MAHOGANY_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAHOGANY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> MAHOGANY_CHEST_BOAT = createChestBoat("mahogany_chest_boat", ModBoatEntity.BoatType.MAHOGANY, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> MAHOGANY_FURNACE_BOAT = createFurnaceBoat("mahogany_furnace_boat", ModBoatEntity.BoatType.MAHOGANY, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_MAHOGANY_BOAT = createLargeBoat("large_mahogany_boat", ModBoatEntity.BoatType.MAHOGANY, BiomesOPlenty.isInstalled());
 	
-	public static final Item PALM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item PALM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_PALM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.PALM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> PALM_CHEST_BOAT = createChestBoat("palm_chest_boat", ModBoatEntity.BoatType.PALM, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> PALM_FURNACE_BOAT = createFurnaceBoat("palm_furnace_boat", ModBoatEntity.BoatType.PALM, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_PALM_BOAT = createLargeBoat("large_palm_boat", ModBoatEntity.BoatType.PALM, BiomesOPlenty.isInstalled());
 	
-	public static final Item REDWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item REDWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_REDWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.REDWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> REDWOOD_CHEST_BOAT = createChestBoat("redwood_chest_boat", ModBoatEntity.BoatType.REDWOOD, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> REDWOOD_FURNACE_BOAT = createFurnaceBoat("redwood_furnace_boat", ModBoatEntity.BoatType.REDWOOD, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_REDWOOD_BOAT = createLargeBoat("large_redwood_boat", ModBoatEntity.BoatType.REDWOOD, BiomesOPlenty.isInstalled());
 	
-	public static final Item UMBRAN_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item UMBRAN_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_UMBRAN_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.UMBRAN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> UMBRAN_CHEST_BOAT = createChestBoat("umbran_chest_boat", ModBoatEntity.BoatType.UMBRAN, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> UMBRAN_FURNACE_BOAT = createFurnaceBoat("umbran_furnace_boat", ModBoatEntity.BoatType.UMBRAN, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_UMBRAN_BOAT = createLargeBoat("large_umbran_boat", ModBoatEntity.BoatType.UMBRAN, BiomesOPlenty.isInstalled());
 	
-	public static final Item WILLOW_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item WILLOW_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_WILLOW_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> WILLOW_CHEST_BOAT = createChestBoat("willow_chest_boat", ModBoatEntity.BoatType.WILLOW, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> WILLOW_FURNACE_BOAT = createFurnaceBoat("willow_furnace_boat", ModBoatEntity.BoatType.WILLOW, BiomesOPlenty.isInstalled());
+	public static RegistryObject<Item> LARGE_WILLOW_BOAT = createLargeBoat("large_willow_boat", ModBoatEntity.BoatType.WILLOW, BiomesOPlenty.isInstalled());
 
 	// Upgrade Aquatic
-	public static final Item DRIFTWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item DRIFTWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_DRIFTWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.DRIFTWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> DRIFTWOOD_CHEST_BOAT = createChestBoat("driftwood_chest_boat", ModBoatEntity.BoatType.DRIFTWOOD, UpgradeAquatic.isInstalled());
+	public static RegistryObject<Item> DRIFTWOOD_FURNACE_BOAT = createFurnaceBoat("driftwood_furnace_boat", ModBoatEntity.BoatType.DRIFTWOOD, UpgradeAquatic.isInstalled());
+	public static RegistryObject<Item> LARGE_DRIFTWOOD_BOAT = createLargeBoat("large_driftwood_boat", ModBoatEntity.BoatType.DRIFTWOOD, UpgradeAquatic.isInstalled());
 	
-	public static final Item RIVER_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.RIVER, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item RIVER_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.RIVER, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_RIVER_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.RIVER, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> RIVER_CHEST_BOAT = createChestBoat("river_chest_boat", ModBoatEntity.BoatType.RIVER, UpgradeAquatic.isInstalled());
+	public static RegistryObject<Item> RIVER_FURNACE_BOAT = createFurnaceBoat("river_furnace_boat", ModBoatEntity.BoatType.RIVER, UpgradeAquatic.isInstalled());
+	public static RegistryObject<Item> LARGE_RIVER_BOAT = createLargeBoat("large_river_boat", ModBoatEntity.BoatType.RIVER, UpgradeAquatic.isInstalled());
 
 	// Bamboo Blocks
-	public static final Item BAMBOO_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item BAMBOO_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_BAMBOO_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.BAMBOO, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> BAMBOO_CHEST_BOAT = createChestBoat("bamboo_chest_boat", ModBoatEntity.BoatType.BAMBOO, BambooBlocks.isInstalled());
+	public static RegistryObject<Item> BAMBOO_FURNACE_BOAT = createFurnaceBoat("bamboo_furnace_boat", ModBoatEntity.BoatType.BAMBOO, BambooBlocks.isInstalled());
+	public static RegistryObject<Item> LARGE_BAMBOO_BOAT = createLargeBoat("large_bamboo_boat", ModBoatEntity.BoatType.BAMBOO, BambooBlocks.isInstalled());
 
 	// Endergetic Expansion
-	public static final Item POISE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item POISE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_POISE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.POISE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> POISE_CHEST_BOAT = createChestBoat("poise_chest_boat", ModBoatEntity.BoatType.POISE, EndergeticExpansion.isInstalled());
+	public static RegistryObject<Item> POISE_FURNACE_BOAT = createFurnaceBoat("poise_furnace_boat", ModBoatEntity.BoatType.POISE, EndergeticExpansion.isInstalled());
+	public static RegistryObject<Item> LARGE_POISE_BOAT = createLargeBoat("large_poise_boat", ModBoatEntity.BoatType.POISE, EndergeticExpansion.isInstalled());
 
 	// Environmental
-	public static final Item WISTERIA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item WISTERIA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_WISTERIA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.WISTERIA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> WISTERIA_CHEST_BOAT = createChestBoat("wisteria_chest_boat", ModBoatEntity.BoatType.WISTERIA, Environmental.isInstalled());
+	public static RegistryObject<Item> WISTERIA_FURNACE_BOAT = createFurnaceBoat("wisteria_furnace_boat", ModBoatEntity.BoatType.WISTERIA, Environmental.isInstalled());
+	public static RegistryObject<Item> LARGE_WISTERIA_BOAT = createLargeBoat("large_wisteria_boat", ModBoatEntity.BoatType.WISTERIA, Environmental.isInstalled());
 	
-	public static final Item ENV_WILLOW_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ENV_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item ENV_WILLOW_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ENV_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_ENV_WILLOW_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ENV_WILLOW, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> ENV_WILLOW_CHEST_BOAT = createChestBoat("env_willow_chest_boat", ModBoatEntity.BoatType.ENV_WILLOW, Environmental.isInstalled());
+	public static RegistryObject<Item> ENV_WILLOW_FURNACE_BOAT = createFurnaceBoat("env_willow_furnace_boat", ModBoatEntity.BoatType.ENV_WILLOW, Environmental.isInstalled());
+	public static RegistryObject<Item> LARGE_ENV_WILLOW_BOAT = createLargeBoat("large_env_willow_boat", ModBoatEntity.BoatType.ENV_WILLOW, Environmental.isInstalled());
 	
-	public static final Item ENV_CHERRY_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ENV_CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item ENV_CHERRY_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ENV_CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_ENV_CHERRY_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ENV_CHERRY, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> ENV_CHERRY_CHEST_BOAT = createChestBoat("env_cherry_chest_boat", ModBoatEntity.BoatType.ENV_CHERRY, Environmental.isInstalled());
+	public static RegistryObject<Item> ENV_CHERRY_FURNACE_BOAT = createFurnaceBoat("env_cherry_furnace_boat", ModBoatEntity.BoatType.ENV_CHERRY, Environmental.isInstalled());
+	public static RegistryObject<Item> LARGE_ENV_CHERRY_BOAT = createLargeBoat("large_env_cherry_boat", ModBoatEntity.BoatType.ENV_CHERRY, Environmental.isInstalled());
 
 	// Atmospheric
-	public static final Item ROSEWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item ROSEWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_ROSEWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ROSEWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> ROSEWOOD_CHEST_BOAT = createChestBoat("rosewood_chest_boat", ModBoatEntity.BoatType.ROSEWOOD, Atmospheric.isInstalled());
+	public static RegistryObject<Item> ROSEWOOD_FURNACE_BOAT = createFurnaceBoat("rosewood_furnace_boat", ModBoatEntity.BoatType.ROSEWOOD, Atmospheric.isInstalled());
+	public static RegistryObject<Item> LARGE_ROSEWOOD_BOAT = createLargeBoat("large_rosewood_boat", ModBoatEntity.BoatType.ROSEWOOD, Atmospheric.isInstalled());
 	
-	public static final Item ASPEN_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item ASPEN_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_ASPEN_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.ASPEN, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> ASPEN_CHEST_BOAT = createChestBoat("aspen_chest_boat", ModBoatEntity.BoatType.ASPEN, Atmospheric.isInstalled());
+	public static RegistryObject<Item> ASPEN_FURNACE_BOAT = createFurnaceBoat("aspen_furnace_boat", ModBoatEntity.BoatType.ASPEN, Atmospheric.isInstalled());
+	public static RegistryObject<Item> LARGE_ASPEN_BOAT = createLargeBoat("large_aspen_boat", ModBoatEntity.BoatType.ASPEN, Atmospheric.isInstalled());
 	
-	public static final Item KOUSA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item KOUSA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_KOUSA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.KOUSA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> KOUSA_CHEST_BOAT = createChestBoat("kousa_chest_boat", ModBoatEntity.BoatType.KOUSA, Atmospheric.isInstalled());
+	public static RegistryObject<Item> KOUSA_FURNACE_BOAT = createFurnaceBoat("kousa_furnace_boat", ModBoatEntity.BoatType.KOUSA, Atmospheric.isInstalled());
+	public static RegistryObject<Item> LARGE_KOUSA_BOAT = createLargeBoat("large_kousa_boat", ModBoatEntity.BoatType.KOUSA, Atmospheric.isInstalled());
 	
-	public static final Item YUCCA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item YUCCA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_YUCCA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.YUCCA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> YUCCA_CHEST_BOAT = createChestBoat("yucca_chest_boat", ModBoatEntity.BoatType.YUCCA, Atmospheric.isInstalled());
+	public static RegistryObject<Item> YUCCA_FURNACE_BOAT = createFurnaceBoat("yucca_furnace_boat", ModBoatEntity.BoatType.YUCCA, Atmospheric.isInstalled());
+	public static RegistryObject<Item> LARGE_YUCCA_BOAT = createLargeBoat("large_yucca_boat", ModBoatEntity.BoatType.YUCCA, Atmospheric.isInstalled());
 	
-	public static final Item GRIMWOOD_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.GRIMWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item GRIMWOOD_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.GRIMWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_GRIMWOOD_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.GRIMWOOD, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> GRIMWOOD_CHEST_BOAT = createChestBoat("grimwood_chest_boat", ModBoatEntity.BoatType.GRIMWOOD, Atmospheric.isInstalled());
+	public static RegistryObject<Item> GRIMWOOD_FURNACE_BOAT = createFurnaceBoat("grimwood_furnace_boat", ModBoatEntity.BoatType.GRIMWOOD, Atmospheric.isInstalled());
+	public static RegistryObject<Item> LARGE_GRIMWOOD_BOAT = createLargeBoat("large_grimwood_boat", ModBoatEntity.BoatType.GRIMWOOD, Atmospheric.isInstalled());
 	
 	// Autumnity
-	public static final Item MAPLE_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item MAPLE_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_MAPLE_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.MAPLE, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> MAPLE_CHEST_BOAT = createChestBoat("maple_chest_boat", ModBoatEntity.BoatType.MAPLE, Autumnity.isInstalled());
+	public static RegistryObject<Item> MAPLE_FURNACE_BOAT = createFurnaceBoat("maple_furnace_boat", ModBoatEntity.BoatType.MAPLE, Autumnity.isInstalled());
+	public static RegistryObject<Item> LARGE_MAPLE_BOAT = createLargeBoat("large_maple_boat", ModBoatEntity.BoatType.MAPLE, Autumnity.isInstalled());
 
 	// Enhanced Mushrooms
-	public static final Item RED_MUSHROOM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.RED_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item RED_MUSHROOM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.RED_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_RED_MUSHROOM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.RED_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> RED_MUSHROOM_CHEST_BOAT = createChestBoat("red_mushroom_chest_boat", ModBoatEntity.BoatType.RED_MUSHROOM, EnhancedMushrooms.isInstalled());
+	public static RegistryObject<Item> RED_MUSHROOM_FURNACE_BOAT = createFurnaceBoat("red_mushroom_furnace_boat", ModBoatEntity.BoatType.RED_MUSHROOM, EnhancedMushrooms.isInstalled());
+	public static RegistryObject<Item> LARGE_RED_MUSHROOM_BOAT = createLargeBoat("large_red_mushroom_boat", ModBoatEntity.BoatType.RED_MUSHROOM, EnhancedMushrooms.isInstalled());
 
-	public static final Item BROWN_MUSHROOM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.BROWN_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item BROWN_MUSHROOM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.BROWN_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_BROWN_MUSHROOM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.BROWN_MUSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> BROWN_MUSHROOM_CHEST_BOAT = createChestBoat("brown_mushroom_chest_boat", ModBoatEntity.BoatType.BROWN_MUSHROOM, EnhancedMushrooms.isInstalled());
+	public static RegistryObject<Item> BROWN_MUSHROOM_FURNACE_BOAT = createFurnaceBoat("brown_mushroom_furnace_boat", ModBoatEntity.BoatType.BROWN_MUSHROOM, EnhancedMushrooms.isInstalled());
+	public static RegistryObject<Item> LARGE_BROWN_MUSHROOM_BOAT = createLargeBoat("large_brown_mushroom_boat", ModBoatEntity.BoatType.BROWN_MUSHROOM, EnhancedMushrooms.isInstalled());
 
-	public static final Item GLOWSHROOM_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.GLOWSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item GLOWSHROOM_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.GLOWSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_GLOWSHROOM_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.GLOWSHROOM, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> GLOWSHROOM_CHEST_BOAT = createChestBoat("glowshroom_chest_boat", ModBoatEntity.BoatType.GLOWSHROOM, EnhancedMushrooms.isInstalled());
+	public static RegistryObject<Item> GLOWSHROOM_FURNACE_BOAT = createFurnaceBoat("glowshroom_furnace_boat", ModBoatEntity.BoatType.GLOWSHROOM, EnhancedMushrooms.isInstalled());
+	public static RegistryObject<Item> LARGE_GLOWSHROOM_BOAT = createLargeBoat("large_glowshroom_boat", ModBoatEntity.BoatType.GLOWSHROOM, EnhancedMushrooms.isInstalled());
 
 	// Hanami
-	public static final Item SAKURA_CHEST_BOAT = new ChestBoatItem(ModBoatEntity.BoatType.SAKURA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item SAKURA_FURNACE_BOAT = new FurnaceBoatItem(ModBoatEntity.BoatType.SAKURA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
-	public static final Item LARGE_SAKURA_BOAT = new LargeBoatItem(ModBoatEntity.BoatType.SAKURA, (new Item.Properties()).maxStackSize(1).group(ItemGroup.TRANSPORTATION));
+	public static RegistryObject<Item> SAKURA_CHEST_BOAT = createChestBoat("hanami_chest_boat", ModBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
+	public static RegistryObject<Item> SAKURA_FURNACE_BOAT = createFurnaceBoat("hanami_furnace_boat", ModBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
+	public static RegistryObject<Item> LARGE_SAKURA_BOAT = createLargeBoat("large_hanami_boat", ModBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
 
-
-	@SubscribeEvent(priority = EventPriority.LOWEST)
-	public static void registerItems(RegistryEvent.Register<Item> event)
+	private static RegistryObject<Item> createChestBoat(String name, ModBoatEntity.BoatType type, boolean compat)
 	{
-		registerItem(OAK_CHEST_BOAT, "oak_chest_boat");
-		registerItem(OAK_FURNACE_BOAT, "oak_furnace_boat");
-		registerItem(LARGE_OAK_BOAT, "large_oak_boat");
-		
-		registerItem(SPRUCE_CHEST_BOAT, "spruce_chest_boat");
-		registerItem(SPRUCE_FURNACE_BOAT, "spruce_furnace_boat");
-		registerItem(LARGE_SPRUCE_BOAT, "large_spruce_boat");
-		
-		registerItem(BIRCH_CHEST_BOAT, "birch_chest_boat");
-		registerItem(BIRCH_FURNACE_BOAT, "birch_furnace_boat");
-		registerItem(LARGE_BIRCH_BOAT, "large_birch_boat");
-		
-		registerItem(JUNGLE_CHEST_BOAT, "jungle_chest_boat");
-		registerItem(JUNGLE_FURNACE_BOAT, "jungle_furnace_boat");
-		registerItem(LARGE_JUNGLE_BOAT, "large_jungle_boat");
-		
-		registerItem(ACACIA_CHEST_BOAT, "acacia_chest_boat");
-		registerItem(ACACIA_FURNACE_BOAT, "acacia_furnace_boat");
-		registerItem(LARGE_ACACIA_BOAT, "large_acacia_boat");
-		
-		registerItem(DARK_OAK_CHEST_BOAT, "dark_oak_chest_boat");
-		registerItem(DARK_OAK_FURNACE_BOAT, "dark_oak_furnace_boat");
-		registerItem(LARGE_DARK_OAK_BOAT, "large_dark_oak_boat");
-
-		if (BiomesOPlenty.isInstalled())
-		{
-			registerItem(CHERRY_CHEST_BOAT, "cherry_chest_boat");
-			registerItem(CHERRY_FURNACE_BOAT, "cherry_furnace_boat");
-			registerItem(LARGE_CHERRY_BOAT, "large_cherry_boat");
-			
-			registerItem(DEAD_CHEST_BOAT, "dead_chest_boat");
-			registerItem(DEAD_FURNACE_BOAT, "dead_furnace_boat");
-			registerItem(LARGE_DEAD_BOAT, "large_dead_boat");
-			
-			registerItem(FIR_CHEST_BOAT, "fir_chest_boat");
-			registerItem(FIR_FURNACE_BOAT, "fir_furnace_boat");
-			registerItem(LARGE_FIR_BOAT, "large_fir_boat");
-			
-			registerItem(HELLBARK_CHEST_BOAT, "hellbark_chest_boat");
-			registerItem(HELLBARK_FURNACE_BOAT, "hellbark_furnace_boat");
-			registerItem(LARGE_HELLBARK_BOAT, "large_hellbark_boat");
-			
-			registerItem(JACARANDA_CHEST_BOAT, "jacaranda_chest_boat");
-			registerItem(JACARANDA_FURNACE_BOAT, "jacaranda_furnace_boat");
-			registerItem(LARGE_JACARANDA_BOAT, "large_jacaranda_boat");
-			
-			registerItem(MAGIC_CHEST_BOAT, "magic_chest_boat");
-			registerItem(MAGIC_FURNACE_BOAT, "magic_furnace_boat");
-			registerItem(LARGE_MAGIC_BOAT, "large_magic_boat");
-			
-			registerItem(MAHOGANY_CHEST_BOAT, "mahogany_chest_boat");
-			registerItem(MAHOGANY_FURNACE_BOAT, "mahogany_furnace_boat");
-			registerItem(LARGE_MAHOGANY_BOAT, "large_mahogany_boat");
-			
-			registerItem(PALM_CHEST_BOAT, "palm_chest_boat");
-			registerItem(PALM_FURNACE_BOAT, "palm_furnace_boat");
-			registerItem(LARGE_PALM_BOAT, "large_palm_boat");
-			
-			registerItem(REDWOOD_CHEST_BOAT, "redwood_chest_boat");
-			registerItem(REDWOOD_FURNACE_BOAT, "redwood_furnace_boat");
-			registerItem(LARGE_REDWOOD_BOAT, "large_redwood_boat");
-			
-			registerItem(UMBRAN_CHEST_BOAT, "umbran_chest_boat");
-			registerItem(UMBRAN_FURNACE_BOAT, "umbran_furnace_boat");
-			registerItem(LARGE_UMBRAN_BOAT, "large_umbran_boat");
-			
-			registerItem(WILLOW_CHEST_BOAT, "willow_chest_boat");
-			registerItem(WILLOW_FURNACE_BOAT, "willow_furnace_boat");
-			registerItem(LARGE_WILLOW_BOAT, "large_willow_boat");
-		}
-
-		if (UpgradeAquatic.isInstalled())
-		{
-			registerItem(DRIFTWOOD_CHEST_BOAT, "driftwood_chest_boat");
-			registerItem(DRIFTWOOD_FURNACE_BOAT, "driftwood_furnace_boat");
-			registerItem(LARGE_DRIFTWOOD_BOAT, "large_driftwood_boat");
-			registerItem(RIVER_CHEST_BOAT, "river_chest_boat");
-			registerItem(RIVER_FURNACE_BOAT, "river_furnace_boat");
-			registerItem(LARGE_RIVER_BOAT, "large_river_boat");
-		}
-
-		if (BambooBlocks.isInstalled())
-		{
-			registerItem(BAMBOO_CHEST_BOAT, "bamboo_chest_boat");
-			registerItem(BAMBOO_FURNACE_BOAT, "bamboo_furnace_boat");
-			registerItem(LARGE_BAMBOO_BOAT, "large_bamboo_boat");
-		}
-
-		if (EndergeticExpansion.isInstalled())
-		{
-			registerItem(POISE_CHEST_BOAT, "poise_chest_boat");
-			registerItem(POISE_FURNACE_BOAT, "poise_furnace_boat");
-			registerItem(LARGE_POISE_BOAT, "large_poise_boat");
-		}
-
-		if (Environmental.isInstalled())
-		{
-			registerItem(WISTERIA_CHEST_BOAT, "wisteria_chest_boat");
-			registerItem(WISTERIA_FURNACE_BOAT, "wisteria_furnace_boat");
-			registerItem(LARGE_WISTERIA_BOAT, "large_wisteria_boat");
-			
-			registerItem(ENV_WILLOW_CHEST_BOAT, "env_willow_chest_boat");
-			registerItem(ENV_WILLOW_FURNACE_BOAT, "env_willow_furnace_boat");
-			registerItem(LARGE_ENV_WILLOW_BOAT, "large_env_willow_boat");
-			
-			registerItem(ENV_CHERRY_CHEST_BOAT, "env_cherry_chest_boat");
-			registerItem(ENV_CHERRY_FURNACE_BOAT, "env_cherry_furnace_boat");
-			registerItem(LARGE_ENV_CHERRY_BOAT, "large_env_cherry_boat");
-		}
-
-		if (Atmospheric.isInstalled())
-		{
-			registerItem(ROSEWOOD_CHEST_BOAT, "rosewood_chest_boat");
-			registerItem(ROSEWOOD_FURNACE_BOAT, "rosewood_furnace_boat");
-			registerItem(LARGE_ROSEWOOD_BOAT, "large_rosewood_boat");
-			
-			registerItem(ASPEN_CHEST_BOAT, "aspen_chest_boat");
-			registerItem(ASPEN_FURNACE_BOAT, "aspen_furnace_boat");
-			registerItem(LARGE_ASPEN_BOAT, "large_aspen_boat");
-			
-			registerItem(KOUSA_CHEST_BOAT, "kousa_chest_boat");
-			registerItem(KOUSA_FURNACE_BOAT, "kousa_furnace_boat");
-			registerItem(LARGE_KOUSA_BOAT, "large_kousa_boat");
-			
-			registerItem(YUCCA_CHEST_BOAT, "yucca_chest_boat");
-			registerItem(YUCCA_FURNACE_BOAT, "yucca_furnace_boat");
-			registerItem(LARGE_YUCCA_BOAT, "large_yucca_boat");
-			
-			registerItem(GRIMWOOD_CHEST_BOAT, "grimwood_chest_boat");
-			registerItem(GRIMWOOD_FURNACE_BOAT, "grimwood_furnace_boat");
-			registerItem(LARGE_GRIMWOOD_BOAT, "large_grimwood_boat");
-		}
-		
-		if (Autumnity.isInstalled())
-		{
-			registerItem(MAPLE_CHEST_BOAT, "maple_chest_boat");
-			registerItem(MAPLE_FURNACE_BOAT, "maple_furnace_boat");
-			registerItem(LARGE_MAPLE_BOAT, "large_maple_boat");
-		}
-
-		if (EnhancedMushrooms.isInstalled())
-		{
-			registerItem(RED_MUSHROOM_CHEST_BOAT, "red_mushroom_chest_boat");
-			registerItem(RED_MUSHROOM_FURNACE_BOAT, "red_mushroom_furnace_boat");
-			registerItem(LARGE_RED_MUSHROOM_BOAT, "large_red_mushroom_boat");
-
-			registerItem(BROWN_MUSHROOM_CHEST_BOAT, "brown_mushroom_chest_boat");
-			registerItem(BROWN_MUSHROOM_FURNACE_BOAT, "brown_mushroom_furnace_boat");
-			registerItem(LARGE_BROWN_MUSHROOM_BOAT, "large_brown_mushroom_boat");
-		}
-
-		if (EnhancedMushrooms.isInstalledWQuark())
-		{
-			registerItem(GLOWSHROOM_CHEST_BOAT, "glowshroom_chest_boat");
-			registerItem(GLOWSHROOM_FURNACE_BOAT, "glowshroom_furnace_boat");
-			registerItem(LARGE_GLOWSHROOM_BOAT, "large_glowshroom_boat");
-		}
-
-		if (Hanami.isInstalled())
-		{
-			registerItem(SAKURA_CHEST_BOAT, "sakura_chest_boat");
-			registerItem(SAKURA_FURNACE_BOAT, "sakura_furnace_boat");
-			registerItem(LARGE_SAKURA_BOAT, "large_sakura_boat");
-		}
+		return ITEMS.register(name, () -> new ChestBoatItem(type, (new Item.Properties()).maxStackSize(1).group(compat ? ItemGroup.TRANSPORTATION : null)));
 	}
-
-	private static void registerItem(Item item, String name)
+	
+	private static RegistryObject<Item> createFurnaceBoat(String name, ModBoatEntity.BoatType type, boolean compat)
 	{
-		item.setRegistryName(Reference.location(name));
-		ForgeRegistries.ITEMS.register(item);
+		return ITEMS.register(name, () -> new FurnaceBoatItem(type, (new Item.Properties()).maxStackSize(1).group(compat ? ItemGroup.TRANSPORTATION : null)));
+	}
+	
+	private static RegistryObject<Item> createLargeBoat(String name, ModBoatEntity.BoatType type, boolean compat)
+	{
+		return ITEMS.register(name, () -> new LargeBoatItem(type, (new Item.Properties()).maxStackSize(1).group(compat ? ItemGroup.TRANSPORTATION : null)));
 	}
 }

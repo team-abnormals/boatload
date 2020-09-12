@@ -44,7 +44,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 	public FurnaceBoatEntity(World worldIn, double x, double y, double z)
 	{
-		this(ModEntities.FURNACE_BOAT, worldIn);
+		this(ModEntities.FURNACE_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -54,7 +54,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 	public FurnaceBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn)
 	{
-		super(ModEntities.FURNACE_BOAT, worldIn);
+		super(ModEntities.FURNACE_BOAT.get(), worldIn);
 	}
 
 	protected void registerData()

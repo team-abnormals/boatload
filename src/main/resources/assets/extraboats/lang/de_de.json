@@ -98,9 +98,9 @@
   
   "_comment": "Environmental",
   
-  "item.extraboats.wisteria_chest_boat": "Glyzinienholzgüterboot",
-  "item.extraboats.wisteria_furnace_boat": "Glyzinienholzantriebsboot",
-  "item.extraboats.large_wisteria_boat": "Großes Glyzinienholzboot",
+  "item.extraboats.wisteria_chest_boat": "Glyzinenholzgüterboot",
+  "item.extraboats.wisteria_furnace_boat": "Glyzinenholzantriebsboot",
+  "item.extraboats.large_wisteria_boat": "Großes Glyzinenholzboot",
   
   "item.extraboats.env_willow_chest_boat": "Weidenholzgüterboot",
   "item.extraboats.env_willow_furnace_boat": "Weidenholzantriebsboot",

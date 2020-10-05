@@ -208,7 +208,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		{
 			LootTable loottable = this.world.getServer().getLootTableManager().getLootTableFromLocation(this.lootTable);
 			this.lootTable = null;
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld)this.world)).withParameter(LootParameters.POSITION, this.func_233580_cy_()).withSeed(this.lootTableSeed);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld)this.world)).withParameter(LootParameters.field_237457_g_, this.getPositionVec()).withSeed(this.lootTableSeed);
 			lootcontext$builder.withParameter(LootParameters.KILLER_ENTITY, this);
 			if (player != null)
 			{

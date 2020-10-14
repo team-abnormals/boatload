@@ -209,9 +209,10 @@ public class FurnaceBoatEntity extends ModBoatEntity
 	{
 		if (this.isPassenger(passenger))
 		{
+			float f = passenger instanceof AnimalEntity ? 0.4F : 0.2F;
 			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
 
-			Vector3d vector3d = (new Vector3d((double)0.2F, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
+			Vector3d vector3d = (new Vector3d((double)f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
 			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double)f1, this.getPosZ() + vector3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
@@ -227,6 +228,6 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 	protected boolean canFitPassenger(Entity passenger)
 	{
-		return this.getPassengerAmount() < 1 && !this.areEyesInFluid(FluidTags.WATER);
+		return !this.isBeingRidden() && !this.areEyesInFluid(FluidTags.WATER);
 	}
 }

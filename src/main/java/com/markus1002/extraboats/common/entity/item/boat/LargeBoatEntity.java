@@ -72,7 +72,7 @@ public class LargeBoatEntity extends ModBoatEntity
 				Entity entity = list.get(j);
 				if (!entity.isPassenger(this))
 				{
-					if (flag && this.getPassengerAmount() < 4 && !entity.isPassenger() && entity.getWidth() < 1.375F && entity instanceof LivingEntity && !(entity instanceof WaterMobEntity) && !(entity instanceof PlayerEntity))
+					if (flag && this.getPassengers().size() < 4 && !entity.isPassenger() && entity.getWidth() < 1.375F && entity instanceof LivingEntity && !(entity instanceof WaterMobEntity) && !(entity instanceof PlayerEntity))
 					{
 						entity.startRiding(this);
 					}
@@ -127,10 +127,10 @@ public class LargeBoatEntity extends ModBoatEntity
 		{
 			float f = 0.0F;
 			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
-			
-			if (this.getPassengerAmount() == 2)
+
+			if (this.getPassengers().size() == 2)
 			{
-				int i = this.getNonBalloonPassengers().indexOf(passenger);
+				int i = this.getPassengers().indexOf(passenger);
 				if (i == 0)
 				{
 					f = 0.4F;
@@ -140,9 +140,9 @@ public class LargeBoatEntity extends ModBoatEntity
 					f = -0.8F;
 				}
 			}
-			else if (this.getPassengerAmount() == 3)
+			else if (this.getPassengers().size() == 3)
 			{
-				int i = this.getNonBalloonPassengers().indexOf(passenger);
+				int i = this.getPassengers().indexOf(passenger);
 				if (i == 0)
 				{
 					f = 0.8F;
@@ -156,23 +156,16 @@ public class LargeBoatEntity extends ModBoatEntity
 					f = -1.0F;
 				}
 			}
-			else if (this.getPassengerAmount() > 3)
+			else if (this.getPassengers().size() > 3)
 			{
-				int i = this.getNonBalloonPassengers().indexOf(passenger);
-				
+				int i = this.getPassengers().indexOf(passenger);
+
 				Entity firstpassenger = this.getPassengers().get(0);
 				boolean flag = firstpassenger.getType().isContained(ModTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
-				
+
 				if (i == 0)
 				{
-					if (flag)
-					{
-						f = 0.875F;
-					}
-					else
-					{
-						f = 1.0F;
-					}
+					f = flag ? 0.875F : 1.0F;
 				}
 				else
 				{
@@ -188,7 +181,7 @@ public class LargeBoatEntity extends ModBoatEntity
 					{
 						f = -1.3F;
 					}
-					
+
 					f += flag ? 0.0F : 0.05F;
 				}
 			}
@@ -197,13 +190,13 @@ public class LargeBoatEntity extends ModBoatEntity
 			{
 				f = (float)((double)f + 0.1D);
 			}
-			
+
 			Vector3d vector3d = (new Vector3d((double)f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
 			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double)f1, this.getPosZ() + vector3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);
-			if (passenger instanceof AnimalEntity && this.getPassengerAmount() > 1)
+			if (passenger instanceof AnimalEntity && this.getPassengers().size() > 1)
 			{
 				int j = passenger.getEntityId() % 2 == 0 ? 90 : 270;
 				passenger.setRenderYawOffset(((AnimalEntity)passenger).renderYawOffset + (float)j);
@@ -219,6 +212,6 @@ public class LargeBoatEntity extends ModBoatEntity
 
 	protected boolean canFitPassenger(Entity passenger)
 	{
-		return this.getPassengerAmount() < 4 && passenger.getWidth() < 1.375F && !this.areEyesInFluid(FluidTags.WATER);
+		return this.getPassengers().size() < 4 && passenger.getWidth() < 1.375F && !this.areEyesInFluid(FluidTags.WATER);
 	}
 }

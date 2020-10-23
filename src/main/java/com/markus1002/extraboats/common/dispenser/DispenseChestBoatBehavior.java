@@ -1,7 +1,7 @@
 package com.markus1002.extraboats.common.dispenser;
 
 import com.markus1002.extraboats.common.entity.item.boat.ChestBoatEntity;
-import com.markus1002.extraboats.common.entity.item.boat.ModBoatEntity;
+import com.markus1002.extraboats.common.entity.item.boat.EBBoatEntity;
 
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.DefaultDispenseItemBehavior;
@@ -15,13 +15,14 @@ import net.minecraft.world.World;
 public class DispenseChestBoatBehavior extends DefaultDispenseItemBehavior
 {
 	private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
-	private final ModBoatEntity.BoatType type;
+	private final EBBoatEntity.BoatType type;
 
-	public DispenseChestBoatBehavior(ModBoatEntity.BoatType typeIn)
+	public DispenseChestBoatBehavior(EBBoatEntity.BoatType typeIn)
 	{
 		this.type = typeIn;
 	}
 
+	@Override
 	public ItemStack dispenseStack(IBlockSource source, ItemStack stack)
 	{
 		Direction direction = source.getBlockState().get(DispenserBlock.FACING);
@@ -53,6 +54,7 @@ public class DispenseChestBoatBehavior extends DefaultDispenseItemBehavior
 		return stack;
 	}
 
+	@Override
 	protected void playDispenseSound(IBlockSource source)
 	{
 		source.getWorld().playEvent(1000, source.getBlockPos(), 0);

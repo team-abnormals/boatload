@@ -23,44 +23,48 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;;
 
-public abstract class ModBoatEntity extends BoatEntity
+public abstract class EBBoatEntity extends BoatEntity
 {
-	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(ModBoatEntity.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(EBBoatEntity.class, DataSerializers.VARINT);
 
-	public ModBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn)
+	public EBBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn)
 	{
 		super(entityType, worldIn);
 	}
 
+	@Override
 	protected void registerData()
 	{
 		super.registerData();
-		this.dataManager.register(BOAT_TYPE, ModBoatEntity.BoatType.OAK.ordinal());
+		this.dataManager.register(BOAT_TYPE, EBBoatEntity.BoatType.OAK.ordinal());
 	}
 
-	public void setModBoatType(ModBoatEntity.BoatType boatType)
+	public void setModBoatType(EBBoatEntity.BoatType boatType)
 	{
 		this.dataManager.set(BOAT_TYPE, boatType.ordinal());
 	}
 
-	public ModBoatEntity.BoatType getModBoatType()
+	public EBBoatEntity.BoatType getModBoatType()
 	{
-		return ModBoatEntity.BoatType.byId(this.dataManager.get(BOAT_TYPE));
+		return EBBoatEntity.BoatType.byId(this.dataManager.get(BOAT_TYPE));
 	}
 
+	@Override
 	protected void writeAdditional(CompoundNBT compound)
 	{
 		compound.putString("Type", this.getModBoatType().getName());
 	}
 
+	@Override
 	protected void readAdditional(CompoundNBT compound)
 	{
 		if (compound.contains("Type", 8))
 		{
-			this.setModBoatType(ModBoatEntity.BoatType.getTypeFromString(compound.getString("Type")));
+			this.setModBoatType(EBBoatEntity.BoatType.getTypeFromString(compound.getString("Type")));
 		}
 	}
 
+	@Override
 	protected void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos)
 	{
 		this.lastYd = this.getMotion().y;
@@ -111,6 +115,7 @@ public abstract class ModBoatEntity extends BoatEntity
 		this.entityDropItem(this.getDisplayTile().getBlock());
 	}
 
+	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount)
 	{
 		if (this.isInvulnerableTo(source))
@@ -169,6 +174,7 @@ public abstract class ModBoatEntity extends BoatEntity
 		return BoatHelper.getBoatItem(this.getModBoatType());
 	}
 
+	@Override
 	public IPacket<?> createSpawnPacket()
 	{
 		return NetworkHooks.getEntitySpawningPacket(this);
@@ -212,6 +218,7 @@ public abstract class ModBoatEntity extends BoatEntity
 		ENV_CHERRY("env_cherry"),
 
 		ROSEWOOD("rosewood"),
+		MORADO("morado"),
 		ASPEN("aspen"),
 		KOUSA("kousa"),
 		YUCCA("yucca"),
@@ -242,9 +249,9 @@ public abstract class ModBoatEntity extends BoatEntity
 			return this.name;
 		}
 
-		public static ModBoatEntity.BoatType byId(int id)
+		public static EBBoatEntity.BoatType byId(int id)
 		{
-			ModBoatEntity.BoatType[] aboatentity$type = values();
+			EBBoatEntity.BoatType[] aboatentity$type = values();
 			if (id < 0 || id >= aboatentity$type.length)
 			{
 				id = 0;
@@ -253,9 +260,9 @@ public abstract class ModBoatEntity extends BoatEntity
 			return aboatentity$type[id];
 		}
 
-		public static ModBoatEntity.BoatType getTypeFromString(String nameIn)
+		public static EBBoatEntity.BoatType getTypeFromString(String nameIn)
 		{
-			ModBoatEntity.BoatType[] aboatentity$type = values();
+			EBBoatEntity.BoatType[] aboatentity$type = values();
 
 			for(int i = 0; i < aboatentity$type.length; ++i)
 			{

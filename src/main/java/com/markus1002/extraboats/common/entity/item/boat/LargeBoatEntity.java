@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.markus1002.extraboats.core.BoatHelper;
 import com.markus1002.extraboats.core.ModTags;
-import com.markus1002.extraboats.core.registry.ModEntities;
+import com.markus1002.extraboats.core.registry.EBEntities;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -22,7 +22,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 
-public class LargeBoatEntity extends ModBoatEntity
+public class LargeBoatEntity extends EBBoatEntity
 {
 	public LargeBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn)
 	{
@@ -31,7 +31,7 @@ public class LargeBoatEntity extends ModBoatEntity
 
 	public LargeBoatEntity(World worldIn, double x, double y, double z)
 	{
-		this(ModEntities.LARGE_BOAT.get(), worldIn);
+		this(EBEntities.LARGE_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -41,9 +41,10 @@ public class LargeBoatEntity extends ModBoatEntity
 
 	public LargeBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn)
 	{
-		super(ModEntities.LARGE_BOAT.get(), worldIn);
+		super(EBEntities.LARGE_BOAT.get(), worldIn);
 	}
 
+	@Override
 	protected void dropBreakItems()
 	{
 		super.dropBreakItems();
@@ -58,6 +59,7 @@ public class LargeBoatEntity extends ModBoatEntity
 		}
 	}
 
+	@Override
 	public void tick()
 	{
 		super.tick();
@@ -85,6 +87,7 @@ public class LargeBoatEntity extends ModBoatEntity
 		}
 	}
 
+	@Override
 	protected void controlBoat()
 	{
 		if (this.isBeingRidden())
@@ -121,6 +124,7 @@ public class LargeBoatEntity extends ModBoatEntity
 		}
 	}
 
+	@Override
 	public void updatePassenger(Entity passenger)
 	{
 		if (this.isPassenger(passenger))
@@ -205,11 +209,13 @@ public class LargeBoatEntity extends ModBoatEntity
 		}
 	}
 
+	@Override
 	public Item getItemBoat()
 	{
 		return BoatHelper.getLargeBoatItem(this.getModBoatType());
 	}
 
+	@Override
 	protected boolean canFitPassenger(Entity passenger)
 	{
 		return this.getPassengers().size() < 4 && passenger.getWidth() < 1.375F && !this.areEyesInFluid(FluidTags.WATER);

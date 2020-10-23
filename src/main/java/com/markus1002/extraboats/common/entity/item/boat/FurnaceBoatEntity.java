@@ -3,7 +3,7 @@ package com.markus1002.extraboats.common.entity.item.boat;
 import javax.annotation.Nullable;
 
 import com.markus1002.extraboats.core.BoatHelper;
-import com.markus1002.extraboats.core.registry.ModEntities;
+import com.markus1002.extraboats.core.registry.EBEntities;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -32,7 +32,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 
-public class FurnaceBoatEntity extends ModBoatEntity
+public class FurnaceBoatEntity extends EBBoatEntity
 {
 	private static final DataParameter<Integer> FUEL = EntityDataManager.createKey(FurnaceBoatEntity.class, DataSerializers.VARINT);
 	private static final Ingredient FUEL_ITEMS = Ingredient.fromItems(Items.COAL, Items.CHARCOAL);
@@ -44,7 +44,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 	public FurnaceBoatEntity(World worldIn, double x, double y, double z)
 	{
-		this(ModEntities.FURNACE_BOAT.get(), worldIn);
+		this(EBEntities.FURNACE_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -54,21 +54,24 @@ public class FurnaceBoatEntity extends ModBoatEntity
 
 	public FurnaceBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn)
 	{
-		super(ModEntities.FURNACE_BOAT.get(), worldIn);
+		super(EBEntities.FURNACE_BOAT.get(), worldIn);
 	}
 
+	@Override
 	protected void registerData()
 	{
 		super.registerData();
 		this.dataManager.register(FUEL, 0);
 	}
 
+	@Override
 	public void killBoat()
 	{
 		super.killBoat();
 		this.entityDropItem(Blocks.FURNACE);
 	}
 
+	@Override
 	public ActionResultType processInitialInteract(PlayerEntity player, Hand hand)
 	{
 		if (player.isSneaking())
@@ -92,6 +95,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 		}
 	}
 
+	@Override
 	public void tick()
 	{
 		super.tick();
@@ -115,6 +119,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 		}
 	}
 
+	@Override
 	protected void controlBoat()
 	{
 		if (this.isBeingRidden())
@@ -167,12 +172,14 @@ public class FurnaceBoatEntity extends ModBoatEntity
 		}
 	}
 
+	@Override
 	protected void writeAdditional(CompoundNBT compound)
 	{
 		super.writeAdditional(compound);
 		compound.putInt("Fuel", this.getFuel());
 	}
 
+	@Override
 	protected void readAdditional(CompoundNBT compound)
 	{
 		super.readAdditional(compound);
@@ -190,21 +197,25 @@ public class FurnaceBoatEntity extends ModBoatEntity
 		return this.dataManager.get(FUEL);
 	}
 
+	@Override
 	public Item getItemBoat()
 	{
 		return BoatHelper.getFurnaceBoatItem(this.getModBoatType());
 	}
 
+	@Override
 	public Item getItemDropBoat()
 	{
 		return BoatHelper.getBoatItem(this.getModBoatType());
 	}
 
+	@Override
 	public BlockState getDisplayTile()
 	{
 		return Blocks.FURNACE.getDefaultState().with(FurnaceBlock.FACING, Direction.SOUTH).with(FurnaceBlock.LIT, Boolean.valueOf(this.getFuel() > 0));
 	}
 
+	@Override
 	public void updatePassenger(Entity passenger)
 	{
 		if (this.isPassenger(passenger))
@@ -226,6 +237,7 @@ public class FurnaceBoatEntity extends ModBoatEntity
 		}
 	}
 
+	@Override
 	protected boolean canFitPassenger(Entity passenger)
 	{
 		return !this.isBeingRidden() && !this.areEyesInFluid(FluidTags.WATER);

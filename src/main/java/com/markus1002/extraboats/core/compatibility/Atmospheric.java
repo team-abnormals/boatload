@@ -10,6 +10,9 @@ public class Atmospheric
 	@ObjectHolder("atmospheric:rosewood_planks")
 	public static final Block ROSEWOOD_PLANKS = null;
 	
+	@ObjectHolder("atmospheric:morado_planks")
+	public static final Block MORADO_PLANKS = null;
+	
 	@ObjectHolder("atmospheric:aspen_planks")
 	public static final Block ASPEN_PLANKS = null;
 	
@@ -25,6 +28,9 @@ public class Atmospheric
 
 	@ObjectHolder("atmospheric:rosewood_boat")
 	public static final Item ROSEWOOD_BOAT = null;
+	
+	@ObjectHolder("atmospheric:morado_boat")
+	public static final Item MORADO_BOAT = null;
 	
 	@ObjectHolder("atmospheric:aspen_boat")
 	public static final Item ASPEN_BOAT = null;

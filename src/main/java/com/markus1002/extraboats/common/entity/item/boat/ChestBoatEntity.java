@@ -1,7 +1,7 @@
 package com.markus1002.extraboats.common.entity.item.boat;
 
 import com.markus1002.extraboats.core.BoatHelper;
-import com.markus1002.extraboats.core.registry.ModEntities;
+import com.markus1002.extraboats.core.registry.EBEntities;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -26,7 +26,7 @@ public class ChestBoatEntity extends ContainerBoatEntity
 
 	public ChestBoatEntity(World worldIn, double x, double y, double z)
 	{
-		this(ModEntities.CHEST_BOAT.get(), worldIn);
+		this(EBEntities.CHEST_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -36,30 +36,35 @@ public class ChestBoatEntity extends ContainerBoatEntity
 
 	public ChestBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn)
 	{
-		super(ModEntities.CHEST_BOAT.get(), worldIn);
+		super(EBEntities.CHEST_BOAT.get(), worldIn);
 	}
 	
+	@Override
 	public void killBoat()
 	{
 		super.killBoat();
 		this.entityDropItem(Blocks.CHEST);
 	}
 
+	@Override
 	public int getSizeInventory()
 	{
 		return 27;
 	}
 
+	@Override
 	public Item getItemBoat()
 	{
 		return BoatHelper.getChestBoatItem(this.getModBoatType());
 	}
 
+	@Override
 	public BlockState getDisplayTile()
 	{
 		return Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.NORTH);
 	}
 
+	@Override
 	public Container createContainer(int id, PlayerInventory playerInventoryIn)
 	{
 		return ChestContainer.createGeneric9X3(id, playerInventoryIn, this);

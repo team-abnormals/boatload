@@ -32,7 +32,7 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public abstract class ContainerBoatEntity extends ModBoatEntity implements IInventory, INamedContainerProvider
+public abstract class ContainerBoatEntity extends EBBoatEntity implements IInventory, INamedContainerProvider
 {
 	private NonNullList<ItemStack> boatContainerItems = NonNullList.withSize(36, ItemStack.EMPTY);
 	private boolean dropContentsWhenDead = true;
@@ -45,6 +45,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		super(entityType, worldIn);
 	}
 
+	@Override
 	protected void dropBreakItems()
 	{
 		super.dropBreakItems();
@@ -54,6 +55,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	public void killBoat()
 	{
 		super.killBoat();
@@ -63,6 +65,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	public boolean isEmpty()
 	{
 		for(ItemStack itemstack : this.boatContainerItems)
@@ -75,18 +78,21 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		return true;
 	}
 
+	@Override
 	public ItemStack getStackInSlot(int index)
 	{
 		this.addLoot((PlayerEntity)null);
 		return this.boatContainerItems.get(index);
 	}
 
+	@Override
 	public ItemStack decrStackSize(int index, int count)
 	{
 		this.addLoot((PlayerEntity)null);
 		return ItemStackHelper.getAndSplit(this.boatContainerItems, index, count);
 	}
 
+	@Override
 	public ItemStack removeStackFromSlot(int index)
 	{
 		this.addLoot((PlayerEntity)null);
@@ -102,6 +108,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	public void setInventorySlotContents(int index, ItemStack stack)
 	{
 		this.addLoot((PlayerEntity)null);
@@ -112,6 +119,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	public boolean replaceItemInInventory(int inventorySlot, ItemStack itemStackIn)
 	{
 		if (inventorySlot >= 0 && inventorySlot < this.getSizeInventory())
@@ -125,10 +133,12 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	public void markDirty()
 	{
 	}
 
+	@Override
 	public boolean isUsableByPlayer(PlayerEntity player)
 	{
 		if (this.removed)
@@ -141,15 +151,6 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
-	/*
-	@Nullable
-	public Entity changeDimension(DimensionType destination)
-	{
-		this.dropContentsWhenDead = false;
-		return super.changeDimension(destination);
-	}
-	*/
-
 	@Override
 	public void remove(boolean keepData)
 	{
@@ -157,6 +158,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		if (!keepData) itemHandler.invalidate();
 	}
 
+	@Override
 	protected void writeAdditional(CompoundNBT compound)
 	{
 		super.writeAdditional(compound);
@@ -174,6 +176,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	protected void readAdditional(CompoundNBT compound)
 	{
 		super.readAdditional(compound);
@@ -189,6 +192,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	public ActionResultType processInitialInteract(PlayerEntity player, Hand hand)
 	{
 		if (player.isSneaking())
@@ -219,6 +223,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	public void clear()
 	{
 		this.addLoot((PlayerEntity)null);
@@ -232,6 +237,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 	}
 
 	@Nullable
+	@Override
 	public Container createMenu(int p_createMenu_1_, PlayerInventory p_createMenu_2_, PlayerEntity p_createMenu_3_)
 	{
 		if (this.lootTable != null && p_createMenu_3_.isSpectator())
@@ -262,11 +268,13 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		this.dropContentsWhenDead = value;
 	}
 
+	@Override
 	public Item getItemDropBoat()
 	{
 		return BoatHelper.getBoatItem(this.getModBoatType());
 	}
 
+	@Override
 	public void updatePassenger(Entity passenger)
 	{
 		if (this.isPassenger(passenger))
@@ -288,6 +296,7 @@ public abstract class ContainerBoatEntity extends ModBoatEntity implements IInve
 		}
 	}
 
+	@Override
 	protected boolean canFitPassenger(Entity passenger)
 	{
 		return !this.isBeingRidden() && !this.areEyesInFluid(FluidTags.WATER);

@@ -1,6 +1,6 @@
 package com.markus1002.extraboats.client.renderer.entity;
 
-import com.markus1002.extraboats.common.entity.item.boat.ModBoatEntity;
+import com.markus1002.extraboats.common.entity.item.boat.EBBoatEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
@@ -21,7 +21,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class ModBoatRenderer<T extends ModBoatEntity> extends EntityRenderer<T>
+public class ModBoatRenderer<T extends EBBoatEntity> extends EntityRenderer<T>
 {
 	private static final ResourceLocation[] BOAT_TEXTURES = new ResourceLocation[]{
 			new ResourceLocation("textures/entity/boat/oak.png"),

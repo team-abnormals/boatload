@@ -1,6 +1,6 @@
 package com.markus1002.extraboats.core;
 
-import com.markus1002.extraboats.common.entity.item.boat.ModBoatEntity;
+import com.markus1002.extraboats.common.entity.item.boat.EBBoatEntity;
 import com.markus1002.extraboats.core.compatibility.Atmospheric;
 import com.markus1002.extraboats.core.compatibility.Autumnity;
 import com.markus1002.extraboats.core.compatibility.BambooBlocks;
@@ -10,7 +10,7 @@ import com.markus1002.extraboats.core.compatibility.EnhancedMushrooms;
 import com.markus1002.extraboats.core.compatibility.Environmental;
 import com.markus1002.extraboats.core.compatibility.Hanami;
 import com.markus1002.extraboats.core.compatibility.UpgradeAquatic;
-import com.markus1002.extraboats.core.registry.ModItems;
+import com.markus1002.extraboats.core.registry.EBItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -19,7 +19,7 @@ import net.minecraft.item.Items;
 
 public class BoatHelper
 {
-	public static Block getPlanks(ModBoatEntity.BoatType type)
+	public static Block getPlanks(EBBoatEntity.BoatType type)
 	{
 		switch(type)
 		{
@@ -80,6 +80,8 @@ public class BoatHelper
 			
 		case ROSEWOOD:
 			return Atmospheric.ROSEWOOD_PLANKS;
+		case MORADO:
+			return Atmospheric.MORADO_PLANKS;
 		case ASPEN:
 			return Atmospheric.ASPEN_PLANKS;
 		case KOUSA:
@@ -104,7 +106,7 @@ public class BoatHelper
 		}
 	}
 	
-	public static Item getBoatItem(ModBoatEntity.BoatType type)
+	public static Item getBoatItem(EBBoatEntity.BoatType type)
 	{
 		switch(type)
 		{
@@ -165,6 +167,8 @@ public class BoatHelper
 			
 		case ROSEWOOD:
 			return Atmospheric.ROSEWOOD_BOAT;
+		case MORADO:
+			return Atmospheric.MORADO_BOAT;
 		case ASPEN:
 			return Atmospheric.ASPEN_BOAT;
 		case KOUSA:
@@ -189,258 +193,264 @@ public class BoatHelper
 		}
 	}
 	
-	public static Item getChestBoatItem(ModBoatEntity.BoatType type)
+	public static Item getChestBoatItem(EBBoatEntity.BoatType type)
 	{
 		switch(type)
 		{
 		case OAK:
 		default:
-			return ModItems.OAK_CHEST_BOAT.get();
+			return EBItems.OAK_CHEST_BOAT.get();
 		case SPRUCE:
-			return ModItems.SPRUCE_CHEST_BOAT.get();
+			return EBItems.SPRUCE_CHEST_BOAT.get();
 		case BIRCH:
-			return ModItems.BIRCH_CHEST_BOAT.get();
+			return EBItems.BIRCH_CHEST_BOAT.get();
 		case JUNGLE:
-			return ModItems.JUNGLE_CHEST_BOAT.get();
+			return EBItems.JUNGLE_CHEST_BOAT.get();
 		case ACACIA:
-			return ModItems.ACACIA_CHEST_BOAT.get();
+			return EBItems.ACACIA_CHEST_BOAT.get();
 		case DARK_OAK:
-			return ModItems.DARK_OAK_CHEST_BOAT.get();
+			return EBItems.DARK_OAK_CHEST_BOAT.get();
 			
 		case CHERRY:
-			return ModItems.CHERRY_CHEST_BOAT.get();
+			return EBItems.CHERRY_CHEST_BOAT.get();
 		case DEAD:
-			return ModItems.DEAD_CHEST_BOAT.get();
+			return EBItems.DEAD_CHEST_BOAT.get();
 		case FIR:
-			return ModItems.FIR_CHEST_BOAT.get();
+			return EBItems.FIR_CHEST_BOAT.get();
 		case HELLBARK:
-			return ModItems.HELLBARK_CHEST_BOAT.get();
+			return EBItems.HELLBARK_CHEST_BOAT.get();
 		case JACARANDA:
-			return ModItems.JACARANDA_CHEST_BOAT.get();
+			return EBItems.JACARANDA_CHEST_BOAT.get();
 		case MAGIC:
-			return ModItems.MAGIC_CHEST_BOAT.get();
+			return EBItems.MAGIC_CHEST_BOAT.get();
 		case MAHOGANY:
-			return ModItems.MAHOGANY_CHEST_BOAT.get();
+			return EBItems.MAHOGANY_CHEST_BOAT.get();
 		case PALM:
-			return ModItems.PALM_CHEST_BOAT.get();
+			return EBItems.PALM_CHEST_BOAT.get();
 		case REDWOOD:
-			return ModItems.REDWOOD_CHEST_BOAT.get();
+			return EBItems.REDWOOD_CHEST_BOAT.get();
 		case UMBRAN:
-			return ModItems.UMBRAN_CHEST_BOAT.get();
+			return EBItems.UMBRAN_CHEST_BOAT.get();
 		case WILLOW:
-			return ModItems.WILLOW_CHEST_BOAT.get();
+			return EBItems.WILLOW_CHEST_BOAT.get();
 			
 		case DRIFTWOOD:
-			return ModItems.DRIFTWOOD_CHEST_BOAT.get();
+			return EBItems.DRIFTWOOD_CHEST_BOAT.get();
 		case RIVER:
-			return ModItems.RIVER_CHEST_BOAT.get();
+			return EBItems.RIVER_CHEST_BOAT.get();
 			
 		case BAMBOO:
-			return ModItems.BAMBOO_CHEST_BOAT.get();
+			return EBItems.BAMBOO_CHEST_BOAT.get();
 			
 		case POISE:
-			return ModItems.POISE_CHEST_BOAT.get();
+			return EBItems.POISE_CHEST_BOAT.get();
 			
 		case WISTERIA:
-			return ModItems.WISTERIA_CHEST_BOAT.get();
+			return EBItems.WISTERIA_CHEST_BOAT.get();
 		case ENV_WILLOW:
-			return ModItems.ENV_WILLOW_CHEST_BOAT.get();
+			return EBItems.ENV_WILLOW_CHEST_BOAT.get();
 		case ENV_CHERRY:
-			return ModItems.ENV_CHERRY_CHEST_BOAT.get();
+			return EBItems.ENV_CHERRY_CHEST_BOAT.get();
 			
 		case ROSEWOOD:
-			return ModItems.ROSEWOOD_CHEST_BOAT.get();
+			return EBItems.ROSEWOOD_CHEST_BOAT.get();
+		case MORADO:
+			return EBItems.MORADO_CHEST_BOAT.get();
 		case ASPEN:
-			return ModItems.ASPEN_CHEST_BOAT.get();
+			return EBItems.ASPEN_CHEST_BOAT.get();
 		case KOUSA:
-			return ModItems.KOUSA_CHEST_BOAT.get();
+			return EBItems.KOUSA_CHEST_BOAT.get();
 		case YUCCA:
-			return ModItems.YUCCA_CHEST_BOAT.get();
+			return EBItems.YUCCA_CHEST_BOAT.get();
 		case GRIMWOOD:
-			return ModItems.GRIMWOOD_CHEST_BOAT.get();
+			return EBItems.GRIMWOOD_CHEST_BOAT.get();
 			
 		case MAPLE:
-			return ModItems.MAPLE_CHEST_BOAT.get();
+			return EBItems.MAPLE_CHEST_BOAT.get();
 
 		case RED_MUSHROOM:
-			return ModItems.RED_MUSHROOM_CHEST_BOAT.get();
+			return EBItems.RED_MUSHROOM_CHEST_BOAT.get();
 		case BROWN_MUSHROOM:
-			return ModItems.BROWN_MUSHROOM_CHEST_BOAT.get();
+			return EBItems.BROWN_MUSHROOM_CHEST_BOAT.get();
 		case GLOWSHROOM:
-			return ModItems.GLOWSHROOM_CHEST_BOAT.get();
+			return EBItems.GLOWSHROOM_CHEST_BOAT.get();
 
 		case SAKURA:
-			return ModItems.SAKURA_CHEST_BOAT.get();
+			return EBItems.SAKURA_CHEST_BOAT.get();
 		}
 	}
 	
-	public static Item getFurnaceBoatItem(ModBoatEntity.BoatType type)
+	public static Item getFurnaceBoatItem(EBBoatEntity.BoatType type)
 	{
 		switch(type)
 		{
 		case OAK:
 		default:
-			return ModItems.OAK_FURNACE_BOAT.get();
+			return EBItems.OAK_FURNACE_BOAT.get();
 		case SPRUCE:
-			return ModItems.SPRUCE_FURNACE_BOAT.get();
+			return EBItems.SPRUCE_FURNACE_BOAT.get();
 		case BIRCH:
-			return ModItems.BIRCH_FURNACE_BOAT.get();
+			return EBItems.BIRCH_FURNACE_BOAT.get();
 		case JUNGLE:
-			return ModItems.JUNGLE_FURNACE_BOAT.get();
+			return EBItems.JUNGLE_FURNACE_BOAT.get();
 		case ACACIA:
-			return ModItems.ACACIA_FURNACE_BOAT.get();
+			return EBItems.ACACIA_FURNACE_BOAT.get();
 		case DARK_OAK:
-			return ModItems.DARK_OAK_FURNACE_BOAT.get();
+			return EBItems.DARK_OAK_FURNACE_BOAT.get();
 
 		case CHERRY:
-			return ModItems.CHERRY_FURNACE_BOAT.get();
+			return EBItems.CHERRY_FURNACE_BOAT.get();
 		case DEAD:
-			return ModItems.DEAD_FURNACE_BOAT.get();
+			return EBItems.DEAD_FURNACE_BOAT.get();
 		case FIR:
-			return ModItems.FIR_FURNACE_BOAT.get();
+			return EBItems.FIR_FURNACE_BOAT.get();
 		case HELLBARK:
-			return ModItems.HELLBARK_FURNACE_BOAT.get();
+			return EBItems.HELLBARK_FURNACE_BOAT.get();
 		case JACARANDA:
-			return ModItems.JACARANDA_FURNACE_BOAT.get();
+			return EBItems.JACARANDA_FURNACE_BOAT.get();
 		case MAGIC:
-			return ModItems.MAGIC_FURNACE_BOAT.get();
+			return EBItems.MAGIC_FURNACE_BOAT.get();
 		case MAHOGANY:
-			return ModItems.MAHOGANY_FURNACE_BOAT.get();
+			return EBItems.MAHOGANY_FURNACE_BOAT.get();
 		case PALM:
-			return ModItems.PALM_FURNACE_BOAT.get();
+			return EBItems.PALM_FURNACE_BOAT.get();
 		case REDWOOD:
-			return ModItems.REDWOOD_FURNACE_BOAT.get();
+			return EBItems.REDWOOD_FURNACE_BOAT.get();
 		case UMBRAN:
-			return ModItems.UMBRAN_FURNACE_BOAT.get();
+			return EBItems.UMBRAN_FURNACE_BOAT.get();
 		case WILLOW:
-			return ModItems.WILLOW_FURNACE_BOAT.get();
+			return EBItems.WILLOW_FURNACE_BOAT.get();
 
 		case DRIFTWOOD:
-			return ModItems.DRIFTWOOD_FURNACE_BOAT.get();
+			return EBItems.DRIFTWOOD_FURNACE_BOAT.get();
 		case RIVER:
-			return ModItems.RIVER_FURNACE_BOAT.get();
+			return EBItems.RIVER_FURNACE_BOAT.get();
 
 		case BAMBOO:
-			return ModItems.BAMBOO_FURNACE_BOAT.get();
+			return EBItems.BAMBOO_FURNACE_BOAT.get();
 
 		case POISE:
-			return ModItems.POISE_FURNACE_BOAT.get();
+			return EBItems.POISE_FURNACE_BOAT.get();
 
 		case WISTERIA:
-			return ModItems.WISTERIA_FURNACE_BOAT.get();
+			return EBItems.WISTERIA_FURNACE_BOAT.get();
 		case ENV_WILLOW:
-			return ModItems.ENV_WILLOW_FURNACE_BOAT.get();
+			return EBItems.ENV_WILLOW_FURNACE_BOAT.get();
 		case ENV_CHERRY:
-			return ModItems.ENV_CHERRY_FURNACE_BOAT.get();
+			return EBItems.ENV_CHERRY_FURNACE_BOAT.get();
 			
 		case ROSEWOOD:
-			return ModItems.ROSEWOOD_FURNACE_BOAT.get();
+			return EBItems.ROSEWOOD_FURNACE_BOAT.get();
+		case MORADO:
+			return EBItems.MORADO_FURNACE_BOAT.get();
 		case ASPEN:
-			return ModItems.ASPEN_FURNACE_BOAT.get();
+			return EBItems.ASPEN_FURNACE_BOAT.get();
 		case KOUSA:
-			return ModItems.KOUSA_FURNACE_BOAT.get();
+			return EBItems.KOUSA_FURNACE_BOAT.get();
 		case YUCCA:
-			return ModItems.YUCCA_FURNACE_BOAT.get();
+			return EBItems.YUCCA_FURNACE_BOAT.get();
 		case GRIMWOOD:
-			return ModItems.GRIMWOOD_FURNACE_BOAT.get();
+			return EBItems.GRIMWOOD_FURNACE_BOAT.get();
 			
 		case MAPLE:
-			return ModItems.MAPLE_FURNACE_BOAT.get();
+			return EBItems.MAPLE_FURNACE_BOAT.get();
 
 		case RED_MUSHROOM:
-			return ModItems.RED_MUSHROOM_FURNACE_BOAT.get();
+			return EBItems.RED_MUSHROOM_FURNACE_BOAT.get();
 		case BROWN_MUSHROOM:
-			return ModItems.BROWN_MUSHROOM_FURNACE_BOAT.get();
+			return EBItems.BROWN_MUSHROOM_FURNACE_BOAT.get();
 		case GLOWSHROOM:
-			return ModItems.GLOWSHROOM_FURNACE_BOAT.get();
+			return EBItems.GLOWSHROOM_FURNACE_BOAT.get();
 
 		case SAKURA:
-			return ModItems.SAKURA_FURNACE_BOAT.get();
+			return EBItems.SAKURA_FURNACE_BOAT.get();
 		}
 	}
 	
-	public static Item getLargeBoatItem(ModBoatEntity.BoatType type)
+	public static Item getLargeBoatItem(EBBoatEntity.BoatType type)
 	{
 		switch(type)
 		{
 		case OAK:
 		default:
-			return ModItems.LARGE_OAK_BOAT.get();
+			return EBItems.LARGE_OAK_BOAT.get();
 		case SPRUCE:
-			return ModItems.LARGE_SPRUCE_BOAT.get();
+			return EBItems.LARGE_SPRUCE_BOAT.get();
 		case BIRCH:
-			return ModItems.LARGE_BIRCH_BOAT.get();
+			return EBItems.LARGE_BIRCH_BOAT.get();
 		case JUNGLE:
-			return ModItems.LARGE_JUNGLE_BOAT.get();
+			return EBItems.LARGE_JUNGLE_BOAT.get();
 		case ACACIA:
-			return ModItems.LARGE_ACACIA_BOAT.get();
+			return EBItems.LARGE_ACACIA_BOAT.get();
 		case DARK_OAK:
-			return ModItems.LARGE_DARK_OAK_BOAT.get();
+			return EBItems.LARGE_DARK_OAK_BOAT.get();
 			
 		case CHERRY:
-			return ModItems.LARGE_CHERRY_BOAT.get();
+			return EBItems.LARGE_CHERRY_BOAT.get();
 		case DEAD:
-			return ModItems.LARGE_DEAD_BOAT.get();
+			return EBItems.LARGE_DEAD_BOAT.get();
 		case FIR:
-			return ModItems.LARGE_FIR_BOAT.get();
+			return EBItems.LARGE_FIR_BOAT.get();
 		case HELLBARK:
-			return ModItems.LARGE_HELLBARK_BOAT.get();
+			return EBItems.LARGE_HELLBARK_BOAT.get();
 		case JACARANDA:
-			return ModItems.LARGE_JACARANDA_BOAT.get();
+			return EBItems.LARGE_JACARANDA_BOAT.get();
 		case MAGIC:
-			return ModItems.LARGE_MAGIC_BOAT.get();
+			return EBItems.LARGE_MAGIC_BOAT.get();
 		case MAHOGANY:
-			return ModItems.LARGE_MAHOGANY_BOAT.get();
+			return EBItems.LARGE_MAHOGANY_BOAT.get();
 		case PALM:
-			return ModItems.LARGE_PALM_BOAT.get();
+			return EBItems.LARGE_PALM_BOAT.get();
 		case REDWOOD:
-			return ModItems.LARGE_REDWOOD_BOAT.get();
+			return EBItems.LARGE_REDWOOD_BOAT.get();
 		case UMBRAN:
-			return ModItems.LARGE_UMBRAN_BOAT.get();
+			return EBItems.LARGE_UMBRAN_BOAT.get();
 		case WILLOW:
-			return ModItems.LARGE_WILLOW_BOAT.get();
+			return EBItems.LARGE_WILLOW_BOAT.get();
 			
 		case DRIFTWOOD:
-			return ModItems.LARGE_DRIFTWOOD_BOAT.get();
+			return EBItems.LARGE_DRIFTWOOD_BOAT.get();
 		case RIVER:
-			return ModItems.LARGE_RIVER_BOAT.get();
+			return EBItems.LARGE_RIVER_BOAT.get();
 			
 		case BAMBOO:
-			return ModItems.LARGE_BAMBOO_BOAT.get();
+			return EBItems.LARGE_BAMBOO_BOAT.get();
 			
 		case POISE:
-			return ModItems.LARGE_POISE_BOAT.get();
+			return EBItems.LARGE_POISE_BOAT.get();
 			
 		case WISTERIA:
-			return ModItems.LARGE_WISTERIA_BOAT.get();
+			return EBItems.LARGE_WISTERIA_BOAT.get();
 		case ENV_WILLOW:
-			return ModItems.LARGE_ENV_WILLOW_BOAT.get();
+			return EBItems.LARGE_ENV_WILLOW_BOAT.get();
 		case ENV_CHERRY:
-			return ModItems.LARGE_ENV_CHERRY_BOAT.get();
+			return EBItems.LARGE_ENV_CHERRY_BOAT.get();
 			
 		case ROSEWOOD:
-			return ModItems.LARGE_ROSEWOOD_BOAT.get();
+			return EBItems.LARGE_ROSEWOOD_BOAT.get();
+		case MORADO:
+			return EBItems.LARGE_MORADO_BOAT.get();
 		case ASPEN:
-			return ModItems.LARGE_ASPEN_BOAT.get();
+			return EBItems.LARGE_ASPEN_BOAT.get();
 		case KOUSA:
-			return ModItems.LARGE_KOUSA_BOAT.get();
+			return EBItems.LARGE_KOUSA_BOAT.get();
 		case YUCCA:
-			return ModItems.LARGE_YUCCA_BOAT.get();
+			return EBItems.LARGE_YUCCA_BOAT.get();
 		case GRIMWOOD:
-			return ModItems.LARGE_GRIMWOOD_BOAT.get();
+			return EBItems.LARGE_GRIMWOOD_BOAT.get();
 			
 		case MAPLE:
-			return ModItems.LARGE_MAPLE_BOAT.get();
+			return EBItems.LARGE_MAPLE_BOAT.get();
 
 		case RED_MUSHROOM:
-			return ModItems.LARGE_RED_MUSHROOM_BOAT.get();
+			return EBItems.LARGE_RED_MUSHROOM_BOAT.get();
 		case BROWN_MUSHROOM:
-			return ModItems.LARGE_BROWN_MUSHROOM_BOAT.get();
+			return EBItems.LARGE_BROWN_MUSHROOM_BOAT.get();
 		case GLOWSHROOM:
-			return ModItems.LARGE_GLOWSHROOM_BOAT.get();
+			return EBItems.LARGE_GLOWSHROOM_BOAT.get();
 
 		case SAKURA:
-			return ModItems.LARGE_SAKURA_BOAT.get();
+			return EBItems.LARGE_SAKURA_BOAT.get();
 		}
 	}
 }

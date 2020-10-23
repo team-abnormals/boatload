@@ -30,6 +30,18 @@
   "item.extraboats.large_dark_oak_boat": "Suuri tumma tammivene",
   
   
+  "_comment": "Upgrade Aquatic",
+  
+  "item.extraboats.driftwood_chest_boat": "Arkullinen ajopuuvene",
+  "item.extraboats.river_chest_boat": "Arkullinen jokipuuvene",
+  
+  "item.extraboats.driftwood_furnace_boat": "Moottoroitu ajopuuvene",
+  "item.extraboats.river_furnace_boat": "Moottoroitu jokipuuvene",
+  
+  "item.extraboats.large_driftwood_boat": "Suuri ajopuuvene",
+  "item.extraboats.large_river_boat": "Suuri jokipuuvene",
+  
+  
   "_comment": "Bamboo Blocks",
   
   "item.extraboats.bamboo_chest_boat": "Arkullinen bambuvene",
@@ -37,18 +49,50 @@
   "item.extraboats.large_bamboo_boat": "Suuri bambuvene",
   
   
-  "_comment": "Bloomful",
+  "_comment": "Endergetic Expansion",
+  
+  "item.extraboats.poise_chest_boat": "Arkullinen kohopuuvene",
+  "item.extraboats.poise_furnace_boat": "Moottoroitu kohopuuvene",
+  "item.extraboats.large_poise_boat": "Suuri kohopuuvene",
+  
+  
+  "_comment": "Environmental",
   
   "item.extraboats.wisteria_chest_boat": "Arkullinen sinisadevene",
   "item.extraboats.wisteria_furnace_boat": "Moottoroitu sinisadevene",
   "item.extraboats.large_wisteria_boat": "Suuri sinisadevene",
   
-  
-  "_comment": "Environmental",
-  
   "item.extraboats.env_willow_chest_boat": "Arkullinen pajuvene",
   "item.extraboats.env_willow_furnace_boat": "Moottoroitu pajuvene",
   "item.extraboats.large_env_willow_boat": "Suuri pajuvene",
+  
+  "item.extraboats.env_cherry_chest_boat": "Arkullinen kirsikkapuuvene",
+  "item.extraboats.env_cherry_furnace_boat": "Moottoroitu kirsikkapuuvene",
+  "item.extraboats.large_env_cherry_boat": "Suuri kirsikkapuuvene",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.extraboats.rosewood_chest_boat": "Arkullinen ruusupuuvene",
+  "item.extraboats.morado_chest_boat": "Arkullinen kesalpiniavene",
+  "item.extraboats.aspen_chest_boat": "Arkullinen haapavene",
+  "item.extraboats.kousa_chest_boat": "Arkullinen kanukkavene",
+  "item.extraboats.yucca_chest_boat": "Arkullinen jukkavene",
+  "item.extraboats.grimwood_chest_boat": "Arkullinen synkkäpuuvene",
+  
+  "item.extraboats.rosewood_furnace_boat": "Moottoroitu ruusupuuvene",
+  "item.extraboats.morado_furnace_boat": "Moottoroitu kesalpiniavene",
+  "item.extraboats.aspen_furnace_boat": "Moottoroitu haapavene",
+  "item.extraboats.kousa_furnace_boat": "Moottoroitu kanukkavene",
+  "item.extraboats.yucca_furnace_boat": "Moottoroitu jukkavene",
+  "item.extraboats.grimwood_furnace_boat": "Moottoroitu synkkäpuuvene",
+  
+  "item.extraboats.large_rosewood_boat": "Suuri ruusupuuvene",
+  "item.extraboats.large_morado_boat": "Suuri kesalpiniavene",
+  "item.extraboats.large_aspen_boat": "Suuri haapavene",
+  "item.extraboats.large_kousa_boat": "Suuri kanukkavene",
+  "item.extraboats.large_yucca_boat": "Suuri jukkavene",
+  "item.extraboats.large_grimwood_boat": "Suuri synkkäpuuvene",
   
   
   "_comment": "Autumnity",

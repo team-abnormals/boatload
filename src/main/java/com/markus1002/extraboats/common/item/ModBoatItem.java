@@ -3,7 +3,7 @@ package com.markus1002.extraboats.common.item;
 import java.util.List;
 import java.util.function.Predicate;
 
-import com.markus1002.extraboats.common.entity.item.boat.ModBoatEntity;
+import com.markus1002.extraboats.common.entity.item.boat.EBBoatEntity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,14 +22,15 @@ import net.minecraft.world.World;
 public class ModBoatItem extends Item
 {
 	private static final Predicate<Entity> field_219989_a = EntityPredicates.NOT_SPECTATING.and(Entity::canBeCollidedWith);
-	private final ModBoatEntity.BoatType type;
+	private final EBBoatEntity.BoatType type;
 
-	public ModBoatItem(ModBoatEntity.BoatType typeIn, Item.Properties properties)
+	public ModBoatItem(EBBoatEntity.BoatType typeIn, Item.Properties properties)
 	{
 		super(properties);
 		this.type = typeIn;
 	}
 
+	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
 	{
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
@@ -58,7 +59,7 @@ public class ModBoatItem extends Item
 
 			if (raytraceresult.getType() == RayTraceResult.Type.BLOCK)
 			{
-				ModBoatEntity boatentity = this.getBoatEntity(worldIn, raytraceresult);
+				EBBoatEntity boatentity = this.getBoatEntity(worldIn, raytraceresult);
 				boatentity.setModBoatType(this.type);
 				boatentity.rotationYaw = playerIn.rotationYaw;
 				if (!worldIn.hasNoCollisions(boatentity, boatentity.getBoundingBox().grow(-0.1D)))
@@ -87,12 +88,12 @@ public class ModBoatItem extends Item
 		}
 	}
 
-	protected ModBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult)
+	protected EBBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult)
 	{
 		return null;
 	}
 
-	public ModBoatEntity.BoatType getType()
+	public EBBoatEntity.BoatType getType()
 	{
 		return this.type;
 	}

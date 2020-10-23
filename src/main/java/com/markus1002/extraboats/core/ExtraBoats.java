@@ -6,8 +6,8 @@ import com.markus1002.extraboats.common.dispenser.DispenseLargeBoatBehavior;
 import com.markus1002.extraboats.common.item.ChestBoatItem;
 import com.markus1002.extraboats.common.item.FurnaceBoatItem;
 import com.markus1002.extraboats.common.item.ModBoatItem;
-import com.markus1002.extraboats.core.registry.ModEntities;
-import com.markus1002.extraboats.core.registry.ModItems;
+import com.markus1002.extraboats.core.registry.EBEntities;
+import com.markus1002.extraboats.core.registry.EBItems;
 
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.Item;
@@ -29,15 +29,15 @@ public class ExtraBoats
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetup);
         
-        ModEntities.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
-        ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        EBEntities.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        EBItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	private void setup(final FMLCommonSetupEvent event)
 	{
-		for (RegistryObject<Item> item : ModItems.ITEMS.getEntries())
+		for (RegistryObject<Item> item : EBItems.ITEMS.getEntries())
 		{
 			ModBoatItem boatitem = (ModBoatItem) item.get();
 			if (boatitem instanceof ChestBoatItem)
@@ -57,6 +57,6 @@ public class ExtraBoats
 
 	private void clientSetup(final FMLClientSetupEvent event)
 	{
-		ModEntities.setupEntitiesClient();
+		EBEntities.setupEntitiesClient();
 	}
 }

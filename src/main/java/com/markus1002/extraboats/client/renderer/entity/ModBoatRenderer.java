@@ -55,6 +55,7 @@ public class ModBoatRenderer<T extends EBBoatEntity> extends EntityRenderer<T>
 			new ResourceLocation("environmental", "textures/entity/boat/cherry.png"),
 			
 			new ResourceLocation("atmospheric", "textures/entity/boat/rosewood.png"),
+			new ResourceLocation("atmospheric", "textures/entity/boat/morado.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/aspen.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/kousa.png"),
 			new ResourceLocation("atmospheric", "textures/entity/boat/yucca.png"),

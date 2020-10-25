@@ -4,7 +4,6 @@ import javax.annotation.Nonnull;
 
 import com.markus1002.extraboats.common.entity.item.boat.EBBoatEntity;
 import com.markus1002.extraboats.common.item.ChestBoatItem;
-import com.markus1002.extraboats.common.item.EBBoatItem;
 import com.markus1002.extraboats.core.BoatHelper;
 
 import net.minecraft.inventory.CraftingInventory;
@@ -21,7 +20,7 @@ import net.minecraftforge.common.Tags;
 
 public class ChestBoatRecipe extends SpecialRecipe
 {
-    public static final SpecialRecipeSerializer<?> SERIALIZER = new SpecialRecipeSerializer<>(ChestBoatRecipe::new);
+    public static final SpecialRecipeSerializer<ChestBoatRecipe> SERIALIZER = new SpecialRecipeSerializer<>(ChestBoatRecipe::new);
     
 	public ChestBoatRecipe(ResourceLocation idIn)
 	{
@@ -77,7 +76,7 @@ public class ChestBoatRecipe extends SpecialRecipe
 			{
 				if (itemstack2.getItem().isIn(ItemTags.BOATS))
 				{
-					type = ((EBBoatItem) itemstack2.getItem()).getType();
+					type = BoatHelper.getType(itemstack2.getItem());
 				}
 				else if (itemstack2.getItem().isIn(Tags.Items.CHESTS_WOODEN) && !itemstack2.getItem().isIn(Tags.Items.CHESTS_TRAPPED))
 				{

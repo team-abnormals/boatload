@@ -453,4 +453,100 @@ public class BoatHelper
 			return EBItems.LARGE_SAKURA_BOAT.get();
 		}
 	}
+	
+	public static EBBoatEntity.BoatType getType(Item item)
+	{
+		if (item == Items.OAK_BOAT)
+			return EBBoatEntity.BoatType.OAK;
+		else if (item == Items.SPRUCE_BOAT)
+			return EBBoatEntity.BoatType.SPRUCE;
+		else if (item == Items.BIRCH_BOAT)
+			return EBBoatEntity.BoatType.BIRCH;
+		else if (item == Items.JUNGLE_BOAT)
+			return EBBoatEntity.BoatType.JUNGLE;
+		else if (item == Items.ACACIA_BOAT)
+			return EBBoatEntity.BoatType.ACACIA;
+		else if (item == Items.DARK_OAK_BOAT)
+			return EBBoatEntity.BoatType.DARK_OAK;
+		
+		else if (item == Items.OAK_BOAT)
+			return EBBoatEntity.BoatType.OAK;
+		else if (item == Items.SPRUCE_BOAT)
+			return EBBoatEntity.BoatType.SPRUCE;
+		else if (item == Items.BIRCH_BOAT)
+			return EBBoatEntity.BoatType.BIRCH;
+		else if (item == Items.JUNGLE_BOAT)
+			return EBBoatEntity.BoatType.JUNGLE;
+		else if (item == Items.ACACIA_BOAT)
+			return EBBoatEntity.BoatType.ACACIA;
+		else if (item == Items.DARK_OAK_BOAT)
+			return EBBoatEntity.BoatType.DARK_OAK;
+		
+		else if (item == BiomesOPlenty.CHERRY_BOAT)
+			return EBBoatEntity.BoatType.CHERRY;
+		else if (item == BiomesOPlenty.DEAD_BOAT)
+			return EBBoatEntity.BoatType.DEAD;
+		else if (item == BiomesOPlenty.FIR_BOAT)
+			return EBBoatEntity.BoatType.FIR;
+		else if (item == BiomesOPlenty.HELLBARK_BOAT)
+			return EBBoatEntity.BoatType.HELLBARK;
+		else if (item == BiomesOPlenty.JACARANDA_BOAT)
+			return EBBoatEntity.BoatType.JACARANDA;
+		else if (item == BiomesOPlenty.MAGIC_BOAT)
+			return EBBoatEntity.BoatType.MAGIC;
+		else if (item == BiomesOPlenty.MAHOGANY_BOAT)
+			return EBBoatEntity.BoatType.MAHOGANY;
+		else if (item == BiomesOPlenty.PALM_BOAT)
+			return EBBoatEntity.BoatType.PALM;
+		else if (item == BiomesOPlenty.REDWOOD_BOAT)
+			return EBBoatEntity.BoatType.REDWOOD;
+		else if (item == BiomesOPlenty.UMBRAN_BOAT)
+			return EBBoatEntity.BoatType.UMBRAN;
+		else if (item == BiomesOPlenty.WILLOW_BOAT)
+			return EBBoatEntity.BoatType.WILLOW;
+		
+		else if (item == UpgradeAquatic.DRIFTWOOD_BOAT)
+			return EBBoatEntity.BoatType.DRIFTWOOD;
+		else if (item == UpgradeAquatic.RIVER_BOAT)
+			return EBBoatEntity.BoatType.RIVER;
+		
+		else if (item == BambooBlocks.BAMBOO_BOAT)
+			return EBBoatEntity.BoatType.BAMBOO;
+		
+		else if (item == EndergeticExpansion.POISE_BOAT)
+			return EBBoatEntity.BoatType.POISE;
+		
+		else if (item == Environmental.WISTERIA_BOAT)
+			return EBBoatEntity.BoatType.WISTERIA;
+		else if (item == Environmental.WILLOW_BOAT)
+			return EBBoatEntity.BoatType.ENV_WILLOW;
+		else if (item == Environmental.CHERRY_BOAT)
+			return EBBoatEntity.BoatType.ENV_CHERRY;
+		
+		else if (item == Atmospheric.ROSEWOOD_BOAT)
+			return EBBoatEntity.BoatType.ROSEWOOD;
+		else if (item == Atmospheric.MORADO_BOAT)
+			return EBBoatEntity.BoatType.MORADO;
+		else if (item == Atmospheric.ASPEN_BOAT)
+			return EBBoatEntity.BoatType.ASPEN;
+		else if (item == Atmospheric.KOUSA_BOAT)
+			return EBBoatEntity.BoatType.KOUSA;
+		else if (item == Atmospheric.YUCCA_BOAT)
+			return EBBoatEntity.BoatType.YUCCA;
+		else if (item == Atmospheric.GRIMWOOD_BOAT)
+			return EBBoatEntity.BoatType.GRIMWOOD;
+		
+		else if (item == Autumnity.MAPLE_BOAT)
+			return EBBoatEntity.BoatType.MAPLE;
+		
+		else if (item == EnhancedMushrooms.RED_MUSHROOM_BOAT)
+			return EBBoatEntity.BoatType.RED_MUSHROOM;
+		else if (item == EnhancedMushrooms.BROWN_MUSHROOM_BOAT)
+			return EBBoatEntity.BoatType.BROWN_MUSHROOM;
+		else if (item == EnhancedMushrooms.GLOWSHROOM_BOAT)
+			return EBBoatEntity.BoatType.GLOWSHROOM;
+		
+		else // Sakura
+			return EBBoatEntity.BoatType.SAKURA;
+	}
 }

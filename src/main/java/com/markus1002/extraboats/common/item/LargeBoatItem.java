@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class LargeBoatItem extends ModBoatItem
+public class LargeBoatItem extends EBBoatItem
 {
 	public LargeBoatItem(EBBoatEntity.BoatType typeIn, Item.Properties properties)
 	{
@@ -16,7 +16,7 @@ public class LargeBoatItem extends ModBoatItem
 	}
 
 	@Override
-	protected EBBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult)
+	protected EBBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult, ItemStack itemStack)
 	{
 		return new LargeBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
 	}

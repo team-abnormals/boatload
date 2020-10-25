@@ -4,8 +4,9 @@ import com.markus1002.extraboats.common.dispenser.DispenseChestBoatBehavior;
 import com.markus1002.extraboats.common.dispenser.DispenseFurnaceBoatBehavior;
 import com.markus1002.extraboats.common.dispenser.DispenseLargeBoatBehavior;
 import com.markus1002.extraboats.common.item.ChestBoatItem;
+import com.markus1002.extraboats.common.item.EBBoatItem;
 import com.markus1002.extraboats.common.item.FurnaceBoatItem;
-import com.markus1002.extraboats.common.item.ModBoatItem;
+import com.markus1002.extraboats.common.item.crafting.EBRecipes;
 import com.markus1002.extraboats.core.registry.EBEntities;
 import com.markus1002.extraboats.core.registry.EBItems;
 
@@ -29,8 +30,9 @@ public class ExtraBoats
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetup);
         
-        EBEntities.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
-        EBItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        EBEntities.ENTITIES.register(modEventBus);
+        EBItems.ITEMS.register(modEventBus);
+		EBRecipes.RECIPE_SERIALIZERS.register(modEventBus);
         
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -39,7 +41,7 @@ public class ExtraBoats
 	{
 		for (RegistryObject<Item> item : EBItems.ITEMS.getEntries())
 		{
-			ModBoatItem boatitem = (ModBoatItem) item.get();
+			EBBoatItem boatitem = (EBBoatItem) item.get();
 			if (boatitem instanceof ChestBoatItem)
 			{
 				DispenserBlock.registerDispenseBehavior(boatitem, new DispenseChestBoatBehavior(boatitem.getType()));

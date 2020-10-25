@@ -3,6 +3,7 @@ package com.markus1002.extraboats.common.entity.item.boat;
 import com.markus1002.extraboats.core.BoatHelper;
 import com.markus1002.extraboats.core.registry.EBEntities;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ChestBlock;
@@ -11,7 +12,13 @@ import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -19,6 +26,8 @@ import net.minecraftforge.fml.network.FMLPlayMessages;
 
 public class ChestBoatEntity extends ContainerBoatEntity
 {
+	private static final DataParameter<ItemStack> CHEST = EntityDataManager.createKey(ChestBoatEntity.class, DataSerializers.ITEMSTACK);
+
 	public ChestBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn)
 	{
 		super(entityType, worldIn);
@@ -38,12 +47,39 @@ public class ChestBoatEntity extends ContainerBoatEntity
 	{
 		super(EBEntities.CHEST_BOAT.get(), worldIn);
 	}
-	
+
+	@Override
+	protected void registerData()
+	{
+		this.getDataManager().register(CHEST, ItemStack.EMPTY);
+		super.registerData();
+	}
+
+	@Override
+	public void writeAdditional(CompoundNBT compound)
+	{
+		super.writeAdditional(compound);
+		
+		if (!this.getChest().isEmpty())
+		{
+			compound.put("Chest", this.getChest().write(new CompoundNBT()));
+		}
+	}
+
+	@Override
+	public void readAdditional(CompoundNBT compound)
+	{
+		super.readAdditional(compound);
+		
+		CompoundNBT compoundnbt = compound.getCompound("Chest");
+		this.setChest(ItemStack.read(compoundnbt));
+	}
+
 	@Override
 	public void killBoat()
 	{
 		super.killBoat();
-		this.entityDropItem(Blocks.CHEST);
+		this.entityDropItem(this.getChest());
 	}
 
 	@Override
@@ -58,9 +94,30 @@ public class ChestBoatEntity extends ContainerBoatEntity
 		return BoatHelper.getChestBoatItem(this.getModBoatType());
 	}
 
+	public ItemStack getChest()
+	{
+		return this.getDataManager().get(CHEST);
+	}
+
+	public void setChest(ItemStack itemStack)
+	{
+		this.getDataManager().set(CHEST, itemStack);
+	}
+
 	@Override
 	public BlockState getDisplayTile()
 	{
+		Item item = this.getChest().getItem();
+		if (this.getChest().getItem() instanceof BlockItem)
+		{
+			Block block = ((BlockItem)item).getBlock();
+
+			if (block instanceof ChestBlock)
+			{
+				return block.getDefaultState().with(ChestBlock.FACING, Direction.NORTH);
+			}
+		}
+
 		return Blocks.CHEST.getDefaultState().with(ChestBlock.FACING, Direction.NORTH);
 	}
 

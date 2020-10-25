@@ -19,12 +19,12 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public class ModBoatItem extends Item
+public class EBBoatItem extends Item
 {
 	private static final Predicate<Entity> field_219989_a = EntityPredicates.NOT_SPECTATING.and(Entity::canBeCollidedWith);
 	private final EBBoatEntity.BoatType type;
 
-	public ModBoatItem(EBBoatEntity.BoatType typeIn, Item.Properties properties)
+	public EBBoatItem(EBBoatEntity.BoatType typeIn, Item.Properties properties)
 	{
 		super(properties);
 		this.type = typeIn;
@@ -59,7 +59,7 @@ public class ModBoatItem extends Item
 
 			if (raytraceresult.getType() == RayTraceResult.Type.BLOCK)
 			{
-				EBBoatEntity boatentity = this.getBoatEntity(worldIn, raytraceresult);
+				EBBoatEntity boatentity = this.getBoatEntity(worldIn, raytraceresult, itemstack);
 				boatentity.setModBoatType(this.type);
 				boatentity.rotationYaw = playerIn.rotationYaw;
 				if (!worldIn.hasNoCollisions(boatentity, boatentity.getBoundingBox().grow(-0.1D)))
@@ -88,7 +88,7 @@ public class ModBoatItem extends Item
 		}
 	}
 
-	protected EBBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult)
+	protected EBBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult, ItemStack itemStack)
 	{
 		return null;
 	}

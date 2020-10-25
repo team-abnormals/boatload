@@ -98,9 +98,9 @@
   
   "_comment": "Environmental",
   
-  "item.extraboats.wisteria_chest_boat": "Glyzinienholzgüterboot",
-  "item.extraboats.wisteria_furnace_boat": "Glyzinienholzantriebsboot",
-  "item.extraboats.large_wisteria_boat": "Großes Glyzinienholzboot",
+  "item.extraboats.wisteria_chest_boat": "Glyzinenholzgüterboot",
+  "item.extraboats.wisteria_furnace_boat": "Glyzinenholzantriebsboot",
+  "item.extraboats.large_wisteria_boat": "Großes Glyzinenholzboot",
   
   "item.extraboats.env_willow_chest_boat": "Weidenholzgüterboot",
   "item.extraboats.env_willow_furnace_boat": "Weidenholzantriebsboot",
@@ -114,18 +114,21 @@
   "_comment": "Atmospheric",
   
   "item.extraboats.rosewood_chest_boat": "Palisanderholzgüterboot",
+  "item.extraboats.morado_chest_boat": "Eisenholzgüterboot",
   "item.extraboats.aspen_chest_boat": "Espenholzgüterboot",
   "item.extraboats.kousa_chest_boat": "Hartriegelholzgüterboot",
   "item.extraboats.yucca_chest_boat": "Yuccaholzgüterboot",
   "item.extraboats.grimwood_chest_boat": "Grimmholzgüterboot",
   
   "item.extraboats.rosewood_furnace_boat": "Palisanderholzantriebsboot",
+  "item.extraboats.morado_furnace_boat": "Eisenholzantriebsboot",
   "item.extraboats.aspen_furnace_boat": "Espenholzantriebsboot",
   "item.extraboats.kousa_furnace_boat": "Hartriegelholzantriebsboot",
   "item.extraboats.yucca_furnace_boat": "Yuccaholzantriebsboot",
   "item.extraboats.grimwood_furnace_boat": "Grimmholzantriebsboot",
   
   "item.extraboats.large_rosewood_boat": "Großes Palisanderholzboot",
+  "item.extraboats.large_morado_boat": "Großes Eisenholzboot",
   "item.extraboats.large_aspen_boat": "Großes Espenholzboot",
   "item.extraboats.large_kousa_boat": "Großes Hartriegelholzboot",
   "item.extraboats.large_yucca_boat": "Großes Yuccaholzboot",

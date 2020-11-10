@@ -1,15 +1,15 @@
 modLoader="javafml"
 loaderVersion="[29,)"
-issueTrackerURL="https://github.com/Markus1002/Extra-Boats/issues"
+issueTrackerURL="https://github.com/team-abnormals/extra-boats/issues"
 license="https://creativecommons.org/licenses/by-nc-nd/4.0/"
 
 [[mods]]
 modId="extraboats"
-version="1.5.0"
+version="1.4.2"
 displayName="Extra Boats"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/extra-boats"
 logoFile="logo.png"
-credits="Creator: Markus1002, Translators: asthyr, Pandory_, kubajzzz, rio192al, kemiuu, peehpeh, F4zzer, Rye, feliclaria, Estellarium, EltrutLikes"
+credits=""
 authors="Markus1002"
 description='''Adds some new kinds of boats to make ocean exploration more interesting.'''
 

@@ -1,6 +1,5 @@
-
+{
   "itemGroup.extraboats": "Botes extras",
-  
 
   "entity.extraboats.chest_boat": "Bote com baú",
   "entity.extraboats.furnace_boat": "Bote com fornalha",
@@ -96,35 +95,39 @@
   "item.extraboats.large_poise_boat": "Bote grande de madeira paira",
   
   
-  "_comment": "Bloomful",
+  "_comment": "Environmental",
   
   "item.extraboats.wisteria_chest_boat": "Bote de glicínia com baú",
   "item.extraboats.wisteria_furnace_boat": "Bote de glicínia com fornalha",
   "item.extraboats.large_wisteria_boat": "Bote grande de glicínia",
   
-  
-  "_comment": "Swamp Expansion",
-  
   "item.extraboats.se_willow_chest_boat": "Bote de salgueiro com baú",
   "item.extraboats.se_willow_furnace_boat": "Bote de salgueiro com fornalha",
   "item.extraboats.large_se_willow_boat": "Bote grande de salgueiro",
+  
+  "item.extraboats.env_cherry_chest_boat": "Bote de cerejeira com baú",
+  "item.extraboats.env_cherry_furnace_boat": "Bote de cerejeira com fornalha",
+  "item.extraboats.large_env_cherry_boat": "Bote grande de cerejeira",
   
   
   "_comment": "Atmospheric",
   
   "item.extraboats.rosewood_chest_boat": "Bote de jacarandá com baú",
+  "item.extraboats.morado_chest_boat": "Bote de pau-ferro com baú",
   "item.extraboats.aspen_chest_boat": "Bote de álamo com baú",
   "item.extraboats.kousa_chest_boat": "Bote de kousa com baú",
   "item.extraboats.yucca_chest_boat": "Bote de yucca com baú",
   "item.extraboats.grimwood_chest_boat": "Bote de madeira sinistra com baú",
   
   "item.extraboats.rosewood_furnace_boat": "Bote de jacarandá com fornalha",
+  "item.extraboats.morado_furnace_boat": "Bote de pau-ferro com fornalha",
   "item.extraboats.aspen_furnace_boat": "Bote de álamo com fornalha",
   "item.extraboats.kousa_furnace_boat": "Bote de kousa com fornalha",
   "item.extraboats.yucca_furnace_boat": "Bote de yucca com fornalha",
   "item.extraboats.grimwood_furnace_boat": "Bote de madeira sinistra com fornalha",
   
   "item.extraboats.large_rosewood_boat": "Bote grande de jacarandá",
+  "item.extraboats.large_morado_boat": "Bote grande de pau-ferro",
   "item.extraboats.large_aspen_boat": "Bote grande de álamo",
   "item.extraboats.large_kousa_boat": "Bote grande de kousa",
   "item.extraboats.large_yucca_boat": "Bote grande de yucca",

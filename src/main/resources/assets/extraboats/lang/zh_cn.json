@@ -2,7 +2,7 @@
   "itemGroup.extraboats": "更多船",
   
   "entity.extraboats.chest_boat": "箱子船",
-  "entity.extraboats.furnace_boat": "熔炉船",
+  "entity.extraboats.furnace_boat": "动力船",
   "entity.extraboats.large_boat": "大型船",
   
   
@@ -15,12 +15,12 @@
   "item.extraboats.acacia_chest_boat": "金合欢木箱子船",
   "item.extraboats.dark_oak_chest_boat": "深色橡木箱子船",
   
-  "item.extraboats.oak_furnace_boat": "橡木熔炉船",
-  "item.extraboats.spruce_furnace_boat": "云杉木熔炉船",
-  "item.extraboats.birch_furnace_boat": "白桦木熔炉船",
-  "item.extraboats.jungle_furnace_boat": "丛林木熔炉船",
-  "item.extraboats.acacia_furnace_boat": "金合欢木熔炉船",
-  "item.extraboats.dark_oak_furnace_boat": "深色橡木熔炉船",
+  "item.extraboats.oak_furnace_boat": "橡木动力船",
+  "item.extraboats.spruce_furnace_boat": "云杉木动力船",
+  "item.extraboats.birch_furnace_boat": "白桦木动力船",
+  "item.extraboats.jungle_furnace_boat": "丛林木动力船",
+  "item.extraboats.acacia_furnace_boat": "金合欢木动力船",
+  "item.extraboats.dark_oak_furnace_boat": "深色橡木动力船",
   
   "item.extraboats.large_oak_boat": "橡木大型船",
   "item.extraboats.large_spruce_boat": "云杉木大型船",
@@ -44,17 +44,17 @@
   "item.extraboats.umbran_chest_boat": "暗影木箱子船",
   "item.extraboats.willow_chest_boat": "柳木箱子船",
   
-  "item.extraboats.cherry_furnace_boat": "樱木熔炉船",
-  "item.extraboats.dead_furnace_boat": "垂死木熔炉船",
-  "item.extraboats.fir_furnace_boat": "杉木熔炉船",
-  "item.extraboats.hellbark_furnace_boat": "地狱皮木熔炉船",
-  "item.extraboats.jacaranda_furnace_boat": "蓝花楹木熔炉船",
-  "item.extraboats.magic_furnace_boat": "魔法木熔炉船",
-  "item.extraboats.mahogany_furnace_boat": "桃花心木熔炉船",
-  "item.extraboats.palm_furnace_boat": "棕榈木熔炉船",
-  "item.extraboats.redwood_furnace_boat": "红木熔炉船",
-  "item.extraboats.umbran_furnace_boat": "暗影木熔炉船",
-  "item.extraboats.willow_furnace_boat": "柳木熔炉船",
+  "item.extraboats.cherry_furnace_boat": "樱木动力船",
+  "item.extraboats.dead_furnace_boat": "垂死木动力船",
+  "item.extraboats.fir_furnace_boat": "杉木动力船",
+  "item.extraboats.hellbark_furnace_boat": "地狱皮木动力船",
+  "item.extraboats.jacaranda_furnace_boat": "蓝花楹木动力船",
+  "item.extraboats.magic_furnace_boat": "魔法木动力船",
+  "item.extraboats.mahogany_furnace_boat": "桃花心木动力船",
+  "item.extraboats.palm_furnace_boat": "棕榈木动力船",
+  "item.extraboats.redwood_furnace_boat": "红木动力船",
+  "item.extraboats.umbran_furnace_boat": "暗影木动力船",
+  "item.extraboats.willow_furnace_boat": "柳木动力船",
   
   "item.extraboats.large_cherry_boat": "樱木大型船",
   "item.extraboats.large_dead_boat": "垂死木大型船",
@@ -74,8 +74,8 @@
   "item.extraboats.driftwood_chest_boat": "浮木箱子船",
   "item.extraboats.river_chest_boat": "桑木箱子船",
   
-  "item.extraboats.driftwood_furnace_boat": "浮木熔炉船",
-  "item.extraboats.river_furnace_boat": "桑木熔炉船",
+  "item.extraboats.driftwood_furnace_boat": "浮木动力船",
+  "item.extraboats.river_furnace_boat": "桑木动力船",
   
   "item.extraboats.large_driftwood_boat": "浮木大型船",
   "item.extraboats.large_river_boat": "桑木大型船",
@@ -84,29 +84,29 @@
   "_comment": "Bamboo Blocks丨It only has translation that was not made by native speakers and needs to be reviewed and updated丨https://github.com/team-abnormals/bamboo-blocks/blob/master/src/main/resources/assets/bamboo_blocks/lang/zh_cn.json",
   
   "item.extraboats.bamboo_chest_boat": "竹制箱子船",
-  "item.extraboats.bamboo_furnace_boat": "竹制熔炉船",
+  "item.extraboats.bamboo_furnace_boat": "竹制动力船",
   "item.extraboats.large_bamboo_boat": "竹制大型船",
   
   
   "_comment": "Endergetic Expansion丨It has no official CHS translation so I left them here丨https://github.com/team-abnormals/endergetic/tree/1.16.x/src/main/resources/assets/endergetic/lang",
   
   "item.extraboats.poise_chest_boat": "Poise箱子船",
-  "item.extraboats.poise_furnace_boat": "Poise熔炉船",
+  "item.extraboats.poise_furnace_boat": "Poise动力船",
   "item.extraboats.large_poise_boat": "Poise大型船",
   
   
   "_comment": "Environmental丨It only has translation that was not made by native speakers and needs to be reviewed and updated丨https://github.com/team-abnormals/environmental/blob/master/src/main/resources/assets/environmental/lang/zh_cn.json",
   
   "item.extraboats.wisteria_chest_boat": "紫藤木箱子船",
-  "item.extraboats.wisteria_furnace_boat": "紫藤木熔炉船",
+  "item.extraboats.wisteria_furnace_boat": "紫藤木动力船",
   "item.extraboats.large_wisteria_boat": "紫藤木大型船",
   
   "item.extraboats.env_willow_chest_boat": "柳木箱子船",
-  "item.extraboats.env_willow_furnace_boat": "柳木熔炉船",
+  "item.extraboats.env_willow_furnace_boat": "柳木动力船",
   "item.extraboats.large_env_willow_boat": "柳木大型船",
   
   "item.extraboats.env_cherry_chest_boat": "樱木箱子船",
-  "item.extraboats.env_cherry_furnace_boat": "樱木熔炉船",
+  "item.extraboats.env_cherry_furnace_boat": "樱木动力船",
   "item.extraboats.large_env_cherry_boat": "樱木大型船",
   
   
@@ -119,12 +119,12 @@
   "item.extraboats.yucca_chest_boat": "Yucca箱子船",
   "item.extraboats.grimwood_chest_boat": "Grimwood箱子船",
   
-  "item.extraboats.rosewood_furnace_boat": "Rosewood熔炉船",
-  "item.extraboats.morado_furnace_boat": "Morado熔炉船",
-  "item.extraboats.aspen_furnace_boat": "Aspen熔炉船",
-  "item.extraboats.kousa_furnace_boat": "Kousa熔炉船",
-  "item.extraboats.yucca_furnace_boat": "Yucca熔炉船",
-  "item.extraboats.grimwood_furnace_boat": "Grimwood熔炉船",
+  "item.extraboats.rosewood_furnace_boat": "Rosewood动力船",
+  "item.extraboats.morado_furnace_boat": "Morado动力船",
+  "item.extraboats.aspen_furnace_boat": "Aspen动力船",
+  "item.extraboats.kousa_furnace_boat": "Kousa动力船",
+  "item.extraboats.yucca_furnace_boat": "Yucca动力船",
+  "item.extraboats.grimwood_furnace_boat": "Grimwood动力船",
   
   "item.extraboats.large_rosewood_boat": "Rosewood大型船",
   "item.extraboats.large_morado_boat": "Morado大型船",
@@ -137,7 +137,7 @@
   "_comment": "秋原丨https://github.com/team-abnormals/autumnity/blob/1.16.x/src/main/resources/assets/autumnity/lang/zh_cn.json",
   
   "item.extraboats.maple_chest_boat": "枫木箱子船",
-  "item.extraboats.maple_furnace_boat": "枫木熔炉船",
+  "item.extraboats.maple_furnace_boat": "枫木动力船",
   "item.extraboats.large_maple_boat": "枫木大型船",
 
 
@@ -147,9 +147,9 @@
   "item.extraboats.brown_mushroom_chest_boat": "Brown Mushroom箱子船",
   "item.extraboats.glowshroom_chest_boat": "Glowshroom箱子船",
 
-  "item.extraboats.red_mushroom_furnace_boat": "Red Mushroom熔炉船",
-  "item.extraboats.brown_mushroom_furnace_boat": "Brown Mushroom熔炉船",
-  "item.extraboats.glowshroom_furnace_boat": "Glowshroom熔炉船",
+  "item.extraboats.red_mushroom_furnace_boat": "Red Mushroom动力船",
+  "item.extraboats.brown_mushroom_furnace_boat": "Brown Mushroom动力船",
+  "item.extraboats.glowshroom_furnace_boat": "Glowshroom动力船",
 
   "item.extraboats.large_red_mushroom_boat": "Red Mushroom大型船",
   "item.extraboats.large_brown_mushroom_boat": "Brown Mushroom大型船",
@@ -159,6 +159,6 @@
   "_comment": "Hanami丨It has no official CHS translation丨https://github.com/teamauroramods/Hanami/tree/master/src/main/resources/assets/hanami/lang",
 
   "item.extraboats.sakura_chest_boat": "樱花木箱子船",
-  "item.extraboats.sakura_furnace_boat": "樱花木熔炉船",
+  "item.extraboats.sakura_furnace_boat": "樱花木动力船",
   "item.extraboats.large_sakura_boat": "樱花木大型船"
 }

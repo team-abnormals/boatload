@@ -172,9 +172,9 @@ public class EBItems
 	public static RegistryObject<Item> LARGE_GLOWSHROOM_BOAT = createLargeBoat("glowshroom", EBBoatEntity.BoatType.GLOWSHROOM, EnhancedMushrooms.isInstalled());
 
 	// Hanami
-	public static RegistryObject<Item> SAKURA_CHEST_BOAT = createChestBoat("hanami", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
-	public static RegistryObject<Item> SAKURA_FURNACE_BOAT = createFurnaceBoat("hanami", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
-	public static RegistryObject<Item> LARGE_SAKURA_BOAT = createLargeBoat("hanami", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
+	public static RegistryObject<Item> SAKURA_CHEST_BOAT = createChestBoat("sakura", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
+	public static RegistryObject<Item> SAKURA_FURNACE_BOAT = createFurnaceBoat("sakura", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
+	public static RegistryObject<Item> LARGE_SAKURA_BOAT = createLargeBoat("sakura", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
 
 	private static RegistryObject<Item> createChestBoat(String name, EBBoatEntity.BoatType type, boolean compat)
 	{

@@ -64,7 +64,7 @@ public class ChestBoatItem extends EBBoatItem
 
 		if (item != Items.CHEST)
 		{
-			tooltip.add(((TranslationTextComponent) item.getName()).func_240699_a_(TextFormatting.GRAY));
+			tooltip.add(((TranslationTextComponent) item.getName()).mergeStyle(TextFormatting.GRAY));
 		}
 
 		super.addInformation(stack, worldIn, tooltip, flagIn);

@@ -1,27 +1,29 @@
-modLoader="javafml"
-loaderVersion="[29,)"
-issueTrackerURL="https://github.com/team-abnormals/extra-boats/issues"
-license="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+modLoader = "javafml"
+loaderVersion = "[32,)"
+issueTrackerURL = "https://github.com/team-abnormals/extra-boats/issues"
+license = "https://github.com/team-abnormals/extra-boats/blob/main/LICENSE.txt"
 
 [[mods]]
-modId="extraboats"
-version="1.4.2"
-displayName="Extra Boats"
-displayURL="https://www.curseforge.com/minecraft/mc-mods/extra-boats"
-logoFile="logo.png"
-authors="Markus1002"
-description='''Adds some new kinds of boats to make ocean exploration more interesting.'''
+    modId = "extraboats"
+    version = "${file.jarVersion}"
+    logoFile = "logo.png"
+    authors = "Team Abnormals"
+    credits = "Markus1002"
+    displayName = "Extra Boats"
+    description = '''
+    Adds some new kinds of boats to make ocean exploration more interesting.
+    '''
 
 [[dependencies.extraboats]]
-    modId="forge"
-    mandatory=true
-    versionRange="[32.0.47,)"
-    ordering="NONE"
-    side="BOTH"
-	
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.16.3,1.17)"
+    ordering = "NONE"
+    side = "BOTH"
+
 [[dependencies.extraboats]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.16.1]"
-    ordering="NONE"
-    side="BOTH"
+    modId = "forge"
+    mandatory = true
+    versionRange = "[34.1.42,)"
+    ordering = "NONE"
+    side = "BOTH"

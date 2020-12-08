@@ -39,24 +39,22 @@ public class ExtraBoats
 
 	private void setup(final FMLCommonSetupEvent event)
 	{
-		event.enqueueWork(() -> {
-			for (RegistryObject<Item> item : EBItems.ITEMS.getEntries())
+		for (RegistryObject<Item> item : EBItems.ITEMS.getEntries())
+		{
+			EBBoatItem boatitem = (EBBoatItem) item.get();
+			if (boatitem instanceof ChestBoatItem)
 			{
-				EBBoatItem boatitem = (EBBoatItem) item.get();
-				if (boatitem instanceof ChestBoatItem)
-				{
-					DispenserBlock.registerDispenseBehavior(boatitem, new DispenseChestBoatBehavior(boatitem.getType()));
-				}
-				else if (boatitem instanceof FurnaceBoatItem)
-				{
-					DispenserBlock.registerDispenseBehavior(boatitem, new DispenseFurnaceBoatBehavior(boatitem.getType()));
-				}
-				else
-				{
-					DispenserBlock.registerDispenseBehavior(boatitem, new DispenseLargeBoatBehavior(boatitem.getType()));
-				}
+				DispenserBlock.registerDispenseBehavior(boatitem, new DispenseChestBoatBehavior(boatitem.getType()));
 			}
-		});
+			else if (boatitem instanceof FurnaceBoatItem)
+			{
+				DispenserBlock.registerDispenseBehavior(boatitem, new DispenseFurnaceBoatBehavior(boatitem.getType()));
+			}
+			else
+			{
+				DispenserBlock.registerDispenseBehavior(boatitem, new DispenseLargeBoatBehavior(boatitem.getType()));
+			}
+		}
 	}
 
 	private void clientSetup(final FMLClientSetupEvent event)

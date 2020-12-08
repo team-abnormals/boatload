@@ -24,23 +24,23 @@ public class EBEntities
 	
 	public static RegistryObject<EntityType<ChestBoatEntity>> CHEST_BOAT = ENTITIES.register("chest_boat", () -> EntityType.Builder.<ChestBoatEntity>create(ChestBoatEntity::new, EntityClassification.MISC)
 			.size(1.375F, 0.5625F)
-			.setCustomClientFactory(ChestBoatEntity::new)
+			.setCustomClientFactory((FMLPlayMessages.SpawnEntity spawnEntity, World worldIn) -> new ChestBoatEntity(spawnEntity, worldIn))
 			.build(Reference.location("chest_boat").toString()));
 
 	public static RegistryObject<EntityType<FurnaceBoatEntity>> FURNACE_BOAT = ENTITIES.register("furnace_boat", () -> EntityType.Builder.<FurnaceBoatEntity>create(FurnaceBoatEntity::new, EntityClassification.MISC)
 			.size(1.375F, 0.5625F)
-			.setCustomClientFactory(FurnaceBoatEntity::new)
+			.setCustomClientFactory((FMLPlayMessages.SpawnEntity spawnEntity, World worldIn) -> new FurnaceBoatEntity(spawnEntity, worldIn))
 			.build(Reference.location("furnace_boat").toString()));
 
 	public static RegistryObject<EntityType<LargeBoatEntity>> LARGE_BOAT = ENTITIES.register("large_boat", () -> EntityType.Builder.<LargeBoatEntity>create(LargeBoatEntity::new, EntityClassification.MISC)
 			.size(2.5F, 0.5625F)
-			.setCustomClientFactory(LargeBoatEntity::new)
+			.setCustomClientFactory((FMLPlayMessages.SpawnEntity spawnEntity, World worldIn) -> new LargeBoatEntity(spawnEntity, worldIn))
 			.build(Reference.location("large_boat").toString()));
 
 	public static void setupEntitiesClient()
 	{
-        RenderingRegistry.registerEntityRenderingHandler(CHEST_BOAT.get(), ModBoatRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(FURNACE_BOAT.get(), ModBoatRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(LARGE_BOAT.get(), LargeBoatRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler((EntityType<? extends ChestBoatEntity>)CHEST_BOAT.get(), ModBoatRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler((EntityType<? extends FurnaceBoatEntity>)FURNACE_BOAT.get(), ModBoatRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler((EntityType<? extends LargeBoatEntity>)LARGE_BOAT.get(), LargeBoatRenderer::new);
 	}
 }

@@ -1,11 +1,8 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
-import java.util.List;
-
 import com.minecraftabnormals.extraboats.core.BoatHelper;
 import com.minecraftabnormals.extraboats.core.ModTags;
 import com.minecraftabnormals.extraboats.core.registry.EBEntities;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -22,15 +19,14 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 
-public class LargeBoatEntity extends EBBoatEntity
-{
-	public LargeBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn)
-	{
+import java.util.List;
+
+public class LargeBoatEntity extends EBBoatEntity {
+	public LargeBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn) {
 		super(entityType, worldIn);
 	}
 
-	public LargeBoatEntity(World worldIn, double x, double y, double z)
-	{
+	public LargeBoatEntity(World worldIn, double x, double y, double z) {
 		this(EBEntities.LARGE_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
@@ -39,47 +35,36 @@ public class LargeBoatEntity extends EBBoatEntity
 		this.prevPosZ = z;
 	}
 
-	public LargeBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn)
-	{
+	public LargeBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn) {
 		super(EBEntities.LARGE_BOAT.get(), worldIn);
 	}
 
 	@Override
-	protected void dropBreakItems()
-	{
+	protected void dropBreakItems() {
 		super.dropBreakItems();
-		for(int i = 0; i < 3; ++i)
-		{
+		for (int i = 0; i < 3; ++i) {
 			this.entityDropItem(this.getPlanks());
 		}
 
-		for(int j = 0; j < 2; ++j)
-		{
+		for (int j = 0; j < 2; ++j) {
 			this.entityDropItem(Items.STICK);
 		}
 	}
 
 	@Override
-	public void tick()
-	{
+	public void tick() {
 		super.tick();
 
-		List<Entity> list = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow((double)0.2F, (double)-0.01F, (double)0.2F), EntityPredicates.pushableBy(this));
-		if (!list.isEmpty())
-		{
+		List<Entity> list = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow((double) 0.2F, (double) -0.01F, (double) 0.2F), EntityPredicates.pushableBy(this));
+		if (!list.isEmpty()) {
 			boolean flag = !this.world.isRemote && !(this.getControllingPassenger() instanceof PlayerEntity);
 
-			for(int j = 0; j < list.size(); ++j)
-			{
+			for (int j = 0; j < list.size(); ++j) {
 				Entity entity = list.get(j);
-				if (!entity.isPassenger(this))
-				{
-					if (flag && this.getPassengers().size() < 4 && !entity.isPassenger() && entity.getWidth() < 1.375F && entity instanceof LivingEntity && !(entity instanceof WaterMobEntity) && !(entity instanceof PlayerEntity))
-					{
+				if (!entity.isPassenger(this)) {
+					if (flag && this.getPassengers().size() < 4 && !entity.isPassenger() && entity.getWidth() < 1.375F && entity instanceof LivingEntity && !(entity instanceof WaterMobEntity) && !(entity instanceof PlayerEntity)) {
 						entity.startRiding(this);
-					}
-					else
-					{
+					} else {
 						this.applyEntityCollision(entity);
 					}
 				}
@@ -88,101 +73,71 @@ public class LargeBoatEntity extends EBBoatEntity
 	}
 
 	@Override
-	protected void controlBoat()
-	{
-		if (this.isBeingRidden())
-		{
+	protected void controlBoat() {
+		if (this.isBeingRidden()) {
 			float f = 0.0F;
-			if (this.leftInputDown)
-			{
+			if (this.leftInputDown) {
 				--this.deltaRotation;
 			}
 
-			if (this.rightInputDown)
-			{
+			if (this.rightInputDown) {
 				++this.deltaRotation;
 			}
 
-			if (this.rightInputDown != this.leftInputDown && !this.forwardInputDown && !this.backInputDown)
-			{
+			if (this.rightInputDown != this.leftInputDown && !this.forwardInputDown && !this.backInputDown) {
 				f += 0.005F;
 			}
 
 			this.rotationYaw += this.deltaRotation;
-			if (this.forwardInputDown)
-			{
+			if (this.forwardInputDown) {
 				f += 0.03F;
 			}
 
-			if (this.backInputDown)
-			{
+			if (this.backInputDown) {
 				f -= 0.005F;
 			}
 
-			this.setMotion(this.getMotion().add((double)(MathHelper.sin(-this.rotationYaw * ((float)Math.PI / 180F)) * f), 0.0D, (double)(MathHelper.cos(this.rotationYaw * ((float)Math.PI / 180F)) * f)));
+			this.setMotion(this.getMotion().add((double) (MathHelper.sin(-this.rotationYaw * ((float) Math.PI / 180F)) * f), 0.0D, (double) (MathHelper.cos(this.rotationYaw * ((float) Math.PI / 180F)) * f)));
 			this.setPaddleState(this.rightInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown && !this.rightInputDown || this.forwardInputDown);
 		}
 	}
 
 	@Override
-	public void updatePassenger(Entity passenger)
-	{
-		if (this.isPassenger(passenger))
-		{
+	public void updatePassenger(Entity passenger) {
+		if (this.isPassenger(passenger)) {
 			float f = 0.0F;
-			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
+			float f1 = (float) ((this.removed ? (double) 0.01F : this.getMountedYOffset()) + passenger.getYOffset());
 
-			if (this.getPassengers().size() == 2)
-			{
+			if (this.getPassengers().size() == 2) {
 				int i = this.getPassengers().indexOf(passenger);
-				if (i == 0)
-				{
+				if (i == 0) {
 					f = 0.4F;
-				}
-				else
-				{
+				} else {
 					f = -0.8F;
 				}
-			}
-			else if (this.getPassengers().size() == 3)
-			{
+			} else if (this.getPassengers().size() == 3) {
 				int i = this.getPassengers().indexOf(passenger);
-				if (i == 0)
-				{
+				if (i == 0) {
 					f = 0.8F;
-				}
-				else if (i == 1)
-				{
+				} else if (i == 1) {
 					f = -0.1F;
-				}
-				else
-				{
+				} else {
 					f = -1.0F;
 				}
-			}
-			else if (this.getPassengers().size() > 3)
-			{
+			} else if (this.getPassengers().size() > 3) {
 				int i = this.getPassengers().indexOf(passenger);
 
 				Entity firstpassenger = this.getPassengers().get(0);
 				boolean flag = firstpassenger.getType().isContained(ModTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
 
-				if (i == 0)
-				{
+				if (i == 0) {
 					f = flag ? 0.875F : 1.0F;
-				}
-				else
-				{
-					if (i == 1)
-					{
+				} else {
+					if (i == 1) {
 						f = 0.2F;
-					}
-					else if (i == 2)
-					{
+					} else if (i == 2) {
 						f = -0.55F;
-					}
-					else
-					{
+					} else {
 						f = -1.3F;
 					}
 
@@ -190,34 +145,30 @@ public class LargeBoatEntity extends EBBoatEntity
 				}
 			}
 
-			if (passenger instanceof AnimalEntity)
-			{
-				f = (float)((double)f + 0.1D);
+			if (passenger instanceof AnimalEntity) {
+				f = (float) ((double) f + 0.1D);
 			}
 
-			Vector3d vector3d = (new Vector3d((double)f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
-			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double)f1, this.getPosZ() + vector3d.z);
+			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
+			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double) f1, this.getPosZ() + vector3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);
-			if (passenger instanceof AnimalEntity && this.getPassengers().size() > 1)
-			{
+			if (passenger instanceof AnimalEntity && this.getPassengers().size() > 1) {
 				int j = passenger.getEntityId() % 2 == 0 ? 90 : 270;
-				passenger.setRenderYawOffset(((AnimalEntity)passenger).renderYawOffset + (float)j);
-				passenger.setRotationYawHead(passenger.getRotationYawHead() + (float)j);
+				passenger.setRenderYawOffset(((AnimalEntity) passenger).renderYawOffset + (float) j);
+				passenger.setRotationYawHead(passenger.getRotationYawHead() + (float) j);
 			}
 		}
 	}
 
 	@Override
-	public Item getItemBoat()
-	{
+	public Item getItemBoat() {
 		return BoatHelper.getLargeBoatItem(this.getModBoatType());
 	}
 
 	@Override
-	protected boolean canFitPassenger(Entity passenger)
-	{
+	protected boolean canFitPassenger(Entity passenger) {
 		return this.getPassengers().size() < 4 && passenger.getWidth() < 1.375F && !this.areEyesInFluid(FluidTags.WATER);
 	}
 }

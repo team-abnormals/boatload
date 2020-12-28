@@ -1,7 +1,6 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
 import com.minecraftabnormals.extraboats.core.BoatHelper;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -21,94 +20,76 @@ import net.minecraft.util.IndirectEntityDamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.network.NetworkHooks;;
+import net.minecraftforge.fml.network.NetworkHooks;
 
-public abstract class EBBoatEntity extends BoatEntity
-{
+;
+
+public abstract class EBBoatEntity extends BoatEntity {
 	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(EBBoatEntity.class, DataSerializers.VARINT);
 
-	public EBBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn)
-	{
+	public EBBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn) {
 		super(entityType, worldIn);
 	}
 
 	@Override
-	protected void registerData()
-	{
+	protected void registerData() {
 		super.registerData();
 		this.dataManager.register(BOAT_TYPE, EBBoatEntity.BoatType.OAK.ordinal());
 	}
 
-	public void setModBoatType(EBBoatEntity.BoatType boatType)
-	{
+	public void setModBoatType(EBBoatEntity.BoatType boatType) {
 		this.dataManager.set(BOAT_TYPE, boatType.ordinal());
 	}
 
-	public EBBoatEntity.BoatType getModBoatType()
-	{
+	public EBBoatEntity.BoatType getModBoatType() {
 		return EBBoatEntity.BoatType.byId(this.dataManager.get(BOAT_TYPE));
 	}
 
 	@Override
-	protected void writeAdditional(CompoundNBT compound)
-	{
+	protected void writeAdditional(CompoundNBT compound) {
 		compound.putString("Type", this.getModBoatType().getName());
 	}
 
 	@Override
-	protected void readAdditional(CompoundNBT compound)
-	{
-		if (compound.contains("Type", 8))
-		{
+	protected void readAdditional(CompoundNBT compound) {
+		if (compound.contains("Type", 8)) {
 			this.setModBoatType(EBBoatEntity.BoatType.getTypeFromString(compound.getString("Type")));
 		}
 	}
 
 	@Override
-	protected void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos)
-	{
+	protected void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
 		this.lastYd = this.getMotion().y;
-		if (!this.isPassenger())
-		{
-			if (onGroundIn)
-			{
-				if (this.fallDistance > 3.0F)
-				{
-					if (this.status != BoatEntity.Status.ON_LAND)
-					{
+		if (!this.isPassenger()) {
+			if (onGroundIn) {
+				if (this.fallDistance > 3.0F) {
+					if (this.status != BoatEntity.Status.ON_LAND) {
 						this.fallDistance = 0.0F;
 						return;
 					}
 
 					this.onLivingFall(this.fallDistance, 1.0F);
-					if (!this.world.isRemote && !this.removed)
-					{
+					if (!this.world.isRemote && !this.removed) {
 						this.remove();
-						if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS))
-						{
+						if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
 							this.dropBreakItems();
 						}
 					}
 				}
 
 				this.fallDistance = 0.0F;
-			}
-			else if (!this.world.getFluidState(this.getPosition().down()).isTagged(FluidTags.WATER) && y < 0.0D)
-			{
-				this.fallDistance = (float)((double)this.fallDistance - y);
+			} else if (!this.world.getFluidState(this.getPosition().down()).isTagged(FluidTags.WATER) && y < 0.0D) {
+				this.fallDistance = (float) ((double) this.fallDistance - y);
 			}
 		}
 	}
 
-	protected void dropBreakItems()
-	{
-		for(int i = 0; i < 3; ++i)
-		{
+	protected void dropBreakItems() {
+		for (int i = 0; i < 3; ++i) {
 			this.entityDropItem(this.getPlanks());
 		}
 
-		for(int j = 0; j < 2; ++j)
-		{
+		for (int j = 0; j < 2; ++j) {
 			this.entityDropItem(Items.STICK);
 		}
 
@@ -116,29 +97,20 @@ public abstract class EBBoatEntity extends BoatEntity
 	}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount)
-	{
-		if (this.isInvulnerableTo(source))
-		{
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (this.isInvulnerableTo(source)) {
 			return false;
-		}
-		else if (!this.world.isRemote && !this.removed)
-		{
-			if (source instanceof IndirectEntityDamageSource && source.getTrueSource() != null && this.isPassenger(source.getTrueSource()))
-			{
+		} else if (!this.world.isRemote && !this.removed) {
+			if (source instanceof IndirectEntityDamageSource && source.getTrueSource() != null && this.isPassenger(source.getTrueSource())) {
 				return false;
-			}
-			else
-			{
+			} else {
 				this.setForwardDirection(-this.getForwardDirection());
 				this.setTimeSinceHit(10);
 				this.setDamageTaken(this.getDamageTaken() + amount * 10.0F);
 				this.markVelocityChanged();
-				boolean flag = source.getTrueSource() instanceof PlayerEntity && ((PlayerEntity)source.getTrueSource()).abilities.isCreativeMode;
-				if (flag || this.getDamageTaken() > 40.0F)
-				{
-					if (!flag && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS))
-					{
+				boolean flag = source.getTrueSource() instanceof PlayerEntity && ((PlayerEntity) source.getTrueSource()).abilities.isCreativeMode;
+				if (flag || this.getDamageTaken() > 40.0F) {
+					if (!flag && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
 						this.killBoat();
 					}
 
@@ -147,46 +119,37 @@ public abstract class EBBoatEntity extends BoatEntity
 
 				return true;
 			}
-		}
-		else
-		{
+		} else {
 			return true;
 		}
 	}
 
-	public void killBoat()
-	{
+	public void killBoat() {
 		this.entityDropItem(this.getItemDropBoat());
 	}
 
-	public BlockState getDisplayTile()
-	{
+	public BlockState getDisplayTile() {
 		return Blocks.AIR.getDefaultState();
 	}
 
-	public Item getItemDropBoat()
-	{
+	public Item getItemDropBoat() {
 		return this.getItemBoat();
 	}
 
-	public Item getItemBoat()
-	{
+	public Item getItemBoat() {
 		return BoatHelper.getBoatItem(this.getModBoatType());
 	}
 
 	@Override
-	public IPacket<?> createSpawnPacket()
-	{
+	public IPacket<?> createSpawnPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
-	protected Block getPlanks()
-	{
+	protected Block getPlanks() {
 		return BoatHelper.getPlanks(this.getModBoatType());
 	}
 
-	public static enum BoatType
-	{
+	public static enum BoatType {
 		OAK("oak"),
 		SPRUCE("spruce"),
 		BIRCH("birch"),
@@ -234,40 +197,32 @@ public abstract class EBBoatEntity extends BoatEntity
 
 		private final String name;
 
-		private BoatType(String nameIn) 
-		{
+		private BoatType(String nameIn) {
 			this.name = nameIn;
 		}
 
-		public String getName()
-		{
+		public String getName() {
 			return this.name;
 		}
 
-		public String toString()
-		{
+		public String toString() {
 			return this.name;
 		}
 
-		public static EBBoatEntity.BoatType byId(int id)
-		{
+		public static EBBoatEntity.BoatType byId(int id) {
 			EBBoatEntity.BoatType[] aboatentity$type = values();
-			if (id < 0 || id >= aboatentity$type.length)
-			{
+			if (id < 0 || id >= aboatentity$type.length) {
 				id = 0;
 			}
 
 			return aboatentity$type[id];
 		}
 
-		public static EBBoatEntity.BoatType getTypeFromString(String nameIn)
-		{
+		public static EBBoatEntity.BoatType getTypeFromString(String nameIn) {
 			EBBoatEntity.BoatType[] aboatentity$type = values();
 
-			for(int i = 0; i < aboatentity$type.length; ++i)
-			{
-				if (aboatentity$type[i].getName().equals(nameIn))
-				{
+			for (int i = 0; i < aboatentity$type.length; ++i) {
+				if (aboatentity$type[i].getName().equals(nameIn)) {
 					return aboatentity$type[i];
 				}
 			}

@@ -1,10 +1,7 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
-import javax.annotation.Nullable;
-
 import com.minecraftabnormals.extraboats.core.BoatHelper;
 import com.minecraftabnormals.extraboats.core.registry.EBEntities;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FurnaceBlock;
@@ -32,18 +29,17 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 
-public class FurnaceBoatEntity extends EBBoatEntity
-{
+import javax.annotation.Nullable;
+
+public class FurnaceBoatEntity extends EBBoatEntity {
 	private static final DataParameter<Integer> FUEL = EntityDataManager.createKey(FurnaceBoatEntity.class, DataSerializers.VARINT);
 	private static final Ingredient FUEL_ITEMS = Ingredient.fromItems(Items.COAL, Items.CHARCOAL);
 
-	public FurnaceBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn)
-	{
+	public FurnaceBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn) {
 		super(entityType, worldIn);
 	}
 
-	public FurnaceBoatEntity(World worldIn, double x, double y, double z)
-	{
+	public FurnaceBoatEntity(World worldIn, double x, double y, double z) {
 		this(EBEntities.FURNACE_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
@@ -52,35 +48,28 @@ public class FurnaceBoatEntity extends EBBoatEntity
 		this.prevPosZ = z;
 	}
 
-	public FurnaceBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn)
-	{
+	public FurnaceBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn) {
 		super(EBEntities.FURNACE_BOAT.get(), worldIn);
 	}
 
 	@Override
-	protected void registerData()
-	{
+	protected void registerData() {
 		super.registerData();
 		this.dataManager.register(FUEL, 0);
 	}
 
 	@Override
-	public void killBoat()
-	{
+	public void killBoat() {
 		super.killBoat();
 		this.entityDropItem(Blocks.FURNACE);
 	}
 
 	@Override
-	public ActionResultType processInitialInteract(PlayerEntity player, Hand hand)
-	{
-		if (player.isSneaking())
-		{
+	public ActionResultType processInitialInteract(PlayerEntity player, Hand hand) {
+		if (player.isSneaking()) {
 			ItemStack itemstack = player.getHeldItem(hand);
-			if (FUEL_ITEMS.test(itemstack) && this.getFuel() + 3600 <= 32000)
-			{
-				if (!player.abilities.isCreativeMode)
-				{
+			if (FUEL_ITEMS.test(itemstack) && this.getFuel() + 3600 <= 32000) {
+				if (!player.abilities.isCreativeMode) {
 					itemstack.shrink(1);
 				}
 
@@ -88,158 +77,131 @@ public class FurnaceBoatEntity extends EBBoatEntity
 			}
 
 			return ActionResultType.func_233537_a_(this.world.isRemote);
-		}
-		else
-		{
+		} else {
 			return super.processInitialInteract(player, hand);
 		}
 	}
 
 	@Override
-	public void tick()
-	{
+	public void tick() {
 		super.tick();
-		if (this.getFuel() > 0)
-		{
+		if (this.getFuel() > 0) {
 			this.setFuel(this.getFuel() - 1);
 
-			float f = (this.rotationYaw - 90.0F) * ((float)Math.PI / 180F);
+			float f = (this.rotationYaw - 90.0F) * ((float) Math.PI / 180F);
 			float f1 = MathHelper.cos(f);
 			float f2 = MathHelper.sin(f);
 
-			if (this.world.isRemote && this.rand.nextInt(4) == 0)
-			{
-				this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.getPosX() + (double)f1 * 0.5D, this.getPosY() + 1.0D, this.getPosZ() + (double)f2 * 0.5D, 0.0D, 0.0D, 0.0D);
+			if (this.world.isRemote && this.rand.nextInt(4) == 0) {
+				this.world.addParticle(ParticleTypes.LARGE_SMOKE, this.getPosX() + (double) f1 * 0.5D, this.getPosY() + 1.0D, this.getPosZ() + (double) f2 * 0.5D, 0.0D, 0.0D, 0.0D);
 			}
 
-			if (this.rand.nextInt(40) == 0)
-			{
-				this.world.playSound(this.getPosX() + (double)f1 * 0.5D, this.getPosY(), this.getPosZ() + (double)f2 * 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, this.getSoundCategory(), 1.0F, 1.0F, false);
+			if (this.rand.nextInt(40) == 0) {
+				this.world.playSound(this.getPosX() + (double) f1 * 0.5D, this.getPosY(), this.getPosZ() + (double) f2 * 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, this.getSoundCategory(), 1.0F, 1.0F, false);
 			}
 		}
 	}
 
 	@Override
-	protected void controlBoat()
-	{
-		if (this.isBeingRidden())
-		{
+	protected void controlBoat() {
+		if (this.isBeingRidden()) {
 			float f = 0.0F;
-			if (this.leftInputDown)
-			{
+			if (this.leftInputDown) {
 				--this.deltaRotation;
 			}
 
-			if (this.rightInputDown)
-			{
+			if (this.rightInputDown) {
 				++this.deltaRotation;
 			}
 
-			if (this.rightInputDown != this.leftInputDown && !this.forwardInputDown && !this.backInputDown)
-			{
+			if (this.rightInputDown != this.leftInputDown && !this.forwardInputDown && !this.backInputDown) {
 				f += 0.005F;
 			}
 
 			this.rotationYaw += this.deltaRotation;
-			if (this.forwardInputDown)
-			{
+			if (this.forwardInputDown) {
 				f += 0.04F;
 			}
 
-			if (this.backInputDown)
-			{
+			if (this.backInputDown) {
 				f -= 0.021F;
 			}
 
-			if (this.getFuel() > 0)
-			{
+			if (this.getFuel() > 0) {
 				f += 0.026F;
 			}
 
-			this.setMotion(this.getMotion().add((double)(MathHelper.sin(-this.rotationYaw * ((float)Math.PI / 180F)) * f), 0.0D, (double)(MathHelper.cos(this.rotationYaw * ((float)Math.PI / 180F)) * f)));
+			this.setMotion(this.getMotion().add((double) (MathHelper.sin(-this.rotationYaw * ((float) Math.PI / 180F)) * f), 0.0D, (double) (MathHelper.cos(this.rotationYaw * ((float) Math.PI / 180F)) * f)));
 			this.setPaddleState(this.rightInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown && !this.rightInputDown || this.forwardInputDown);
 
-			if (this.getFuel() > 0 && this.status == BoatEntity.Status.IN_WATER)
-			{
-				float f1 = (this.rotationYaw - 90.0F) * ((float)Math.PI / 180F);
+			if (this.getFuel() > 0 && this.status == BoatEntity.Status.IN_WATER) {
+				float f1 = (this.rotationYaw - 90.0F) * ((float) Math.PI / 180F);
 				float f2 = MathHelper.cos(f1);
 				float f3 = MathHelper.sin(f1);
-				for(int i = 0; i < 10; ++i)
-				{
-					this.world.addParticle(ParticleTypes.SPLASH, this.getPosX() + (double)f2 * 0.8D + (this.rand.nextDouble() - 0.5D), this.getPosY() + 0.2F, this.getPosZ() + (double)f3 * 0.8D + (this.rand.nextDouble()- 0.5D), 0.0D, 0.05D, 0.0D);
+				for (int i = 0; i < 10; ++i) {
+					this.world.addParticle(ParticleTypes.SPLASH, this.getPosX() + (double) f2 * 0.8D + (this.rand.nextDouble() - 0.5D), this.getPosY() + 0.2F, this.getPosZ() + (double) f3 * 0.8D + (this.rand.nextDouble() - 0.5D), 0.0D, 0.05D, 0.0D);
 				}
 			}
 		}
 	}
 
 	@Override
-	protected void writeAdditional(CompoundNBT compound)
-	{
+	protected void writeAdditional(CompoundNBT compound) {
 		super.writeAdditional(compound);
 		compound.putInt("Fuel", this.getFuel());
 	}
 
 	@Override
-	protected void readAdditional(CompoundNBT compound)
-	{
+	protected void readAdditional(CompoundNBT compound) {
 		super.readAdditional(compound);
 		this.setFuel(compound.getInt("Fuel"));
 	}
 
-	private void setFuel(@Nullable int fuel)
-	{
+	private void setFuel(@Nullable int fuel) {
 		this.dataManager.set(FUEL, fuel);
 	}
 
 	@Nullable
-	public int getFuel()
-	{
+	public int getFuel() {
 		return this.dataManager.get(FUEL);
 	}
 
 	@Override
-	public Item getItemBoat()
-	{
+	public Item getItemBoat() {
 		return BoatHelper.getFurnaceBoatItem(this.getModBoatType());
 	}
 
 	@Override
-	public Item getItemDropBoat()
-	{
+	public Item getItemDropBoat() {
 		return BoatHelper.getBoatItem(this.getModBoatType());
 	}
 
 	@Override
-	public BlockState getDisplayTile()
-	{
+	public BlockState getDisplayTile() {
 		return Blocks.FURNACE.getDefaultState().with(FurnaceBlock.FACING, Direction.SOUTH).with(FurnaceBlock.LIT, Boolean.valueOf(this.getFuel() > 0));
 	}
 
 	@Override
-	public void updatePassenger(Entity passenger)
-	{
-		if (this.isPassenger(passenger))
-		{
+	public void updatePassenger(Entity passenger) {
+		if (this.isPassenger(passenger)) {
 			float f = passenger instanceof AnimalEntity ? 0.4F : 0.2F;
-			float f1 = (float)((this.removed ? (double)0.01F : this.getMountedYOffset()) + passenger.getYOffset());
+			float f1 = (float) ((this.removed ? (double) 0.01F : this.getMountedYOffset()) + passenger.getYOffset());
 
-			Vector3d vector3d = (new Vector3d((double)f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float)Math.PI / 180F) - ((float)Math.PI / 2F));
-			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double)f1, this.getPosZ() + vector3d.z);
+			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
+			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double) f1, this.getPosZ() + vector3d.z);
 			passenger.rotationYaw += this.deltaRotation;
 			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
 			this.applyYawToEntity(passenger);
-			if (passenger instanceof AnimalEntity)
-			{
+			if (passenger instanceof AnimalEntity) {
 				int j = passenger.getEntityId() % 2 == 0 ? 90 : 270;
-				passenger.setRenderYawOffset(((AnimalEntity)passenger).renderYawOffset + (float)j);
-				passenger.setRotationYawHead(passenger.getRotationYawHead() + (float)j);
+				passenger.setRenderYawOffset(((AnimalEntity) passenger).renderYawOffset + (float) j);
+				passenger.setRotationYawHead(passenger.getRotationYawHead() + (float) j);
 			}
 		}
 	}
 
 	@Override
-	protected boolean canFitPassenger(Entity passenger)
-	{
+	protected boolean canFitPassenger(Entity passenger) {
 		return !this.isBeingRidden() && !this.areEyesInFluid(FluidTags.WATER);
 	}
 }

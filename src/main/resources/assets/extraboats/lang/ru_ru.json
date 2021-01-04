@@ -1,7 +1,6 @@
 {
   "itemGroup.extraboats": "Extra Boats",
   
-  
   "entity.extraboats.chest_boat": "Лодка с сундуком",
   "entity.extraboats.furnace_boat": "Лодка с печкой",
   "entity.extraboats.large_boat": "Большая лодка",
@@ -35,7 +34,6 @@
   
   "item.extraboats.cherry_chest_boat": "Вишнёвая лодка с сундуком",
   "item.extraboats.dead_chest_boat": "Мёртвая лодка с сундуком",
-  "item.extraboats.ethereal_chest_boat": "Эфирная лодка с сундуком",
   "item.extraboats.fir_chest_boat": "Пихтовая лодка с сундуком",
   "item.extraboats.hellbark_chest_boat": "Лодка из адской коры с сундуком",
   "item.extraboats.jacaranda_chest_boat": "Жакарандовая лодка с сундуком",
@@ -48,7 +46,6 @@
   
   "item.extraboats.cherry_furnace_boat": "Вишнёвая лодка с печкой",
   "item.extraboats.dead_furnace_boat": "Мёртвая лодка с печкой",
-  "item.extraboats.ethereal_furnace_boat": "Эфирная лодка с печкой",
   "item.extraboats.fir_furnace_boat": "Пихтовая лодка с печкой",
   "item.extraboats.hellbark_furnace_boat": "Лодка из адской коры с печкой",
   "item.extraboats.jacaranda_furnace_boat": "Жакарандовая лодка с печкой",
@@ -61,7 +58,6 @@
   
   "item.extraboats.large_cherry_boat": "Большая вишнёвая лодка",
   "item.extraboats.large_dead_boat": "Большая мёртвая лодка",
-  "item.extraboats.large_ethereal_boat": "Большая эфирная лодка",
   "item.extraboats.large_fir_boat": "Большая пихтовая лодка",
   "item.extraboats.large_hellbark_boat": "Большая лодка из адской коры",
   "item.extraboats.large_jacaranda_boat": "Большая жакарандовая лодка",
@@ -99,35 +95,39 @@
   "item.extraboats.large_poise_boat": "Большая пуазовая лодка",
   
   
-  "_comment": "Bloomful",
+  "_comment": "Environmental",
   
   "item.extraboats.wisteria_chest_boat": "Глициниевая лодка с сундуком",
   "item.extraboats.wisteria_furnace_boat": "Глициниевая лодка с печкой",
   "item.extraboats.large_wisteria_boat": "Большая глициниевая лодка",
   
+  "item.extraboats.env_willow_chest_boat": "Ивовая лодка с сундуком",
+  "item.extraboats.env_willow_furnace_boat": "Ивовая лодка с печкой",
+  "item.extraboats.large_env_willow_boat": "Большая ивовая лодка",
   
-  "_comment": "Swamp Expansion",
-  
-  "item.extraboats.se_willow_chest_boat": "Ивовая лодка с сундуком",
-  "item.extraboats.se_willow_furnace_boat": "Ивовая лодка с печкой",
-  "item.extraboats.large_se_willow_boat": "Большая ивовая лодка",
+  "item.extraboats.env_cherry_chest_boat": "Вишнёвая лодка с сундуком",
+  "item.extraboats.env_cherry_furnace_boat": "Вишнёвая лодка с печкой",
+  "item.extraboats.large_env_cherry_boat": "Большая вишнёвая лодка",
   
   
   "_comment": "Atmospheric",
   
   "item.extraboats.rosewood_chest_boat": "Розовая лодка с сундуком",
+  "item.extraboats.morado_chest_boat": "Морадовая лодка с сундуком",
   "item.extraboats.aspen_chest_boat": "Осиновая лодка с сундуком",
   "item.extraboats.kousa_chest_boat": "Цветущая лодка с сундуком",
   "item.extraboats.yucca_chest_boat": "Юккавая лодка с сундуком",
   "item.extraboats.grimwood_chest_boat": "Лодка из мрачного дерева с сундуком",
   
   "item.extraboats.rosewood_furnace_boat": "Розовая лодка с печкой",
+  "item.extraboats.morado_furnace_boat": "Морадовая лодка с печкой",
   "item.extraboats.aspen_furnace_boat": "Основая лодка с печкой",
   "item.extraboats.kousa_furnace_boat": "Цветущая лодка с печкой",
   "item.extraboats.yucca_furnace_boat": "Юкковая лодка с печкой",
   "item.extraboats.grimwood_furnace_boat": "Лодка из мрачного дерева с печкой",
   
   "item.extraboats.large_rosewood_boat": "Большая розовая лодка",
+  "item.extraboats.large_morado_boat": "Большая морадовая лодка",
   "item.extraboats.large_aspen_boat": "Большая осиновая лодка",
   "item.extraboats.large_kousa_boat": "Большая цветущая лодка",
   "item.extraboats.large_yucca_boat": "Большая юкковая лодка",
@@ -141,9 +141,24 @@
   "item.extraboats.large_maple_boat": "Большая кленовая лодка",
   
   
-  "_comment": "Buzzier Bees",
+  "_comment": "Enhanced Mushrooms",
+
+  "item.extraboats.red_mushroom_chest_boat": "Лодка из красного гриба с сундуком",
+  "item.extraboats.brown_mushroom_chest_boat": "Лодка из коричневого гриба с сундуком",
+  "item.extraboats.glowshroom_chest_boat": "Лодка из светящегося гриба с сундуком",
+
+  "item.extraboats.red_mushroom_furnace_boat": "Лодка из красного гриба с печкой",
+  "item.extraboats.brown_mushroom_furnace_boat": "Лодка из коричневого гриба с печкой",
+  "item.extraboats.glowshroom_furnace_boat": "Лодка из светящегося гриба с печкой",
+
+  "item.extraboats.large_red_mushroom_boat": "Большая лодка из красного гриба",
+  "item.extraboats.large_brown_mushroom_boat": "Большая лодка из коричневого гриба",
+  "item.extraboats.large_glowshroom_boat": "Большая лодка из светящегося гриба",
   
-  "item.extraboats.hive_chest_boat": "Ульевая лодка с сундуком",
-  "item.extraboats.hive_furnace_boat": "Ульвая лодка с печкой",
-  "item.extraboats.large_hive_boat": "Большая ульевая лодка"
+  
+  "_comment": "Hanami",
+
+  "item.extraboats.sakura_chest_boat": "Сакуровая лодка с сундуком",
+  "item.extraboats.sakura_furnace_boat": "Сакуровая лодка с печкой",
+  "item.extraboats.large_sakura_boat": "Большая сакуровая лодка"
 }

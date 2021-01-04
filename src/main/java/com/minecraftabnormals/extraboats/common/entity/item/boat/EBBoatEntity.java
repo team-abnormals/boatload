@@ -193,7 +193,10 @@ public abstract class EBBoatEntity extends BoatEntity {
 		BROWN_MUSHROOM("brown_mushroom"),
 		GLOWSHROOM("glowshroom"),
 
-		SAKURA("sakura");
+		SAKURA("sakura"),
+		
+		CRIMSON("crimson"),
+		WARPED("warped");
 
 		private final String name;
 

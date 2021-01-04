@@ -165,6 +165,15 @@ public class EBItems {
 	public static RegistryObject<Item> SAKURA_CHEST_BOAT = createChestBoat("sakura", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
 	public static RegistryObject<Item> SAKURA_FURNACE_BOAT = createFurnaceBoat("sakura", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
 	public static RegistryObject<Item> LARGE_SAKURA_BOAT = createLargeBoat("sakura", EBBoatEntity.BoatType.SAKURA, Hanami.isInstalled());
+	
+	// Nether Extension
+	public static RegistryObject<Item> CRIMSON_CHEST_BOAT = createChestBoat("crimson", EBBoatEntity.BoatType.CRIMSON, NetherExtension.isInstalled());
+	public static RegistryObject<Item> CRIMSON_FURNACE_BOAT = createFurnaceBoat("crimson", EBBoatEntity.BoatType.CRIMSON, NetherExtension.isInstalled());
+	public static RegistryObject<Item> LARGE_CRIMSON_BOAT = createLargeBoat("crimson", EBBoatEntity.BoatType.CRIMSON, NetherExtension.isInstalled());
+	
+	public static RegistryObject<Item> WARPED_CHEST_BOAT = createChestBoat("warped", EBBoatEntity.BoatType.WARPED, NetherExtension.isInstalled());
+	public static RegistryObject<Item> WARPED_FURNACE_BOAT = createFurnaceBoat("warped", EBBoatEntity.BoatType.WARPED, NetherExtension.isInstalled());
+	public static RegistryObject<Item> LARGE_WARPED_BOAT = createLargeBoat("warped", EBBoatEntity.BoatType.WARPED, NetherExtension.isInstalled());
 
 	private static RegistryObject<Item> createChestBoat(String name, EBBoatEntity.BoatType type, boolean compat) {
 		return ITEMS.register(name + "_chest_boat", () -> new ChestBoatItem(type, (new Item.Properties()).maxStackSize(1).group(compat ? ItemGroup.TRANSPORTATION : null)));

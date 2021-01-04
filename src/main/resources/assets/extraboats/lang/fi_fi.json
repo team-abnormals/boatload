@@ -99,5 +99,17 @@
   
   "item.extraboats.maple_chest_boat": "Arkullinen vaahteravene",
   "item.extraboats.maple_furnace_boat": "Moottoroitu vaahteravene",
-  "item.extraboats.large_maple_boat": "Suuri vaahteravene"
+  "item.extraboats.large_maple_boat": "Suuri vaahteravene",
+
+
+  "_comment": "Nether Extension",
+
+  "item.extraboats.crimson_chest_boat": "Arkullinen karmiinivene",
+  "item.extraboats.warped_chest_boat": "Arkullinen kummavene",
+
+  "item.extraboats.crimson_furnace_boat": "Moottoroitu karmiinivene",
+  "item.extraboats.warped_furnace_boat": "Moottoroitu kummavene",
+  
+  "item.extraboats.large_crimson_boat": "Suuri karmiinivene",
+  "item.extraboats.large_warped_boat": "Suuri kummavene"
 }

@@ -1,8 +1,18 @@
 package com.minecraftabnormals.extraboats.core;
 
 import com.minecraftabnormals.extraboats.common.entity.item.boat.EBBoatEntity;
-import com.minecraftabnormals.extraboats.core.compatibility.*;
+import com.minecraftabnormals.extraboats.core.compatibility.Atmospheric;
+import com.minecraftabnormals.extraboats.core.compatibility.Autumnity;
+import com.minecraftabnormals.extraboats.core.compatibility.BambooBlocks;
+import com.minecraftabnormals.extraboats.core.compatibility.BiomesOPlenty;
+import com.minecraftabnormals.extraboats.core.compatibility.EndergeticExpansion;
+import com.minecraftabnormals.extraboats.core.compatibility.EnhancedMushrooms;
+import com.minecraftabnormals.extraboats.core.compatibility.Environmental;
+import com.minecraftabnormals.extraboats.core.compatibility.Hanami;
+import com.minecraftabnormals.extraboats.core.compatibility.NetherExtension;
+import com.minecraftabnormals.extraboats.core.compatibility.UpgradeAquatic;
 import com.minecraftabnormals.extraboats.core.registry.EBItems;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
@@ -91,6 +101,11 @@ public class BoatHelper {
 
 			case SAKURA:
 				return Hanami.SAKURA_PLANKS;
+
+			case CRIMSON:
+				return Blocks.CRIMSON_PLANKS;
+			case WARPED:
+				return Blocks.WARPED_PLANKS;
 		}
 	}
 
@@ -176,6 +191,11 @@ public class BoatHelper {
 
 			case SAKURA:
 				return Hanami.SAKURA_BOAT;
+
+			case CRIMSON:
+				return NetherExtension.CRIMSON_BOAT;
+			case WARPED:
+				return NetherExtension.WARPED_BOAT;
 		}
 	}
 
@@ -261,6 +281,11 @@ public class BoatHelper {
 
 			case SAKURA:
 				return EBItems.SAKURA_CHEST_BOAT.get();
+
+			case CRIMSON:
+				return EBItems.CRIMSON_CHEST_BOAT.get();
+			case WARPED:
+				return EBItems.WARPED_CHEST_BOAT.get();
 		}
 	}
 
@@ -346,6 +371,11 @@ public class BoatHelper {
 
 			case SAKURA:
 				return EBItems.SAKURA_FURNACE_BOAT.get();
+
+			case CRIMSON:
+				return EBItems.CRIMSON_FURNACE_BOAT.get();
+			case WARPED:
+				return EBItems.WARPED_FURNACE_BOAT.get();
 		}
 	}
 
@@ -431,6 +461,11 @@ public class BoatHelper {
 
 			case SAKURA:
 				return EBItems.LARGE_SAKURA_BOAT.get();
+
+			case CRIMSON:
+				return EBItems.LARGE_CRIMSON_BOAT.get();
+			case WARPED:
+				return EBItems.LARGE_WARPED_BOAT.get();
 		}
 	}
 
@@ -525,7 +560,12 @@ public class BoatHelper {
 		else if (item == EnhancedMushrooms.GLOWSHROOM_BOAT)
 			return EBBoatEntity.BoatType.GLOWSHROOM;
 
-		else // Sakura
+		else if (item == Hanami.SAKURA_BOAT)
 			return EBBoatEntity.BoatType.SAKURA;
+		
+		else if (item == NetherExtension.CRIMSON_BOAT)
+			return EBBoatEntity.BoatType.CRIMSON;
+		else
+			return EBBoatEntity.BoatType.WARPED;
 	}
 }

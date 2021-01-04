@@ -65,7 +65,11 @@ public class ModBoatRenderer<T extends EBBoatEntity> extends EntityRenderer<T> {
 			new ResourceLocation("enhanced_mushrooms", "textures/entity/boat/brown_mushroom.png"),
 			new ResourceLocation("enhanced_mushrooms", "textures/entity/boat/glowshroom.png"),
 
-			new ResourceLocation("hanami", "textures/entity/boat/sakura.png")};
+			new ResourceLocation("hanami", "textures/entity/boat/sakura.png"),
+			
+			new ResourceLocation("nether_extension", "textures/entity/boat/crimson.png"),
+			new ResourceLocation("nether_extension", "textures/entity/boat/warped.png")};
+	
 	protected final BoatModel modelBoat = new BoatModel();
 
 	public ModBoatRenderer(EntityRendererManager renderManagerIn) {

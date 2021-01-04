@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "nether_extension"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:warped_plans"
+    },
+    "W": {
+      "item": "nether_extension:warped_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:large_warped_boat"
+  }
+}

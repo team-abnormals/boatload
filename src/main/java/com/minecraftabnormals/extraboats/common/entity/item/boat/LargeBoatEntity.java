@@ -1,7 +1,7 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
 import com.minecraftabnormals.extraboats.core.BoatHelper;
-import com.minecraftabnormals.extraboats.core.ModTags;
+import com.minecraftabnormals.extraboats.core.EBTags;
 import com.minecraftabnormals.extraboats.core.registry.EBEntities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -128,7 +128,7 @@ public class LargeBoatEntity extends EBBoatEntity {
 				int i = this.getPassengers().indexOf(passenger);
 
 				Entity firstpassenger = this.getPassengers().get(0);
-				boolean flag = firstpassenger.getType().isContained(ModTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
+				boolean flag = firstpassenger.getType().isContained(EBTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
 
 				if (i == 0) {
 					f = flag ? 0.875F : 1.0F;

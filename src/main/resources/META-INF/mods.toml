@@ -27,3 +27,10 @@ license = "https://github.com/team-abnormals/extra-boats/blob/main/LICENSE.txt"
     versionRange = "[34.1.42,)"
     ordering = "NONE"
     side = "BOTH"
+
+[[dependencies.environmental]]
+    modId = "abnormals_core"
+    mandatory = true
+    versionRange = "[3.0.4,)"
+    ordering = "AFTER"
+    side = "BOTH"

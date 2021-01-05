@@ -1,6 +1,7 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
 import com.minecraftabnormals.extraboats.core.BoatHelper;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -21,8 +22,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
-
-;
 
 public abstract class EBBoatEntity extends BoatEntity {
 	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(EBBoatEntity.class, DataSerializers.VARINT);

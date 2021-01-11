@@ -1,12 +1,14 @@
 package com.minecraftabnormals.extraboats.core.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.IDataManager;
-import com.minecraftabnormals.extraboats.common.entity.item.boat.ChestBoatEntity;
+import com.minecraftabnormals.extraboats.core.ExtraBoats;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -15,40 +17,42 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BannerItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 @Mixin(BoatEntity.class)
 public abstract class BoatEntityMixin extends Entity {
-	private static final DataParameter<ItemStack> BANNER = EntityDataManager.createKey(ChestBoatEntity.class, DataSerializers.ITEMSTACK);
-
 	public BoatEntityMixin(EntityType<?> entityTypeIn, World worldIn) {
 		super(entityTypeIn, worldIn);
 	}
 
+	@Shadow
+	float getDamageTaken() {
+		return 0.0F;
+	}
+
 	@Inject(method = "writeAdditional", at = @At("TAIL"))
-	private void writeBanner(CompoundNBT compound) {
+	private void writeBanner(CompoundNBT compound, CallbackInfo info) {
 		if (!this.getBanner().isEmpty()) {
 			compound.put("Banner", this.getBanner().write(new CompoundNBT()));
 		}
 	}
 
 	@Inject(method = "readAdditional", at = @At("TAIL"))
-	private void readBanner(CompoundNBT compound) {
+	private void readBanner(CompoundNBT compound, CallbackInfo info) {
 		CompoundNBT compoundnbt = compound.getCompound("Banner");
 		this.setBanner(ItemStack.read(compoundnbt));
 	}
 
 	public ItemStack getBanner() {
-		return this.getDataManager().get(BANNER);
+		return ((IDataManager) this).getValue(ExtraBoats.BANNER);
 	}
 
 	public void setBanner(ItemStack itemStack) {
-		this.getDataManager().set(BANNER, itemStack);
+		((IDataManager) this).setValue(ExtraBoats.BANNER, itemStack);
 	}
 
 	@Inject(method = "processInitialInteract", at = @At("HEAD"), cancellable = true)
@@ -58,13 +62,23 @@ public abstract class BoatEntityMixin extends Entity {
 		if (this.getBanner().isEmpty() && itemstack.getItem() instanceof BannerItem) {
 			if (!this.world.isRemote) {
 				this.setBanner(itemstack);
-	            if (!player.abilities.isCreativeMode) {
-	            	player.getHeldItem(hand).shrink(1);
-	             }
-	            
+				if (!player.abilities.isCreativeMode) {
+					player.getHeldItem(hand).shrink(1);
+				}
+
 				cir.setReturnValue(ActionResultType.CONSUME);
 			} else {
 				cir.setReturnValue(ActionResultType.SUCCESS);
+			}
+		}
+	}
+
+	@Inject(method = "attackEntityFrom", at = @At(value = "RETURN", ordinal = 0), cancellable = true)
+	private void dropBanner(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+		boolean flag = source.getTrueSource() instanceof PlayerEntity && ((PlayerEntity) source.getTrueSource()).abilities.isCreativeMode;
+		if (flag || this.getDamageTaken() > 40.0F) {
+			if (!flag && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
+				this.entityDropItem(this.getBanner());
 			}
 		}
 	}

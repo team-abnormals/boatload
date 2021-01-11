@@ -35,7 +35,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
-            arg "-mixin.config=environmental.mixins.json"
+            arg "-mixin.config=extraboats.mixins.json"
             mods {
                 extraboats {
                     source sourceSets.main
@@ -47,7 +47,7 @@ minecraft {
             property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
             property "forge.logging.console.level", "debug"
             property "mixin.env.disableRefMap", "true"
-            arg "-mixin.config=environmental.mixins.json"
+            arg "-mixin.config=extraboats.mixins.json"
             mods {
                 extraboats {
                     source sourceSets.main

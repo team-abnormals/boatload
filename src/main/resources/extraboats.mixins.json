@@ -5,7 +5,7 @@
   "minVersion": "0.8",
   "refmap": "extraboats.refmap.json",
   "mixins": [
-    "BoatEntity"
+    "BoatEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

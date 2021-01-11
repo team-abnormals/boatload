@@ -1,5 +1,8 @@
 package com.minecraftabnormals.extraboats.core;
 
+import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.DataProcessors;
+import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.TrackedData;
+import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.TrackedDataManager;
 import com.minecraftabnormals.extraboats.common.dispenser.DispenseChestBoatBehavior;
 import com.minecraftabnormals.extraboats.common.dispenser.DispenseFurnaceBoatBehavior;
 import com.minecraftabnormals.extraboats.common.dispenser.DispenseLargeBoatBehavior;
@@ -11,6 +14,8 @@ import com.minecraftabnormals.extraboats.core.registry.EBEntities;
 import com.minecraftabnormals.extraboats.core.registry.EBItems;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -23,6 +28,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class ExtraBoats {
 	public static final String MOD_ID = "extraboats";
 
+	public static final TrackedData<ItemStack> BANNER = TrackedData.Builder.create(DataProcessors.STACK, () -> ItemStack.EMPTY).build();
+	
 	public ExtraBoats() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -48,6 +55,7 @@ public class ExtraBoats {
 					DispenserBlock.registerDispenseBehavior(boatitem, new DispenseLargeBoatBehavior(boatitem.getType()));
 				}
 			}
+			event.enqueueWork(() -> TrackedDataManager.INSTANCE.registerData(new ResourceLocation(MOD_ID, "banner"), BANNER));
 		});
 	}
 

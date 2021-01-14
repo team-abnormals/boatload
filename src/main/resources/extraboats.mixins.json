@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.minecraftabnormals.extraboats.core.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "refmap": "extraboats.refmap.json",
+  "mixins": [
+    "BoatEntityMixin"
+  ],
+  "client": [
+    "BoatRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

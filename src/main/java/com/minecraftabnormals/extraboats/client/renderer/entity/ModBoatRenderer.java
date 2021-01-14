@@ -1,26 +1,34 @@
 package com.minecraftabnormals.extraboats.client.renderer.entity;
 
-import com.minecraftabnormals.extraboats.common.entity.item.boat.EBBoatEntity;
+import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.IDataManager;
+import com.minecraftabnormals.extraboats.common.entity.item.boat.ExtraBoatsBoatEntity;
+import com.minecraftabnormals.extraboats.core.other.ExtraBoatsDataProcessors;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
+
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.model.BoatModel;
+import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.item.BannerItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3f;
+import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class ModBoatRenderer<T extends EBBoatEntity> extends EntityRenderer<T> {
+public class ModBoatRenderer<T extends ExtraBoatsBoatEntity> extends EntityRenderer<T> {
 	private static final ResourceLocation[] BOAT_TEXTURES = new ResourceLocation[]{
 			new ResourceLocation("textures/entity/boat/oak.png"),
 			new ResourceLocation("textures/entity/boat/spruce.png"),
@@ -66,10 +74,10 @@ public class ModBoatRenderer<T extends EBBoatEntity> extends EntityRenderer<T> {
 			new ResourceLocation("enhanced_mushrooms", "textures/entity/boat/glowshroom.png"),
 
 			new ResourceLocation("hanami", "textures/entity/boat/sakura.png"),
-			
+
 			new ResourceLocation("nether_extension", "textures/entity/boat/crimson.png"),
 			new ResourceLocation("nether_extension", "textures/entity/boat/warped.png")};
-	
+
 	protected final BoatModel modelBoat = new BoatModel();
 
 	public ModBoatRenderer(EntityRendererManager renderManagerIn) {
@@ -103,6 +111,23 @@ public class ModBoatRenderer<T extends EBBoatEntity> extends EntityRenderer<T> {
 			matrixStackIn.translate(0.5D, (double) (-3.0F / 16.0F), 1.1D);
 			matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F));
 			this.renderBlockState(entityIn, partialTicks, blockstate, matrixStackIn, bufferIn, packedLightIn);
+			matrixStackIn.pop();
+		}
+
+		ItemStack banner = ((IDataManager) entityIn).getValue(ExtraBoatsDataProcessors.BANNER);
+		if (banner != null && banner.getItem() instanceof BannerItem) {
+			World world = entityIn.getEntityWorld();
+			int i;
+			if (world != null) {
+				i = WorldRenderer.getCombinedLight(world, entityIn.getPosition());
+			} else {
+				i = 15728880;
+			}
+
+			matrixStackIn.push();
+			matrixStackIn.translate(0.5D, (double) (3.0F / 16.0F), (double) (23.0F / 16.0F));
+			matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F));
+			banner.getItem().getItemStackTileEntityRenderer().func_239207_a_(banner, ItemCameraTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
 			matrixStackIn.pop();
 		}
 

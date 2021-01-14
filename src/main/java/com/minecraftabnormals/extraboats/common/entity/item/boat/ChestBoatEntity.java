@@ -1,7 +1,7 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
 import com.minecraftabnormals.extraboats.core.BoatHelper;
-import com.minecraftabnormals.extraboats.core.registry.EBEntities;
+import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -31,7 +31,7 @@ public class ChestBoatEntity extends ContainerBoatEntity {
 	}
 
 	public ChestBoatEntity(World worldIn, double x, double y, double z) {
-		this(EBEntities.CHEST_BOAT.get(), worldIn);
+		this(ExtraBoatsEntities.CHEST_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -40,7 +40,7 @@ public class ChestBoatEntity extends ContainerBoatEntity {
 	}
 
 	public ChestBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn) {
-		super(EBEntities.CHEST_BOAT.get(), worldIn);
+		super(ExtraBoatsEntities.CHEST_BOAT.get(), worldIn);
 	}
 
 	@Override
@@ -66,6 +66,12 @@ public class ChestBoatEntity extends ContainerBoatEntity {
 		this.setChest(ItemStack.read(compoundnbt));
 	}
 
+	@Override
+	protected void dropBreakItems() {
+		super.dropBreakItems();
+		this.entityDropItem(this.getChest());
+	}
+	
 	@Override
 	public void killBoat() {
 		super.killBoat();

@@ -1,6 +1,9 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
+import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.IDataManager;
 import com.minecraftabnormals.extraboats.core.BoatHelper;
+import com.minecraftabnormals.extraboats.core.other.ExtraBoatsDataProcessors;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -22,38 +25,38 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-;
+public abstract class ExtraBoatsBoatEntity extends BoatEntity {
+	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(ExtraBoatsBoatEntity.class, DataSerializers.VARINT);
 
-public abstract class EBBoatEntity extends BoatEntity {
-	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(EBBoatEntity.class, DataSerializers.VARINT);
-
-	public EBBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn) {
+	public ExtraBoatsBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn) {
 		super(entityType, worldIn);
 	}
 
 	@Override
 	protected void registerData() {
 		super.registerData();
-		this.dataManager.register(BOAT_TYPE, EBBoatEntity.BoatType.OAK.ordinal());
+		this.dataManager.register(BOAT_TYPE, ExtraBoatsBoatEntity.BoatType.OAK.ordinal());
 	}
 
-	public void setModBoatType(EBBoatEntity.BoatType boatType) {
+	public void setModBoatType(ExtraBoatsBoatEntity.BoatType boatType) {
 		this.dataManager.set(BOAT_TYPE, boatType.ordinal());
 	}
 
-	public EBBoatEntity.BoatType getModBoatType() {
-		return EBBoatEntity.BoatType.byId(this.dataManager.get(BOAT_TYPE));
+	public ExtraBoatsBoatEntity.BoatType getModBoatType() {
+		return ExtraBoatsBoatEntity.BoatType.byId(this.dataManager.get(BOAT_TYPE));
 	}
 
 	@Override
 	protected void writeAdditional(CompoundNBT compound) {
+		super.writeAdditional(compound);
 		compound.putString("Type", this.getModBoatType().getName());
 	}
 
 	@Override
 	protected void readAdditional(CompoundNBT compound) {
+		super.readAdditional(compound);
 		if (compound.contains("Type", 8)) {
-			this.setModBoatType(EBBoatEntity.BoatType.getTypeFromString(compound.getString("Type")));
+			this.setModBoatType(ExtraBoatsBoatEntity.BoatType.getTypeFromString(compound.getString("Type")));
 		}
 	}
 
@@ -93,7 +96,7 @@ public abstract class EBBoatEntity extends BoatEntity {
 			this.entityDropItem(Items.STICK);
 		}
 
-		this.entityDropItem(this.getDisplayTile().getBlock());
+		this.entityDropItem(((IDataManager) this).getValue(ExtraBoatsDataProcessors.BANNER));
 	}
 
 	@Override
@@ -126,6 +129,7 @@ public abstract class EBBoatEntity extends BoatEntity {
 
 	public void killBoat() {
 		this.entityDropItem(this.getItemDropBoat());
+		this.entityDropItem(((IDataManager) this).getValue(ExtraBoatsDataProcessors.BANNER));
 	}
 
 	public BlockState getDisplayTile() {
@@ -194,7 +198,7 @@ public abstract class EBBoatEntity extends BoatEntity {
 		GLOWSHROOM("glowshroom"),
 
 		SAKURA("sakura"),
-		
+
 		CRIMSON("crimson"),
 		WARPED("warped");
 
@@ -212,8 +216,8 @@ public abstract class EBBoatEntity extends BoatEntity {
 			return this.name;
 		}
 
-		public static EBBoatEntity.BoatType byId(int id) {
-			EBBoatEntity.BoatType[] aboatentity$type = values();
+		public static ExtraBoatsBoatEntity.BoatType byId(int id) {
+			ExtraBoatsBoatEntity.BoatType[] aboatentity$type = values();
 			if (id < 0 || id >= aboatentity$type.length) {
 				id = 0;
 			}
@@ -221,8 +225,8 @@ public abstract class EBBoatEntity extends BoatEntity {
 			return aboatentity$type[id];
 		}
 
-		public static EBBoatEntity.BoatType getTypeFromString(String nameIn) {
-			EBBoatEntity.BoatType[] aboatentity$type = values();
+		public static ExtraBoatsBoatEntity.BoatType getTypeFromString(String nameIn) {
+			ExtraBoatsBoatEntity.BoatType[] aboatentity$type = values();
 
 			for (int i = 0; i < aboatentity$type.length; ++i) {
 				if (aboatentity$type[i].getName().equals(nameIn)) {

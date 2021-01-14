@@ -1,8 +1,8 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
 import com.minecraftabnormals.extraboats.core.BoatHelper;
-import com.minecraftabnormals.extraboats.core.EBTags;
-import com.minecraftabnormals.extraboats.core.registry.EBEntities;
+import com.minecraftabnormals.extraboats.core.other.ExtraBoatsTags;
+import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsEntities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -21,13 +21,13 @@ import net.minecraftforge.fml.network.FMLPlayMessages;
 
 import java.util.List;
 
-public class LargeBoatEntity extends EBBoatEntity {
+public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 	public LargeBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn) {
 		super(entityType, worldIn);
 	}
 
 	public LargeBoatEntity(World worldIn, double x, double y, double z) {
-		this(EBEntities.LARGE_BOAT.get(), worldIn);
+		this(ExtraBoatsEntities.LARGE_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -36,7 +36,7 @@ public class LargeBoatEntity extends EBBoatEntity {
 	}
 
 	public LargeBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn) {
-		super(EBEntities.LARGE_BOAT.get(), worldIn);
+		super(ExtraBoatsEntities.LARGE_BOAT.get(), worldIn);
 	}
 
 	@Override
@@ -128,7 +128,7 @@ public class LargeBoatEntity extends EBBoatEntity {
 				int i = this.getPassengers().indexOf(passenger);
 
 				Entity firstpassenger = this.getPassengers().get(0);
-				boolean flag = firstpassenger.getType().isContained(EBTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
+				boolean flag = firstpassenger.getType().isContained(ExtraBoatsTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
 
 				if (i == 0) {
 					f = flag ? 0.875F : 1.0F;

@@ -1,7 +1,7 @@
 package com.minecraftabnormals.extraboats.common.item;
 
 import com.minecraftabnormals.extraboats.common.entity.item.boat.ChestBoatEntity;
-import com.minecraftabnormals.extraboats.common.entity.item.boat.EBBoatEntity;
+import com.minecraftabnormals.extraboats.common.entity.item.boat.ExtraBoatsBoatEntity;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,7 +20,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 
 public class ChestBoatItem extends EBBoatItem {
-	public ChestBoatItem(EBBoatEntity.BoatType typeIn, Item.Properties properties) {
+	public ChestBoatItem(ExtraBoatsBoatEntity.BoatType typeIn, Item.Properties properties) {
 		super(typeIn, properties);
 	}
 
@@ -42,7 +42,7 @@ public class ChestBoatItem extends EBBoatItem {
 	}
 
 	@Override
-	protected EBBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult, ItemStack itemStack) {
+	protected ExtraBoatsBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult, ItemStack itemStack) {
 		ChestBoatEntity boatentity = new ChestBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
 		boatentity.setChest(new ItemStack(getChest(itemStack)));
 		return boatentity;

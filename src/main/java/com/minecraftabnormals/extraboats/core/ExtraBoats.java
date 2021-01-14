@@ -7,8 +7,10 @@ import com.minecraftabnormals.extraboats.common.item.ChestBoatItem;
 import com.minecraftabnormals.extraboats.common.item.EBBoatItem;
 import com.minecraftabnormals.extraboats.common.item.FurnaceBoatItem;
 import com.minecraftabnormals.extraboats.common.item.crafting.EBRecipes;
-import com.minecraftabnormals.extraboats.core.registry.EBEntities;
-import com.minecraftabnormals.extraboats.core.registry.EBItems;
+import com.minecraftabnormals.extraboats.core.other.ExtraBoatsDataProcessors;
+import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsEntities;
+import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsItems;
+
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,15 +24,15 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(ExtraBoats.MOD_ID)
 public class ExtraBoats {
 	public static final String MOD_ID = "extraboats";
-
+	
 	public ExtraBoats() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		modEventBus.addListener(this::setup);
 		modEventBus.addListener(this::clientSetup);
 
-		EBEntities.ENTITIES.register(modEventBus);
-		EBItems.ITEMS.register(modEventBus);
+		ExtraBoatsEntities.ENTITIES.register(modEventBus);
+		ExtraBoatsItems.ITEMS.register(modEventBus);
 		EBRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 
 		MinecraftForge.EVENT_BUS.register(this);
@@ -38,7 +40,7 @@ public class ExtraBoats {
 
 	private void setup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			for (RegistryObject<Item> item : EBItems.ITEMS.getEntries()) {
+			for (RegistryObject<Item> item : ExtraBoatsItems.ITEMS.getEntries()) {
 				EBBoatItem boatitem = (EBBoatItem) item.get();
 				if (boatitem instanceof ChestBoatItem) {
 					DispenserBlock.registerDispenseBehavior(boatitem, new DispenseChestBoatBehavior(boatitem.getType()));
@@ -48,10 +50,11 @@ public class ExtraBoats {
 					DispenserBlock.registerDispenseBehavior(boatitem, new DispenseLargeBoatBehavior(boatitem.getType()));
 				}
 			}
+			ExtraBoatsDataProcessors.registerTrackedData();
 		});
 	}
 
 	private void clientSetup(final FMLClientSetupEvent event) {
-		EBEntities.setupEntitiesClient();
+		ExtraBoatsEntities.setupEntitiesClient();
 	}
 }

@@ -7,6 +7,9 @@
   "mixins": [
     "BoatEntityMixin"
   ],
+  "client": [
+    "BoatRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

@@ -1,7 +1,7 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
 import com.minecraftabnormals.extraboats.core.BoatHelper;
-import com.minecraftabnormals.extraboats.core.registry.EBEntities;
+import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FurnaceBlock;
@@ -26,12 +26,13 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 
 import javax.annotation.Nullable;
 
-public class FurnaceBoatEntity extends EBBoatEntity {
+public class FurnaceBoatEntity extends ExtraBoatsBoatEntity {
 	private static final DataParameter<Integer> FUEL = EntityDataManager.createKey(FurnaceBoatEntity.class, DataSerializers.VARINT);
 	private static final Ingredient FUEL_ITEMS = Ingredient.fromItems(Items.COAL, Items.CHARCOAL);
 
@@ -40,7 +41,7 @@ public class FurnaceBoatEntity extends EBBoatEntity {
 	}
 
 	public FurnaceBoatEntity(World worldIn, double x, double y, double z) {
-		this(EBEntities.FURNACE_BOAT.get(), worldIn);
+		this(ExtraBoatsEntities.FURNACE_BOAT.get(), worldIn);
 		this.setPosition(x, y, z);
 		this.setMotion(Vector3d.ZERO);
 		this.prevPosX = x;
@@ -49,13 +50,19 @@ public class FurnaceBoatEntity extends EBBoatEntity {
 	}
 
 	public FurnaceBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn) {
-		super(EBEntities.FURNACE_BOAT.get(), worldIn);
+		super(ExtraBoatsEntities.FURNACE_BOAT.get(), worldIn);
 	}
 
 	@Override
 	protected void registerData() {
 		super.registerData();
 		this.dataManager.register(FUEL, 0);
+	}
+
+	@Override
+	protected void dropBreakItems() {
+		super.dropBreakItems();
+		this.entityDropItem(Blocks.FURNACE);
 	}
 
 	@Override

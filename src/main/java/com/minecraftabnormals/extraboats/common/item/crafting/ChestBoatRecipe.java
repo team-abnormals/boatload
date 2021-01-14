@@ -1,6 +1,6 @@
 package com.minecraftabnormals.extraboats.common.item.crafting;
 
-import com.minecraftabnormals.extraboats.common.entity.item.boat.EBBoatEntity;
+import com.minecraftabnormals.extraboats.common.entity.item.boat.ExtraBoatsBoatEntity;
 import com.minecraftabnormals.extraboats.common.item.ChestBoatItem;
 import com.minecraftabnormals.extraboats.core.BoatHelper;
 import net.minecraft.inventory.CraftingInventory;
@@ -55,7 +55,7 @@ public class ChestBoatRecipe extends SpecialRecipe {
 	@Override
 	public ItemStack getCraftingResult(CraftingInventory inv) {
 		Item item = Items.CHEST;
-		EBBoatEntity.BoatType type = EBBoatEntity.BoatType.OAK;
+		ExtraBoatsBoatEntity.BoatType type = ExtraBoatsBoatEntity.BoatType.OAK;
 
 		for (int i = 0; i < inv.getSizeInventory(); ++i) {
 			ItemStack itemstack2 = inv.getStackInSlot(i);

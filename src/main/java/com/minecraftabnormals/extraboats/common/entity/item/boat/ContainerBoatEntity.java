@@ -31,7 +31,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public abstract class ContainerBoatEntity extends EBBoatEntity implements IInventory, INamedContainerProvider {
+public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implements IInventory, INamedContainerProvider {
 	private NonNullList<ItemStack> boatContainerItems = NonNullList.withSize(36, ItemStack.EMPTY);
 	private boolean dropContentsWhenDead = true;
 	@Nullable

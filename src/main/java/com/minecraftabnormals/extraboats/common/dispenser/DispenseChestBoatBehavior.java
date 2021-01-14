@@ -1,7 +1,7 @@
 package com.minecraftabnormals.extraboats.common.dispenser;
 
 import com.minecraftabnormals.extraboats.common.entity.item.boat.ChestBoatEntity;
-import com.minecraftabnormals.extraboats.common.entity.item.boat.EBBoatEntity;
+import com.minecraftabnormals.extraboats.common.entity.item.boat.ExtraBoatsBoatEntity;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.dispenser.IBlockSource;
@@ -13,9 +13,9 @@ import net.minecraft.world.World;
 
 public class DispenseChestBoatBehavior extends DefaultDispenseItemBehavior {
 	private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
-	private final EBBoatEntity.BoatType type;
+	private final ExtraBoatsBoatEntity.BoatType type;
 
-	public DispenseChestBoatBehavior(EBBoatEntity.BoatType typeIn) {
+	public DispenseChestBoatBehavior(ExtraBoatsBoatEntity.BoatType typeIn) {
 		this.type = typeIn;
 	}
 

@@ -161,5 +161,17 @@
 
   "item.extraboats.sakura_chest_boat": "Sakuraholzgüterboot",
   "item.extraboats.sakura_furnace_boat": "Sakuraholzantriebsboot",
-  "item.extraboats.large_sakura_boat": "Großes Sakuraholzboot"
+  "item.extraboats.large_sakura_boat": "Großes Sakuraholzboot",
+
+
+  "_comment": "Nether Extension",
+
+  "item.extraboats.crimson_chest_boat": "Karmesingüterboot",
+  "item.extraboats.warped_chest_boat": "Wirrgüterboot",
+
+  "item.extraboats.crimson_furnace_boat": "Karmesinantriebsboot",
+  "item.extraboats.warped_furnace_boat": "Wirrantriebsboot",
+
+  "item.extraboats.large_crimson_boat": "Großes Karmesinboot",
+  "item.extraboats.large_warped_boat": "Großes Wirrboot"
 }

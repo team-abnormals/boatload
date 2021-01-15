@@ -18,11 +18,11 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class EBBoatItem extends Item {
+public class ExtraBoatsBoatItem extends Item {
 	private static final Predicate<Entity> field_219989_a = EntityPredicates.NOT_SPECTATING.and(Entity::canBeCollidedWith);
 	private final ExtraBoatsBoatEntity.BoatType type;
 
-	public EBBoatItem(ExtraBoatsBoatEntity.BoatType typeIn, Item.Properties properties) {
+	public ExtraBoatsBoatItem(ExtraBoatsBoatEntity.BoatType typeIn, Item.Properties properties) {
 		super(properties);
 		this.type = typeIn;
 	}

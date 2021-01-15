@@ -19,7 +19,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 
-public class ChestBoatItem extends EBBoatItem {
+public class ChestBoatItem extends ExtraBoatsBoatItem {
 	public ChestBoatItem(ExtraBoatsBoatEntity.BoatType typeIn, Item.Properties properties) {
 		super(typeIn, properties);
 	}

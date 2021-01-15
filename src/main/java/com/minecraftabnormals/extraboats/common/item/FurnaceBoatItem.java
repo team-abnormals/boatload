@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class FurnaceBoatItem extends EBBoatItem {
+public class FurnaceBoatItem extends ExtraBoatsBoatItem {
 	public FurnaceBoatItem(ExtraBoatsBoatEntity.BoatType typeIn, Item.Properties properties) {
 		super(typeIn, properties);
 	}

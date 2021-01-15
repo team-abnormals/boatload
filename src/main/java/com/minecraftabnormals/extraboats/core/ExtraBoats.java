@@ -4,10 +4,10 @@ import com.minecraftabnormals.extraboats.common.dispenser.DispenseChestBoatBehav
 import com.minecraftabnormals.extraboats.common.dispenser.DispenseFurnaceBoatBehavior;
 import com.minecraftabnormals.extraboats.common.dispenser.DispenseLargeBoatBehavior;
 import com.minecraftabnormals.extraboats.common.item.ChestBoatItem;
-import com.minecraftabnormals.extraboats.common.item.EBBoatItem;
+import com.minecraftabnormals.extraboats.common.item.ExtraBoatsBoatItem;
 import com.minecraftabnormals.extraboats.common.item.FurnaceBoatItem;
-import com.minecraftabnormals.extraboats.common.item.crafting.EBRecipes;
 import com.minecraftabnormals.extraboats.core.other.ExtraBoatsDataProcessors;
+import com.minecraftabnormals.extraboats.core.other.ExtraBoatsRecipes;
 import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsEntities;
 import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsItems;
 
@@ -33,7 +33,7 @@ public class ExtraBoats {
 
 		ExtraBoatsEntities.ENTITIES.register(modEventBus);
 		ExtraBoatsItems.ITEMS.register(modEventBus);
-		EBRecipes.RECIPE_SERIALIZERS.register(modEventBus);
+		ExtraBoatsRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -41,7 +41,7 @@ public class ExtraBoats {
 	private void setup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			for (RegistryObject<Item> item : ExtraBoatsItems.ITEMS.getEntries()) {
-				EBBoatItem boatitem = (EBBoatItem) item.get();
+				ExtraBoatsBoatItem boatitem = (ExtraBoatsBoatItem) item.get();
 				if (boatitem instanceof ChestBoatItem) {
 					DispenserBlock.registerDispenseBehavior(boatitem, new DispenseChestBoatBehavior(boatitem.getType()));
 				} else if (boatitem instanceof FurnaceBoatItem) {

@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class LargeBoatItem extends EBBoatItem {
+public class LargeBoatItem extends ExtraBoatsBoatItem {
 	public LargeBoatItem(ExtraBoatsBoatEntity.BoatType typeIn, Item.Properties properties) {
 		super(typeIn, properties);
 	}

@@ -114,23 +114,6 @@ public class ModBoatRenderer<T extends ExtraBoatsBoatEntity> extends EntityRende
 			matrixStackIn.pop();
 		}
 
-		ItemStack banner = ((IDataManager) entityIn).getValue(ExtraBoatsDataProcessors.BANNER);
-		if (banner != null && banner.getItem() instanceof BannerItem) {
-			World world = entityIn.getEntityWorld();
-			int i;
-			if (world != null) {
-				i = WorldRenderer.getCombinedLight(world, entityIn.getPosition());
-			} else {
-				i = 15728880;
-			}
-
-			matrixStackIn.push();
-			matrixStackIn.translate(0.5D, (double) (3.0F / 16.0F), (double) (23.0F / 16.0F));
-			matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F));
-			banner.getItem().getItemStackTileEntityRenderer().func_239207_a_(banner, ItemCameraTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
-			matrixStackIn.pop();
-		}
-
 		matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
 		matrixStackIn.rotate(Vector3f.YP.rotationDegrees(90.0F));
 		this.modelBoat.setRotationAngles(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);

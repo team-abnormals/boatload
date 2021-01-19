@@ -8,7 +8,7 @@
     "BoatEntityMixin"
   ],
   "client": [
-    "BoatRendererMixin"
+    "EntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

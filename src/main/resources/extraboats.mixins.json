@@ -5,7 +5,8 @@
   "minVersion": "0.8",
   "refmap": "extraboats.refmap.json",
   "mixins": [
-    "BoatEntityMixin"
+    "BoatEntityMixin",
+    "EntityMixin"
   ],
   "client": [
     "EntityRendererMixin"

@@ -95,8 +95,6 @@ public abstract class ExtraBoatsBoatEntity extends BoatEntity {
 		for (int j = 0; j < 2; ++j) {
 			this.entityDropItem(Items.STICK);
 		}
-
-		this.entityDropItem(((IDataManager) this).getValue(ExtraBoatsDataProcessors.BANNER));
 	}
 
 	@Override

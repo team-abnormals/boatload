@@ -10,7 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.IDataManager;
 import com.minecraftabnormals.extraboats.core.other.ExtraBoatsDataProcessors;
 
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.BoatEntity;
@@ -21,7 +20,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
@@ -36,19 +34,6 @@ public abstract class BoatEntityMixin extends Entity {
 
 	@Shadow
 	public abstract float getDamageTaken();
-
-	@Inject(method = "writeAdditional", at = @At("TAIL"))
-	private void writeBanner(CompoundNBT compound, CallbackInfo info) {
-		if (!this.getBanner().isEmpty()) {
-			compound.put("Banner", this.getBanner().write(new CompoundNBT()));
-		}
-	}
-
-	@Inject(method = "readAdditional", at = @At("TAIL"))
-	private void readBanner(CompoundNBT compound, CallbackInfo info) {
-		CompoundNBT compoundnbt = compound.getCompound("Banner");
-		this.setBanner(ItemStack.read(compoundnbt));
-	}
 
 	public ItemStack getBanner() {
 		return ((IDataManager) this).getValue(ExtraBoatsDataProcessors.BANNER);
@@ -84,15 +69,6 @@ public abstract class BoatEntityMixin extends Entity {
 		boolean flag = source.getTrueSource() instanceof PlayerEntity && ((PlayerEntity) source.getTrueSource()).abilities.isCreativeMode;
 		if (flag || this.getDamageTaken() > 40.0F) {
 			if (!flag && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
-				this.entityDropItem(this.getBanner());
-			}
-		}
-	}
-
-	@Inject(method = "updateFallState", at = @At(value = "HEAD"))
-	private void dropBannerUponFalling(double y, boolean onGroundIn, BlockState state, BlockPos pos, CallbackInfo info) {
-		if (!this.world.isRemote && !this.isPassenger() && onGroundIn && this.fallDistance > 3.0F && this.status == BoatEntity.Status.ON_LAND && !this.removed) {
-			if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
 				this.entityDropItem(this.getBanner());
 			}
 		}

@@ -160,5 +160,17 @@
 
   "item.extraboats.sakura_chest_boat": "Barca de sakura con cofre",
   "item.extraboats.sakura_furnace_boat": "Barca de sakura con horno",
-  "item.extraboats.large_sakura_boat": "Barca de sakura grande"
+  "item.extraboats.large_sakura_boat": "Barca de sakura grande",
+
+
+  "_comment": "Nether Extension",
+
+  "item.extraboats.crimson_chest_boat": "Barca de madera carmesí con cofre",
+  "item.extraboats.warped_chest_boat": "Barca distorsionado con cofre",
+
+  "item.extraboats.crimson_furnace_boat": "Barca de madera carmesí con horno",
+  "item.extraboats.warped_furnace_boat": "Barca distorsionado con horno",
+
+  "item.extraboats.large_crimson_boat": "Barca de madera carmesí grande",
+  "item.extraboats.large_warped_boat": "Barca distorsionado grande"
 }

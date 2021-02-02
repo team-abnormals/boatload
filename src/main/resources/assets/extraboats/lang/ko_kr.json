@@ -145,20 +145,32 @@
 
   "item.extraboats.red_mushroom_chest_boat": "상자가 실린 빨간색 버섯 보트",
   "item.extraboats.brown_mushroom_chest_boat": "상자가 실린 갈색 버섯 보트",
-  "item.extraboats.glowshroom_chest_boat": "상자가 실린 빛나는 버섯 보트",
+  "item.extraboats.glowshroom_chest_boat": "상자가 실린 발광버섯 보트",
 
   "item.extraboats.red_mushroom_furnace_boat": "화로가 실린 빨간색 버섯 보트",
   "item.extraboats.brown_mushroom_furnace_boat": "화로가 실린 갈색 버섯 보트",
-  "item.extraboats.glowshroom_furnace_boat": "화로가 실린 빛나는 버섯 보트",
+  "item.extraboats.glowshroom_furnace_boat": "화로가 실린 발광버섯 보트",
 
   "item.extraboats.large_red_mushroom_boat": "큰 빨간색 버섯 보트",
   "item.extraboats.large_brown_mushroom_boat": "큰 갈색 버섯 보트",
-  "item.extraboats.large_glowshroom_boat": "큰 빛나는 버섯 보트",
+  "item.extraboats.large_glowshroom_boat": "큰 발광버섯 보트",
 
 
   "_comment": "Hanami",
 
   "item.extraboats.sakura_chest_boat": "상자가 실린 벚나무 보트",
   "item.extraboats.sakura_furnace_boat": "화로가 실린 벚나무 보트",
-  "item.extraboats.large_sakura_boat": "큰 벚나무 보트"
+  "item.extraboats.large_sakura_boat": "큰 벚나무 보트",
+
+
+  "_comment": "Nether Extension",
+
+  "item.extraboats.crimson_chest_boat": "상자가 실린 진홍빛 보트",
+  "item.extraboats.warped_chest_boat": "상자가 실린 뒤틀린 보트",
+
+  "item.extraboats.crimson_furnace_boat": "화로가 실린 진홍빛 보트",
+  "item.extraboats.warped_furnace_boat": "화로가 실린 뒤틀린 보트",
+  
+  "item.extraboats.large_crimson_boat": "큰 진홍빛 보트",
+  "item.extraboats.large_warped_boat": "큰 뒤틀린 보트"
 }

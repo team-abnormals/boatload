@@ -72,13 +72,13 @@
   "_comment": "Upgrade Aquatic",
   
   "item.extraboats.driftwood_chest_boat": "Barca de deriva con cofre",
-  "item.extraboats.river_chest_boat": "Barca fluvial con cofre",
+  "item.extraboats.river_chest_boat": "Barca ribereña con cofre",
   
   "item.extraboats.driftwood_furnace_boat": "Barca de deriva con horno",
-  "item.extraboats.river_furnace_boat": "Barca fluvial con horno",
+  "item.extraboats.river_furnace_boat": "Barca ribereña con horno",
   
   "item.extraboats.large_driftwood_boat": "Barca de deriva grande",
-  "item.extraboats.large_river_boat": "Barca fluvial grande",
+  "item.extraboats.large_river_boat": "Barca ribereña grande",
   
   
   "_comment": "Bamboo Blocks",
@@ -112,21 +112,21 @@
   
   "_comment": "Atmospheric",
   
-  "item.extraboats.rosewood_chest_boat": "Barca de jacarandá con cofre",
+  "item.extraboats.rosewood_chest_boat": "Barca de palisandro con cofre",
   "item.extraboats.morado_chest_boat": "Barca de palo de hierro con cofre",
   "item.extraboats.aspen_chest_boat": "Barca de álamo con cofre",
   "item.extraboats.kousa_chest_boat": "Barca de kousa con cofre",
   "item.extraboats.yucca_chest_boat": "Barca de yuca con cofre",
   "item.extraboats.grimwood_chest_boat": "Barca siniestra con cofre",
   
-  "item.extraboats.rosewood_furnace_boat": "Barca de jacarandá con horno",
+  "item.extraboats.rosewood_furnace_boat": "Barca de palisandro con horno",
   "item.extraboats.morado_furnace_boat": "Barca de palo de hierro con horno",
   "item.extraboats.aspen_furnace_boat": "Barca de álamo con horno",
   "item.extraboats.kousa_furnace_boat": "Barca de kousa con horno",
   "item.extraboats.yucca_furnace_boat": "Barca de yuca con horno",
   "item.extraboats.grimwood_furnace_boat": "Barca siniestra con horno",
   
-  "item.extraboats.large_rosewood_boat": "Barca de jacarandá grande",
+  "item.extraboats.large_rosewood_boat": "Barca de palisandro grande",
   "item.extraboats.large_morado_boat": "Barca de palo de hierro grande",
   "item.extraboats.large_aspen_boat": "Barca de álamo grande",
   "item.extraboats.large_kousa_boat": "Barca de kousa grande",
@@ -166,11 +166,11 @@
   "_comment": "Nether Extension",
 
   "item.extraboats.crimson_chest_boat": "Barca de madera carmesí con cofre",
-  "item.extraboats.warped_chest_boat": "Barca distorsionado con cofre",
+  "item.extraboats.warped_chest_boat": "Barca distorsionada con cofre",
 
   "item.extraboats.crimson_furnace_boat": "Barca de madera carmesí con horno",
-  "item.extraboats.warped_furnace_boat": "Barca distorsionado con horno",
+  "item.extraboats.warped_furnace_boat": "Barca distorsionada con horno",
 
   "item.extraboats.large_crimson_boat": "Barca de madera carmesí grande",
-  "item.extraboats.large_warped_boat": "Barca distorsionado grande"
+  "item.extraboats.large_warped_boat": "Barca distorsionada grande"
 }

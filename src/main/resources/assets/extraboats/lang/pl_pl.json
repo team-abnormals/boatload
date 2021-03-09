@@ -1,7 +1,12 @@
 {
+  "itemGroup.extraboats": "Extra Boats",
+  
   "entity.extraboats.chest_boat": "Łódka ze skrzynią",
   "entity.extraboats.furnace_boat": "Łódka z piecem",
   "entity.extraboats.large_boat": "Wielka łódka",
+  
+  
+  "_comment": "Vanilla",
   
   "item.extraboats.oak_chest_boat": "Dębowa łódka ze skrzynią",
   "item.extraboats.spruce_chest_boat": "Świerkowa łódka ze skrzynią",
@@ -17,13 +22,155 @@
   "item.extraboats.acacia_furnace_boat": "Akacjowa łódka z piecem",
   "item.extraboats.dark_oak_furnace_boat": "Ciemnodębowa łódka z piecem",
   
-  "item.extraboats.large_oak_boat": "Wielka łódka dębowa",
-  "item.extraboats.large_spruce_boat": "Wielka łódka świerkowa",
-  "item.extraboats.large_birch_boat": "Wielka łódka brzozowa",
-  "item.extraboats.large_jungle_boat": "Wielka łódka tropikalna",
-  "item.extraboats.large_acacia_boat": "Wielka łódka akacjowa",
-  "item.extraboats.large_dark_oak_boat": "Wielka łódka ciemnodębowa",
+  "item.extraboats.large_oak_boat": "Wielka dębowa łódka",
+  "item.extraboats.large_spruce_boat": "Wielka świerkowa łódka",
+  "item.extraboats.large_birch_boat": "Wielka brzozowa łódka",
+  "item.extraboats.large_jungle_boat": "Wielka tropikalna łódka",
+  "item.extraboats.large_acacia_boat": "Wielka  akacjowa łódka",
+  "item.extraboats.large_dark_oak_boat": "Wielka ciemnodębowa łódka",
   
-  "advancements.adventure.get_in_the_boat.title": "Właź do łodzi!",
-  "advancements.adventure.get_in_the_boat.description": "Wsiądź do wielkej łódki z trzema osadnikami"
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.extraboats.cherry_chest_boat": "Wiśniowa łódka ze skrzynią",
+  "item.extraboats.dead_chest_boat": "Martwa łódka ze skrzynią",
+  "item.extraboats.fir_chest_boat": "Jodłowa łódka ze skrzynią",
+  "item.extraboats.hellbark_chest_boat": "Piekielna łódka ze skrzynią",
+  "item.extraboats.jacaranda_chest_boat": "Jakarandowa łódka ze skrzynią",
+  "item.extraboats.magic_chest_boat": "Magiczna łódka ze skrzynią",
+  "item.extraboats.mahogany_chest_boat": "Mahoniowa łódka ze skrzynią",
+  "item.extraboats.palm_chest_boat": "Palmowa łódka ze skrzynią",
+  "item.extraboats.redwood_chest_boat": "Sekwojowa łódka ze skrzynią",
+  "item.extraboats.umbran_chest_boat": "Umbranowa łódka ze skrzynią",
+  "item.extraboats.willow_chest_boat": "Wierzbowa łódka ze skrzynią",
+  
+  "item.extraboats.cherry_furnace_boat": "Wiśniowa łódka z piecem",
+  "item.extraboats.dead_furnace_boat": "Martwa łódka z piecem",
+  "item.extraboats.fir_furnace_boat": "Jodłowa łódka z piecem",
+  "item.extraboats.hellbark_furnace_boat": "Piekielna łódka z piecem",
+  "item.extraboats.jacaranda_furnace_boat": "Jakarandowa łódka z piecem",
+  "item.extraboats.magic_furnace_boat": "Magiczna łódka z piecem",
+  "item.extraboats.mahogany_furnace_boat": "Mahoniowa łódka z piecem",
+  "item.extraboats.palm_furnace_boat": "Palmowa łódka z piecem",
+  "item.extraboats.redwood_furnace_boat": "Sekwojowa łódka z piecem",
+  "item.extraboats.umbran_furnace_boat": "Umbranowa łódka z piecem",
+  "item.extraboats.willow_furnace_boat": "Wierzbowa łódka z piecem",
+  
+  "item.extraboats.large_cherry_boat": "Wielka wiśniowa łódka",
+  "item.extraboats.large_dead_boat": "Wielka martwa łódka",
+  "item.extraboats.large_fir_boat": "Wielka jodłowa łódka",
+  "item.extraboats.large_hellbark_boat": "Wielka piekielna łódka",
+  "item.extraboats.large_jacaranda_boat": "Wielka jakarandowa łódka",
+  "item.extraboats.large_magic_boat": "Wielka magiczna łódka",
+  "item.extraboats.large_mahogany_boat": "Wielka mahoniowa łódka",
+  "item.extraboats.large_palm_boat": "Wielka palmowa łódka",
+  "item.extraboats.large_redwood_boat": "Wielka sekwojowa łódka",
+  "item.extraboats.large_umbran_boat": "Wielka umbranowa łódka",
+  "item.extraboats.large_willow_boat": "Wielka wierzbowa łódka",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.extraboats.driftwood_chest_boat": "Korzeniowa łódka ze skrzynią",
+  "item.extraboats.river_chest_boat": "Nadrzeczna łódka ze skrzynią",
+  
+  "item.extraboats.driftwood_furnace_boat": "Korzeniowa łódka z piecem",
+  "item.extraboats.river_furnace_boat": "Nadrzeczna łódka z piecem",
+  
+  "item.extraboats.large_driftwood_boat": "Wielka korzeniowa łódka",
+  "item.extraboats.large_river_boat": "Wielka nadrzeczna łódka",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.extraboats.bamboo_chest_boat": "Bambusowa łódka ze skrzynią",
+  "item.extraboats.bamboo_furnace_boat": "Bambusowa łódka z piecem",
+  "item.extraboats.large_bamboo_boat": "Wielka bambusowa łódka",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.extraboats.poise_chest_boat": "Poisowa łódka ze skrzynią",
+  "item.extraboats.poise_furnace_boat": "Poisowa łódka z piecem",
+  "item.extraboats.large_poise_boat": "Wielka poisowa łódka",
+  
+  
+  "_comment": "Environmental",
+  
+  "item.extraboats.wisteria_chest_boat": "Glicyniowa łódka ze skrzynią",
+  "item.extraboats.wisteria_furnace_boat": "Glicyniowa łódka z piecem",
+  "item.extraboats.large_wisteria_boat": "Wielka glicyniowa łódka",
+  
+  "item.extraboats.env_willow_chest_boat": "Wierzbowa łódka ze skrzynią",
+  "item.extraboats.env_willow_furnace_boat": "Wierzbowa łódka z piecem",
+  "item.extraboats.large_env_willow_boat": "Wielka wierzbowa łódka",
+  
+  "item.extraboats.env_cherry_chest_boat": "Wiśniowa łódka ze skrzynią",
+  "item.extraboats.env_cherry_furnace_boat": "Wiśniowa łódka z piecem",
+  "item.extraboats.large_env_cherry_boat": "Wielka wiśniowa łódka",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.extraboats.rosewood_chest_boat": "Palisandrowa łódka ze skrzynią",
+  "item.extraboats.morado_chest_boat": "Moradowa łódka ze skrzynią",
+  "item.extraboats.aspen_chest_boat": "Osikowa łódka ze skrzynią",
+  "item.extraboats.kousa_chest_boat": "Dereniowa łódka ze skrzynią",
+  "item.extraboats.yucca_chest_boat": "Jukkowa łódka ze skrzynią",
+  "item.extraboats.grimwood_chest_boat": "Ponuropniowa łódka ze skrzynią",
+  
+  "item.extraboats.rosewood_furnace_boat": "Palisandrowa łódka z piecem",
+  "item.extraboats.morado_furnace_boat": "Moradowa łódka z piecem",
+  "item.extraboats.aspen_furnace_boat": "Osikowa łódka z piecem",
+  "item.extraboats.kousa_furnace_boat": "Dereniowa łódka z piecem",
+  "item.extraboats.yucca_furnace_boat": "Jukkowa łódka z piecem",
+  "item.extraboats.grimwood_furnace_boat": "Ponuropniowa łódka z piecem",
+  
+  "item.extraboats.large_rosewood_boat": "Wielka palisandrowa łódka",
+  "item.extraboats.large_morado_boat": "Wielka moradowa łódka",
+  "item.extraboats.large_aspen_boat": "Wielka osikowa łódka",
+  "item.extraboats.large_kousa_boat": "Wielka dereniowa łódka",
+  "item.extraboats.large_yucca_boat": "Wielka jukkowa łódka",
+  "item.extraboats.large_grimwood_boat": "Wielka ponuropniowa łódka",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.extraboats.maple_chest_boat": "Klonowa łódka ze skrzynią",
+  "item.extraboats.maple_furnace_boat": "Klonowa łódka z piecem",
+  "item.extraboats.large_maple_boat": "Wielka klonowa łódka",
+
+
+  "_comment": "Enhanced Mushrooms",
+
+  "item.extraboats.red_mushroom_chest_boat": "Muchomorowa łódka ze skrzynią",
+  "item.extraboats.brown_mushroom_chest_boat": "Borowikowa łódka ze skrzynią",
+  "item.extraboats.glowshroom_chest_boat": "Świetligrzybowa łódka ze skrzynią",
+
+  "item.extraboats.red_mushroom_furnace_boat": "Muchomorowa łódka z piecem",
+  "item.extraboats.brown_mushroom_furnace_boat": "Borowikowa łódka z piecem",
+  "item.extraboats.glowshroom_furnace_boat": "Świetligrzybowa łódka z piecem",
+
+  "item.extraboats.large_red_mushroom_boat": "Wielka muchomorowa łódka",
+  "item.extraboats.large_brown_mushroom_boat": "Wielka borowikowa łódka",
+  "item.extraboats.large_glowshroom_boat": "Wielka świetligrzybowa łódka",
+
+
+  "_comment": "Hanami",
+
+  "item.extraboats.sakura_chest_boat": "Sakurowa łódka ze skrzynią",
+  "item.extraboats.sakura_furnace_boat": "Sakurowa łódka z piecem",
+  "item.extraboats.large_sakura_boat": "Wielka sakurowa łódka",
+
+
+  "_comment": "Nether Extension",
+
+  "item.extraboats.crimson_chest_boat": "Szkarłatna łódka ze skrzynią",
+  "item.extraboats.warped_chest_boat": "Spaczona łódka ze skrzynią",
+
+  "item.extraboats.crimson_furnace_boat": "Szkarłatna łódka z piecem",
+  "item.extraboats.warped_furnace_boat": "Spaczona łódka z piecem",
+  
+  "item.extraboats.large_crimson_boat": "Wielka szkarłatna łódka",
+  "item.extraboats.large_warped_boat": "Wielka spaczona łódka"
 }

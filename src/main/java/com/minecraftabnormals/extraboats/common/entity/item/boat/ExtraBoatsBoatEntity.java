@@ -198,7 +198,10 @@ public abstract class ExtraBoatsBoatEntity extends BoatEntity {
 		SAKURA("sakura"),
 
 		CRIMSON("crimson"),
-		WARPED("warped");
+		WARPED("warped"),
+
+		APPLE("apple"),
+		HAZEL("hazel");
 
 		private final String name;
 

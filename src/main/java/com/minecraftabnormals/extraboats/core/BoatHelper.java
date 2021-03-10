@@ -1,16 +1,7 @@
 package com.minecraftabnormals.extraboats.core;
 
 import com.minecraftabnormals.extraboats.common.entity.item.boat.ExtraBoatsBoatEntity;
-import com.minecraftabnormals.extraboats.core.compatibility.Atmospheric;
-import com.minecraftabnormals.extraboats.core.compatibility.Autumnity;
-import com.minecraftabnormals.extraboats.core.compatibility.BambooBlocks;
-import com.minecraftabnormals.extraboats.core.compatibility.BiomesOPlenty;
-import com.minecraftabnormals.extraboats.core.compatibility.EndergeticExpansion;
-import com.minecraftabnormals.extraboats.core.compatibility.EnhancedMushrooms;
-import com.minecraftabnormals.extraboats.core.compatibility.Environmental;
-import com.minecraftabnormals.extraboats.core.compatibility.Hanami;
-import com.minecraftabnormals.extraboats.core.compatibility.NetherExtension;
-import com.minecraftabnormals.extraboats.core.compatibility.UpgradeAquatic;
+import com.minecraftabnormals.extraboats.core.compatibility.*;
 import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsItems;
 
 import net.minecraft.block.Block;
@@ -106,6 +97,11 @@ public class BoatHelper {
 				return Blocks.CRIMSON_PLANKS;
 			case WARPED:
 				return Blocks.WARPED_PLANKS;
+
+			case APPLE:
+				return TerraIncognita.APPLE_PLANKS;
+			case HAZEL:
+				return TerraIncognita.HAZEL_PLANKS;
 		}
 	}
 
@@ -196,6 +192,11 @@ public class BoatHelper {
 				return NetherExtension.CRIMSON_BOAT;
 			case WARPED:
 				return NetherExtension.WARPED_BOAT;
+
+			case APPLE:
+				return TerraIncognita.APPLE_BOAT;
+			case HAZEL:
+				return TerraIncognita.HAZEL_BOAT;
 		}
 	}
 
@@ -286,6 +287,11 @@ public class BoatHelper {
 				return ExtraBoatsItems.CRIMSON_CHEST_BOAT.get();
 			case WARPED:
 				return ExtraBoatsItems.WARPED_CHEST_BOAT.get();
+
+			case APPLE:
+				return ExtraBoatsItems.APPLE_CHEST_BOAT.get();
+			case HAZEL:
+				return ExtraBoatsItems.HAZEL_CHEST_BOAT.get();
 		}
 	}
 
@@ -376,6 +382,11 @@ public class BoatHelper {
 				return ExtraBoatsItems.CRIMSON_FURNACE_BOAT.get();
 			case WARPED:
 				return ExtraBoatsItems.WARPED_FURNACE_BOAT.get();
+
+			case APPLE:
+				return ExtraBoatsItems.APPLE_FURNACE_BOAT.get();
+			case HAZEL:
+				return ExtraBoatsItems.HAZEL_FURNACE_BOAT.get();
 		}
 	}
 
@@ -466,6 +477,11 @@ public class BoatHelper {
 				return ExtraBoatsItems.LARGE_CRIMSON_BOAT.get();
 			case WARPED:
 				return ExtraBoatsItems.LARGE_WARPED_BOAT.get();
+
+			case APPLE:
+				return ExtraBoatsItems.LARGE_APPLE_BOAT.get();
+			case HAZEL:
+				return ExtraBoatsItems.LARGE_HAZEL_BOAT.get();
 		}
 	}
 
@@ -565,7 +581,12 @@ public class BoatHelper {
 		
 		else if (item == NetherExtension.CRIMSON_BOAT)
 			return ExtraBoatsBoatEntity.BoatType.CRIMSON;
-		else
+		else if (item == NetherExtension.WARPED_BOAT)
 			return ExtraBoatsBoatEntity.BoatType.WARPED;
+
+		else if (item == TerraIncognita.APPLE_BOAT)
+			return ExtraBoatsBoatEntity.BoatType.APPLE;
+		else
+			return ExtraBoatsBoatEntity.BoatType.HAZEL;
 	}
 }

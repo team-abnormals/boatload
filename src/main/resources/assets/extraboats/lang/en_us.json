@@ -172,5 +172,17 @@
   "item.extraboats.warped_furnace_boat": "Warped Boat with Furnace",
   
   "item.extraboats.large_crimson_boat": "Large Crimson Boat",
-  "item.extraboats.large_warped_boat": "Large Warped Boat"
+  "item.extraboats.large_warped_boat": "Large Warped Boat",
+
+
+  "_comment": "Terra Incognita",
+  
+  "item.extraboats.apple_chest_boat": "Apple Boat with Chest",
+  "item.extraboats.hazel_chest_boat": "Hazel Boat with Chest",
+
+  "item.extraboats.apple_furnace_boat": "Apple Boat with Furnace",
+  "item.extraboats.hazel_furnace_boat": "Hazel Boat with Furnace",
+  
+  "item.extraboats.large_apple_boat": "Large Apple Boat",
+  "item.extraboats.large_hazel_boat": "Large Hazel Boat"
 }

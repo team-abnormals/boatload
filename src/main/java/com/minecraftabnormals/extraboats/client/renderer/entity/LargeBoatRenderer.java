@@ -67,7 +67,10 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity> {
 			"textures/entity/large_boat/sakura.png",
 			
 			"textures/entity/large_boat/crimson.png",
-			"textures/entity/large_boat/warped.png"};
+			"textures/entity/large_boat/warped.png",
+
+			"textures/entity/large_boat/apple.png",
+			"textures/entity/large_boat/hazel.png"};
 			
 	protected final LargeBoatModel modelLargeBoat = new LargeBoatModel();
 

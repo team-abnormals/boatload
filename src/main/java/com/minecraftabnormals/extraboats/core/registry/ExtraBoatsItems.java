@@ -175,6 +175,15 @@ public class ExtraBoatsItems {
 	public static RegistryObject<Item> WARPED_FURNACE_BOAT = createFurnaceBoat("warped", ExtraBoatsBoatEntity.BoatType.WARPED, NetherExtension.isInstalled());
 	public static RegistryObject<Item> LARGE_WARPED_BOAT = createLargeBoat("warped", ExtraBoatsBoatEntity.BoatType.WARPED, NetherExtension.isInstalled());
 
+	//Terra Incognita
+	public static RegistryObject<Item> APPLE_CHEST_BOAT = createChestBoat("apple", ExtraBoatsBoatEntity.BoatType.APPLE, TerraIncognita.isInstalled());
+	public static RegistryObject<Item> APPLE_FURNACE_BOAT = createFurnaceBoat("apple", ExtraBoatsBoatEntity.BoatType.APPLE, TerraIncognita.isInstalled());
+	public static RegistryObject<Item> LARGE_APPLE_BOAT = createLargeBoat("apple", ExtraBoatsBoatEntity.BoatType.APPLE, TerraIncognita.isInstalled());
+
+	public static RegistryObject<Item> HAZEL_CHEST_BOAT = createChestBoat("hazel", ExtraBoatsBoatEntity.BoatType.HAZEL, TerraIncognita.isInstalled());
+	public static RegistryObject<Item> HAZEL_FURNACE_BOAT = createFurnaceBoat("hazel", ExtraBoatsBoatEntity.BoatType.HAZEL, TerraIncognita.isInstalled());
+	public static RegistryObject<Item> LARGE_HAZEL_BOAT = createLargeBoat("hazel", ExtraBoatsBoatEntity.BoatType.HAZEL, TerraIncognita.isInstalled());
+
 	private static RegistryObject<Item> createChestBoat(String name, ExtraBoatsBoatEntity.BoatType type, boolean compat) {
 		return ITEMS.register(name + "_chest_boat", () -> new ChestBoatItem(type, (new Item.Properties()).maxStackSize(1).group(compat ? ItemGroup.TRANSPORTATION : null)));
 	}

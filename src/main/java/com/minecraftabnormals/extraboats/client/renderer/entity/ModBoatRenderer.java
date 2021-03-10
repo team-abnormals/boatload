@@ -69,7 +69,10 @@ public class ModBoatRenderer<T extends ExtraBoatsBoatEntity> extends EntityRende
 			new ResourceLocation("hanami", "textures/entity/boat/sakura.png"),
 
 			new ResourceLocation("nether_extension", "textures/entity/boat/crimson.png"),
-			new ResourceLocation("nether_extension", "textures/entity/boat/warped.png")};
+			new ResourceLocation("nether_extension", "textures/entity/boat/warped.png"),
+
+			new ResourceLocation("terraincognita", "textures/entity/boat/apple.png"),
+			new ResourceLocation("terraincognita", "textures/entity/boat/hazel.png")};
 
 	protected final BoatModel modelBoat = new BoatModel();
 

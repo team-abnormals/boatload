@@ -1,0 +1,23 @@
+{
+  "conditions": [{
+  "type": "forge:mod_loaded",
+  "modid": "terraincognita"
+  }],
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "terraincognita:apple_planks"
+    },
+    "W": {
+      "item": "terraincognita:apple_boat"
+    }
+  },
+  "result": {
+    "item": "extraboats:large_apple_boat"
+  }
+}

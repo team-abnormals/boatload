@@ -160,5 +160,29 @@
 
   "item.extraboats.sakura_chest_boat": "Сакуровая лодка с сундуком",
   "item.extraboats.sakura_furnace_boat": "Сакуровая лодка с печкой",
-  "item.extraboats.large_sakura_boat": "Большая сакуровая лодка"
+  "item.extraboats.large_sakura_boat": "Большая сакуровая лодка",
+
+
+  "_comment": "Nether Extension",
+  
+  "item.extraboats.crimson_chest_boat": "Багровая лодка с сундуком",
+  "item.extraboats.warped_chest_boat": "Искажённая лодка с сундуком",
+  
+  "item.extraboats.crimson_furnace_boat": "Багровая лодка с печкой",
+  "item.extraboats.warped_furnace_boat": "Искажённая лодка с печкой",
+   
+  "item.extraboats.large_crimson_boat": "Большая багровая лодка",
+  "item.extraboats.large_warped_boat": "Большая искажённая лодка",
+
+
+  "_comment": "Terra Incognita",
+  
+  "item.extraboats.apple_chest_boat": "Яблоневая лодка с сундуком",
+  "item.extraboats.hazel_chest_boat": "Орешниковая лодка с сундуком",
+
+  "item.extraboats.apple_furnace_boat": "Яблоневая лодка с печкой",
+  "item.extraboats.hazel_furnace_boat": "Орешниковая лодка с печкой",
+  
+  "item.extraboats.large_apple_boat": "Большая яблоневая лодка",
+  "item.extraboats.large_hazel_boat": "Большая орешниковая лодка"
 }

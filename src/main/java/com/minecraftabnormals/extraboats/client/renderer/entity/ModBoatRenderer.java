@@ -3,7 +3,6 @@ package com.minecraftabnormals.extraboats.client.renderer.entity;
 import com.minecraftabnormals.extraboats.common.entity.item.boat.ExtraBoatsBoatEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
@@ -75,56 +74,56 @@ public class ModBoatRenderer<T extends ExtraBoatsBoatEntity> extends EntityRende
 
 	public ModBoatRenderer(EntityRendererManager renderManagerIn) {
 		super(renderManagerIn);
-		this.shadowSize = 0.8F;
+		this.shadowRadius = 0.8F;
 	}
 
 	public void render(T entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
-		matrixStackIn.push();
+		matrixStackIn.pushPose();
 		matrixStackIn.translate(0.0D, 0.375D, 0.0D);
-		matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
-		float f = (float) entityIn.getTimeSinceHit() - partialTicks;
-		float f1 = entityIn.getDamageTaken() - partialTicks;
+		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
+		float f = (float) entityIn.getHurtTime() - partialTicks;
+		float f1 = entityIn.getDamage() - partialTicks;
 		if (f1 < 0.0F) {
 			f1 = 0.0F;
 		}
 
 		if (f > 0.0F) {
-			matrixStackIn.rotate(Vector3f.XP.rotationDegrees(MathHelper.sin(f) * f * f1 / 10.0F * (float) entityIn.getForwardDirection()));
+			matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(MathHelper.sin(f) * f * f1 / 10.0F * (float) entityIn.getHurtDir()));
 		}
 
-		float f2 = entityIn.getRockingAngle(partialTicks);
-		if (!MathHelper.epsilonEquals(f2, 0.0F)) {
-			matrixStackIn.rotate(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), entityIn.getRockingAngle(partialTicks), true));
+		float f2 = entityIn.getBubbleAngle(partialTicks);
+		if (!MathHelper.equal(f2, 0.0F)) {
+			matrixStackIn.mulPose(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), entityIn.getBubbleAngle(partialTicks), true));
 		}
 
 		BlockState blockstate = entityIn.getDisplayTile();
-		if (blockstate.getRenderType() != BlockRenderType.INVISIBLE) {
-			matrixStackIn.push();
+		if (blockstate.getRenderShape() != BlockRenderType.INVISIBLE) {
+			matrixStackIn.pushPose();
 			matrixStackIn.scale(0.75F, 0.75F, 0.75F);
 			matrixStackIn.translate(0.5D, (double) (-3.0F / 16.0F), 1.1D);
-			matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F));
+			matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
 			this.renderBlockState(entityIn, partialTicks, blockstate, matrixStackIn, bufferIn, packedLightIn);
-			matrixStackIn.pop();
+			matrixStackIn.popPose();
 		}
 
 		matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
-		matrixStackIn.rotate(Vector3f.YP.rotationDegrees(90.0F));
-		this.modelBoat.setRotationAngles(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
-		IVertexBuilder ivertexbuilder = bufferIn.getBuffer(this.modelBoat.getRenderType(this.getEntityTexture(entityIn)));
-		this.modelBoat.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-		if (!entityIn.canSwim()) {
-			IVertexBuilder ivertexbuilder1 = bufferIn.getBuffer(RenderType.getWaterMask());
-			this.modelBoat.func_228245_c_().render(matrixStackIn, ivertexbuilder1, packedLightIn, OverlayTexture.NO_OVERLAY);
+		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(90.0F));
+		this.modelBoat.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
+		IVertexBuilder ivertexbuilder = bufferIn.getBuffer(this.modelBoat.renderType(this.getTextureLocation(entityIn)));
+		this.modelBoat.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+		if (!entityIn.isUnderWater()) {
+			IVertexBuilder ivertexbuilder1 = bufferIn.getBuffer(RenderType.waterMask());
+			this.modelBoat.waterPatch().render(matrixStackIn, ivertexbuilder1, packedLightIn, OverlayTexture.NO_OVERLAY);
 		}
-		matrixStackIn.pop();
+		matrixStackIn.popPose();
 		super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
 	}
 
-	public ResourceLocation getEntityTexture(T entity) {
+	public ResourceLocation getTextureLocation(T entity) {
 		return BOAT_TEXTURES[entity.getModBoatType().ordinal()];
 	}
 
 	protected void renderBlockState(T entityIn, float partialTicks, BlockState stateIn, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
-		Minecraft.getInstance().getBlockRendererDispatcher().renderBlock(stateIn, matrixStackIn, bufferIn, packedLightIn, OverlayTexture.NO_OVERLAY);
+		Minecraft.getInstance().getBlockRenderer().renderSingleBlock(stateIn, matrixStackIn, bufferIn, packedLightIn, OverlayTexture.NO_OVERLAY);
 	}
 }

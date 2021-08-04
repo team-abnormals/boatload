@@ -2,8 +2,7 @@ package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
 import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.IDataManager;
 import com.minecraftabnormals.extraboats.core.BoatHelper;
-import com.minecraftabnormals.extraboats.core.other.ExtraBoatsDataProcessors;
-
+import com.minecraftabnormals.extraboats.core.other.EBDataProcessors;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -26,43 +25,43 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 public abstract class ExtraBoatsBoatEntity extends BoatEntity {
-	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.createKey(ExtraBoatsBoatEntity.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> BOAT_TYPE = EntityDataManager.defineId(ExtraBoatsBoatEntity.class, DataSerializers.INT);
 
 	public ExtraBoatsBoatEntity(EntityType<? extends BoatEntity> entityType, World worldIn) {
 		super(entityType, worldIn);
 	}
 
 	@Override
-	protected void registerData() {
-		super.registerData();
-		this.dataManager.register(BOAT_TYPE, ExtraBoatsBoatEntity.BoatType.OAK.ordinal());
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(BOAT_TYPE, ExtraBoatsBoatEntity.BoatType.OAK.ordinal());
 	}
 
 	public void setModBoatType(ExtraBoatsBoatEntity.BoatType boatType) {
-		this.dataManager.set(BOAT_TYPE, boatType.ordinal());
+		this.entityData.set(BOAT_TYPE, boatType.ordinal());
 	}
 
 	public ExtraBoatsBoatEntity.BoatType getModBoatType() {
-		return ExtraBoatsBoatEntity.BoatType.byId(this.dataManager.get(BOAT_TYPE));
+		return ExtraBoatsBoatEntity.BoatType.byId(this.entityData.get(BOAT_TYPE));
 	}
 
 	@Override
-	protected void writeAdditional(CompoundNBT compound) {
-		super.writeAdditional(compound);
+	protected void addAdditionalSaveData(CompoundNBT compound) {
+		super.addAdditionalSaveData(compound);
 		compound.putString("Type", this.getModBoatType().getName());
 	}
 
 	@Override
-	protected void readAdditional(CompoundNBT compound) {
-		super.readAdditional(compound);
+	protected void readAdditionalSaveData(CompoundNBT compound) {
+		super.readAdditionalSaveData(compound);
 		if (compound.contains("Type", 8)) {
 			this.setModBoatType(ExtraBoatsBoatEntity.BoatType.getTypeFromString(compound.getString("Type")));
 		}
 	}
 
 	@Override
-	protected void updateFallState(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
-		this.lastYd = this.getMotion().y;
+	protected void checkFallDamage(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
+		this.lastYd = this.getDeltaMovement().y;
 		if (!this.isPassenger()) {
 			if (onGroundIn) {
 				if (this.fallDistance > 3.0F) {
@@ -71,17 +70,17 @@ public abstract class ExtraBoatsBoatEntity extends BoatEntity {
 						return;
 					}
 
-					this.onLivingFall(this.fallDistance, 1.0F);
-					if (!this.world.isRemote && !this.removed) {
+					this.causeFallDamage(this.fallDistance, 1.0F);
+					if (!this.level.isClientSide && !this.removed) {
 						this.remove();
-						if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
+						if (this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
 							this.dropBreakItems();
 						}
 					}
 				}
 
 				this.fallDistance = 0.0F;
-			} else if (!this.world.getFluidState(this.getPosition().down()).isTagged(FluidTags.WATER) && y < 0.0D) {
+			} else if (!this.level.getFluidState(this.blockPosition().below()).is(FluidTags.WATER) && y < 0.0D) {
 				this.fallDistance = (float) ((double) this.fallDistance - y);
 			}
 		}
@@ -89,29 +88,29 @@ public abstract class ExtraBoatsBoatEntity extends BoatEntity {
 
 	protected void dropBreakItems() {
 		for (int i = 0; i < 3; ++i) {
-			this.entityDropItem(this.getPlanks());
+			this.spawnAtLocation(this.getPlanks());
 		}
 
 		for (int j = 0; j < 2; ++j) {
-			this.entityDropItem(Items.STICK);
+			this.spawnAtLocation(Items.STICK);
 		}
 	}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
+	public boolean hurt(DamageSource source, float amount) {
 		if (this.isInvulnerableTo(source)) {
 			return false;
-		} else if (!this.world.isRemote && !this.removed) {
-			if (source instanceof IndirectEntityDamageSource && source.getTrueSource() != null && this.isPassenger(source.getTrueSource())) {
+		} else if (!this.level.isClientSide && !this.removed) {
+			if (source instanceof IndirectEntityDamageSource && source.getEntity() != null && this.hasPassenger(source.getEntity())) {
 				return false;
 			} else {
-				this.setForwardDirection(-this.getForwardDirection());
-				this.setTimeSinceHit(10);
-				this.setDamageTaken(this.getDamageTaken() + amount * 10.0F);
-				this.markVelocityChanged();
-				boolean flag = source.getTrueSource() instanceof PlayerEntity && ((PlayerEntity) source.getTrueSource()).abilities.isCreativeMode;
-				if (flag || this.getDamageTaken() > 40.0F) {
-					if (!flag && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
+				this.setHurtDir(-this.getHurtDir());
+				this.setHurtTime(10);
+				this.setDamage(this.getDamage() + amount * 10.0F);
+				this.markHurt();
+				boolean flag = source.getEntity() instanceof PlayerEntity && ((PlayerEntity) source.getEntity()).abilities.instabuild;
+				if (flag || this.getDamage() > 40.0F) {
+					if (!flag && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
 						this.killBoat();
 					}
 
@@ -126,24 +125,24 @@ public abstract class ExtraBoatsBoatEntity extends BoatEntity {
 	}
 
 	public void killBoat() {
-		this.entityDropItem(this.getItemDropBoat());
-		this.entityDropItem(((IDataManager) this).getValue(ExtraBoatsDataProcessors.BANNER));
+		this.spawnAtLocation(this.getItemDropBoat());
+		this.spawnAtLocation(((IDataManager) this).getValue(EBDataProcessors.BANNER));
 	}
 
 	public BlockState getDisplayTile() {
-		return Blocks.AIR.getDefaultState();
+		return Blocks.AIR.defaultBlockState();
 	}
 
 	public Item getItemDropBoat() {
-		return this.getItemBoat();
+		return this.getDropItem();
 	}
 
-	public Item getItemBoat() {
+	public Item getDropItem() {
 		return BoatHelper.getBoatItem(this.getModBoatType());
 	}
 
 	@Override
-	public IPacket<?> createSpawnPacket() {
+	public IPacket<?> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 

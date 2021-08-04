@@ -1,27 +1,23 @@
 package com.minecraftabnormals.extraboats.core.mixin;
 
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
 import com.minecraftabnormals.abnormals_core.common.world.storage.tracking.IDataManager;
-import com.minecraftabnormals.extraboats.core.other.ExtraBoatsDataProcessors;
-
+import com.minecraftabnormals.extraboats.core.other.EBDataProcessors;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BannerItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BoatEntity.class)
 public abstract class BoatEntityMixin extends Entity {
@@ -33,43 +29,38 @@ public abstract class BoatEntityMixin extends Entity {
 	}
 
 	@Shadow
-	public abstract float getDamageTaken();
+	public abstract float getDamage();
 
 	public ItemStack getBanner() {
-		return ((IDataManager) this).getValue(ExtraBoatsDataProcessors.BANNER);
+		return ((IDataManager) this).getValue(EBDataProcessors.BANNER);
 	}
 
 	public void setBanner(ItemStack itemStack) {
-		((IDataManager) this).setValue(ExtraBoatsDataProcessors.BANNER, itemStack);
+		((IDataManager) this).setValue(EBDataProcessors.BANNER, itemStack);
 	}
 
-	@Inject(method = "processInitialInteract", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "interact", at = @At("HEAD"), cancellable = true)
 	private void addBannerInteraction(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResultType> info) {
-		ItemStack itemstack = player.getHeldItem(hand);
+		ItemStack itemstack = player.getItemInHand(hand);
 
 		if (this.getBanner().isEmpty() && itemstack.getItem() instanceof BannerItem) {
-			if (!player.abilities.isCreativeMode) {
-				player.getHeldItem(hand).shrink(1);
+			if (!player.abilities.instabuild) {
+				player.getItemInHand(hand).shrink(1);
 			}
 			ItemStack itemstack1 = itemstack.copy();
 			itemstack1.setCount(1);
 
 			this.setBanner(itemstack1);
-			if (!this.world.isRemote) {
-				info.setReturnValue(ActionResultType.CONSUME);
-			}
-			else {
-				info.setReturnValue(ActionResultType.SUCCESS);
-			}
+			info.setReturnValue(ActionResultType.sidedSuccess(level.isClientSide()));
 		}
 	}
 
-	@Inject(method = "attackEntityFrom", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
+	@Inject(method = "hurt", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
 	private void dropBannerWhenBroken(DamageSource source, float amount, CallbackInfoReturnable<Boolean> info) {
-		boolean flag = source.getTrueSource() instanceof PlayerEntity && ((PlayerEntity) source.getTrueSource()).abilities.isCreativeMode;
-		if (flag || this.getDamageTaken() > 40.0F) {
-			if (!flag && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
-				this.entityDropItem(this.getBanner());
+		boolean flag = source.getEntity() instanceof PlayerEntity && ((PlayerEntity) source.getEntity()).abilities.instabuild;
+		if (flag || this.getDamage() > 40.0F) {
+			if (!flag && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+				this.spawnAtLocation(this.getBanner());
 			}
 		}
 	}

@@ -14,7 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ExtraBoatsItems {
+public class EBItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ExtraBoats.MOD_ID);
 
 	public static RegistryObject<Item> OAK_CHEST_BOAT = createChestBoat("oak", ExtraBoatsBoatEntity.BoatType.OAK, true);
@@ -176,14 +176,14 @@ public class ExtraBoatsItems {
 	public static RegistryObject<Item> LARGE_WARPED_BOAT = createLargeBoat("warped", ExtraBoatsBoatEntity.BoatType.WARPED, NetherExtension.isInstalled());
 
 	private static RegistryObject<Item> createChestBoat(String name, ExtraBoatsBoatEntity.BoatType type, boolean compat) {
-		return ITEMS.register(name + "_chest_boat", () -> new ChestBoatItem(type, (new Item.Properties()).maxStackSize(1).group(compat ? ItemGroup.TRANSPORTATION : null)));
+		return ITEMS.register(name + "_chest_boat", () -> new ChestBoatItem(type, (new Item.Properties()).stacksTo(1).tab(compat ? ItemGroup.TAB_TRANSPORTATION : null)));
 	}
 
 	private static RegistryObject<Item> createFurnaceBoat(String name, ExtraBoatsBoatEntity.BoatType type, boolean compat) {
-		return ITEMS.register(name + "_furnace_boat", () -> new FurnaceBoatItem(type, (new Item.Properties()).maxStackSize(1).group(compat ? ItemGroup.TRANSPORTATION : null)));
+		return ITEMS.register(name + "_furnace_boat", () -> new FurnaceBoatItem(type, (new Item.Properties()).stacksTo(1).tab(compat ? ItemGroup.TAB_TRANSPORTATION : null)));
 	}
 
 	private static RegistryObject<Item> createLargeBoat(String name, ExtraBoatsBoatEntity.BoatType type, boolean compat) {
-		return ITEMS.register("large_" + name + "_boat", () -> new LargeBoatItem(type, (new Item.Properties()).maxStackSize(1).group(compat ? ItemGroup.TRANSPORTATION : null)));
+		return ITEMS.register("large_" + name + "_boat", () -> new LargeBoatItem(type, (new Item.Properties()).stacksTo(1).tab(compat ? ItemGroup.TAB_TRANSPORTATION : null)));
 	}
 }

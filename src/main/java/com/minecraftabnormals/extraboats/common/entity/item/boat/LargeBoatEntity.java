@@ -1,8 +1,8 @@
 package com.minecraftabnormals.extraboats.common.entity.item.boat;
 
 import com.minecraftabnormals.extraboats.core.BoatHelper;
-import com.minecraftabnormals.extraboats.core.other.ExtraBoatsTags;
-import com.minecraftabnormals.extraboats.core.registry.ExtraBoatsEntities;
+import com.minecraftabnormals.extraboats.core.other.EBTags;
+import com.minecraftabnormals.extraboats.core.registry.EBEntities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -27,27 +27,27 @@ public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 	}
 
 	public LargeBoatEntity(World worldIn, double x, double y, double z) {
-		this(ExtraBoatsEntities.LARGE_BOAT.get(), worldIn);
-		this.setPosition(x, y, z);
-		this.setMotion(Vector3d.ZERO);
-		this.prevPosX = x;
-		this.prevPosY = y;
-		this.prevPosZ = z;
+		this(EBEntities.LARGE_BOAT.get(), worldIn);
+		this.setPos(x, y, z);
+		this.setDeltaMovement(Vector3d.ZERO);
+		this.xo = x;
+		this.yo = y;
+		this.zo = z;
 	}
 
 	public LargeBoatEntity(FMLPlayMessages.SpawnEntity packet, World worldIn) {
-		super(ExtraBoatsEntities.LARGE_BOAT.get(), worldIn);
+		super(EBEntities.LARGE_BOAT.get(), worldIn);
 	}
 
 	@Override
 	protected void dropBreakItems() {
 		super.dropBreakItems();
 		for (int i = 0; i < 3; ++i) {
-			this.entityDropItem(this.getPlanks());
+			this.spawnAtLocation(this.getPlanks());
 		}
 
 		for (int j = 0; j < 2; ++j) {
-			this.entityDropItem(Items.STICK);
+			this.spawnAtLocation(Items.STICK);
 		}
 	}
 
@@ -55,17 +55,17 @@ public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 	public void tick() {
 		super.tick();
 
-		List<Entity> list = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow((double) 0.2F, (double) -0.01F, (double) 0.2F), EntityPredicates.pushableBy(this));
+		List<Entity> list = this.level.getEntities(this, this.getBoundingBox().inflate((double) 0.2F, (double) -0.01F, (double) 0.2F), EntityPredicates.pushableBy(this));
 		if (!list.isEmpty()) {
-			boolean flag = !this.world.isRemote && !(this.getControllingPassenger() instanceof PlayerEntity);
+			boolean flag = !this.level.isClientSide && !(this.getControllingPassenger() instanceof PlayerEntity);
 
 			for (int j = 0; j < list.size(); ++j) {
 				Entity entity = list.get(j);
-				if (!entity.isPassenger(this)) {
-					if (flag && this.getPassengers().size() < 4 && !entity.isPassenger() && entity.getWidth() < 1.375F && entity instanceof LivingEntity && !(entity instanceof WaterMobEntity) && !(entity instanceof PlayerEntity)) {
+				if (!entity.hasPassenger(this)) {
+					if (flag && this.getPassengers().size() < 4 && !entity.isPassenger() && entity.getBbWidth() < 1.375F && entity instanceof LivingEntity && !(entity instanceof WaterMobEntity) && !(entity instanceof PlayerEntity)) {
 						entity.startRiding(this);
 					} else {
-						this.applyEntityCollision(entity);
+						this.push(entity);
 					}
 				}
 			}
@@ -74,39 +74,39 @@ public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 
 	@Override
 	protected void controlBoat() {
-		if (this.isBeingRidden()) {
+		if (this.isVehicle()) {
 			float f = 0.0F;
-			if (this.leftInputDown) {
+			if (this.inputLeft) {
 				--this.deltaRotation;
 			}
 
-			if (this.rightInputDown) {
+			if (this.inputRight) {
 				++this.deltaRotation;
 			}
 
-			if (this.rightInputDown != this.leftInputDown && !this.forwardInputDown && !this.backInputDown) {
+			if (this.inputRight != this.inputLeft && !this.inputUp && !this.inputDown) {
 				f += 0.005F;
 			}
 
-			this.rotationYaw += this.deltaRotation;
-			if (this.forwardInputDown) {
+			this.yRot += this.deltaRotation;
+			if (this.inputUp) {
 				f += 0.03F;
 			}
 
-			if (this.backInputDown) {
+			if (this.inputDown) {
 				f -= 0.005F;
 			}
 
-			this.setMotion(this.getMotion().add((double) (MathHelper.sin(-this.rotationYaw * ((float) Math.PI / 180F)) * f), 0.0D, (double) (MathHelper.cos(this.rotationYaw * ((float) Math.PI / 180F)) * f)));
-			this.setPaddleState(this.rightInputDown && !this.leftInputDown || this.forwardInputDown, this.leftInputDown && !this.rightInputDown || this.forwardInputDown);
+			this.setDeltaMovement(this.getDeltaMovement().add((double) (MathHelper.sin(-this.yRot * ((float) Math.PI / 180F)) * f), 0.0D, (double) (MathHelper.cos(this.yRot * ((float) Math.PI / 180F)) * f)));
+			this.setPaddleState(this.inputRight && !this.inputLeft || this.inputUp, this.inputLeft && !this.inputRight || this.inputUp);
 		}
 	}
 
 	@Override
-	public void updatePassenger(Entity passenger) {
-		if (this.isPassenger(passenger)) {
+	public void positionRider(Entity passenger) {
+		if (this.hasPassenger(passenger)) {
 			float f = 0.0F;
-			float f1 = (float) ((this.removed ? (double) 0.01F : this.getMountedYOffset()) + passenger.getYOffset());
+			float f1 = (float) ((this.removed ? (double) 0.01F : this.getPassengersRidingOffset()) + passenger.getMyRidingOffset());
 
 			if (this.getPassengers().size() == 2) {
 				int i = this.getPassengers().indexOf(passenger);
@@ -128,7 +128,7 @@ public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 				int i = this.getPassengers().indexOf(passenger);
 
 				Entity firstpassenger = this.getPassengers().get(0);
-				boolean flag = firstpassenger.getType().isContained(ExtraBoatsTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
+				boolean flag = firstpassenger.getType().is(EBTags.SITTING_MOBS) || firstpassenger instanceof PlayerEntity;
 
 				if (i == 0) {
 					f = flag ? 0.875F : 1.0F;
@@ -149,26 +149,26 @@ public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 				f = (float) ((double) f + 0.1D);
 			}
 
-			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
-			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double) f1, this.getPosZ() + vector3d.z);
-			passenger.rotationYaw += this.deltaRotation;
-			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
-			this.applyYawToEntity(passenger);
+			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).yRot(-this.yRot * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
+			passenger.setPos(this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
+			passenger.yRot += this.deltaRotation;
+			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);
+			this.clampRotation(passenger);
 			if (passenger instanceof AnimalEntity && this.getPassengers().size() > 1) {
-				int j = passenger.getEntityId() % 2 == 0 ? 90 : 270;
-				passenger.setRenderYawOffset(((AnimalEntity) passenger).renderYawOffset + (float) j);
-				passenger.setRotationYawHead(passenger.getRotationYawHead() + (float) j);
+				int j = passenger.getId() % 2 == 0 ? 90 : 270;
+				passenger.setYBodyRot(((AnimalEntity) passenger).yBodyRot + (float) j);
+				passenger.setYHeadRot(passenger.getYHeadRot() + (float) j);
 			}
 		}
 	}
 
 	@Override
-	public Item getItemBoat() {
+	public Item getDropItem() {
 		return BoatHelper.getLargeBoatItem(this.getModBoatType());
 	}
 
 	@Override
-	protected boolean canFitPassenger(Entity passenger) {
-		return this.getPassengers().size() < 4 && passenger.getWidth() < 1.375F && !this.areEyesInFluid(FluidTags.WATER);
+	protected boolean canAddPassenger(Entity passenger) {
+		return this.getPassengers().size() < 4 && passenger.getBbWidth() < 1.375F && !this.isEyeInFluid(FluidTags.WATER);
 	}
 }

@@ -14,7 +14,7 @@ public class FurnaceBoatItem extends ExtraBoatsBoatItem {
 
 	@Override
 	protected ExtraBoatsBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult, ItemStack itemStack) {
-		return new FurnaceBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
+		return new FurnaceBoatEntity(worldIn, raytraceresult.getLocation().x, raytraceresult.getLocation().y, raytraceresult.getLocation().z);
 	}
 
 	@Override

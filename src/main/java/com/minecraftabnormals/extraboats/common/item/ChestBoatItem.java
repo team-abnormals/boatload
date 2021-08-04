@@ -43,21 +43,21 @@ public class ChestBoatItem extends ExtraBoatsBoatItem {
 
 	@Override
 	protected ExtraBoatsBoatEntity getBoatEntity(World worldIn, RayTraceResult raytraceresult, ItemStack itemStack) {
-		ChestBoatEntity boatentity = new ChestBoatEntity(worldIn, raytraceresult.getHitVec().x, raytraceresult.getHitVec().y, raytraceresult.getHitVec().z);
+		ChestBoatEntity boatentity = new ChestBoatEntity(worldIn, raytraceresult.getLocation().x, raytraceresult.getLocation().y, raytraceresult.getLocation().z);
 		boatentity.setChest(new ItemStack(getChest(itemStack)));
 		return boatentity;
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+	public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		Item item = getChest(stack);
 
 		if (item != Items.CHEST) {
-			tooltip.add(((TranslationTextComponent) item.getName()).mergeStyle(TextFormatting.GRAY));
+			tooltip.add(((TranslationTextComponent) item.getDescription()).withStyle(TextFormatting.GRAY));
 		}
 
-		super.addInformation(stack, worldIn, tooltip, flagIn);
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 	}
 
 	@Override

@@ -29,16 +29,16 @@ public class ChestBoatRecipe extends SpecialRecipe {
 		ItemStack itemstack = ItemStack.EMPTY;
 		ItemStack itemstack1 = ItemStack.EMPTY;
 
-		for (int i = 0; i < inv.getSizeInventory(); ++i) {
-			ItemStack itemstack2 = inv.getStackInSlot(i);
+		for (int i = 0; i < inv.getContainerSize(); ++i) {
+			ItemStack itemstack2 = inv.getItem(i);
 			if (!itemstack2.isEmpty()) {
-				if (itemstack2.getItem().isIn(ItemTags.BOATS)) {
+				if (itemstack2.getItem().is(ItemTags.BOATS)) {
 					if (!itemstack.isEmpty()) {
 						return false;
 					}
 
 					itemstack = itemstack2;
-				} else if (itemstack2.getItem().isIn(Tags.Items.CHESTS_WOODEN) && !itemstack2.getItem().isIn(Tags.Items.CHESTS_TRAPPED)) {
+				} else if (itemstack2.getItem().is(Tags.Items.CHESTS_WOODEN) && !itemstack2.getItem().is(Tags.Items.CHESTS_TRAPPED)) {
 					if (!itemstack1.isEmpty()) {
 						return false;
 					}
@@ -53,16 +53,16 @@ public class ChestBoatRecipe extends SpecialRecipe {
 
 	@Nonnull
 	@Override
-	public ItemStack getCraftingResult(CraftingInventory inv) {
+	public ItemStack assemble(CraftingInventory inv) {
 		Item item = Items.CHEST;
 		ExtraBoatsBoatEntity.BoatType type = ExtraBoatsBoatEntity.BoatType.OAK;
 
-		for (int i = 0; i < inv.getSizeInventory(); ++i) {
-			ItemStack itemstack2 = inv.getStackInSlot(i);
+		for (int i = 0; i < inv.getContainerSize(); ++i) {
+			ItemStack itemstack2 = inv.getItem(i);
 			if (!itemstack2.isEmpty()) {
-				if (itemstack2.getItem().isIn(ItemTags.BOATS)) {
+				if (itemstack2.getItem().is(ItemTags.BOATS)) {
 					type = BoatHelper.getType(itemstack2.getItem());
-				} else if (itemstack2.getItem().isIn(Tags.Items.CHESTS_WOODEN) && !itemstack2.getItem().isIn(Tags.Items.CHESTS_TRAPPED)) {
+				} else if (itemstack2.getItem().is(Tags.Items.CHESTS_WOODEN) && !itemstack2.getItem().is(Tags.Items.CHESTS_TRAPPED)) {
 					item = itemstack2.getItem();
 				}
 			}
@@ -75,7 +75,7 @@ public class ChestBoatRecipe extends SpecialRecipe {
 	}
 
 	@Override
-	public boolean canFit(int width, int height) {
+	public boolean canCraftInDimensions(int width, int height) {
 		return width * height >= 2;
 	}
 

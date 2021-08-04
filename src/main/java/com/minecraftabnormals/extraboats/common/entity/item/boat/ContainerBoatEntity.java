@@ -45,16 +45,16 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 	@Override
 	protected void dropBreakItems() {
 		super.dropBreakItems();
-		if (!this.world.isRemote && this.dropContentsWhenDead && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
-			InventoryHelper.dropInventoryItems(this.world, this, this);
+		if (!this.level.isClientSide && this.dropContentsWhenDead && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+			InventoryHelper.dropContents(this.level, this, this);
 		}
 	}
 
 	@Override
 	public void killBoat() {
 		super.killBoat();
-		if (!this.world.isRemote && this.dropContentsWhenDead && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
-			InventoryHelper.dropInventoryItems(this.world, this, this);
+		if (!this.level.isClientSide && this.dropContentsWhenDead && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+			InventoryHelper.dropContents(this.level, this, this);
 		}
 	}
 
@@ -69,19 +69,19 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 	}
 
 	@Override
-	public ItemStack getStackInSlot(int index) {
+	public ItemStack getItem(int index) {
 		this.addLoot((PlayerEntity) null);
 		return this.boatContainerItems.get(index);
 	}
 
 	@Override
-	public ItemStack decrStackSize(int index, int count) {
+	public ItemStack removeItem(int index, int count) {
 		this.addLoot((PlayerEntity) null);
-		return ItemStackHelper.getAndSplit(this.boatContainerItems, index, count);
+		return ItemStackHelper.removeItem(this.boatContainerItems, index, count);
 	}
 
 	@Override
-	public ItemStack removeStackFromSlot(int index) {
+	public ItemStack removeItemNoUpdate(int index) {
 		this.addLoot((PlayerEntity) null);
 		ItemStack itemstack = this.boatContainerItems.get(index);
 		if (itemstack.isEmpty()) {
@@ -93,18 +93,18 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 	}
 
 	@Override
-	public void setInventorySlotContents(int index, ItemStack stack) {
+	public void setItem(int index, ItemStack stack) {
 		this.addLoot((PlayerEntity) null);
 		this.boatContainerItems.set(index, stack);
-		if (!stack.isEmpty() && stack.getCount() > this.getInventoryStackLimit()) {
-			stack.setCount(this.getInventoryStackLimit());
+		if (!stack.isEmpty() && stack.getCount() > this.getMaxStackSize()) {
+			stack.setCount(this.getMaxStackSize());
 		}
 	}
 
 	@Override
-	public boolean replaceItemInInventory(int inventorySlot, ItemStack itemStackIn) {
-		if (inventorySlot >= 0 && inventorySlot < this.getSizeInventory()) {
-			this.setInventorySlotContents(inventorySlot, itemStackIn);
+	public boolean setSlot(int inventorySlot, ItemStack itemStackIn) {
+		if (inventorySlot >= 0 && inventorySlot < this.getContainerSize()) {
+			this.setItem(inventorySlot, itemStackIn);
 			return true;
 		} else {
 			return false;
@@ -112,15 +112,15 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 	}
 
 	@Override
-	public void markDirty() {
+	public void setChanged() {
 	}
 
 	@Override
-	public boolean isUsableByPlayer(PlayerEntity player) {
+	public boolean stillValid(PlayerEntity player) {
 		if (this.removed) {
 			return false;
 		} else {
-			return !(player.getDistanceSq(this) > 64.0D);
+			return !(player.distanceToSqr(this) > 64.0D);
 		}
 	}
 
@@ -131,8 +131,8 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 	}
 
 	@Override
-	protected void writeAdditional(CompoundNBT compound) {
-		super.writeAdditional(compound);
+	protected void addAdditionalSaveData(CompoundNBT compound) {
+		super.addAdditionalSaveData(compound);
 		if (this.lootTable != null) {
 			compound.putString("LootTable", this.lootTable.toString());
 			if (this.lootTableSeed != 0L) {
@@ -144,9 +144,9 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 	}
 
 	@Override
-	protected void readAdditional(CompoundNBT compound) {
-		super.readAdditional(compound);
-		this.boatContainerItems = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
+	protected void readAdditionalSaveData(CompoundNBT compound) {
+		super.readAdditionalSaveData(compound);
+		this.boatContainerItems = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		if (compound.contains("LootTable", 8)) {
 			this.lootTable = new ResourceLocation(compound.getString("LootTable"));
 			this.lootTableSeed = compound.getLong("LootTableSeed");
@@ -156,31 +156,31 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 	}
 
 	@Override
-	public ActionResultType processInitialInteract(PlayerEntity player, Hand hand) {
-		if (player.isSneaking()) {
-			player.openContainer(this);
-			return ActionResultType.func_233537_a_(this.world.isRemote);
+	public ActionResultType interact(PlayerEntity player, Hand hand) {
+		if (player.isShiftKeyDown()) {
+			player.openMenu(this);
+			return ActionResultType.sidedSuccess(this.level.isClientSide);
 		} else {
-			return super.processInitialInteract(player, hand);
+			return super.interact(player, hand);
 		}
 	}
 
 	public void addLoot(@Nullable PlayerEntity player) {
-		if (this.lootTable != null && this.world.getServer() != null) {
-			LootTable loottable = this.world.getServer().getLootTableManager().getLootTableFromLocation(this.lootTable);
+		if (this.lootTable != null && this.level.getServer() != null) {
+			LootTable loottable = this.level.getServer().getLootTables().get(this.lootTable);
 			this.lootTable = null;
-			LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld) this.world)).withParameter(LootParameters.field_237457_g_, this.getPositionVec()).withSeed(this.lootTableSeed);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerWorld) this.level)).withParameter(LootParameters.ORIGIN, this.position()).withOptionalRandomSeed(this.lootTableSeed);
 			lootcontext$builder.withParameter(LootParameters.KILLER_ENTITY, this);
 			if (player != null) {
 				lootcontext$builder.withLuck(player.getLuck()).withParameter(LootParameters.THIS_ENTITY, player);
 			}
 
-			loottable.fillInventory(this, lootcontext$builder.build(LootParameterSets.CHEST));
+			loottable.fill(this, lootcontext$builder.create(LootParameterSets.CHEST));
 		}
 	}
 
 	@Override
-	public void clear() {
+	public void clearContent() {
 		this.addLoot((PlayerEntity) null);
 		this.boatContainerItems.clear();
 	}
@@ -222,26 +222,26 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 	}
 
 	@Override
-	public void updatePassenger(Entity passenger) {
-		if (this.isPassenger(passenger)) {
+	public void positionRider(Entity passenger) {
+		if (this.hasPassenger(passenger)) {
 			float f = passenger instanceof AnimalEntity ? 0.4F : 0.2F;
-			float f1 = (float) ((this.removed ? (double) 0.01F : this.getMountedYOffset()) + passenger.getYOffset());
+			float f1 = (float) ((this.removed ? (double) 0.01F : this.getPassengersRidingOffset()) + passenger.getMyRidingOffset());
 
-			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).rotateYaw(-this.rotationYaw * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
-			passenger.setPosition(this.getPosX() + vector3d.x, this.getPosY() + (double) f1, this.getPosZ() + vector3d.z);
-			passenger.rotationYaw += this.deltaRotation;
-			passenger.setRotationYawHead(passenger.getRotationYawHead() + this.deltaRotation);
-			this.applyYawToEntity(passenger);
+			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).yRot(-this.yRot * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
+			passenger.setPos(this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
+			passenger.yRot += this.deltaRotation;
+			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);
+			this.clampRotation(passenger);
 			if (passenger instanceof AnimalEntity) {
-				int j = passenger.getEntityId() % 2 == 0 ? 90 : 270;
-				passenger.setRenderYawOffset(((AnimalEntity) passenger).renderYawOffset + (float) j);
-				passenger.setRotationYawHead(passenger.getRotationYawHead() + (float) j);
+				int j = passenger.getId() % 2 == 0 ? 90 : 270;
+				passenger.setYBodyRot(((AnimalEntity) passenger).yBodyRot + (float) j);
+				passenger.setYHeadRot(passenger.getYHeadRot() + (float) j);
 			}
 		}
 	}
 
 	@Override
-	protected boolean canFitPassenger(Entity passenger) {
-		return !this.isBeingRidden() && !this.areEyesInFluid(FluidTags.WATER);
+	protected boolean canAddPassenger(Entity passenger) {
+		return !this.isVehicle() && !this.isEyeInFluid(FluidTags.WATER);
 	}
 }

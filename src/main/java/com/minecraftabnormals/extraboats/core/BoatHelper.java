@@ -552,7 +552,7 @@ public class BoatHelper {
 
 		else if (item == Hanami.SAKURA_BOAT)
 			return ExtraBoatsBoatEntity.BoatType.SAKURA;
-		
+
 		else if (item == NetherExtension.CRIMSON_BOAT)
 			return ExtraBoatsBoatEntity.BoatType.CRIMSON;
 		else

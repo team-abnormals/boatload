@@ -100,7 +100,7 @@ public class ModBoatRenderer<T extends ExtraBoatsBoatEntity> extends EntityRende
 		if (blockstate.getRenderShape() != BlockRenderType.INVISIBLE) {
 			matrixStackIn.pushPose();
 			matrixStackIn.scale(0.75F, 0.75F, 0.75F);
-			matrixStackIn.translate(0.5D, (double) (-3.0F / 16.0F), 1.1D);
+			matrixStackIn.translate(0.5D, -3.0F / 16.0F, 1.1D);
 			matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
 			this.renderBlockState(entityIn, partialTicks, blockstate, matrixStackIn, bufferIn, packedLightIn);
 			matrixStackIn.popPose();

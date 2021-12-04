@@ -28,6 +28,9 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.wrapper.InvWrapper;
 
 import javax.annotation.Nullable;
 
@@ -70,19 +73,19 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 
 	@Override
 	public ItemStack getItem(int index) {
-		this.addLoot((PlayerEntity) null);
+		this.addLoot(null);
 		return this.boatContainerItems.get(index);
 	}
 
 	@Override
 	public ItemStack removeItem(int index, int count) {
-		this.addLoot((PlayerEntity) null);
+		this.addLoot(null);
 		return ItemStackHelper.removeItem(this.boatContainerItems, index, count);
 	}
 
 	@Override
 	public ItemStack removeItemNoUpdate(int index) {
-		this.addLoot((PlayerEntity) null);
+		this.addLoot(null);
 		ItemStack itemstack = this.boatContainerItems.get(index);
 		if (itemstack.isEmpty()) {
 			return ItemStack.EMPTY;
@@ -94,7 +97,7 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 
 	@Override
 	public void setItem(int index, ItemStack stack) {
-		this.addLoot((PlayerEntity) null);
+		this.addLoot(null);
 		this.boatContainerItems.set(index, stack);
 		if (!stack.isEmpty() && stack.getCount() > this.getMaxStackSize()) {
 			stack.setCount(this.getMaxStackSize());
@@ -181,7 +184,7 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 
 	@Override
 	public void clearContent() {
-		this.addLoot((PlayerEntity) null);
+		this.addLoot(null);
 		this.boatContainerItems.clear();
 	}
 
@@ -203,10 +206,10 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 
 	protected abstract Container createContainer(int id, PlayerInventory playerInventoryIn);
 
-	private net.minecraftforge.common.util.LazyOptional<?> itemHandler = net.minecraftforge.common.util.LazyOptional.of(() -> new net.minecraftforge.items.wrapper.InvWrapper(this));
+	private final LazyOptional<?> itemHandler = LazyOptional.of(() -> new InvWrapper(this));
 
 	@Override
-	public <T> net.minecraftforge.common.util.LazyOptional<T> getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, @Nullable net.minecraft.util.Direction facing) {
+	public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable net.minecraft.util.Direction facing) {
 		if (this.isAlive() && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
 			return itemHandler.cast();
 		return super.getCapability(capability, facing);
@@ -227,7 +230,7 @@ public abstract class ContainerBoatEntity extends ExtraBoatsBoatEntity implement
 			float f = passenger instanceof AnimalEntity ? 0.4F : 0.2F;
 			float f1 = (float) ((this.removed ? (double) 0.01F : this.getPassengersRidingOffset()) + passenger.getMyRidingOffset());
 
-			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).yRot(-this.yRot * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
+			Vector3d vector3d = (new Vector3d(f, 0.0D, 0.0D)).yRot(-this.yRot * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
 			passenger.setPos(this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
 			passenger.yRot += this.deltaRotation;
 			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);

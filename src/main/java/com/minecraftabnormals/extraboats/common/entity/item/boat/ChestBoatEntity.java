@@ -71,7 +71,7 @@ public class ChestBoatEntity extends ContainerBoatEntity {
 		super.dropBreakItems();
 		this.spawnAtLocation(this.getChest());
 	}
-	
+
 	@Override
 	public void killBoat() {
 		super.killBoat();

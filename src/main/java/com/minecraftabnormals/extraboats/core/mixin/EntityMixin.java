@@ -25,7 +25,7 @@ public abstract class EntityMixin {
 		if ((Object) this instanceof BoatEntity) {
 			if (!this.level.isClientSide && !this.removed) {
 				if (this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-					((Entity)(Object) this).spawnAtLocation(((IDataManager) this).getValue(EBDataProcessors.BANNER));
+					((Entity) (Object) this).spawnAtLocation(((IDataManager) this).getValue(EBDataProcessors.BANNER));
 				}
 			}
 		}

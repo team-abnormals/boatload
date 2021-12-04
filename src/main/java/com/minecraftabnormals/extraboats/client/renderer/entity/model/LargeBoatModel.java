@@ -73,8 +73,8 @@ public class LargeBoatModel extends SegmentedModel<LargeBoatEntity> {
 	protected void animatePaddle(LargeBoatEntity p_228244_1_, int p_228244_2_, float p_228244_3_) {
 		float f = p_228244_1_.getRowingTime(p_228244_2_, p_228244_3_);
 		ModelRenderer modelrenderer = this.paddles[p_228244_2_];
-		modelrenderer.xRot = (float) MathHelper.clampedLerp((double) (-(float) Math.PI / 3F), (double) -0.2617994F, (double) ((MathHelper.sin(-f) + 1.0F) / 2.0F));
-		modelrenderer.yRot = (float) MathHelper.clampedLerp((double) (-(float) Math.PI / 4F), (double) ((float) Math.PI / 4F), (double) ((MathHelper.sin(-f + 1.0F) + 1.0F) / 2.0F));
+		modelrenderer.xRot = (float) MathHelper.clampedLerp(-(float) Math.PI / 3F, -0.2617994F, (MathHelper.sin(-f) + 1.0F) / 2.0F);
+		modelrenderer.yRot = (float) MathHelper.clampedLerp(-(float) Math.PI / 4F, (float) Math.PI / 4F, (MathHelper.sin(-f + 1.0F) + 1.0F) / 2.0F);
 		if (p_228244_2_ == 1) {
 			modelrenderer.yRot = (float) Math.PI - modelrenderer.yRot;
 		}

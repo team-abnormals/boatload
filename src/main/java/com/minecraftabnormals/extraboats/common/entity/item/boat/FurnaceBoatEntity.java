@@ -137,7 +137,7 @@ public class FurnaceBoatEntity extends ExtraBoatsBoatEntity {
 				f += 0.026F;
 			}
 
-			this.setDeltaMovement(this.getDeltaMovement().add((double) (MathHelper.sin(-this.yRot * ((float) Math.PI / 180F)) * f), 0.0D, (double) (MathHelper.cos(this.yRot * ((float) Math.PI / 180F)) * f)));
+			this.setDeltaMovement(this.getDeltaMovement().add(MathHelper.sin(-this.yRot * ((float) Math.PI / 180F)) * f, 0.0D, MathHelper.cos(this.yRot * ((float) Math.PI / 180F)) * f));
 			this.setPaddleState(this.inputRight && !this.inputLeft || this.inputUp, this.inputLeft && !this.inputRight || this.inputUp);
 
 			if (this.getFuel() > 0 && this.status == BoatEntity.Status.IN_WATER) {
@@ -193,7 +193,7 @@ public class FurnaceBoatEntity extends ExtraBoatsBoatEntity {
 			float f = passenger instanceof AnimalEntity ? 0.4F : 0.2F;
 			float f1 = (float) ((this.removed ? (double) 0.01F : this.getPassengersRidingOffset()) + passenger.getMyRidingOffset());
 
-			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).yRot(-this.yRot * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
+			Vector3d vector3d = (new Vector3d(f, 0.0D, 0.0D)).yRot(-this.yRot * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
 			passenger.setPos(this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
 			passenger.yRot += this.deltaRotation;
 			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);

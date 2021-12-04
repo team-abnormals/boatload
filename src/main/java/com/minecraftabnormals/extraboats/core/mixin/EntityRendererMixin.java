@@ -60,14 +60,13 @@ public abstract class EntityRendererMixin<T extends Entity> {
 				if (boatentity instanceof LargeBoatEntity) {
 					matrixStackIn.pushPose();
 					matrixStackIn.scale(1.05F, 1.05F, 1.05F);
-					matrixStackIn.translate(0.5D, (double) (3.0F / 16.0F), (double) (33.0F / 16.0F));
+					matrixStackIn.translate(0.5D, 3.0F / 16.0F, 33.0F / 16.0F);
 					matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
 					banner.getItem().getItemStackTileEntityRenderer().renderByItem(banner, ItemCameraTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
 					matrixStackIn.popPose();
-				}
-				else {
+				} else {
 					matrixStackIn.pushPose();
-					matrixStackIn.translate(0.5D, (double) (3.0F / 16.0F), (double) (23.0F / 16.0F));
+					matrixStackIn.translate(0.5D, 3.0F / 16.0F, 23.0F / 16.0F);
 					matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
 					banner.getItem().getItemStackTileEntityRenderer().renderByItem(banner, ItemCameraTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
 					matrixStackIn.popPose();

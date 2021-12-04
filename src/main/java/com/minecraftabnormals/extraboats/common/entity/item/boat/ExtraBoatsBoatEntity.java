@@ -150,7 +150,7 @@ public abstract class ExtraBoatsBoatEntity extends BoatEntity {
 		return BoatHelper.getPlanks(this.getModBoatType());
 	}
 
-	public static enum BoatType {
+	public enum BoatType {
 		OAK("oak"),
 		SPRUCE("spruce"),
 		BIRCH("birch"),
@@ -201,7 +201,7 @@ public abstract class ExtraBoatsBoatEntity extends BoatEntity {
 
 		private final String name;
 
-		private BoatType(String nameIn) {
+		BoatType(String nameIn) {
 			this.name = nameIn;
 		}
 

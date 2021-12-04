@@ -64,10 +64,10 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity> {
 			"textures/entity/large_boat/glowshroom.png",
 
 			"textures/entity/large_boat/sakura.png",
-			
+
 			"textures/entity/large_boat/crimson.png",
 			"textures/entity/large_boat/warped.png"};
-			
+
 	protected final LargeBoatModel modelLargeBoat = new LargeBoatModel();
 
 	public LargeBoatRenderer(EntityRendererManager renderManagerIn) {
@@ -93,7 +93,7 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoatEntity> {
 		if (!MathHelper.equal(f2, 0.0F)) {
 			matrixStackIn.mulPose(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), entityIn.getBubbleAngle(partialTicks), true));
 		}
-		
+
 		matrixStackIn.scale(-1.05F, -1.05F, 1.05F);
 		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(90.0F));
 		this.modelLargeBoat.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);

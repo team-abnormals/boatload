@@ -40,7 +40,7 @@ public class ExtraBoatsBoatItem extends Item {
 				Vector3d vector3d1 = playerIn.getEyePosition(1.0F);
 
 				for (Entity entity : list) {
-					AxisAlignedBB axisalignedbb = entity.getBoundingBox().inflate((double) entity.getPickRadius());
+					AxisAlignedBB axisalignedbb = entity.getBoundingBox().inflate(entity.getPickRadius());
 					if (axisalignedbb.contains(vector3d1)) {
 						return ActionResult.pass(itemstack);
 					}

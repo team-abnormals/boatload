@@ -55,7 +55,7 @@ public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 	public void tick() {
 		super.tick();
 
-		List<Entity> list = this.level.getEntities(this, this.getBoundingBox().inflate((double) 0.2F, (double) -0.01F, (double) 0.2F), EntityPredicates.pushableBy(this));
+		List<Entity> list = this.level.getEntities(this, this.getBoundingBox().inflate(0.2F, -0.01F, 0.2F), EntityPredicates.pushableBy(this));
 		if (!list.isEmpty()) {
 			boolean flag = !this.level.isClientSide && !(this.getControllingPassenger() instanceof PlayerEntity);
 
@@ -97,7 +97,7 @@ public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 				f -= 0.005F;
 			}
 
-			this.setDeltaMovement(this.getDeltaMovement().add((double) (MathHelper.sin(-this.yRot * ((float) Math.PI / 180F)) * f), 0.0D, (double) (MathHelper.cos(this.yRot * ((float) Math.PI / 180F)) * f)));
+			this.setDeltaMovement(this.getDeltaMovement().add(MathHelper.sin(-this.yRot * ((float) Math.PI / 180F)) * f, 0.0D, MathHelper.cos(this.yRot * ((float) Math.PI / 180F)) * f));
 			this.setPaddleState(this.inputRight && !this.inputLeft || this.inputUp, this.inputLeft && !this.inputRight || this.inputUp);
 		}
 	}
@@ -149,7 +149,7 @@ public class LargeBoatEntity extends ExtraBoatsBoatEntity {
 				f = (float) ((double) f + 0.1D);
 			}
 
-			Vector3d vector3d = (new Vector3d((double) f, 0.0D, 0.0D)).yRot(-this.yRot * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
+			Vector3d vector3d = (new Vector3d(f, 0.0D, 0.0D)).yRot(-this.yRot * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
 			passenger.setPos(this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
 			passenger.yRot += this.deltaRotation;
 			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);

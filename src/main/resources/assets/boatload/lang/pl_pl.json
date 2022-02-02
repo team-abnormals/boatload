@@ -1,0 +1,176 @@
+{
+  "itemGroup.boatload": "Extra Boats",
+  
+  "entity.boatload.chest_boat": "Łódka ze skrzynią",
+  "entity.boatload.furnace_boat": "Łódka z piecem",
+  "entity.boatload.large_boat": "Wielka łódka",
+  
+  
+  "_comment": "Vanilla",
+  
+  "item.boatload.oak_chest_boat": "Dębowa łódka ze skrzynią",
+  "item.boatload.spruce_chest_boat": "Świerkowa łódka ze skrzynią",
+  "item.boatload.birch_chest_boat": "Brzozowa łódka ze skrzynią",
+  "item.boatload.jungle_chest_boat": "Tropikalna łódka ze skrzynią",
+  "item.boatload.acacia_chest_boat": "Akacjowa łódka ze skrzynią",
+  "item.boatload.dark_oak_chest_boat": "Ciemnodębowa łódka ze skrzynią",
+  
+  "item.boatload.oak_furnace_boat": "Dębowa łódka z piecem",
+  "item.boatload.spruce_furnace_boat": "Świerkowa łódka z piecem",
+  "item.boatload.birch_furnace_boat": "Brzozowa łódka z piecem",
+  "item.boatload.jungle_furnace_boat": "Tropikalna łódka z piecem",
+  "item.boatload.acacia_furnace_boat": "Akacjowa łódka z piecem",
+  "item.boatload.dark_oak_furnace_boat": "Ciemnodębowa łódka z piecem",
+  
+  "item.boatload.large_oak_boat": "Wielka dębowa łódka",
+  "item.boatload.large_spruce_boat": "Wielka świerkowa łódka",
+  "item.boatload.large_birch_boat": "Wielka brzozowa łódka",
+  "item.boatload.large_jungle_boat": "Wielka tropikalna łódka",
+  "item.boatload.large_acacia_boat": "Wielka  akacjowa łódka",
+  "item.boatload.large_dark_oak_boat": "Wielka ciemnodębowa łódka",
+  
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.boatload.cherry_chest_boat": "Wiśniowa łódka ze skrzynią",
+  "item.boatload.dead_chest_boat": "Martwa łódka ze skrzynią",
+  "item.boatload.fir_chest_boat": "Jodłowa łódka ze skrzynią",
+  "item.boatload.hellbark_chest_boat": "Piekielna łódka ze skrzynią",
+  "item.boatload.jacaranda_chest_boat": "Jakarandowa łódka ze skrzynią",
+  "item.boatload.magic_chest_boat": "Magiczna łódka ze skrzynią",
+  "item.boatload.mahogany_chest_boat": "Mahoniowa łódka ze skrzynią",
+  "item.boatload.palm_chest_boat": "Palmowa łódka ze skrzynią",
+  "item.boatload.redwood_chest_boat": "Sekwojowa łódka ze skrzynią",
+  "item.boatload.umbran_chest_boat": "Umbranowa łódka ze skrzynią",
+  "item.boatload.willow_chest_boat": "Wierzbowa łódka ze skrzynią",
+  
+  "item.boatload.cherry_furnace_boat": "Wiśniowa łódka z piecem",
+  "item.boatload.dead_furnace_boat": "Martwa łódka z piecem",
+  "item.boatload.fir_furnace_boat": "Jodłowa łódka z piecem",
+  "item.boatload.hellbark_furnace_boat": "Piekielna łódka z piecem",
+  "item.boatload.jacaranda_furnace_boat": "Jakarandowa łódka z piecem",
+  "item.boatload.magic_furnace_boat": "Magiczna łódka z piecem",
+  "item.boatload.mahogany_furnace_boat": "Mahoniowa łódka z piecem",
+  "item.boatload.palm_furnace_boat": "Palmowa łódka z piecem",
+  "item.boatload.redwood_furnace_boat": "Sekwojowa łódka z piecem",
+  "item.boatload.umbran_furnace_boat": "Umbranowa łódka z piecem",
+  "item.boatload.willow_furnace_boat": "Wierzbowa łódka z piecem",
+  
+  "item.boatload.large_cherry_boat": "Wielka wiśniowa łódka",
+  "item.boatload.large_dead_boat": "Wielka martwa łódka",
+  "item.boatload.large_fir_boat": "Wielka jodłowa łódka",
+  "item.boatload.large_hellbark_boat": "Wielka piekielna łódka",
+  "item.boatload.large_jacaranda_boat": "Wielka jakarandowa łódka",
+  "item.boatload.large_magic_boat": "Wielka magiczna łódka",
+  "item.boatload.large_mahogany_boat": "Wielka mahoniowa łódka",
+  "item.boatload.large_palm_boat": "Wielka palmowa łódka",
+  "item.boatload.large_redwood_boat": "Wielka sekwojowa łódka",
+  "item.boatload.large_umbran_boat": "Wielka umbranowa łódka",
+  "item.boatload.large_willow_boat": "Wielka wierzbowa łódka",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.boatload.driftwood_chest_boat": "Korzeniowa łódka ze skrzynią",
+  "item.boatload.river_chest_boat": "Nadrzeczna łódka ze skrzynią",
+  
+  "item.boatload.driftwood_furnace_boat": "Korzeniowa łódka z piecem",
+  "item.boatload.river_furnace_boat": "Nadrzeczna łódka z piecem",
+  
+  "item.boatload.large_driftwood_boat": "Wielka korzeniowa łódka",
+  "item.boatload.large_river_boat": "Wielka nadrzeczna łódka",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.boatload.bamboo_chest_boat": "Bambusowa łódka ze skrzynią",
+  "item.boatload.bamboo_furnace_boat": "Bambusowa łódka z piecem",
+  "item.boatload.large_bamboo_boat": "Wielka bambusowa łódka",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.boatload.poise_chest_boat": "Poisowa łódka ze skrzynią",
+  "item.boatload.poise_furnace_boat": "Poisowa łódka z piecem",
+  "item.boatload.large_poise_boat": "Wielka poisowa łódka",
+  
+  
+  "_comment": "Environmental",
+  
+  "item.boatload.wisteria_chest_boat": "Glicyniowa łódka ze skrzynią",
+  "item.boatload.wisteria_furnace_boat": "Glicyniowa łódka z piecem",
+  "item.boatload.large_wisteria_boat": "Wielka glicyniowa łódka",
+  
+  "item.boatload.willow_chest_boat": "Wierzbowa łódka ze skrzynią",
+  "item.boatload.willow_furnace_boat": "Wierzbowa łódka z piecem",
+  "item.boatload.large_willow_boat": "Wielka wierzbowa łódka",
+  
+  "item.boatload.cherry_chest_boat": "Wiśniowa łódka ze skrzynią",
+  "item.boatload.cherry_furnace_boat": "Wiśniowa łódka z piecem",
+  "item.boatload.large_cherry_boat": "Wielka wiśniowa łódka",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.boatload.rosewood_chest_boat": "Palisandrowa łódka ze skrzynią",
+  "item.boatload.morado_chest_boat": "Moradowa łódka ze skrzynią",
+  "item.boatload.aspen_chest_boat": "Osikowa łódka ze skrzynią",
+  "item.boatload.kousa_chest_boat": "Dereniowa łódka ze skrzynią",
+  "item.boatload.yucca_chest_boat": "Jukkowa łódka ze skrzynią",
+  "item.boatload.grimwood_chest_boat": "Ponuropniowa łódka ze skrzynią",
+  
+  "item.boatload.rosewood_furnace_boat": "Palisandrowa łódka z piecem",
+  "item.boatload.morado_furnace_boat": "Moradowa łódka z piecem",
+  "item.boatload.aspen_furnace_boat": "Osikowa łódka z piecem",
+  "item.boatload.kousa_furnace_boat": "Dereniowa łódka z piecem",
+  "item.boatload.yucca_furnace_boat": "Jukkowa łódka z piecem",
+  "item.boatload.grimwood_furnace_boat": "Ponuropniowa łódka z piecem",
+  
+  "item.boatload.large_rosewood_boat": "Wielka palisandrowa łódka",
+  "item.boatload.large_morado_boat": "Wielka moradowa łódka",
+  "item.boatload.large_aspen_boat": "Wielka osikowa łódka",
+  "item.boatload.large_kousa_boat": "Wielka dereniowa łódka",
+  "item.boatload.large_yucca_boat": "Wielka jukkowa łódka",
+  "item.boatload.large_grimwood_boat": "Wielka ponuropniowa łódka",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.boatload.maple_chest_boat": "Klonowa łódka ze skrzynią",
+  "item.boatload.maple_furnace_boat": "Klonowa łódka z piecem",
+  "item.boatload.large_maple_boat": "Wielka klonowa łódka",
+
+
+  "_comment": "Enhanced Mushrooms",
+
+  "item.boatload.red_mushroom_chest_boat": "Muchomorowa łódka ze skrzynią",
+  "item.boatload.brown_mushroom_chest_boat": "Borowikowa łódka ze skrzynią",
+  "item.boatload.glowshroom_chest_boat": "Świetligrzybowa łódka ze skrzynią",
+
+  "item.boatload.red_mushroom_furnace_boat": "Muchomorowa łódka z piecem",
+  "item.boatload.brown_mushroom_furnace_boat": "Borowikowa łódka z piecem",
+  "item.boatload.glowshroom_furnace_boat": "Świetligrzybowa łódka z piecem",
+
+  "item.boatload.large_red_mushroom_boat": "Wielka muchomorowa łódka",
+  "item.boatload.large_brown_mushroom_boat": "Wielka borowikowa łódka",
+  "item.boatload.large_glowshroom_boat": "Wielka świetligrzybowa łódka",
+
+
+  "_comment": "Hanami",
+
+  "item.boatload.sakura_chest_boat": "Sakurowa łódka ze skrzynią",
+  "item.boatload.sakura_furnace_boat": "Sakurowa łódka z piecem",
+  "item.boatload.large_sakura_boat": "Wielka sakurowa łódka",
+
+
+  "_comment": "Nether Extension",
+
+  "item.boatload.crimson_chest_boat": "Szkarłatna łódka ze skrzynią",
+  "item.boatload.warped_chest_boat": "Spaczona łódka ze skrzynią",
+
+  "item.boatload.crimson_furnace_boat": "Szkarłatna łódka z piecem",
+  "item.boatload.warped_furnace_boat": "Spaczona łódka z piecem",
+  
+  "item.boatload.large_crimson_boat": "Wielka szkarłatna łódka",
+  "item.boatload.large_warped_boat": "Wielka spaczona łódka"
+}

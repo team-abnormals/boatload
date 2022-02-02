@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:rosewood_planks"
+    },
+    "W": {
+      "item": "atmospheric:rosewood_boat"
+    }
+  },
+  "result": {
+    "item": "boatload:large_rosewood_boat"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "itemGroup.boatload": "Vessels o' Plenty",
+  
+
+  "entity.boatload.chest_boat": "Coffer in a Vessel",
+  "entity.boatload.furnace_boat": "Oven in a Vessel",
+  "entity.boatload.large_boat": "Galleon",
+  
+  
+  "_comment": "Vanilla",
+  
+  "item.boatload.oak_chest_boat": "Coffer in a Oak'n Vessel",
+  "item.boatload.spruce_chest_boat": "Coffer in a Vessel o' Spruce Timber",
+  "item.boatload.birch_chest_boat": "Coffer in a Vessel o' Birch Timber",
+  "item.boatload.jungle_chest_boat": "Coffer in a Vessel o' Jungle Timber",
+  "item.boatload.acacia_chest_boat": "Coffer in a Vessel o' Acacia Timber",
+  "item.boatload.dark_oak_chest_boat": "Coffer in a Vessel o' Dusky Oak Timber",
+  
+  "item.boatload.oak_furnace_boat": "Oven in a Oak'n Vessel",
+  "item.boatload.spruce_furnace_boat": "Oven in a Vessel o' Spruce Timber",
+  "item.boatload.birch_furnace_boat": "Oven in a Vessel o' Birch Timber",
+  "item.boatload.jungle_furnace_boat": "Oven in a Vessel o' Jungle Timber",
+  "item.boatload.acacia_furnace_boat": "Oven in a Vessel o' Acacia Timber",
+  "item.boatload.dark_oak_furnace_boat": "Oven in a Vessel o' Dusky Oak Timber",
+  
+  "item.boatload.large_oak_boat": "Oak'n Galleon",
+  "item.boatload.large_spruce_boat": "Jolly Roger",
+  "item.boatload.large_birch_boat": "Galleon o' Birch Timber",
+  "item.boatload.large_jungle_boat": "Fancy",
+  "item.boatload.large_acacia_boat": "Whydah",
+  "item.boatload.large_dark_oak_boat": "Black Pearl",
+  
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.boatload.cherry_chest_boat": "Cherry Boat with Chest",
+  "item.boatload.dead_chest_boat": "Dead Boat with Chest",
+  "item.boatload.ethereal_chest_boat": "Ethereal Boat with Chest",
+  "item.boatload.fir_chest_boat": "Fir Boat with Chest",
+  "item.boatload.hellbark_chest_boat": "Hellbark Boat with Chest",
+  "item.boatload.jacaranda_chest_boat": "Jacaranda Boat with Chest",
+  "item.boatload.magic_chest_boat": "Magic Boat with Chest",
+  "item.boatload.mahogany_chest_boat": "Mahogany Boat with Chest",
+  "item.boatload.palm_chest_boat": "Palm Boat with Chest",
+  "item.boatload.redwood_chest_boat": "Redwood Boat with Chest",
+  "item.boatload.umbran_chest_boat": "Umbran Boat with Chest",
+  "item.boatload.willow_chest_boat": "Willow Boat with Chest",
+  
+  "item.boatload.cherry_furnace_boat": "Cherry Boat with Furnace",
+  "item.boatload.dead_furnace_boat": "Dead Boat with Furnace",
+  "item.boatload.ethereal_furnace_boat": "Ethereal Boat with Furnace",
+  "item.boatload.fir_furnace_boat": "Fir Boat with Furnace",
+  "item.boatload.hellbark_furnace_boat": "Hellbark Boat with Furnace",
+  "item.boatload.jacaranda_furnace_boat": "Jacaranda Boat with Furnace",
+  "item.boatload.magic_furnace_boat": "Magic Boat with Furnace",
+  "item.boatload.mahogany_furnace_boat": "Mahogany Boat with Furnace",
+  "item.boatload.palm_furnace_boat": "Palm Boat with Furnace",
+  "item.boatload.redwood_furnace_boat": "Redwood Boat with Furnace",
+  "item.boatload.umbran_furnace_boat": "Umbran Boat with Furnace",
+  "item.boatload.willow_furnace_boat": "Willow Boat with Furnace",
+  
+  "item.boatload.large_cherry_boat": "Large Cherry Boat",
+  "item.boatload.large_dead_boat": "Large Dead Boat",
+  "item.boatload.large_ethereal_boat": "Large Ethereal Boat",
+  "item.boatload.large_fir_boat": "Large Fir Boat",
+  "item.boatload.large_hellbark_boat": "Large Hellbark Boat",
+  "item.boatload.large_jacaranda_boat": "Large Jacaranda Boat",
+  "item.boatload.large_magic_boat": "Large Magic Boat",
+  "item.boatload.large_mahogany_boat": "Large Mahogany Boat",
+  "item.boatload.large_palm_boat": "Large Palm Boat",
+  "item.boatload.large_redwood_boat": "Large Redwood Boat",
+  "item.boatload.large_umbran_boat": "Large Umbran Boat",
+  "item.boatload.large_willow_boat": "Large Willow Boat",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.boatload.driftwood_chest_boat": "Coffer in a Makeshift Vessel",
+  "item.boatload.river_chest_boat": "Coffer in th' Finest Vessel o' th' Seas",
+  
+  "item.boatload.driftwood_furnace_boat": "Oven in a Makeshift Vessel",
+  "item.boatload.river_furnace_boat": "Oven in th' Finest Vessel o' th' Seas",
+  
+  "item.boatload.large_driftwood_boat": "Makeshift Galleon",
+  "item.boatload.large_river_boat": "Ambrose Light",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.boatload.bamboo_chest_boat": "Chest in a Vessel o' Bambarr",
+  "item.boatload.bamboo_furnace_boat": "Oven in a vessel o' Bambarrr",
+  "item.boatload.large_bamboo_boat": "Galleon o' Bambarr",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.boatload.poise_chest_boat": "Coffer in a Purp'l'n Vessel",
+  "item.boatload.poise_furnace_boat": "Oven in a Purp'l'n Vessel",
+  "item.boatload.large_poise_boat": "Arcadia",
+  
+  
+  "_comment": "Bloomful",
+  
+  "item.boatload.wisteria_chest_boat": "Coffer in the Finest Vessel o' the Sea",
+  "item.boatload.wisteria_furnace_boat": "Oven in the Finest Vessel o' the Sea",
+  "item.boatload.large_wisteria_boat": "The Golden Hind",
+  
+  
+  "_comment": "Swamp Expansion",
+  
+  "item.boatload.se_willow_chest_boat": "Coffer in a Willow'n Vessel",
+  "item.boatload.se_willow_furnace_boat": "Oven in a Willow'n Vessel",
+  "item.boatload.large_se_willow_boat": "Flying Dutchman",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.boatload.rosewood_chest_boat": "Coffer in a Vessel o' Love",
+  "item.boatload.aspen_chest_boat": "Coffer in a Vessel o' Aspen",
+  "item.boatload.kousa_chest_boat": "Coffer in a Vessel o' Kousa",
+  "item.boatload.yucca_chest_boat": "Coffer in a Sunburnt Vessel",
+  "item.boatload.grimwood_chest_boat": "Coffer in Queen Anne's Revenge",
+  
+  "item.boatload.rosewood_furnace_boat": "Oven in a Vessel o' Love",
+  "item.boatload.aspen_furnace_boat": "Oven in a Vessel o' Aspen",
+  "item.boatload.kousa_furnace_boat": "Oven in a Vessel o' Kousa",
+  "item.boatload.yucca_furnace_boat": "Oven in a Sunburnt Vessel",
+  "item.boatload.grimwood_furnace_boat": "Oven in Queen Anne's Revenge",
+  
+  "item.boatload.large_rosewood_boat": "Valentine's Galleon",
+  "item.boatload.large_aspen_boat": "Galleon o' Aspen Timber",
+  "item.boatload.large_kousa_boat": "Titanic",
+  "item.boatload.large_yucca_boat": "Lost Ship of the Desert",
+  "item.boatload.large_grimwood_boat": "Queen Anne's Revenge Redux",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.boatload.maple_chest_boat": "Coffer in a Maple'n Vessel",
+  "item.boatload.maple_furnace_boat": "Oven in a Maple'n Vessel",
+  "item.boatload.large_maple_boat": "Royal Fortune",
+  
+  
+  "_comment": "Buzzier Bees",
+  
+  "item.boatload.hive_chest_boat": "Coffer in a Vessel o' Bees",
+  "item.boatload.hive_furnace_boat": "Oven in a Vessel o' Bees",
+  "item.boatload.large_hive_boat": "Bee o' War"
+}

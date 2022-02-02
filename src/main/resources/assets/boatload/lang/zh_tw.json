@@ -1,0 +1,176 @@
+{
+  "itemGroup.boatload": "Extra Boats",
+  
+  "entity.boatload.chest_boat": "帶箱船",
+  "entity.boatload.furnace_boat": "帶爐船",
+  "entity.boatload.large_boat": "大型船",
+  
+  
+  "_comment": "Vanilla",
+  
+  "item.boatload.oak_chest_boat": "橡木帶箱船",
+  "item.boatload.spruce_chest_boat": "杉木帶箱船",
+  "item.boatload.birch_chest_boat": "樺木帶箱船",
+  "item.boatload.jungle_chest_boat": "叢林木帶箱船",
+  "item.boatload.acacia_chest_boat": "相思木帶箱船",
+  "item.boatload.dark_oak_chest_boat": "黑橡木帶箱船",
+  
+  "item.boatload.oak_furnace_boat": "橡木帶爐船",
+  "item.boatload.spruce_furnace_boat": "杉木帶爐船",
+  "item.boatload.birch_furnace_boat": "樺木帶爐船",
+  "item.boatload.jungle_furnace_boat": "叢林木帶爐船",
+  "item.boatload.acacia_furnace_boat": "相思木帶爐船",
+  "item.boatload.dark_oak_furnace_boat": "黑橡木帶爐船",
+  
+  "item.boatload.large_oak_boat": "橡木大型船",
+  "item.boatload.large_spruce_boat": "杉木大型船",
+  "item.boatload.large_birch_boat": "樺木大型船",
+  "item.boatload.large_jungle_boat": "叢林木大型船",
+  "item.boatload.large_acacia_boat": "相思木大型船",
+  "item.boatload.large_dark_oak_boat": "黑橡木大型船",
+  
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.boatload.cherry_chest_boat": "櫻花木帶箱船",
+  "item.boatload.dead_chest_boat": "死木帶箱船",
+  "item.boatload.fir_chest_boat": "樅木帶箱船",
+  "item.boatload.hellbark_chest_boat": "地獄皮木帶箱船",
+  "item.boatload.jacaranda_chest_boat": "藍花楹木帶箱船",
+  "item.boatload.magic_chest_boat": "魔法木帶箱船",
+  "item.boatload.mahogany_chest_boat": "桃花心木帶箱船",
+  "item.boatload.palm_chest_boat": "棕櫚木帶箱船",
+  "item.boatload.redwood_chest_boat": "紅木帶箱船",
+  "item.boatload.umbran_chest_boat": "暗影木帶箱船",
+  "item.boatload.willow_chest_boat": "柳木帶箱船",
+  
+  "item.boatload.cherry_furnace_boat": "櫻花木帶爐船",
+  "item.boatload.dead_furnace_boat": "死木帶爐船",
+  "item.boatload.fir_furnace_boat": "樅木帶爐船",
+  "item.boatload.hellbark_furnace_boat": "地獄皮木帶爐船",
+  "item.boatload.jacaranda_furnace_boat": "藍花楹木帶爐船",
+  "item.boatload.magic_furnace_boat": "魔法木帶爐船",
+  "item.boatload.mahogany_furnace_boat": "桃花心木帶爐船",
+  "item.boatload.palm_furnace_boat": "棕櫚木帶爐船",
+  "item.boatload.redwood_furnace_boat": "紅木帶爐船",
+  "item.boatload.umbran_furnace_boat": "暗影木帶爐船",
+  "item.boatload.willow_furnace_boat": "柳木帶爐船",
+  
+  "item.boatload.large_cherry_boat": "櫻花木大型船",
+  "item.boatload.large_dead_boat": "死木大型船",
+  "item.boatload.large_fir_boat": "樅木大型船",
+  "item.boatload.large_hellbark_boat": "地獄皮木大型船",
+  "item.boatload.large_jacaranda_boat": "藍花楹木大型船",
+  "item.boatload.large_magic_boat": "魔法木大型船",
+  "item.boatload.large_mahogany_boat": "桃花心木大型船",
+  "item.boatload.large_palm_boat": "棕櫚木大型船",
+  "item.boatload.large_redwood_boat": "紅木大型船",
+  "item.boatload.large_umbran_boat": "暗影木大型船",
+  "item.boatload.large_willow_boat": "柳木大型船",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.boatload.driftwood_chest_boat": "漂流木帶箱船",
+  "item.boatload.river_chest_boat": "河木帶箱船",
+  
+  "item.boatload.driftwood_furnace_boat": "漂流木帶爐船",
+  "item.boatload.river_furnace_boat": "河木帶爐船",
+  
+  "item.boatload.large_driftwood_boat": "漂流木大型船",
+  "item.boatload.large_river_boat": "河木大型船",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.boatload.bamboo_chest_boat": "竹帶箱船",
+  "item.boatload.bamboo_furnace_boat": "竹帶爐船",
+  "item.boatload.large_bamboo_boat": "竹大型船",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.boatload.poise_chest_boat": "平衡木帶箱船",
+  "item.boatload.poise_furnace_boat": "平衡木帶爐船",
+  "item.boatload.large_poise_boat": "平衡木大型船",
+  
+  
+  "_comment": "Environmental",
+  
+  "item.boatload.wisteria_chest_boat": "紫藤木帶箱船",
+  "item.boatload.wisteria_furnace_boat": "紫藤木帶爐船",
+  "item.boatload.large_wisteria_boat": "紫藤木大型船",
+  
+  "item.boatload.willow_chest_boat": "柳木帶箱船",
+  "item.boatload.willow_furnace_boat": "柳木帶爐船",
+  "item.boatload.large_willow_boat": "柳木大型船",
+  
+  "item.boatload.cherry_chest_boat": "櫻花木帶箱船",
+  "item.boatload.cherry_furnace_boat": "櫻花木帶爐船",
+  "item.boatload.large_cherry_boat": "櫻花木大型船",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.boatload.rosewood_chest_boat": "玫瑰木帶箱船",
+  "item.boatload.morado_chest_boat": "莫拉多木帶箱船",
+  "item.boatload.aspen_chest_boat": "大齒楊木帶箱船",
+  "item.boatload.kousa_chest_boat": "四照花木帶箱船",
+  "item.boatload.yucca_chest_boat": "絲蘭木帶箱船",
+  "item.boatload.grimwood_chest_boat": "冷肅木帶箱船",
+  
+  "item.boatload.rosewood_furnace_boat": "玫瑰木帶爐船",
+  "item.boatload.morado_furnace_boat": "莫拉多木帶爐船",
+  "item.boatload.aspen_furnace_boat": "大齒楊木帶爐船",
+  "item.boatload.kousa_furnace_boat": "四照花木帶爐船",
+  "item.boatload.yucca_furnace_boat": "絲蘭木帶爐船",
+  "item.boatload.grimwood_furnace_boat": "冷肅木帶爐船",
+  
+  "item.boatload.large_rosewood_boat": "玫瑰木大型船",
+  "item.boatload.large_morado_boat": "莫拉多木大型船",
+  "item.boatload.large_aspen_boat": "大齒楊木大型船",
+  "item.boatload.large_kousa_boat": "四照花木大型船",
+  "item.boatload.large_yucca_boat": "絲蘭木大型船",
+  "item.boatload.large_grimwood_boat": "冷肅木大型船",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.boatload.maple_chest_boat": "楓木帶箱船",
+  "item.boatload.maple_furnace_boat": "楓木帶爐船",
+  "item.boatload.large_maple_boat": "楓木大型船",
+
+
+  "_comment": "Enhanced Mushrooms",
+
+  "item.boatload.red_mushroom_chest_boat": "紅色蘑菇帶箱船",
+  "item.boatload.brown_mushroom_chest_boat": "棕色蘑菇帶箱船",
+  "item.boatload.glowshroom_chest_boat": "螢光蘑菇帶箱船",
+
+  "item.boatload.red_mushroom_furnace_boat": "紅色蘑菇帶爐船",
+  "item.boatload.brown_mushroom_furnace_boat": "棕色蘑菇帶爐船",
+  "item.boatload.glowshroom_furnace_boat": "螢光蘑菇帶爐船",
+
+  "item.boatload.large_red_mushroom_boat": "紅色蘑菇大型船",
+  "item.boatload.large_brown_mushroom_boat": "棕色蘑菇大型船",
+  "item.boatload.large_glowshroom_boat": "螢光蘑菇大型船",
+
+
+  "_comment": "Hanami",
+
+  "item.boatload.sakura_chest_boat": "櫻花木帶箱船",
+  "item.boatload.sakura_furnace_boat": "櫻花木帶爐船",
+  "item.boatload.large_sakura_boat": "櫻花木大型船",
+
+
+  "_comment": "Nether Extension",
+
+  "item.boatload.crimson_chest_boat": "緋紅蕈木帶箱船",
+  "item.boatload.warped_chest_boat": "扭曲蕈木帶箱船",
+
+  "item.boatload.crimson_furnace_boat": "緋紅蕈木帶爐船",
+  "item.boatload.warped_furnace_boat": "扭曲蕈木帶爐船",
+  
+  "item.boatload.large_crimson_boat": "緋紅蕈木大型船",
+  "item.boatload.large_warped_boat": "Large Warped大型船"
+}

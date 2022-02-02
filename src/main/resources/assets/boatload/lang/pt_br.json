@@ -1,0 +1,164 @@
+{
+  "itemGroup.boatload": "Botes extras",
+
+  "entity.boatload.chest_boat": "Bote com baú",
+  "entity.boatload.furnace_boat": "Bote com fornalha",
+  "entity.boatload.large_boat": "Bote grande",
+  
+  
+  "_comment": "Vanilla",
+  
+  "item.boatload.oak_chest_boat": "Bote de carvalho com baú",
+  "item.boatload.spruce_chest_boat": "Bote de pinheiro com baú",
+  "item.boatload.birch_chest_boat": "Bote de bétula com baú",
+  "item.boatload.jungle_chest_boat": "Bote de madeira da selva com baú",
+  "item.boatload.acacia_chest_boat": "Bote de acácia com baú",
+  "item.boatload.dark_oak_chest_boat": "Bote de carvalho escuro com baú",
+  
+  "item.boatload.oak_furnace_boat": "Bote de carvalho com fornalha",
+  "item.boatload.spruce_furnace_boat": "Bote de pinheiro com fornalha",
+  "item.boatload.birch_furnace_boat": "Bote de bétula com fornalha",
+  "item.boatload.jungle_furnace_boat": "Bote de madeira da selva com fornalha",
+  "item.boatload.acacia_furnace_boat": "Bote de acácia com fornalha",
+  "item.boatload.dark_oak_furnace_boat": "Bote de carvalho escuro com fornalha",
+  
+  "item.boatload.large_oak_boat": "Bote grande de carvalho",
+  "item.boatload.large_spruce_boat": "Bote grande de pinheiro",
+  "item.boatload.large_birch_boat": "Bote grande de bétula",
+  "item.boatload.large_jungle_boat": "Bote grande de madeira da selva",
+  "item.boatload.large_acacia_boat": "Bote grande de acácia",
+  "item.boatload.large_dark_oak_boat": "Bote grande de carvalho escuro",
+  
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.boatload.cherry_chest_boat": "Bote de cerejeira com baú",
+  "item.boatload.dead_chest_boat": "Bote de madeira morta com baú",
+  "item.boatload.fir_chest_boat": "Bote de abeto com baú",
+  "item.boatload.hellbark_chest_boat": "Bote de madeira infernal com baú",
+  "item.boatload.jacaranda_chest_boat": "Bote de jacarandá com baú",
+  "item.boatload.magic_chest_boat": "Bote de madeira mágica com baú",
+  "item.boatload.mahogany_chest_boat": "Bote de mogno com baú",
+  "item.boatload.palm_chest_boat": "Bote de palmeira com baú",
+  "item.boatload.redwood_chest_boat": "Bote de sequoia com baú",
+  "item.boatload.umbran_chest_boat": "Bote de madeira sinistra com baú",
+  "item.boatload.willow_chest_boat": "Bote de salgueiro com baú",
+  
+  "item.boatload.cherry_furnace_boat": "Bote de cerejeira com fornalha",
+  "item.boatload.dead_furnace_boat": "Bote de madeira morta com fornalha",
+  "item.boatload.fir_furnace_boat": "Bote de abeto com fornalha",
+  "item.boatload.hellbark_furnace_boat": "Bote de madeira infernal com fornalha",
+  "item.boatload.jacaranda_furnace_boat": "Bote de jacarandá com fornalha",
+  "item.boatload.magic_furnace_boat": "Bote de madeira mágica com fornalha",
+  "item.boatload.mahogany_furnace_boat": "Bote de mogno com fornalha",
+  "item.boatload.palm_furnace_boat": "Bote de palmeira com fornalha",
+  "item.boatload.redwood_furnace_boat": "Bote de sequoia com fornalha",
+  "item.boatload.umbran_furnace_boat": "Bote de madeira sinistra com fornalha",
+  "item.boatload.willow_furnace_boat": "Bote de salgueiro com fornalha",
+  
+  "item.boatload.large_cherry_boat": "Bote grande de cerejeira",
+  "item.boatload.large_dead_boat": "Bote grande de madeira morta",
+  "item.boatload.large_fir_boat": "Bote grande de abeto",
+  "item.boatload.large_hellbark_boat": "Bote grande de madeira infernal",
+  "item.boatload.large_jacaranda_boat": "Bote grande de jacarandá",
+  "item.boatload.large_magic_boat": "Bote grande de madeira mágica",
+  "item.boatload.large_mahogany_boat": "Bote grande de mogno",
+  "item.boatload.large_palm_boat": "Bote grande de palmeira",
+  "item.boatload.large_redwood_boat": "Bote grande de sequoia",
+  "item.boatload.large_umbran_boat": "Bote grande de madeira sinistra",
+  "item.boatload.large_willow_boat": "Bote grande de salgueiro",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.boatload.driftwood_chest_boat": "Bote de madeira flutuante com baú",
+  "item.boatload.river_chest_boat": "Bote de ribeira com baú",
+  
+  "item.boatload.driftwood_furnace_boat": "Bote de madeira flutuante com fornalha",
+  "item.boatload.river_furnace_boat": "Bote de ribeira com fornalha",
+  
+  "item.boatload.large_driftwood_boat": "Bote grande de madeira flutuante",
+  "item.boatload.large_river_boat": "Bote grande de ribeira",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.boatload.bamboo_chest_boat": "Bote de bambu com baú",
+  "item.boatload.bamboo_furnace_boat": "Bote de bambu com fornalha",
+  "item.boatload.large_bamboo_boat": "Bote grande de bambu",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.boatload.poise_chest_boat": "Bote de madeira paira com baú",
+  "item.boatload.poise_furnace_boat": "Bote de madeira paira com fornalha",
+  "item.boatload.large_poise_boat": "Bote grande de madeira paira",
+  
+  
+  "_comment": "Environmental",
+  
+  "item.boatload.wisteria_chest_boat": "Bote de glicínia com baú",
+  "item.boatload.wisteria_furnace_boat": "Bote de glicínia com fornalha",
+  "item.boatload.large_wisteria_boat": "Bote grande de glicínia",
+  
+  "item.boatload.se_willow_chest_boat": "Bote de salgueiro com baú",
+  "item.boatload.se_willow_furnace_boat": "Bote de salgueiro com fornalha",
+  "item.boatload.large_se_willow_boat": "Bote grande de salgueiro",
+  
+  "item.boatload.cherry_chest_boat": "Bote de cerejeira com baú",
+  "item.boatload.cherry_furnace_boat": "Bote de cerejeira com fornalha",
+  "item.boatload.large_cherry_boat": "Bote grande de cerejeira",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.boatload.rosewood_chest_boat": "Bote de jacarandá com baú",
+  "item.boatload.morado_chest_boat": "Bote de pau-ferro com baú",
+  "item.boatload.aspen_chest_boat": "Bote de álamo com baú",
+  "item.boatload.kousa_chest_boat": "Bote de kousa com baú",
+  "item.boatload.yucca_chest_boat": "Bote de yucca com baú",
+  "item.boatload.grimwood_chest_boat": "Bote de madeira sinistra com baú",
+  
+  "item.boatload.rosewood_furnace_boat": "Bote de jacarandá com fornalha",
+  "item.boatload.morado_furnace_boat": "Bote de pau-ferro com fornalha",
+  "item.boatload.aspen_furnace_boat": "Bote de álamo com fornalha",
+  "item.boatload.kousa_furnace_boat": "Bote de kousa com fornalha",
+  "item.boatload.yucca_furnace_boat": "Bote de yucca com fornalha",
+  "item.boatload.grimwood_furnace_boat": "Bote de madeira sinistra com fornalha",
+  
+  "item.boatload.large_rosewood_boat": "Bote grande de jacarandá",
+  "item.boatload.large_morado_boat": "Bote grande de pau-ferro",
+  "item.boatload.large_aspen_boat": "Bote grande de álamo",
+  "item.boatload.large_kousa_boat": "Bote grande de kousa",
+  "item.boatload.large_yucca_boat": "Bote grande de yucca",
+  "item.boatload.large_grimwood_boat": "Bote grande de madeira sinistra",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.boatload.maple_chest_boat": "Bote de bordo com baú",
+  "item.boatload.maple_furnace_boat": "Bote de bordo com fornalha",
+  "item.boatload.large_maple_boat": "Bote grande de bordo",
+
+
+  "_comment": "Enhanced Mushrooms",
+
+  "item.boatload.red_mushroom_chest_boat": "Bote de cogumelo vermelho com baú",
+  "item.boatload.brown_mushroom_chest_boat": "Bote de cogumelo marrom com baú",
+  "item.boatload.glowshroom_chest_boat": "Bote de cogumelo brilhante com baú",
+
+  "item.boatload.red_mushroom_furnace_boat": "Bote de cogumelo vermelho com fornalha",
+  "item.boatload.brown_mushroom_furnace_boat": "Bote de cogumelo marrom com fornalha",
+  "item.boatload.glowshroom_furnace_boat": "Bote de cogumelo brilhante com fornalha",
+
+  "item.boatload.large_red_mushroom_boat": "Bote grande de cogumelo vermelho",
+  "item.boatload.large_brown_mushroom_boat": "Bote grande de cogumelo marrom",
+  "item.boatload.large_glowshroom_boat": "Bote grande de cogumelo brilhante",
+
+
+  "_comment": "Hanami",
+
+  "item.boatload.sakura_chest_boat": "Bote de sakura com baú",
+  "item.boatload.sakura_furnace_boat": "Bote de sakura com fornalha",
+  "item.boatload.large_sakura_boat": "Bote grande de sakura"
+}

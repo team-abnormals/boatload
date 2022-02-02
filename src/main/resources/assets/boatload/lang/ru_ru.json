@@ -1,0 +1,164 @@
+{
+  "itemGroup.boatload": "Extra Boats",
+  
+  "entity.boatload.chest_boat": "Лодка с сундуком",
+  "entity.boatload.furnace_boat": "Лодка с печкой",
+  "entity.boatload.large_boat": "Большая лодка",
+  
+  
+  "_comment": "Vanilla",
+  
+  "item.boatload.oak_chest_boat": "Дубовая лодка с сундуком",
+  "item.boatload.spruce_chest_boat": "Еловая лодка с сундуком",
+  "item.boatload.birch_chest_boat": "Берёзовая лодка с сундуком",
+  "item.boatload.jungle_chest_boat": "Лодка из тропического дерева с сундуком",
+  "item.boatload.acacia_chest_boat": "Акациевая лодка с сундуком",
+  "item.boatload.dark_oak_chest_boat": "Лодка из тёмного дуба с сундуком",
+  
+  "item.boatload.oak_furnace_boat": "Дубовая лодка с печкой",
+  "item.boatload.spruce_furnace_boat": "Еловая лодка с печкой",
+  "item.boatload.birch_furnace_boat": "Берёзовая лодка с печкой",
+  "item.boatload.jungle_furnace_boat": "Лодка из тропического дерева с печкой",
+  "item.boatload.acacia_furnace_boat": "Акациевая лодка с печкой",
+  "item.boatload.dark_oak_furnace_boat": "Лодка из тёмного дуба с печкой",
+  
+  "item.boatload.large_oak_boat": "Большая дубовая лодка",
+  "item.boatload.large_spruce_boat": "Большая еловая лодка",
+  "item.boatload.large_birch_boat": "Большая берёзовая лодка",
+  "item.boatload.large_jungle_boat": "Большая лодка из тропического дерева",
+  "item.boatload.large_acacia_boat": "Большая лодка из акации",
+  "item.boatload.large_dark_oak_boat": "Большая лодка из тёмного дуба",
+  
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.boatload.cherry_chest_boat": "Вишнёвая лодка с сундуком",
+  "item.boatload.dead_chest_boat": "Мёртвая лодка с сундуком",
+  "item.boatload.fir_chest_boat": "Пихтовая лодка с сундуком",
+  "item.boatload.hellbark_chest_boat": "Лодка из адской коры с сундуком",
+  "item.boatload.jacaranda_chest_boat": "Жакарандовая лодка с сундуком",
+  "item.boatload.magic_chest_boat": "Магическая лодка с сундуком",
+  "item.boatload.mahogany_chest_boat": "Махагониевая лодка с сундуком",
+  "item.boatload.palm_chest_boat": "Пальмовая лодка с сундуком",
+  "item.boatload.redwood_chest_boat": "Лодка из красного дерева с сундуком",
+  "item.boatload.umbran_chest_boat": "Зловещая лодка с сундуком",
+  "item.boatload.willow_chest_boat": "Ивовая лодка с сундуком",
+  
+  "item.boatload.cherry_furnace_boat": "Вишнёвая лодка с печкой",
+  "item.boatload.dead_furnace_boat": "Мёртвая лодка с печкой",
+  "item.boatload.fir_furnace_boat": "Пихтовая лодка с печкой",
+  "item.boatload.hellbark_furnace_boat": "Лодка из адской коры с печкой",
+  "item.boatload.jacaranda_furnace_boat": "Жакарандовая лодка с печкой",
+  "item.boatload.magic_furnace_boat": "Магическая лодка с печкой",
+  "item.boatload.mahogany_furnace_boat": "Махагониевая лодка с печкой",
+  "item.boatload.palm_furnace_boat": "Пальмовая лодка с печкой",
+  "item.boatload.redwood_furnace_boat": "Лодка из красного дерева с печкой",
+  "item.boatload.umbran_furnace_boat": "Зловещая лодка с печкой",
+  "item.boatload.willow_furnace_boat": "Ивовая лодка с печкой",
+  
+  "item.boatload.large_cherry_boat": "Большая вишнёвая лодка",
+  "item.boatload.large_dead_boat": "Большая мёртвая лодка",
+  "item.boatload.large_fir_boat": "Большая пихтовая лодка",
+  "item.boatload.large_hellbark_boat": "Большая лодка из адской коры",
+  "item.boatload.large_jacaranda_boat": "Большая жакарандовая лодка",
+  "item.boatload.large_magic_boat": "Большая магическая лодка",
+  "item.boatload.large_mahogany_boat": "Большая махагониевая лодка",
+  "item.boatload.large_palm_boat": "Большая пальмовая лодка",
+  "item.boatload.large_redwood_boat": "Большая лодка из красного дерева",
+  "item.boatload.large_umbran_boat": "Большая зловещая лодка",
+  "item.boatload.large_willow_boat": "Большая ивовая лодка",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.boatload.driftwood_chest_boat": "Плавниковая лодка с сундуком",
+  "item.boatload.river_chest_boat": "Лодка из речного дерева с сундуком",
+  
+  "item.boatload.driftwood_furnace_boat": "Плавниковая лодка с печкой",
+  "item.boatload.river_furnace_boat": "Лодка из речного дерева с печкой",
+  
+  "item.boatload.large_driftwood_boat": "Большая плавниковая лодка",
+  "item.boatload.large_river_boat": "Большая лодка из речного дерева",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.boatload.bamboo_chest_boat": "Бамбуковая лодка с сундуком",
+  "item.boatload.bamboo_furnace_boat": "Бамбуковая лодка с печкой",
+  "item.boatload.large_bamboo_boat": "Большая бамбуковая лодка",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.boatload.poise_chest_boat": "Пуазовая лодка с сундуком",
+  "item.boatload.poise_furnace_boat": "Пуазовая лодка с печкой",
+  "item.boatload.large_poise_boat": "Большая пуазовая лодка",
+  
+  
+  "_comment": "Environmental",
+  
+  "item.boatload.wisteria_chest_boat": "Глициниевая лодка с сундуком",
+  "item.boatload.wisteria_furnace_boat": "Глициниевая лодка с печкой",
+  "item.boatload.large_wisteria_boat": "Большая глициниевая лодка",
+  
+  "item.boatload.willow_chest_boat": "Ивовая лодка с сундуком",
+  "item.boatload.willow_furnace_boat": "Ивовая лодка с печкой",
+  "item.boatload.large_willow_boat": "Большая ивовая лодка",
+  
+  "item.boatload.cherry_chest_boat": "Вишнёвая лодка с сундуком",
+  "item.boatload.cherry_furnace_boat": "Вишнёвая лодка с печкой",
+  "item.boatload.large_cherry_boat": "Большая вишнёвая лодка",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.boatload.rosewood_chest_boat": "Розовая лодка с сундуком",
+  "item.boatload.morado_chest_boat": "Морадовая лодка с сундуком",
+  "item.boatload.aspen_chest_boat": "Осиновая лодка с сундуком",
+  "item.boatload.kousa_chest_boat": "Цветущая лодка с сундуком",
+  "item.boatload.yucca_chest_boat": "Юккавая лодка с сундуком",
+  "item.boatload.grimwood_chest_boat": "Лодка из мрачного дерева с сундуком",
+  
+  "item.boatload.rosewood_furnace_boat": "Розовая лодка с печкой",
+  "item.boatload.morado_furnace_boat": "Морадовая лодка с печкой",
+  "item.boatload.aspen_furnace_boat": "Основая лодка с печкой",
+  "item.boatload.kousa_furnace_boat": "Цветущая лодка с печкой",
+  "item.boatload.yucca_furnace_boat": "Юкковая лодка с печкой",
+  "item.boatload.grimwood_furnace_boat": "Лодка из мрачного дерева с печкой",
+  
+  "item.boatload.large_rosewood_boat": "Большая розовая лодка",
+  "item.boatload.large_morado_boat": "Большая морадовая лодка",
+  "item.boatload.large_aspen_boat": "Большая осиновая лодка",
+  "item.boatload.large_kousa_boat": "Большая цветущая лодка",
+  "item.boatload.large_yucca_boat": "Большая юкковая лодка",
+  "item.boatload.large_grimwood_boat": "Большая лодка из мрачного дерева",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.boatload.maple_chest_boat": "Кленовая лодка с сундуком",
+  "item.boatload.maple_furnace_boat": "Кленовая лодка с Печкой",
+  "item.boatload.large_maple_boat": "Большая кленовая лодка",
+  
+  
+  "_comment": "Enhanced Mushrooms",
+
+  "item.boatload.red_mushroom_chest_boat": "Лодка из красного гриба с сундуком",
+  "item.boatload.brown_mushroom_chest_boat": "Лодка из коричневого гриба с сундуком",
+  "item.boatload.glowshroom_chest_boat": "Лодка из светящегося гриба с сундуком",
+
+  "item.boatload.red_mushroom_furnace_boat": "Лодка из красного гриба с печкой",
+  "item.boatload.brown_mushroom_furnace_boat": "Лодка из коричневого гриба с печкой",
+  "item.boatload.glowshroom_furnace_boat": "Лодка из светящегося гриба с печкой",
+
+  "item.boatload.large_red_mushroom_boat": "Большая лодка из красного гриба",
+  "item.boatload.large_brown_mushroom_boat": "Большая лодка из коричневого гриба",
+  "item.boatload.large_glowshroom_boat": "Большая лодка из светящегося гриба",
+  
+  
+  "_comment": "Hanami",
+
+  "item.boatload.sakura_chest_boat": "Сакуровая лодка с сундуком",
+  "item.boatload.sakura_furnace_boat": "Сакуровая лодка с печкой",
+  "item.boatload.large_sakura_boat": "Большая сакуровая лодка"
+}

@@ -1,37 +1,37 @@
 modLoader = "javafml"
 loaderVersion = "[32,)"
-issueTrackerURL = "https://github.com/team-abnormals/extra-boats/issues"
-license = "https://github.com/team-abnormals/extra-boats/blob/main/LICENSE.txt"
+issueTrackerURL = "https://github.com/team-abnormals/boatload/issues"
+license = "https://github.com/team-abnormals/boatload/blob/main/LICENSE.txt"
 
 [[mods]]
-    modId = "extraboats"
+    modId = "boatload"
     version = "${file.jarVersion}"
     logoFile = "logo.png"
-    itemIcon = "extraboats:birch_furnace_boat"
+    itemIcon = "boatload:birch_furnace_boat"
     configBackground = "minecraft:textures/block/birch_planks.png"
     authors = "Team Abnormals"
-    credits = "Markus1002"
-    displayURL = "https://www.teamabnormals.com/mods/extra-boats"
-    displayName = "Extra Boats"
+    credits = "Markus1002, bageldotjpg"
+    displayURL = "https://www.teamabnormals.com/mods/boatload"
+    displayName = "Boatload"
     description = '''
     Adds some new kinds of boats to make ocean exploration more interesting.
     '''
 
-[[dependencies.extraboats]]
+[[dependencies.boatload]]
     modId = "minecraft"
     mandatory = true
     versionRange = "[1.18.1,1.19)"
     ordering = "NONE"
     side = "BOTH"
 
-[[dependencies.extraboats]]
+[[dependencies.boatload]]
     modId = "forge"
     mandatory = true
     versionRange = "[39.0.0,)"
     ordering = "NONE"
     side = "BOTH"
 
-[[dependencies.extraboats]]
+[[dependencies.boatload]]
     modId = "blueprint"
     mandatory = true
     versionRange = "[5.0.0,)"

@@ -1,0 +1,29 @@
+{
+  "entity.boatload.chest_boat": "Bateau avec coffre",
+  "entity.boatload.furnace_boat": "Bateau avec four",
+  "entity.boatload.large_boat": "Grand bateau",
+  
+  "item.boatload.oak_chest_boat": "Bateau en ch\u00eane avec coffre",
+  "item.boatload.spruce_chest_boat": "Bateau en sapin avec coffre",
+  "item.boatload.birch_chest_boat": "Bateau en bouleau avec coffre",
+  "item.boatload.jungle_chest_boat": "Bateau en acajou avec coffre",
+  "item.boatload.acacia_chest_boat": "Bateau en acacia avec coffre",
+  "item.boatload.dark_oak_chest_boat": "Bateau en ch\u00eane noir avec coffre",
+  
+  "item.boatload.oak_furnace_boat": "Bateau en ch\u00eane avec four",
+  "item.boatload.spruce_furnace_boat": "Bateau en sapin avec four",
+  "item.boatload.birch_furnace_boat": "Bateau en bouleau avec four",
+  "item.boatload.jungle_furnace_boat": "Bateau en acajou avec four",
+  "item.boatload.acacia_furnace_boat": "Bateau en acacia avec four",
+  "item.boatload.dark_oak_furnace_boat": "Bateau en ch\u00eane noir avec four",
+  
+  "item.boatload.large_oak_boat": "Grand bateau en ch\u00eane",
+  "item.boatload.large_spruce_boat": "Grand bateau en sapin",
+  "item.boatload.large_birch_boat": "Grand bateau en bouleau",
+  "item.boatload.large_jungle_boat": "Grand bateau en acajou",
+  "item.boatload.large_acacia_boat": "Grand bateau en acacia",
+  "item.boatload.large_dark_oak_boat": "Grand bateau en ch\u00eane noir",
+  
+  "advancements.adventure.get_in_the_boat.title": "Montez dans le bateau !",
+  "advancements.adventure.get_in_the_boat.description": "Pilotez un grand bateau avec trois villageois"
+}

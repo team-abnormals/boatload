@@ -1,0 +1,176 @@
+{
+  "itemGroup.boatload": "Extra Boats",
+  
+  "entity.boatload.chest_boat": "Bote con cofre",
+  "entity.boatload.furnace_boat": "Bote con horno",
+  "entity.boatload.large_boat": "Bote grande",
+  
+  
+  "_comment": "Vanilla",
+  
+  "item.boatload.oak_chest_boat": "Bote de roble con cofre",
+  "item.boatload.spruce_chest_boat": "Bote de abeto con cofre",
+  "item.boatload.birch_chest_boat": "Bote de abedul con cofre",
+  "item.boatload.jungle_chest_boat": "Bote de jungla con cofre",
+  "item.boatload.acacia_chest_boat": "Bote de acacia con cofre",
+  "item.boatload.dark_oak_chest_boat": "Bote de roble oscuro con cofre",
+  
+  "item.boatload.oak_furnace_boat": "Bote de roble con horno",
+  "item.boatload.spruce_furnace_boat": "Bote de abeto con horno",
+  "item.boatload.birch_furnace_boat": "Bote de abedul con horno",
+  "item.boatload.jungle_furnace_boat": "Bote de jungla con horno",
+  "item.boatload.acacia_furnace_boat": "Bote de acacia con horno",
+  "item.boatload.dark_oak_furnace_boat": "Bote de roble oscuro con horno",
+  
+  "item.boatload.large_oak_boat": "Bote de roble grande",
+  "item.boatload.large_spruce_boat": "Bote de abeto grande",
+  "item.boatload.large_birch_boat": "Bote de abedul grande",
+  "item.boatload.large_jungle_boat": "Bote de jungla grande",
+  "item.boatload.large_acacia_boat": "Bote de acacia grande",
+  "item.boatload.large_dark_oak_boat": "Bote de roble oscuro grande",
+  
+  
+  "_comment": "Biomes O' Plenty",
+  
+  "item.boatload.cherry_chest_boat": "Bote de cerezo con cofre",
+  "item.boatload.dead_chest_boat": "Bote muerto con cofre",
+  "item.boatload.fir_chest_boat": "Bote de abeto blanco con cofre",
+  "item.boatload.hellbark_chest_boat": "Bote de corteza infernal con cofre",
+  "item.boatload.jacaranda_chest_boat": "Bote de jacarandá con cofre",
+  "item.boatload.magic_chest_boat": "Bote mágico con cofre",
+  "item.boatload.mahogany_chest_boat": "Bote de caoba con cofre",
+  "item.boatload.palm_chest_boat": "Bote de palmera con cofre",
+  "item.boatload.redwood_chest_boat": "Bote de secoya con cofre",
+  "item.boatload.umbran_chest_boat": "Bote sombrío con cofre",
+  "item.boatload.willow_chest_boat": "Bote de sauce con cofre",
+  
+  "item.boatload.cherry_furnace_boat": "Bote de cerezo con horno",
+  "item.boatload.dead_furnace_boat": "Bote muerto con horno",
+  "item.boatload.fir_furnace_boat": "Bote de abeto blanco con horno",
+  "item.boatload.hellbark_furnace_boat": "Bote de corteza infernal con horno",
+  "item.boatload.jacaranda_furnace_boat": "Bote de jacarandá con horno",
+  "item.boatload.magic_furnace_boat": "Bote mágico con horno",
+  "item.boatload.mahogany_furnace_boat": "Bote de caoba con horno",
+  "item.boatload.palm_furnace_boat": "Bote de palmera con horno",
+  "item.boatload.redwood_furnace_boat": "Bote de secoya con horno",
+  "item.boatload.umbran_furnace_boat": "Bote sombrío con horno",
+  "item.boatload.willow_furnace_boat": "Bote de sauce con horno",
+  
+  "item.boatload.large_cherry_boat": "Bote de cerezo grande",
+  "item.boatload.large_dead_boat": "Bote muerto grande",
+  "item.boatload.large_fir_boat": "Bote de abeto blanco grande",
+  "item.boatload.large_hellbark_boat": "Bote de corteza infernal grande",
+  "item.boatload.large_jacaranda_boat": "Bote de jacarandá grande",
+  "item.boatload.large_magic_boat": "Bote mágico grande",
+  "item.boatload.large_mahogany_boat": "Bote de caoba grande",
+  "item.boatload.large_palm_boat": "Bote de palmera grande",
+  "item.boatload.large_redwood_boat": "Bote de secoya grande",
+  "item.boatload.large_umbran_boat": "Bote sombrío grande",
+  "item.boatload.large_willow_boat": "Bote de sauce grande",
+  
+  
+  "_comment": "Upgrade Aquatic",
+  
+  "item.boatload.driftwood_chest_boat": "Bote de deriva con cofre",
+  "item.boatload.river_chest_boat": "Bote ribereño con cofre",
+  
+  "item.boatload.driftwood_furnace_boat": "Bote de deriva con horno",
+  "item.boatload.river_furnace_boat": "Bote ribereño con horno",
+  
+  "item.boatload.large_driftwood_boat": "Bote de deriva grande",
+  "item.boatload.large_river_boat": "Bote ribereño grande",
+  
+  
+  "_comment": "Bamboo Blocks",
+  
+  "item.boatload.bamboo_chest_boat": "Bote de bambú con cofre",
+  "item.boatload.bamboo_furnace_boat": "Bote de bambú con horno",
+  "item.boatload.large_bamboo_boat": "Bote de bambú grande",
+  
+  
+  "_comment": "Endergetic Expansion",
+  
+  "item.boatload.poise_chest_boat": "Bote equilibrado con cofre",
+  "item.boatload.poise_furnace_boat": "Bote equilibrado con horno",
+  "item.boatload.large_poise_boat": "Bote equilibrado grande",
+  
+  
+  "_comment": "Environmental",
+  
+  "item.boatload.wisteria_chest_boat": "Bote de glicina con cofre",
+  "item.boatload.wisteria_furnace_boat": "Bote de glicina con horno",
+  "item.boatload.large_wisteria_boat": "Bote de glicina grande",
+
+  "item.boatload.willow_chest_boat": "Bote de sauce con cofre",
+  "item.boatload.willow_furnace_boat": "Bote de sauce con horno",
+  "item.boatload.large_willow_boat": "Bote de sauce grande",
+  
+  "item.boatload.cherry_chest_boat": "Bote de cerezo con cofre",
+  "item.boatload.cherry_furnace_boat": "Bote de cerezo con horno",
+  "item.boatload.large_cherry_boat": "Bote de cerezo grande",
+  
+  
+  "_comment": "Atmospheric",
+  
+  "item.boatload.rosewood_chest_boat": "Bote de palisandro con cofre",
+  "item.boatload.morado_chest_boat": "Bote de palo de hierro con cofre",
+  "item.boatload.aspen_chest_boat": "Bote de álamo con cofre",
+  "item.boatload.kousa_chest_boat": "Bote de kousa con cofre",
+  "item.boatload.yucca_chest_boat": "Bote de yuca con cofre",
+  "item.boatload.grimwood_chest_boat": "Bote siniestro con cofre",
+  
+  "item.boatload.rosewood_furnace_boat": "Bote de palisandro con horno",
+  "item.boatload.morado_furnace_boat": "Bote de palo de hierro con horno",
+  "item.boatload.aspen_furnace_boat": "Bote de álamo con horno",
+  "item.boatload.kousa_furnace_boat": "Bote de kousa con horno",
+  "item.boatload.yucca_furnace_boat": "Bote de yuca con horno",
+  "item.boatload.grimwood_furnace_boat": "Bote siniestro con horno",
+  
+  "item.boatload.large_rosewood_boat": "Bote de palisandro grande",
+  "item.boatload.large_morado_boat": "Bote de palo de hierro grande",
+  "item.boatload.large_aspen_boat": "Bote de álamo grande",
+  "item.boatload.large_kousa_boat": "Bote de kousa grande",
+  "item.boatload.large_yucca_boat": "Bote de yuca grande",
+  "item.boatload.large_grimwood_boat": "Bote siniestro grande",
+  
+  
+  "_comment": "Autumnity",
+  
+  "item.boatload.maple_chest_boat": "Bote de arce con cofre",
+  "item.boatload.maple_furnace_boat": "Bote de arce con horno",
+  "item.boatload.large_maple_boat": "Bote de arce grande",
+
+
+  "_comment": "Enhanced Mushrooms",
+
+  "item.boatload.red_mushroom_chest_boat": "Bote de hongo rojo con cofre",
+  "item.boatload.brown_mushroom_chest_boat": "Bote de hongo marrón con cofre",
+  "item.boatload.glowshroom_chest_boat": "Bote de luminongo con cofre",
+
+  "item.boatload.red_mushroom_furnace_boat": "Bote de hongo rojo con horno",
+  "item.boatload.brown_mushroom_furnace_boat": "Bote de hongo marrón con horno",
+  "item.boatload.glowshroom_furnace_boat": "Bote de luminongo con horno",
+
+  "item.boatload.large_red_mushroom_boat": "Bote de hongo rojo grande",
+  "item.boatload.large_brown_mushroom_boat": "Bote de hongo marrón grande",
+  "item.boatload.large_glowshroom_boat": "Bote de luminongo grande",
+
+
+  "_comment": "Hanami",
+
+  "item.boatload.sakura_chest_boat": "Bote de sakura con cofre",
+  "item.boatload.sakura_furnace_boat": "Bote de sakura con horno",
+  "item.boatload.large_sakura_boat": "Bote de sakura grande",
+
+
+  "_comment": "Nether Extension",
+
+  "item.boatload.crimson_chest_boat": "Bote carmesí con cofre",
+  "item.boatload.warped_chest_boat": "Bote distorsionado con cofre",
+
+  "item.boatload.crimson_furnace_boat": "Bote carmesí con horno",
+  "item.boatload.warped_furnace_boat": "Bote distorsionado con horno",
+
+  "item.boatload.large_crimson_boat": "Bote carmesí grande",
+  "item.boatload.large_warped_boat": "Bote distorsionado grande"
+}

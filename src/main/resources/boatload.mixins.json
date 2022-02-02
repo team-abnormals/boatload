@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "com.teamabnormals.boatload.core.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "boatload.refmap.json",
+  "mixins": [
+    "BoatMixin",
+    "EntityMixin"
+  ],
+  "client": [
+    "client.EntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

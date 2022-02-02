@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "atmospheric:aspen_planks"
+    },
+    "W": {
+      "item": "atmospheric:aspen_boat"
+    }
+  },
+  "result": {
+    "item": "boatload:large_aspen_boat"
+  }
+}

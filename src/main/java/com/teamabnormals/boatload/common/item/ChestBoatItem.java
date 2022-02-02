@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.common.item;
 
 import com.teamabnormals.boatload.common.entity.vehicle.BLBoat;
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.common.entity.vehicle.ChestBoat;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -23,7 +23,7 @@ import java.util.List;
 
 public class ChestBoatItem extends BLBoatItem {
 
-	public ChestBoatItem(BLBoatType typeIn, Item.Properties properties) {
+	public ChestBoatItem(ExtraBoatType typeIn, Item.Properties properties) {
 		super(typeIn, properties);
 	}
 

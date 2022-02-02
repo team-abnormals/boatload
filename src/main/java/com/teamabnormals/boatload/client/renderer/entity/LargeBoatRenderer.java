@@ -7,8 +7,9 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import com.teamabnormals.boatload.client.model.LargeBoatModel;
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
+import com.teamabnormals.boatload.core.Boatload;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.core.other.BLModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -21,16 +22,15 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Map;
-import java.util.stream.Stream;
 
 @OnlyIn(Dist.CLIENT)
 public class LargeBoatRenderer extends EntityRenderer<LargeBoat> {
-	private final Map<BLBoatType, Pair<ResourceLocation, LargeBoatModel>> boatResources;
+	private final Map<ExtraBoatType, Pair<ResourceLocation, LargeBoatModel>> boatResources;
 
 	public LargeBoatRenderer(EntityRendererProvider.Context context) {
 		super(context);
 		this.shadowRadius = 0.8F;
-		this.boatResources = Stream.of(BLBoatType.values()).collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation("extraboats", "textures/entity/large_boat/" + boatType.getName() + ".png"), new LargeBoatModel(context.bakeLayer(BLModelLayers.createLargeBoatModelName(boatType))))));
+		this.boatResources = ExtraBoatType.values().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(Boatload.MOD_ID, "textures/entity/large_boat/" + boatType.getName() + ".png"), new LargeBoatModel(context.bakeLayer(BLModelLayers.createLargeBoatModelName(boatType))))));
 	}
 
 	public void render(LargeBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
@@ -74,6 +74,6 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoat> {
 	}
 
 	public Pair<ResourceLocation, LargeBoatModel> getModelWithLocation(LargeBoat boat) {
-		return this.boatResources.get(boat.getBLBoatType());
+		return this.boatResources.get(boat.getExtraBoatType());
 	}
 }

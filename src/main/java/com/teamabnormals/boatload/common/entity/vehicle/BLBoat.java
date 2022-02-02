@@ -1,15 +1,14 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.core.other.BLDataProcessors;
-import com.teamabnormals.boatload.core.registry.BLItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.IndirectEntityDamageSource;
@@ -23,10 +22,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public abstract class BLBoat extends Boat {
-	private static final EntityDataAccessor<Integer> BOAT_TYPE = SynchedEntityData.defineId(BLBoat.class, EntityDataSerializers.INT);
+	private static final EntityDataAccessor<String> BOAT_TYPE = SynchedEntityData.defineId(BLBoat.class, EntityDataSerializers.STRING);
 
 	public BLBoat(EntityType<? extends Boat> entityType, Level worldIn) {
 		super(entityType, worldIn);
@@ -35,28 +33,28 @@ public abstract class BLBoat extends Boat {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(BOAT_TYPE, BLBoatType.OAK.ordinal());
+		this.entityData.define(BOAT_TYPE, ExtraBoatType.OAK.toString());
 	}
 
-	public void setModBoatType(BLBoatType boatType) {
-		this.entityData.set(BOAT_TYPE, boatType.ordinal());
+	public void setModBoatType(ExtraBoatType boatType) {
+		this.entityData.set(BOAT_TYPE, boatType.toString());
 	}
 
-	public BLBoatType getBLBoatType() {
-		return BLBoatType.byId(this.entityData.get(BOAT_TYPE));
+	public ExtraBoatType getExtraBoatType() {
+		return ExtraBoatType.getTypeFromString(this.entityData.get(BOAT_TYPE));
 	}
 
 	@Override
 	protected void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putString("Type", this.getBLBoatType().getName());
+		compound.putString("Type", this.getExtraBoatType().getName());
 	}
 
 	@Override
 	protected void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Type", 8)) {
-			this.setModBoatType(BLBoatType.getTypeFromString(compound.getString("Type")));
+			this.setModBoatType(ExtraBoatType.getTypeFromString(compound.getString("Type")));
 		}
 	}
 
@@ -139,7 +137,7 @@ public abstract class BLBoat extends Boat {
 	}
 
 	public Item getDropItem() {
-		return this.getBLBoatType().getBoat();
+		return this.getExtraBoatType().getBoat();
 	}
 
 	@Override
@@ -148,117 +146,6 @@ public abstract class BLBoat extends Boat {
 	}
 
 	protected Item getPlanks() {
-		return this.getBLBoatType().getPlanks();
-	}
-
-	public enum BLBoatType {
-		OAK("oak"),
-		SPRUCE("spruce"),
-		BIRCH("birch"),
-		JUNGLE("jungle"),
-		ACACIA("acacia"),
-		DARK_OAK("dark_oak"),
-		ROSEWOOD("atmospheric", "rosewood"),
-		MORADO("atmospheric", "morado"),
-		ASPEN("atmospheric", "aspen"),
-		KOUSA("atmospheric", "kousa"),
-		YUCCA("atmospheric", "yucca"),
-		GRIMWOOD("atmospheric", "grimwood"),
-		MAPLE("autumnity", "maple"),
-		BAMBOO("bamboo_blocks", "bamboo"),
-		POISE("endergetic", "poise"),
-		WISTERIA("environmental", "wisteria"),
-		WILLOW("environmental", "willow"),
-		CHERRY("environmental", "cherry"),
-		CRIMSON("nether_extension", "crimson", "crimson_planks"),
-		WARPED("nether_extension", "warped", "warped_planks"),
-		DRIFTWOOD("upgrade_aquatic", "driftwood"),
-		RIVER("upgrade_aquatic", "river");
-
-		private final String name;
-		private final String modid;
-		private final ResourceLocation planks;
-
-		BLBoatType(String name) {
-			this("minecraft", name, name + "_planks");
-		}
-
-		BLBoatType(String modid, String name) {
-			this(modid, name, modid + ":" + name + "_planks");
-		}
-
-		BLBoatType(String modid, String name, String planks) {
-			this.modid = modid;
-			this.name = name;
-			this.planks = new ResourceLocation(planks);
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public String getModID() {
-			return this.modid;
-		}
-
-		public Item getPlanks() {
-			Item item = ForgeRegistries.ITEMS.getValue(this.planks);
-			return item == null ? Items.OAK_PLANKS : item;
-		}
-
-		public Item getBoat() {
-			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(this.modid, this.name + "_boat"));
-			return item == null ? Items.OAK_BOAT : item;
-		}
-
-		public Item getChestBoat() {
-			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(this.modid, this.name + "_chest_boat"));
-			return item == null ? BLItems.OAK_CHEST_BOAT.get() : item;
-		}
-
-		public Item getFurnaceBoat() {
-			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(this.modid, this.name + "_furnace_boat"));
-			return item == null ? BLItems.OAK_FURNACE_BOAT.get() : item;
-		}
-
-		public Item getLargeBoat() {
-			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(this.modid, "large_" + this.name + "_boat"));
-			return item == null ? BLItems.LARGE_OAK_BOAT.get() : item;
-		}
-
-		public String toString() {
-			return this.name;
-		}
-
-		public static BLBoatType byId(int id) {
-			BLBoatType[] aboatentity$type = values();
-			if (id < 0 || id >= aboatentity$type.length) {
-				id = 0;
-			}
-
-			return aboatentity$type[id];
-		}
-
-		public static BLBoatType getTypeFromString(String nameIn) {
-			BLBoatType[] aboatentity$type = values();
-			for (BLBoatType boatType : aboatentity$type) {
-				if (boatType.getName().equals(nameIn)) {
-					return boatType;
-				}
-			}
-
-			return aboatentity$type[0];
-		}
-
-		public static BLBoatType getTypeFromBoat(Item boat) {
-			BLBoatType[] values = values();
-			for (BLBoatType boatType : values) {
-				if (boatType.getBoat() == boat) {
-					return boatType;
-				}
-			}
-
-			return values[0];
-		}
+		return this.getExtraBoatType().getPlanks();
 	}
 }

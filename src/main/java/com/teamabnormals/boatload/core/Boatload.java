@@ -7,10 +7,10 @@ import com.teamabnormals.boatload.client.renderer.entity.LargeBoatRenderer;
 import com.teamabnormals.boatload.common.dispenser.DispenseChestBoatBehavior;
 import com.teamabnormals.boatload.common.dispenser.DispenseFurnaceBoatBehavior;
 import com.teamabnormals.boatload.common.dispenser.DispenseLargeBoatBehavior;
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
 import com.teamabnormals.boatload.common.item.BLBoatItem;
 import com.teamabnormals.boatload.common.item.ChestBoatItem;
 import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.core.data.client.BLItemModelProvider;
 import com.teamabnormals.boatload.core.data.client.BLLanguageProvider;
 import com.teamabnormals.boatload.core.other.BLDataProcessors;
@@ -35,6 +35,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.stream.Collectors;
 
 @Mod(Boatload.MOD_ID)
 public class Boatload {
@@ -90,7 +92,7 @@ public class Boatload {
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		for (BLBoatType boatType : BLBoatType.values()) {
+		for (ExtraBoatType boatType : ExtraBoatType.values().collect(Collectors.toList())) {
 			event.registerLayerDefinition(BLModelLayers.createBoatModelName(boatType), BoatModel::createBodyModel);
 			event.registerLayerDefinition(BLModelLayers.createLargeBoatModelName(boatType), LargeBoatModel::createBodyModel);
 		}

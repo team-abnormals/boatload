@@ -1,6 +1,6 @@
 package com.teamabnormals.boatload.core.data.server;
 
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.common.item.BLBoatItem;
 import com.teamabnormals.boatload.core.other.BLUtil;
 import net.minecraft.core.Registry;
@@ -29,12 +29,12 @@ public class BLRecipeProvider extends RecipeProvider {
 	}
 
 	private void furnaceBoatRecipe(Consumer<FinishedRecipe> consumer, BLBoatItem item) {
-		BLBoatType type = item.getType();
+		ExtraBoatType type = item.getType();
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(type.getModID())).addRecipe(ShapedRecipeBuilder.shaped(item).define('F', Items.FURNACE).define('B', type.getBoat()).pattern("F").pattern("B").group("furnace_boat").unlockedBy(getHasName(type.getBoat()), has(type.getBoat()))::save).build(consumer, RecipeBuilder.getDefaultRecipeId(item));
 	}
 
 	private void largeBoatRecipe(Consumer<FinishedRecipe> consumer, BLBoatItem item) {
-		BLBoatType type = item.getType();
+		ExtraBoatType type = item.getType();
 		ConditionalRecipe.builder().addCondition(new ModLoadedCondition(type.getModID())).addRecipe(ShapedRecipeBuilder.shaped(item).define('#', type.getPlanks()).define('B', type.getBoat()).pattern("#B#").pattern("###").group("large_boat").unlockedBy(getHasName(type.getBoat()), has(type.getBoat()))::save).build(consumer, RecipeBuilder.getDefaultRecipeId(item));
 	}
 

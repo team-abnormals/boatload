@@ -7,7 +7,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import com.teamabnormals.boatload.common.entity.vehicle.BLBoat;
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.core.other.BLModelLayers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
@@ -24,16 +24,15 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Map;
-import java.util.stream.Stream;
 
 @OnlyIn(Dist.CLIENT)
 public class BLBoatRenderer extends EntityRenderer<BLBoat> {
-	private final Map<BLBoatType, Pair<ResourceLocation, BoatModel>> boatResources;
+	private final Map<ExtraBoatType, Pair<ResourceLocation, BoatModel>> boatResources;
 
 	public BLBoatRenderer(EntityRendererProvider.Context context) {
 		super(context);
 		this.shadowRadius = 0.8F;
-		this.boatResources = Stream.of(BLBoatType.values()).collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.getModID(), "textures/entity/boat/" + boatType.getName() + ".png"), new BoatModel(context.bakeLayer(BLModelLayers.createBoatModelName(boatType))))));
+		this.boatResources = ExtraBoatType.values().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.getModID(), "textures/entity/boat/" + boatType.getName() + ".png"), new BoatModel(context.bakeLayer(BLModelLayers.createBoatModelName(boatType))))));
 	}
 
 	public void render(BLBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
@@ -87,6 +86,6 @@ public class BLBoatRenderer extends EntityRenderer<BLBoat> {
 	}
 
 	public Pair<ResourceLocation, BoatModel> getModelWithLocation(BLBoat boat) {
-		return this.boatResources.get(boat.getBLBoatType());
+		return this.boatResources.get(boat.getExtraBoatType());
 	}
 }

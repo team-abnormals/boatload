@@ -1,6 +1,6 @@
 package com.teamabnormals.boatload.common.dispenser;
 
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
@@ -13,9 +13,9 @@ import net.minecraft.world.level.block.DispenserBlock;
 
 public class DispenseLargeBoatBehavior extends DefaultDispenseItemBehavior {
 	private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
-	private final BLBoatType type;
+	private final ExtraBoatType type;
 
-	public DispenseLargeBoatBehavior(BLBoatType typeIn) {
+	public DispenseLargeBoatBehavior(ExtraBoatType typeIn) {
 		this.type = typeIn;
 	}
 

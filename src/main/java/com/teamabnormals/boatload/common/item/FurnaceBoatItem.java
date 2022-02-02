@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.common.item;
 
 import com.teamabnormals.boatload.common.entity.vehicle.BLBoat;
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.common.entity.vehicle.FurnaceBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -11,7 +11,7 @@ import net.minecraft.world.phys.HitResult;
 
 public class FurnaceBoatItem extends BLBoatItem {
 
-	public FurnaceBoatItem(BLBoatType typeIn, Item.Properties properties) {
+	public FurnaceBoatItem(ExtraBoatType typeIn, Item.Properties properties) {
 		super(typeIn, properties);
 	}
 

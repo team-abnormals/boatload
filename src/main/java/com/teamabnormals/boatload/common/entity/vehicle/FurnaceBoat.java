@@ -173,12 +173,12 @@ public class FurnaceBoat extends BLBoat {
 
 	@Override
 	public Item getDropItem() {
-		return this.getBLBoatType().getFurnaceBoat();
+		return this.getExtraBoatType().getFurnaceBoat();
 	}
 
 	@Override
 	public Item getItemDropBoat() {
-		return this.getBLBoatType().getBoat();
+		return this.getExtraBoatType().getBoat();
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package com.teamabnormals.boatload.common.item.crafting;
 
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import com.teamabnormals.boatload.common.item.ChestBoatItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -54,13 +54,13 @@ public class ChestBoatRecipe extends CustomRecipe {
 	@Override
 	public ItemStack assemble(CraftingContainer inv) {
 		Item item = Items.CHEST;
-		BLBoatType type = BLBoatType.OAK;
+		ExtraBoatType type = ExtraBoatType.OAK;
 
 		for (int i = 0; i < inv.getContainerSize(); ++i) {
 			ItemStack itemstack2 = inv.getItem(i);
 			if (!itemstack2.isEmpty()) {
 				if (itemstack2.is(ItemTags.BOATS)) {
-					type = BLBoatType.getTypeFromBoat(itemstack2.getItem());
+					type = ExtraBoatType.getTypeFromBoat(itemstack2.getItem());
 				} else if (itemstack2.is(Tags.Items.CHESTS_WOODEN) && !itemstack2.is(Tags.Items.CHESTS_TRAPPED)) {
 					item = itemstack2.getItem();
 				}

@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.common.item;
 
 import com.teamabnormals.boatload.common.entity.vehicle.BLBoat;
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat.BLBoatType;
+import com.teamabnormals.boatload.core.api.ExtraBoatType;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -21,9 +21,9 @@ import java.util.function.Predicate;
 
 public class BLBoatItem extends Item {
 	private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
-	private final BLBoatType type;
+	private final ExtraBoatType type;
 
-	public BLBoatItem(BLBoatType typeIn, Item.Properties properties) {
+	public BLBoatItem(ExtraBoatType typeIn, Item.Properties properties) {
 		super(properties);
 		this.type = typeIn;
 	}
@@ -75,7 +75,7 @@ public class BLBoatItem extends Item {
 		return null;
 	}
 
-	public BLBoatType getType() {
+	public ExtraBoatType getType() {
 		return this.type;
 	}
 }

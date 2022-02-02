@@ -239,7 +239,7 @@ public abstract class AbstractContainerBoat extends BLBoat implements Container,
 
 	@Override
 	public Item getItemDropBoat() {
-		return this.getBLBoatType().getChestBoat();
+		return this.getExtraBoatType().getChestBoat();
 	}
 
 	@Override

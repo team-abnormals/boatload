@@ -102,13 +102,13 @@
   "item.extraboats.wisteria_furnace_boat": "Glyzinenholzantriebsboot",
   "item.extraboats.large_wisteria_boat": "Großes Glyzinenholzboot",
   
-  "item.extraboats.env_willow_chest_boat": "Weidenholzgüterboot",
-  "item.extraboats.env_willow_furnace_boat": "Weidenholzantriebsboot",
-  "item.extraboats.large_env_willow_boat": "Großes Weidenholzboot",
+  "item.extraboats.willow_chest_boat": "Weidenholzgüterboot",
+  "item.extraboats.willow_furnace_boat": "Weidenholzantriebsboot",
+  "item.extraboats.large_willow_boat": "Großes Weidenholzboot",
   
-  "item.extraboats.env_cherry_chest_boat": "Kirschholzgüterboot",
-  "item.extraboats.env_cherry_furnace_boat": "Kirschholzantriebsboot",
-  "item.extraboats.large_env_cherry_boat": "Großes Kirschholzboot",
+  "item.extraboats.cherry_chest_boat": "Kirschholzgüterboot",
+  "item.extraboats.cherry_furnace_boat": "Kirschholzantriebsboot",
+  "item.extraboats.large_cherry_boat": "Großes Kirschholzboot",
   
   
   "_comment": "Atmospheric",

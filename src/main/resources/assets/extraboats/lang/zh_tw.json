@@ -101,13 +101,13 @@
   "item.extraboats.wisteria_furnace_boat": "紫藤木帶爐船",
   "item.extraboats.large_wisteria_boat": "紫藤木大型船",
   
-  "item.extraboats.env_willow_chest_boat": "柳木帶箱船",
-  "item.extraboats.env_willow_furnace_boat": "柳木帶爐船",
-  "item.extraboats.large_env_willow_boat": "柳木大型船",
+  "item.extraboats.willow_chest_boat": "柳木帶箱船",
+  "item.extraboats.willow_furnace_boat": "柳木帶爐船",
+  "item.extraboats.large_willow_boat": "柳木大型船",
   
-  "item.extraboats.env_cherry_chest_boat": "櫻花木帶箱船",
-  "item.extraboats.env_cherry_furnace_boat": "櫻花木帶爐船",
-  "item.extraboats.large_env_cherry_boat": "櫻花木大型船",
+  "item.extraboats.cherry_chest_boat": "櫻花木帶箱船",
+  "item.extraboats.cherry_furnace_boat": "櫻花木帶爐船",
+  "item.extraboats.large_cherry_boat": "櫻花木大型船",
   
   
   "_comment": "Atmospheric",

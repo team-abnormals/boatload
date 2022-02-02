@@ -101,13 +101,13 @@
   "item.extraboats.wisteria_furnace_boat": "Barca di glicine con fornace",
   "item.extraboats.large_wisteria_boat": "Barca grande di glicine",
   
-  "item.extraboats.env_willow_chest_boat": "Barca di salice con baule",
-  "item.extraboats.env_willow_furnace_boat": "Barca di salice con fornace",
-  "item.extraboats.large_env_willow_boat": "Barca grande di salice",
+  "item.extraboats.willow_chest_boat": "Barca di salice con baule",
+  "item.extraboats.willow_furnace_boat": "Barca di salice con fornace",
+  "item.extraboats.large_willow_boat": "Barca grande di salice",
   
-  "item.extraboats.env_cherry_chest_boat": "Barca di ciliegio con baule",
-  "item.extraboats.env_cherry_furnace_boat": "Barca di ciliegio con fornace",
-  "item.extraboats.large_env_cherry_boat": "Barca grande di ciliegio",
+  "item.extraboats.cherry_chest_boat": "Barca di ciliegio con baule",
+  "item.extraboats.cherry_furnace_boat": "Barca di ciliegio con fornace",
+  "item.extraboats.large_cherry_boat": "Barca grande di ciliegio",
   
   
   "_comment": "Atmospheric",

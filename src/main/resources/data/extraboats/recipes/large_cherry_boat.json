@@ -1,7 +1,7 @@
 {
   "conditions": [{
   "type": "forge:mod_loaded",
-  "modid": "biomesoplenty"
+  "modid": "environmental"
   }],
   "type": "minecraft:crafting_shaped",
   "group": "large_boat",
@@ -11,10 +11,10 @@
   ],
   "key": {
     "#": {
-      "item": "biomesoplenty:cherry_planks"
+      "item": "environmental:cherry_planks"
     },
     "W": {
-      "item": "biomesoplenty:cherry_boat"
+      "item": "environmental:cherry_boat"
     }
   },
   "result": {

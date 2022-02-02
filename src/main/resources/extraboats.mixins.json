@@ -1,15 +1,15 @@
 {
   "required": true,
-  "package": "com.minecraftabnormals.extraboats.core.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "package": "com.teamabnormals.extraboats.core.mixin",
+  "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "refmap": "extraboats.refmap.json",
   "mixins": [
-    "BoatEntityMixin",
+    "BoatMixin",
     "EntityMixin"
   ],
   "client": [
-    "EntityRendererMixin"
+    "client.EntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -101,13 +101,13 @@
   "item.extraboats.wisteria_furnace_boat": "Bote de glicina con horno",
   "item.extraboats.large_wisteria_boat": "Bote de glicina grande",
 
-  "item.extraboats.env_willow_chest_boat": "Bote de sauce con cofre",
-  "item.extraboats.env_willow_furnace_boat": "Bote de sauce con horno",
-  "item.extraboats.large_env_willow_boat": "Bote de sauce grande",
+  "item.extraboats.willow_chest_boat": "Bote de sauce con cofre",
+  "item.extraboats.willow_furnace_boat": "Bote de sauce con horno",
+  "item.extraboats.large_willow_boat": "Bote de sauce grande",
   
-  "item.extraboats.env_cherry_chest_boat": "Bote de cerezo con cofre",
-  "item.extraboats.env_cherry_furnace_boat": "Bote de cerezo con horno",
-  "item.extraboats.large_env_cherry_boat": "Bote de cerezo grande",
+  "item.extraboats.cherry_chest_boat": "Bote de cerezo con cofre",
+  "item.extraboats.cherry_furnace_boat": "Bote de cerezo con horno",
+  "item.extraboats.large_cherry_boat": "Bote de cerezo grande",
   
   
   "_comment": "Atmospheric",

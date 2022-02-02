@@ -1,7 +1,7 @@
 {
   "conditions": [{
   "type": "forge:mod_loaded",
-  "modid": "biomesoplenty"
+  "modid": "environmental"
   }],
   "type": "minecraft:crafting_shaped",
   "group": "large_boat",
@@ -11,10 +11,10 @@
   ],
   "key": {
     "#": {
-      "item": "biomesoplenty:willow_planks"
+      "item": "environmental:willow_planks"
     },
     "W": {
-      "item": "biomesoplenty:willow_boat"
+      "item": "environmental:willow_boat"
     }
   },
   "result": {

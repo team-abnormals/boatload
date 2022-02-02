@@ -101,13 +101,13 @@
   "item.extraboats.wisteria_furnace_boat": "화로가 실린 등나무 보트",
   "item.extraboats.large_wisteria_boat": "큰 등나무 보트",
   
-  "item.extraboats.env_willow_chest_boat": "상자가 실린 버드나무 보트",
-  "item.extraboats.env_willow_furnace_boat": "화로가 실린 버드나무 보트",
-  "item.extraboats.large_env_willow_boat": "큰 버드나무 보트",
+  "item.extraboats.willow_chest_boat": "상자가 실린 버드나무 보트",
+  "item.extraboats.willow_furnace_boat": "화로가 실린 버드나무 보트",
+  "item.extraboats.large_willow_boat": "큰 버드나무 보트",
   
-  "item.extraboats.env_cherry_chest_boat": "상자가 실린 벚나무 보트",
-  "item.extraboats.env_cherry_furnace_boat": "화로가 실린 벚나무 보트",
-  "item.extraboats.large_env_cherry_boat": "큰 벚나무 보트",
+  "item.extraboats.cherry_chest_boat": "상자가 실린 벚나무 보트",
+  "item.extraboats.cherry_furnace_boat": "화로가 실린 벚나무 보트",
+  "item.extraboats.large_cherry_boat": "큰 벚나무 보트",
   
   
   "_comment": "Atmospheric",

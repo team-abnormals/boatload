@@ -1,6 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "extraboats:item/large_red_mushroom_boat"
-    }
-}

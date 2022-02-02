@@ -62,13 +62,13 @@
   "item.extraboats.wisteria_furnace_boat": "Moottoroitu sinisadevene",
   "item.extraboats.large_wisteria_boat": "Suuri sinisadevene",
   
-  "item.extraboats.env_willow_chest_boat": "Arkullinen pajuvene",
-  "item.extraboats.env_willow_furnace_boat": "Moottoroitu pajuvene",
-  "item.extraboats.large_env_willow_boat": "Suuri pajuvene",
+  "item.extraboats.willow_chest_boat": "Arkullinen pajuvene",
+  "item.extraboats.willow_furnace_boat": "Moottoroitu pajuvene",
+  "item.extraboats.large_willow_boat": "Suuri pajuvene",
   
-  "item.extraboats.env_cherry_chest_boat": "Arkullinen kirsikkapuuvene",
-  "item.extraboats.env_cherry_furnace_boat": "Moottoroitu kirsikkapuuvene",
-  "item.extraboats.large_env_cherry_boat": "Suuri kirsikkapuuvene",
+  "item.extraboats.cherry_chest_boat": "Arkullinen kirsikkapuuvene",
+  "item.extraboats.cherry_furnace_boat": "Moottoroitu kirsikkapuuvene",
+  "item.extraboats.large_cherry_boat": "Suuri kirsikkapuuvene",
   
   
   "_comment": "Atmospheric",

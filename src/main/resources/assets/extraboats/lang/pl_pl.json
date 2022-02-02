@@ -101,13 +101,13 @@
   "item.extraboats.wisteria_furnace_boat": "Glicyniowa łódka z piecem",
   "item.extraboats.large_wisteria_boat": "Wielka glicyniowa łódka",
   
-  "item.extraboats.env_willow_chest_boat": "Wierzbowa łódka ze skrzynią",
-  "item.extraboats.env_willow_furnace_boat": "Wierzbowa łódka z piecem",
-  "item.extraboats.large_env_willow_boat": "Wielka wierzbowa łódka",
+  "item.extraboats.willow_chest_boat": "Wierzbowa łódka ze skrzynią",
+  "item.extraboats.willow_furnace_boat": "Wierzbowa łódka z piecem",
+  "item.extraboats.large_willow_boat": "Wielka wierzbowa łódka",
   
-  "item.extraboats.env_cherry_chest_boat": "Wiśniowa łódka ze skrzynią",
-  "item.extraboats.env_cherry_furnace_boat": "Wiśniowa łódka z piecem",
-  "item.extraboats.large_env_cherry_boat": "Wielka wiśniowa łódka",
+  "item.extraboats.cherry_chest_boat": "Wiśniowa łódka ze skrzynią",
+  "item.extraboats.cherry_furnace_boat": "Wiśniowa łódka z piecem",
+  "item.extraboats.large_cherry_boat": "Wielka wiśniowa łódka",
   
   
   "_comment": "Atmospheric",

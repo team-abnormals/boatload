@@ -101,13 +101,13 @@
   "item.extraboats.wisteria_furnace_boat": "紫藤木动力船",
   "item.extraboats.large_wisteria_boat": "紫藤木大型船",
   
-  "item.extraboats.env_willow_chest_boat": "柳木运输船",
-  "item.extraboats.env_willow_furnace_boat": "柳木动力船",
-  "item.extraboats.large_env_willow_boat": "柳木大型船",
+  "item.extraboats.willow_chest_boat": "柳木运输船",
+  "item.extraboats.willow_furnace_boat": "柳木动力船",
+  "item.extraboats.large_willow_boat": "柳木大型船",
   
-  "item.extraboats.env_cherry_chest_boat": "樱木运输船",
-  "item.extraboats.env_cherry_furnace_boat": "樱木动力船",
-  "item.extraboats.large_env_cherry_boat": "樱木大型船",
+  "item.extraboats.cherry_chest_boat": "樱木运输船",
+  "item.extraboats.cherry_furnace_boat": "樱木动力船",
+  "item.extraboats.large_cherry_boat": "樱木大型船",
   
   
   "_comment": "Atmospheric丨It has no official CHS translation so I left them here丨https://github.com/team-abnormals/atmospheric/tree/master/src/main/resources/assets/atmospheric/lang",

@@ -101,13 +101,13 @@
   "item.extraboats.wisteria_furnace_boat": "Глициниевая лодка с печкой",
   "item.extraboats.large_wisteria_boat": "Большая глициниевая лодка",
   
-  "item.extraboats.env_willow_chest_boat": "Ивовая лодка с сундуком",
-  "item.extraboats.env_willow_furnace_boat": "Ивовая лодка с печкой",
-  "item.extraboats.large_env_willow_boat": "Большая ивовая лодка",
+  "item.extraboats.willow_chest_boat": "Ивовая лодка с сундуком",
+  "item.extraboats.willow_furnace_boat": "Ивовая лодка с печкой",
+  "item.extraboats.large_willow_boat": "Большая ивовая лодка",
   
-  "item.extraboats.env_cherry_chest_boat": "Вишнёвая лодка с сундуком",
-  "item.extraboats.env_cherry_furnace_boat": "Вишнёвая лодка с печкой",
-  "item.extraboats.large_env_cherry_boat": "Большая вишнёвая лодка",
+  "item.extraboats.cherry_chest_boat": "Вишнёвая лодка с сундуком",
+  "item.extraboats.cherry_furnace_boat": "Вишнёвая лодка с печкой",
+  "item.extraboats.large_cherry_boat": "Большая вишнёвая лодка",
   
   
   "_comment": "Atmospheric",

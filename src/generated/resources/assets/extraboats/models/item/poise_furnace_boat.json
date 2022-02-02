@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "extraboats:item/poise_furnace_boat"
+  }
+}

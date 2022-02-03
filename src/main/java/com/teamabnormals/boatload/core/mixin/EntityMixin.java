@@ -18,13 +18,10 @@ public abstract class EntityMixin {
 	@Shadow
 	public Level level;
 
-	@Shadow
-	public abstract boolean isRemoved();
-
 	@Inject(method = "causeFallDamage", at = @At(value = "HEAD"), cancellable = true)
 	private void dropBannerUponFalling(float distance, float damageMultiplier, DamageSource source, CallbackInfoReturnable<Boolean> info) {
 		if ((Object) this instanceof Boat) {
-			if (!this.level.isClientSide && !this.isRemoved()) {
+			if (!this.level.isClientSide && !((Entity) (Object) this).isRemoved()) {
 				if (this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
 					((Entity) (Object) this).spawnAtLocation(((IDataManager) this).getValue(BoatloadDataProcessors.BANNER));
 				}

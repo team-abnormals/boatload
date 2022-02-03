@@ -1,0 +1,176 @@
+{
+  "itemGroup.boatload": "Extra Boats",
+
+  "entity.boatload.chest_boat": "Barca amb cofre",
+  "entity.boatload.furnace_boat": "Barca amb forn",
+  "entity.boatload.large_boat": "Barca gran",
+
+
+  "_comment": "Vanilla",
+
+  "item.boatload.oak_chest_boat": "Barca de pomer amb cofre",
+  "item.boatload.spruce_chest_boat": "Barca de pi amb cofre",
+  "item.boatload.birch_chest_boat": "Barca de bedoll amb cofre",
+  "item.boatload.jungle_chest_boat": "Barca de jungla amb cofre",
+  "item.boatload.acacia_chest_boat": "Barca de acàcia amb cofre",
+  "item.boatload.dark_oak_chest_boat": "Barca de pomer fosc amb cofre",
+
+  "item.boatload.oak_furnace_boat": "Barca de pomer amb forn",
+  "item.boatload.spruce_furnace_boat": "Barca de pi amb forn",
+  "item.boatload.birch_furnace_boat": "Barca de bedoll amb forn",
+  "item.boatload.jungle_furnace_boat": "Barca de jungla amb forn",
+  "item.boatload.acacia_furnace_boat": "Barca de acàcia amb forn",
+  "item.boatload.dark_oak_furnace_boat": "Barca de pomer fosc amb forn",
+
+  "item.boatload.large_oak_boat": "Barca de pomer gran",
+  "item.boatload.large_spruce_boat": "Barca de pi gran",
+  "item.boatload.large_birch_boat": "Barca de bedoll gran",
+  "item.boatload.large_jungle_boat": "Barca de jungla gran",
+  "item.boatload.large_acacia_boat": "Barca de acàcia gran",
+  "item.boatload.large_dark_oak_boat": "Barca de pomer fosc gran",
+
+
+  "_comment": "Biomes O' Plenty",
+
+  "item.boatload.cherry_chest_boat": "Barca de cirere amb cofre",
+  "item.boatload.dead_chest_boat": "Barca de fusta morta amb cofre",
+  "item.boatload.fir_chest_boat": "Barca de bedoll blanc amb cofre",
+  "item.boatload.hellbark_chest_boat": "Barca d'escorça infernal amb cofre",
+  "item.boatload.jacaranda_chest_boat": "Barca de jacarandá amb cofre",
+  "item.boatload.magic_chest_boat": "Barca magic amb cofre",
+  "item.boatload.mahogany_chest_boat": "Barca de caoba amb cofre",
+  "item.boatload.palm_chest_boat": "Barca de palmera amb cofre",
+  "item.boatload.redwood_chest_boat": "Barca de secoia amb cofre",
+  "item.boatload.umbran_chest_boat": "Barca sombría amb cofre",
+  "item.boatload.willow_chest_boat": "Barca de salze amb cofre",
+
+  "item.boatload.cherry_furnace_boat": "Barca de cirere amb forn",
+  "item.boatload.dead_furnace_boat": "Barca de fusta morta amb forn",
+  "item.boatload.fir_furnace_boat": "Barca de bedoll blanc amb forn",
+  "item.boatload.hellbark_furnace_boat": "Barca d'escorça infernal amb forn",
+  "item.boatload.jacaranda_furnace_boat": "Barca de jacarandá amb forn",
+  "item.boatload.magic_furnace_boat": "Barca magic amb forn",
+  "item.boatload.mahogany_furnace_boat": "Barca de caoba amb forn",
+  "item.boatload.palm_furnace_boat": "Barca de palmera amb forn",
+  "item.boatload.redwood_furnace_boat": "Barca de secoia amb forn",
+  "item.boatload.umbran_furnace_boat": "Barca sombría amb forn",
+  "item.boatload.willow_furnace_boat": "Barca de salze amb forn",
+
+  "item.boatload.large_cherry_boat": "Barca de cirere gran",
+  "item.boatload.large_dead_boat": "Barca de fusta morta gran",
+  "item.boatload.large_fir_boat": "Barca de bedoll blanc gran",
+  "item.boatload.large_hellbark_boat": "Barca d'escorça infernal gran",
+  "item.boatload.large_jacaranda_boat": "Barca de jacarandá gran",
+  "item.boatload.large_magic_boat": "Barca magic gran",
+  "item.boatload.large_mahogany_boat": "Barca de caoba gran",
+  "item.boatload.large_palm_boat": "Barca de palmera gran",
+  "item.boatload.large_redwood_boat": "Barca de secoia gran",
+  "item.boatload.large_umbran_boat": "Barca sombría gran",
+  "item.boatload.large_willow_boat": "Barca de salze gran",
+
+
+  "_comment": "Upgrade Aquatic",
+
+  "item.boatload.driftwood_chest_boat": "Barca deriva amb cofre",
+  "item.boatload.river_chest_boat": "Barca riberenyaa amb cofre",
+
+  "item.boatload.driftwood_furnace_boat": "Barca de deriva amb forn",
+  "item.boatload.river_furnace_boat": "Barca ribereña amb forn",
+
+  "item.boatload.large_driftwood_boat": "Barca de deriva gran",
+  "item.boatload.large_river_boat": "Barca ribereña gran",
+
+
+  "_comment": "Bamboo Blocks",
+
+  "item.boatload.bamboo_chest_boat": "Barca de bambú amb cofre",
+  "item.boatload.bamboo_furnace_boat": "Barca de bambú amb forn",
+  "item.boatload.large_bamboo_boat": "Barca de bambú gran",
+
+
+  "_comment": "Endergetic Expansion",
+
+  "item.boatload.poise_chest_boat": "Barca equilibrada amb cofre",
+  "item.boatload.poise_furnace_boat": "Barca equilibrada amb forn",
+  "item.boatload.large_poise_boat": "Barca equilibrada gran",
+
+
+  "_comment": "Environmental",
+
+  "item.boatload.wisteria_chest_boat": "Barca de glicina amb cofre",
+  "item.boatload.wisteria_furnace_boat": "Barca de glicina amb forn",
+  "item.boatload.large_wisteria_boat": "Barca de glicina gran",
+
+  "item.boatload.willow_chest_boat": "Barca de salze amb cofre",
+  "item.boatload.willow_furnace_boat": "Barca de salze amb forn",
+  "item.boatload.large_willow_boat": "Barca de salze gran",
+
+  "item.boatload.cherry_chest_boat": "Barca de cirere amb cofre",
+  "item.boatload.cherry_furnace_boat": "Barca de cirere amb forn",
+  "item.boatload.large_cherry_boat": "Barca de cirere gran",
+
+
+  "_comment": "Atmospheric",
+
+  "item.boatload.rosewood_chest_boat": "Barca de palisandre amb cofre",
+  "item.boatload.morado_chest_boat": "Barca de pal de ferro amb cofre",
+  "item.boatload.aspen_chest_boat": "Barca de àlber amb cofre",
+  "item.boatload.kousa_chest_boat": "Barca de kousa amb cofre",
+  "item.boatload.yucca_chest_boat": "Barca de yuca amb cofre",
+  "item.boatload.grimwood_chest_boat": "Barca sinistre amb cofre",
+
+  "item.boatload.rosewood_furnace_boat": "Barca de palisandre amb forn",
+  "item.boatload.morado_furnace_boat": "Barca de pal de ferro amb forn",
+  "item.boatload.aspen_furnace_boat": "Barca de àlber amb forn",
+  "item.boatload.kousa_furnace_boat": "Barca de kousa amb forn",
+  "item.boatload.yucca_furnace_boat": "Barca de yuca amb forn",
+  "item.boatload.grimwood_furnace_boat": "Barca sinistre amb forn",
+
+  "item.boatload.large_rosewood_boat": "Barca de palisandre gran",
+  "item.boatload.large_morado_boat": "Barca de pal de ferro gran",
+  "item.boatload.large_aspen_boat": "Barca de àlber gran",
+  "item.boatload.large_kousa_boat": "Barca de kousa gran",
+  "item.boatload.large_yucca_boat": "Barca de yuca gran",
+  "item.boatload.large_grimwood_boat": "Barca sinistre gran",
+
+
+  "_comment": "Autumnity",
+
+  "item.boatload.maple_chest_boat": "Barca de auró amb cofre",
+  "item.boatload.maple_furnace_boat": "Barca de auró amb forn",
+  "item.boatload.large_maple_boat": "Barca de auró gran",
+
+
+  "_comment": "Enhanced Mushrooms",
+
+  "item.boatload.red_mushroom_chest_boat": "Barca de xampinyo vermell amb cofre",
+  "item.boatload.brown_mushroom_chest_boat": "Barca de xampinyo marró amb cofre",
+  "item.boatload.glowshroom_chest_boat": "Barca de xampillum amb cofre",
+
+  "item.boatload.red_mushroom_furnace_boat": "Barca de xampinyo vermell amb forn",
+  "item.boatload.brown_mushroom_furnace_boat": "Barca de xampinyo marró amb forn",
+  "item.boatload.glowshroom_furnace_boat": "Barca de xampillum amb forn",
+
+  "item.boatload.large_red_mushroom_boat": "Barca de xampinyo rojo gran",
+  "item.boatload.large_brown_mushroom_boat": "Barca de xampinyo marró gran",
+  "item.boatload.large_glowshroom_boat": "Barca de xampillum gran",
+
+
+  "_comment": "Hanami",
+
+  "item.boatload.sakura_chest_boat": "Barca de sakura amb cofre",
+  "item.boatload.sakura_furnace_boat": "Barca de sakura amb forn",
+  "item.boatload.large_sakura_boat": "Barca de sakura gran",
+
+
+  "_comment": "Nether Extension",
+
+  "item.boatload.crimson_chest_boat": "Barca carmesí amb cofre",
+  "item.boatload.warped_chest_boat": "Barca distorsionada amb cofre",
+
+  "item.boatload.crimson_furnace_boat": "Barca carmesí amb forn",
+  "item.boatload.warped_furnace_boat": "Barca distorsionada amb forn",
+
+  "item.boatload.large_crimson_boat": "Barca carmesí gran",
+  "item.boatload.large_warped_boat": "Barca distorsionada gran"
+}

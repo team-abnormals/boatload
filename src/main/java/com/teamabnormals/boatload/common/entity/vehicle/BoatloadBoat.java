@@ -33,11 +33,11 @@ public abstract class BoatloadBoat extends Boat {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(BOAT_TYPE, BoatloadBoatType.OAK.registryName().getPath());
+		this.entityData.define(BOAT_TYPE, BoatloadBoatType.OAK.registryName().toString());
 	}
 
 	public void setBoatloadBoatType(BoatloadBoatType boatType) {
-		this.entityData.set(BOAT_TYPE, boatType.registryName().getPath());
+		this.entityData.set(BOAT_TYPE, boatType.registryName().toString());
 	}
 
 	public BoatloadBoatType getExtraBoatType() {
@@ -47,7 +47,7 @@ public abstract class BoatloadBoat extends Boat {
 	@Override
 	protected void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putString("Type", this.getExtraBoatType().registryName().getPath());
+		compound.putString("Type", this.getExtraBoatType().registryName().toString());
 	}
 
 	@Override

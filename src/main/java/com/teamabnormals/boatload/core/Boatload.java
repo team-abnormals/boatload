@@ -7,9 +7,6 @@ import com.teamabnormals.boatload.client.renderer.entity.LargeBoatRenderer;
 import com.teamabnormals.boatload.common.dispenser.ChestBoatDispenseItemBehavior;
 import com.teamabnormals.boatload.common.dispenser.FurnaceBoatDispenseItemBehavior;
 import com.teamabnormals.boatload.common.dispenser.LargeBoatDispenseItemBehavior;
-import com.teamabnormals.boatload.common.item.BoatloadBoatItem;
-import com.teamabnormals.boatload.common.item.ChestBoatItem;
-import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.data.client.BoatloadItemModelProvider;
 import com.teamabnormals.boatload.core.data.client.BoatloadLanguageProvider;
@@ -17,11 +14,11 @@ import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
 import com.teamabnormals.boatload.core.other.BoatloadDataProcessors;
 import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
 import com.teamabnormals.boatload.core.other.BoatloadRecipeSerializers;
+import com.teamabnormals.boatload.core.other.BoatloadUtil;
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
 import com.teamabnormals.boatload.core.registry.helper.BoatloadItemSubRegistryHelper;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -35,7 +32,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 @Mod(Boatload.MOD_ID)
 public class Boatload {
@@ -61,16 +57,9 @@ public class Boatload {
 
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			for (RegistryObject<Item> item : REGISTRY_HELPER.getItemSubHelper().getDeferredRegister().getEntries()) {
-				BoatloadBoatItem boatItem = (BoatloadBoatItem) item.get();
-				if (boatItem instanceof ChestBoatItem) {
-					DispenserBlock.registerBehavior(boatItem, new ChestBoatDispenseItemBehavior(boatItem.getType()));
-				} else if (boatItem instanceof FurnaceBoatItem) {
-					DispenserBlock.registerBehavior(boatItem, new FurnaceBoatDispenseItemBehavior(boatItem.getType()));
-				} else {
-					DispenserBlock.registerBehavior(boatItem, new LargeBoatDispenseItemBehavior(boatItem.getType()));
-				}
-			}
+			BoatloadUtil.getChestBoats().forEach(item -> DispenserBlock.registerBehavior(item, new ChestBoatDispenseItemBehavior(item.getType())));
+			BoatloadUtil.getFurnaceBoats().forEach(item -> DispenserBlock.registerBehavior(item, new FurnaceBoatDispenseItemBehavior(item.getType())));
+			BoatloadUtil.getLargeBoats().forEach(item -> DispenserBlock.registerBehavior(item, new LargeBoatDispenseItemBehavior(item.getType())));
 			BoatloadDataProcessors.registerTrackedData();
 		});
 	}
@@ -80,7 +69,7 @@ public class Boatload {
 		ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
 		if (event.includeServer()) {
-			//generator.addProvider(new BoatloadRecipeProvider(generator));
+			generator.addProvider(new BoatloadRecipeProvider(generator));
 		}
 
 		if (event.includeClient()) {

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#B#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:oak_planks"
+    },
+    "B": {
+      "item": "minecraft:oak_boat"
+    }
+  },
+  "result": {
+    "item": "boatload:large_oak_boat"
+  }
+}

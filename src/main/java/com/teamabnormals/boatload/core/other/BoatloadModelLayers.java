@@ -12,7 +12,7 @@ public class BoatloadModelLayers {
 	}
 
 	public static ModelLayerLocation createLargeBoatModelName(BoatloadBoatType boatType) {
-		return register("large_boat/" + boatType.getRegistryName().getPath(), "main");
+		return register("boat/" + boatType.getRegistryName().getPath() + "_large", "main");
 	}
 
 	public static ModelLayerLocation register(String name, String layer) {

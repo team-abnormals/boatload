@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "pattern": [
+    "#B#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:jungle_planks"
+    },
+    "B": {
+      "item": "minecraft:jungle_boat"
+    }
+  },
+  "result": {
+    "item": "boatload:large_jungle_boat"
+  }
+}

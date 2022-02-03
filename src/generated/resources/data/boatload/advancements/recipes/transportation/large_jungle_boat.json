@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "boatload:large_jungle_boat"
+    ]
+  },
+  "criteria": {
+    "has_jungle_boat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:jungle_boat"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "boatload:large_jungle_boat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jungle_boat",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "boatload:large_dark_oak_boat"
+    ]
+  },
+  "criteria": {
+    "has_dark_oak_boat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:dark_oak_boat"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "boatload:large_dark_oak_boat"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dark_oak_boat",
+      "has_the_recipe"
+    ]
+  ]
+}

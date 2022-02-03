@@ -67,7 +67,7 @@ public class ChestBoatRecipe extends CustomRecipe {
 			}
 		}
 
-		ItemStack itemstack1 = new ItemStack(type.getChestBoat().get());
+		ItemStack itemstack1 = new ItemStack(type.chestBoat().get());
 		ChestBoatItem.setChest(itemstack1, item);
 
 		return itemstack1;

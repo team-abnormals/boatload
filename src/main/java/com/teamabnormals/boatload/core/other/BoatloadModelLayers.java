@@ -8,11 +8,11 @@ import net.minecraft.resources.ResourceLocation;
 public class BoatloadModelLayers {
 
 	public static ModelLayerLocation createBoatModelName(BoatloadBoatType boatType) {
-		return register("boat/" + boatType.getRegistryName().getPath(), "main");
+		return register("boat/" + boatType.registryName().getPath(), "main");
 	}
 
 	public static ModelLayerLocation createLargeBoatModelName(BoatloadBoatType boatType) {
-		return register("boat/" + boatType.getRegistryName().getPath() + "_large", "main");
+		return register("boat/" + boatType.registryName().getPath() + "_large", "main");
 	}
 
 	public static ModelLayerLocation register(String name, String layer) {

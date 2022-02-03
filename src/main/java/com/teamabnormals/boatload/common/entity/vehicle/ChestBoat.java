@@ -84,7 +84,7 @@ public class ChestBoat extends AbstractContainerBoat {
 
 	@Override
 	public Item getDropItem() {
-		return this.getExtraBoatType().getChestBoat().get();
+		return this.getExtraBoatType().chestBoat().get();
 	}
 
 	public ItemStack getChest() {

@@ -16,14 +16,14 @@ public class BoatloadItemSubRegistryHelper extends ItemSubRegistryHelper {
 	}
 
 	public RegistryObject<Item> createChestBoat(BoatloadBoatType type) {
-		return this.deferredRegister.register(type.getRegistryName().getPath() + "_chest_boat", () -> new ChestBoatItem(type));
+		return this.deferredRegister.register(type.registryName().getPath() + "_chest_boat", () -> new ChestBoatItem(type));
 	}
 
 	public RegistryObject<Item> createFurnaceBoat(BoatloadBoatType type) {
-		return this.deferredRegister.register(type.getRegistryName().getPath() + "_furnace_boat", () -> new FurnaceBoatItem(type));
+		return this.deferredRegister.register(type.registryName().getPath() + "_furnace_boat", () -> new FurnaceBoatItem(type));
 	}
 
 	public RegistryObject<Item> createLargeBoat(BoatloadBoatType type) {
-		return this.deferredRegister.register("large_" + type.getRegistryName().getPath() + "_boat", () -> new LargeBoatItem(type));
+		return this.deferredRegister.register("large_" + type.registryName().getPath() + "_boat", () -> new LargeBoatItem(type));
 	}
 }

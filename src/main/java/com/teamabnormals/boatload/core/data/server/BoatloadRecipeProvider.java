@@ -27,12 +27,12 @@ public class BoatloadRecipeProvider extends RecipeProvider {
 
 	private void furnaceBoatRecipe(Consumer<FinishedRecipe> consumer, BoatloadBoatItem item) {
 		BoatloadBoatType type = item.getType();
-		ShapedRecipeBuilder.shaped(item).define('F', Items.FURNACE).define('B', type.getBoat().get()).pattern("F").pattern("B").group("furnace_boat").unlockedBy(getHasName(type.getBoat().get()), has(type.getBoat().get())).save(consumer);
+		ShapedRecipeBuilder.shaped(item).define('F', Items.FURNACE).define('B', type.boat().get()).pattern("F").pattern("B").group("furnace_boat").unlockedBy(getHasName(type.boat().get()), has(type.boat().get())).save(consumer);
 	}
 
 	private void largeBoatRecipe(Consumer<FinishedRecipe> consumer, BoatloadBoatItem item) {
 		BoatloadBoatType type = item.getType();
-		ShapedRecipeBuilder.shaped(item).define('#', type.getPlanks().get()).define('B', type.getBoat().get()).pattern("#B#").pattern("###").group("large_boat").unlockedBy(getHasName(type.getBoat().get()), has(type.getBoat().get())).save(consumer);
+		ShapedRecipeBuilder.shaped(item).define('#', type.planks().get()).define('B', type.boat().get()).pattern("#B#").pattern("###").group("large_boat").unlockedBy(getHasName(type.boat().get()), has(type.boat().get())).save(consumer);
 	}
 
 	private static String getHasName(ItemLike item) {

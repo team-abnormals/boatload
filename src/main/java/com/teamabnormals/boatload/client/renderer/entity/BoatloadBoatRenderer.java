@@ -32,7 +32,7 @@ public class BoatloadBoatRenderer extends EntityRenderer<BoatloadBoat> {
 	public BoatloadBoatRenderer(EntityRendererProvider.Context context) {
 		super(context);
 		this.shadowRadius = 0.8F;
-		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.getRegistryName().getNamespace(), "textures/entity/boat/" + boatType.getRegistryName().getPath() + ".png"), new BoatModel(context.bakeLayer(BoatloadModelLayers.createBoatModelName(boatType))))));
+		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.registryName().getNamespace(), "textures/entity/boat/" + boatType.registryName().getPath() + ".png"), new BoatModel(context.bakeLayer(BoatloadModelLayers.createBoatModelName(boatType))))));
 	}
 
 	public void render(BoatloadBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {

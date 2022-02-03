@@ -239,7 +239,7 @@ public abstract class AbstractContainerBoat extends BoatloadBoat implements Cont
 
 	@Override
 	public Item getItemDropBoat() {
-		return this.getExtraBoatType().getChestBoat().get();
+		return this.getExtraBoatType().chestBoat().get();
 	}
 
 	@Override

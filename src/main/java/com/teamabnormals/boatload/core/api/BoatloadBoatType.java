@@ -10,7 +10,7 @@ import net.minecraft.world.item.Items;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public class BoatloadBoatType {
+public record BoatloadBoatType(ResourceLocation registryName, Supplier<Item> planks, Supplier<Item> boat, Supplier<Item> chestBoat, Supplier<Item> furnaceBoat, Supplier<Item> largeBoat) {
 	private static final Set<BoatloadBoatType> BOAT_TYPES = new ObjectArraySet<>();
 
 	public static final BoatloadBoatType OAK = register(create(new ResourceLocation("oak"), () -> Items.OAK_PLANKS, () -> Items.OAK_BOAT, BoatloadItems.OAK_CHEST_BOAT, BoatloadItems.OAK_FURNACE_BOAT, BoatloadItems.LARGE_OAK_BOAT));
@@ -19,54 +19,6 @@ public class BoatloadBoatType {
 	public static final BoatloadBoatType JUNGLE = register(create(new ResourceLocation("jungle"), () -> Items.JUNGLE_PLANKS, () -> Items.JUNGLE_BOAT, BoatloadItems.JUNGLE_CHEST_BOAT, BoatloadItems.JUNGLE_FURNACE_BOAT, BoatloadItems.LARGE_JUNGLE_BOAT));
 	public static final BoatloadBoatType ACACIA = register(create(new ResourceLocation("acacia"), () -> Items.ACACIA_PLANKS, () -> Items.ACACIA_BOAT, BoatloadItems.ACACIA_CHEST_BOAT, BoatloadItems.ACACIA_FURNACE_BOAT, BoatloadItems.LARGE_ACACIA_BOAT));
 	public static final BoatloadBoatType DARK_OAK = register(create(new ResourceLocation("dark_oak"), () -> Items.DARK_OAK_PLANKS, () -> Items.DARK_OAK_BOAT, BoatloadItems.DARK_OAK_CHEST_BOAT, BoatloadItems.DARK_OAK_FURNACE_BOAT, BoatloadItems.LARGE_DARK_OAK_BOAT));
-
-	private final ResourceLocation registryName;
-	private final Supplier<Item> planks;
-	private final Supplier<Item> boat;
-	private final Supplier<Item> chestBoat;
-	private final Supplier<Item> furnaceBoat;
-	private final Supplier<Item> largeBoat;
-
-	protected BoatloadBoatType(ResourceLocation registryName, Supplier<Item> planks, Supplier<Item> boat, Supplier<Item> chestBoat, Supplier<Item> furnaceBoat, Supplier<Item> largeBoat) {
-		this.registryName = registryName;
-		this.planks = planks;
-		this.boat = boat;
-		this.chestBoat = chestBoat;
-		this.furnaceBoat = furnaceBoat;
-		this.largeBoat = largeBoat;
-	}
-
-	public static ImmutableList<BoatloadBoatType> values() {
-		return ImmutableList.copyOf(BOAT_TYPES);
-	}
-
-	public ResourceLocation getRegistryName() {
-		return this.registryName;
-	}
-
-	public String toString() {
-		return this.getRegistryName().toString();
-	}
-
-	public Supplier<Item> getPlanks() {
-		return this.planks;
-	}
-
-	public Supplier<Item> getBoat() {
-		return this.boat;
-	}
-
-	public Supplier<Item> getChestBoat() {
-		return this.chestBoat;
-	}
-
-	public Supplier<Item> getFurnaceBoat() {
-		return this.furnaceBoat;
-	}
-
-	public Supplier<Item> getLargeBoat() {
-		return this.largeBoat;
-	}
 
 	public static BoatloadBoatType create(ResourceLocation registryName, Supplier<Item> planks, Supplier<Item> boat, Supplier<Item> chestBoat, Supplier<Item> furnaceBoat, Supplier<Item> largeBoat) {
 		return new BoatloadBoatType(registryName, planks, boat, chestBoat, furnaceBoat, largeBoat);
@@ -77,19 +29,21 @@ public class BoatloadBoatType {
 		return type;
 	}
 
+	public static ImmutableList<BoatloadBoatType> values() {
+		return ImmutableList.copyOf(BOAT_TYPES);
+	}
+
 	public static BoatloadBoatType getTypeFromString(String name) {
 		for (BoatloadBoatType type : values()) {
-			if (type.getRegistryName().toString().equals(name)) return type;
+			if (type.registryName().toString().equals(name)) return type;
 		}
-
 		return OAK;
 	}
 
 	public static BoatloadBoatType getTypeFromBoat(Item boat) {
 		for (BoatloadBoatType type : values()) {
-			if (type.getBoat() == boat) return type;
+			if (type.boat() == boat) return type;
 		}
-
 		return OAK;
 	}
 }

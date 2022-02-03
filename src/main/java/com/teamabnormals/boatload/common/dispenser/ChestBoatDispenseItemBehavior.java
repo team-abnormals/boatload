@@ -39,7 +39,7 @@ public class ChestBoatDispenseItemBehavior extends DefaultDispenseItemBehavior {
 		}
 
 		ChestBoat chestboatentity = new ChestBoat(world, d0, d1 + d3, d2);
-		chestboatentity.setModBoatType(this.type);
+		chestboatentity.setBoatloadBoatType(this.type);
 		chestboatentity.setYRot(direction.toYRot());
 		world.addFreshEntity(chestboatentity);
 		stack.shrink(1);

@@ -169,7 +169,7 @@ public class LargeBoat extends BoatloadBoat {
 
 	@Override
 	public Item getDropItem() {
-		return this.getExtraBoatType().getLargeBoat().get();
+		return this.getExtraBoatType().largeBoat().get();
 	}
 
 	@Override

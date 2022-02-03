@@ -39,7 +39,7 @@ public class LargeBoatDispenseItemBehavior extends DefaultDispenseItemBehavior {
 		}
 
 		LargeBoat largeboatentity = new LargeBoat(world, d0, d1 + d3, d2);
-		largeboatentity.setModBoatType(this.type);
+		largeboatentity.setBoatloadBoatType(this.type);
 		largeboatentity.setYRot(direction.toYRot());
 		world.addFreshEntity(largeboatentity);
 		stack.shrink(1);

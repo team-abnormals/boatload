@@ -55,7 +55,7 @@ public class BoatloadBoatItem extends Item {
 
 			if (raytraceresult.getType() == HitResult.Type.BLOCK) {
 				BoatloadBoat boatentity = this.getBoatEntity(worldIn, raytraceresult, itemstack);
-				boatentity.setModBoatType(this.type);
+				boatentity.setBoatloadBoatType(this.type);
 				boatentity.setYRot(playerIn.getYRot());
 				if (!worldIn.noCollision(boatentity, boatentity.getBoundingBox().inflate(-0.1D))) {
 					return InteractionResultHolder.fail(itemstack);

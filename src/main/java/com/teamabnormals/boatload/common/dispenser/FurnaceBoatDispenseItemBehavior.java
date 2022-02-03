@@ -39,7 +39,7 @@ public class FurnaceBoatDispenseItemBehavior extends DefaultDispenseItemBehavior
 		}
 
 		FurnaceBoat furnaceboatentity = new FurnaceBoat(world, d0, d1 + d3, d2);
-		furnaceboatentity.setModBoatType(this.type);
+		furnaceboatentity.setBoatloadBoatType(this.type);
 		furnaceboatentity.setYRot(direction.toYRot());
 		world.addFreshEntity(furnaceboatentity);
 		stack.shrink(1);

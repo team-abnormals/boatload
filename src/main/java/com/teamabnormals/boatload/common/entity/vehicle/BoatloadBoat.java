@@ -33,11 +33,11 @@ public abstract class BoatloadBoat extends Boat {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(BOAT_TYPE, BoatloadBoatType.OAK.getRegistryName().toString());
+		this.entityData.define(BOAT_TYPE, BoatloadBoatType.OAK.registryName().getPath());
 	}
 
-	public void setModBoatType(BoatloadBoatType boatType) {
-		this.entityData.set(BOAT_TYPE, boatType.getRegistryName().toString());
+	public void setBoatloadBoatType(BoatloadBoatType boatType) {
+		this.entityData.set(BOAT_TYPE, boatType.registryName().getPath());
 	}
 
 	public BoatloadBoatType getExtraBoatType() {
@@ -47,14 +47,14 @@ public abstract class BoatloadBoat extends Boat {
 	@Override
 	protected void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putString("Type", this.getExtraBoatType().getRegistryName().getPath());
+		compound.putString("Type", this.getExtraBoatType().registryName().getPath());
 	}
 
 	@Override
 	protected void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Type", 8)) {
-			this.setModBoatType(BoatloadBoatType.getTypeFromString(compound.getString("Type")));
+			this.setBoatloadBoatType(BoatloadBoatType.getTypeFromString(compound.getString("Type")));
 		}
 	}
 
@@ -137,7 +137,7 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	public Item getDropItem() {
-		return this.getExtraBoatType().getBoat().get();
+		return this.getExtraBoatType().boat().get();
 	}
 
 	@Override
@@ -146,6 +146,6 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	protected Item getPlanks() {
-		return this.getExtraBoatType().getPlanks().get();
+		return this.getExtraBoatType().planks().get();
 	}
 }

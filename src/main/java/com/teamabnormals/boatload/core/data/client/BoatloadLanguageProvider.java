@@ -1,29 +1,29 @@
 package com.teamabnormals.boatload.core.data.client;
 
 import com.teamabnormals.boatload.core.Boatload;
-import com.teamabnormals.boatload.core.other.BLUtil;
-import com.teamabnormals.boatload.core.registry.BLEntityTypes;
+import com.teamabnormals.boatload.core.other.BoatloadUtil;
+import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.text.WordUtils;
 
-public class BLLanguageProvider extends LanguageProvider {
+public class BoatloadLanguageProvider extends LanguageProvider {
 
-	public BLLanguageProvider(DataGenerator gen) {
+	public BoatloadLanguageProvider(DataGenerator gen) {
 		super(gen, Boatload.MOD_ID, "en_us");
 	}
 
 	@Override
 	protected void addTranslations() {
-		this.add(BLEntityTypes.CHEST_BOAT.get(), "Boat with Chest");
-		this.add(BLEntityTypes.FURNACE_BOAT.get(), "Boat with Furnace");
-		this.add(BLEntityTypes.LARGE_BOAT.get(), "Large Boat");
+		this.add(BoatloadEntityTypes.CHEST_BOAT.get(), "Boat with Chest");
+		this.add(BoatloadEntityTypes.FURNACE_BOAT.get(), "Boat with Furnace");
+		this.add(BoatloadEntityTypes.LARGE_BOAT.get(), "Large Boat");
 
-		BLUtil.getChestBoats().forEach(this::addChestBoat);
-		BLUtil.getFurnaceBoats().forEach(this::addFurnaceBoat);
-		BLUtil.getLargeBoats().forEach(this::add);
+		BoatloadUtil.getChestBoats().forEach(this::addChestBoat);
+		BoatloadUtil.getFurnaceBoats().forEach(this::addFurnaceBoat);
+		BoatloadUtil.getLargeBoats().forEach(this::add);
 	}
 
 	private void add(Item item) {

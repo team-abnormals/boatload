@@ -1,6 +1,6 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
-import com.teamabnormals.boatload.core.registry.BLEntityTypes;
+import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -30,7 +30,7 @@ public class ChestBoat extends AbstractContainerBoat {
 	}
 
 	public ChestBoat(Level worldIn, double x, double y, double z) {
-		this(BLEntityTypes.CHEST_BOAT.get(), worldIn);
+		this(BoatloadEntityTypes.CHEST_BOAT.get(), worldIn);
 		this.setPos(x, y, z);
 		this.setDeltaMovement(Vec3.ZERO);
 		this.xo = x;
@@ -39,7 +39,7 @@ public class ChestBoat extends AbstractContainerBoat {
 	}
 
 	public ChestBoat(PlayMessages.SpawnEntity packet, Level worldIn) {
-		super(BLEntityTypes.CHEST_BOAT.get(), worldIn);
+		super(BoatloadEntityTypes.CHEST_BOAT.get(), worldIn);
 	}
 
 	@Override
@@ -84,7 +84,7 @@ public class ChestBoat extends AbstractContainerBoat {
 
 	@Override
 	public Item getDropItem() {
-		return this.getExtraBoatType().getChestBoat();
+		return this.getExtraBoatType().getChestBoat().get();
 	}
 
 	public ItemStack getChest() {

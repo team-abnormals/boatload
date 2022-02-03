@@ -1,6 +1,6 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
-import com.teamabnormals.boatload.core.registry.BLEntityTypes;
+import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.IllagerModel;
@@ -23,13 +23,13 @@ import net.minecraftforge.network.PlayMessages;
 
 import java.util.List;
 
-public class LargeBoat extends BLBoat {
+public class LargeBoat extends BoatloadBoat {
 	public LargeBoat(EntityType<? extends Boat> entityType, Level worldIn) {
 		super(entityType, worldIn);
 	}
 
 	public LargeBoat(Level worldIn, double x, double y, double z) {
-		this(BLEntityTypes.LARGE_BOAT.get(), worldIn);
+		this(BoatloadEntityTypes.LARGE_BOAT.get(), worldIn);
 		this.setPos(x, y, z);
 		this.setDeltaMovement(Vec3.ZERO);
 		this.xo = x;
@@ -38,7 +38,7 @@ public class LargeBoat extends BLBoat {
 	}
 
 	public LargeBoat(PlayMessages.SpawnEntity packet, Level worldIn) {
-		super(BLEntityTypes.LARGE_BOAT.get(), worldIn);
+		super(BoatloadEntityTypes.LARGE_BOAT.get(), worldIn);
 	}
 
 	@Override
@@ -169,7 +169,7 @@ public class LargeBoat extends BLBoat {
 
 	@Override
 	public Item getDropItem() {
-		return this.getExtraBoatType().getLargeBoat();
+		return this.getExtraBoatType().getLargeBoat().get();
 	}
 
 	@Override

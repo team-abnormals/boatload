@@ -5,7 +5,7 @@ import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
-import com.teamabnormals.boatload.core.other.BLDataProcessors;
+import com.teamabnormals.boatload.core.other.BoatloadDataProcessors;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
@@ -28,7 +28,7 @@ public abstract class EntityRendererMixin<T extends Entity> {
 
 	@Inject(method = "render", at = @At("HEAD"))
 	private void renderBanner(T entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn, CallbackInfo info) {
-		if (entityIn instanceof Boat boat && !((IDataManager) entityIn).getValue(BLDataProcessors.BANNER).isEmpty()) {
+		if (entityIn instanceof Boat boat && !((IDataManager) entityIn).getValue(BoatloadDataProcessors.BANNER).isEmpty()) {
 			matrixStackIn.pushPose();
 			matrixStackIn.translate(0.0D, 0.375D, 0.0D);
 			matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
@@ -47,7 +47,7 @@ public abstract class EntityRendererMixin<T extends Entity> {
 				matrixStackIn.mulPose(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), boat.getBubbleAngle(partialTicks), true));
 			}
 
-			ItemStack banner = ((IDataManager) entityIn).getValue(BLDataProcessors.BANNER);
+			ItemStack banner = ((IDataManager) entityIn).getValue(BoatloadDataProcessors.BANNER);
 			if (banner != null && banner.getItem() instanceof BannerItem) {
 				Level level = boat.getCommandSenderWorld();
 				int i;

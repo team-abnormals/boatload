@@ -1,6 +1,6 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
-import com.teamabnormals.boatload.core.registry.BLEntityTypes;
+import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -30,7 +30,7 @@ import net.minecraftforge.network.PlayMessages;
 
 import javax.annotation.Nullable;
 
-public class FurnaceBoat extends BLBoat {
+public class FurnaceBoat extends BoatloadBoat {
 	private static final EntityDataAccessor<Integer> FUEL = SynchedEntityData.defineId(FurnaceBoat.class, EntityDataSerializers.INT);
 	private static final Ingredient FUEL_ITEMS = Ingredient.of(Items.COAL, Items.CHARCOAL);
 
@@ -39,7 +39,7 @@ public class FurnaceBoat extends BLBoat {
 	}
 
 	public FurnaceBoat(Level worldIn, double x, double y, double z) {
-		this(BLEntityTypes.FURNACE_BOAT.get(), worldIn);
+		this(BoatloadEntityTypes.FURNACE_BOAT.get(), worldIn);
 		this.setPos(x, y, z);
 		this.setDeltaMovement(Vec3.ZERO);
 		this.xo = x;
@@ -48,7 +48,7 @@ public class FurnaceBoat extends BLBoat {
 	}
 
 	public FurnaceBoat(PlayMessages.SpawnEntity packet, Level worldIn) {
-		super(BLEntityTypes.FURNACE_BOAT.get(), worldIn);
+		super(BoatloadEntityTypes.FURNACE_BOAT.get(), worldIn);
 	}
 
 	@Override
@@ -173,12 +173,12 @@ public class FurnaceBoat extends BLBoat {
 
 	@Override
 	public Item getDropItem() {
-		return this.getExtraBoatType().getFurnaceBoat();
+		return this.getExtraBoatType().getFurnaceBoat().get();
 	}
 
 	@Override
 	public Item getItemDropBoat() {
-		return this.getExtraBoatType().getBoat();
+		return this.getExtraBoatType().getBoat().get();
 	}
 
 	@Override

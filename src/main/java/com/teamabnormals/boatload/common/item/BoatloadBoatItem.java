@@ -1,13 +1,14 @@
 package com.teamabnormals.boatload.common.item;
 
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat;
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
+import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
@@ -19,11 +20,15 @@ import net.minecraft.world.phys.Vec3;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class BLBoatItem extends Item {
+public class BoatloadBoatItem extends Item {
 	private static final Predicate<Entity> ENTITY_PREDICATE = EntitySelector.NO_SPECTATORS.and(Entity::isPickable);
-	private final ExtraBoatType type;
+	private final BoatloadBoatType type;
 
-	public BLBoatItem(ExtraBoatType typeIn, Item.Properties properties) {
+	public BoatloadBoatItem(BoatloadBoatType typeIn) {
+		this(typeIn, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION));
+	}
+
+	public BoatloadBoatItem(BoatloadBoatType typeIn, Item.Properties properties) {
 		super(properties);
 		this.type = typeIn;
 	}
@@ -49,7 +54,7 @@ public class BLBoatItem extends Item {
 			}
 
 			if (raytraceresult.getType() == HitResult.Type.BLOCK) {
-				BLBoat boatentity = this.getBoatEntity(worldIn, raytraceresult, itemstack);
+				BoatloadBoat boatentity = this.getBoatEntity(worldIn, raytraceresult, itemstack);
 				boatentity.setModBoatType(this.type);
 				boatentity.setYRot(playerIn.getYRot());
 				if (!worldIn.noCollision(boatentity, boatentity.getBoundingBox().inflate(-0.1D))) {
@@ -71,11 +76,11 @@ public class BLBoatItem extends Item {
 		}
 	}
 
-	protected BLBoat getBoatEntity(Level worldIn, HitResult raytraceresult, ItemStack itemStack) {
+	protected BoatloadBoat getBoatEntity(Level worldIn, HitResult raytraceresult, ItemStack itemStack) {
 		return null;
 	}
 
-	public ExtraBoatType getType() {
+	public BoatloadBoatType getType() {
 		return this.type;
 	}
 }

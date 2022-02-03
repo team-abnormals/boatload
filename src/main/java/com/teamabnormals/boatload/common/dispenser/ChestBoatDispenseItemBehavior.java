@@ -1,6 +1,6 @@
 package com.teamabnormals.boatload.common.dispenser;
 
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.common.entity.vehicle.ChestBoat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
@@ -11,11 +11,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 
-public class DispenseChestBoatBehavior extends DefaultDispenseItemBehavior {
+public class ChestBoatDispenseItemBehavior extends DefaultDispenseItemBehavior {
 	private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
-	private final ExtraBoatType type;
+	private final BoatloadBoatType type;
 
-	public DispenseChestBoatBehavior(ExtraBoatType typeIn) {
+	public ChestBoatDispenseItemBehavior(BoatloadBoatType typeIn) {
 		this.type = typeIn;
 	}
 

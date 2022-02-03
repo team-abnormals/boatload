@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.common.dispenser;
 
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
-import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
+import com.teamabnormals.boatload.common.entity.vehicle.FurnaceBoat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;
@@ -11,11 +11,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 
-public class DispenseLargeBoatBehavior extends DefaultDispenseItemBehavior {
+public class FurnaceBoatDispenseItemBehavior extends DefaultDispenseItemBehavior {
 	private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
-	private final ExtraBoatType type;
+	private final BoatloadBoatType type;
 
-	public DispenseLargeBoatBehavior(ExtraBoatType typeIn) {
+	public FurnaceBoatDispenseItemBehavior(BoatloadBoatType typeIn) {
 		this.type = typeIn;
 	}
 
@@ -38,10 +38,10 @@ public class DispenseLargeBoatBehavior extends DefaultDispenseItemBehavior {
 			d3 = 0.0D;
 		}
 
-		LargeBoat largeboatentity = new LargeBoat(world, d0, d1 + d3, d2);
-		largeboatentity.setModBoatType(this.type);
-		largeboatentity.setYRot(direction.toYRot());
-		world.addFreshEntity(largeboatentity);
+		FurnaceBoat furnaceboatentity = new FurnaceBoat(world, d0, d1 + d3, d2);
+		furnaceboatentity.setModBoatType(this.type);
+		furnaceboatentity.setYRot(direction.toYRot());
+		world.addFreshEntity(furnaceboatentity);
 		stack.shrink(1);
 		return stack;
 	}

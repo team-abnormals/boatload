@@ -1,23 +1,27 @@
 package com.teamabnormals.boatload.common.item;
 
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat;
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
+import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 
-public class LargeBoatItem extends BLBoatItem {
+public class LargeBoatItem extends BoatloadBoatItem {
 
-	public LargeBoatItem(ExtraBoatType typeIn, Item.Properties properties) {
+	public LargeBoatItem(BoatloadBoatType typeIn) {
+		super(typeIn);
+	}
+
+	public LargeBoatItem(BoatloadBoatType typeIn, Item.Properties properties) {
 		super(typeIn, properties);
 	}
 
 	@Override
-	protected BLBoat getBoatEntity(Level worldIn, HitResult raytraceresult, ItemStack itemStack) {
-		return new LargeBoat(worldIn, raytraceresult.getLocation().x, raytraceresult.getLocation().y, raytraceresult.getLocation().z);
+	protected BoatloadBoat getBoatEntity(Level worldIn, HitResult result, ItemStack itemStack) {
+		return new LargeBoat(worldIn, result.getLocation().x, result.getLocation().y, result.getLocation().z);
 	}
 
 	@Override

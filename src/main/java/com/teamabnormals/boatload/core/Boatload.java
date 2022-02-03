@@ -2,22 +2,23 @@ package com.teamabnormals.boatload.core;
 
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import com.teamabnormals.boatload.client.model.LargeBoatModel;
-import com.teamabnormals.boatload.client.renderer.entity.BLBoatRenderer;
+import com.teamabnormals.boatload.client.renderer.entity.BoatloadBoatRenderer;
 import com.teamabnormals.boatload.client.renderer.entity.LargeBoatRenderer;
-import com.teamabnormals.boatload.common.dispenser.DispenseChestBoatBehavior;
-import com.teamabnormals.boatload.common.dispenser.DispenseFurnaceBoatBehavior;
-import com.teamabnormals.boatload.common.dispenser.DispenseLargeBoatBehavior;
-import com.teamabnormals.boatload.common.item.BLBoatItem;
+import com.teamabnormals.boatload.common.dispenser.ChestBoatDispenseItemBehavior;
+import com.teamabnormals.boatload.common.dispenser.FurnaceBoatDispenseItemBehavior;
+import com.teamabnormals.boatload.common.dispenser.LargeBoatDispenseItemBehavior;
+import com.teamabnormals.boatload.common.item.BoatloadBoatItem;
 import com.teamabnormals.boatload.common.item.ChestBoatItem;
 import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
-import com.teamabnormals.boatload.core.data.client.BLItemModelProvider;
-import com.teamabnormals.boatload.core.data.client.BLLanguageProvider;
-import com.teamabnormals.boatload.core.other.BLDataProcessors;
-import com.teamabnormals.boatload.core.other.BLModelLayers;
-import com.teamabnormals.boatload.core.other.BLRecipes;
-import com.teamabnormals.boatload.core.registry.BLEntityTypes;
-import com.teamabnormals.boatload.core.registry.helper.BLItemSubRegistryHelper;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
+import com.teamabnormals.boatload.core.data.client.BoatloadItemModelProvider;
+import com.teamabnormals.boatload.core.data.client.BoatloadLanguageProvider;
+import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
+import com.teamabnormals.boatload.core.other.BoatloadDataProcessors;
+import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
+import com.teamabnormals.boatload.core.other.BoatloadRecipeSerializers;
+import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
+import com.teamabnormals.boatload.core.registry.helper.BoatloadItemSubRegistryHelper;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
@@ -36,20 +37,18 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.stream.Collectors;
-
 @Mod(Boatload.MOD_ID)
 public class Boatload {
 	public static final String MOD_ID = "boatload";
-	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(ForgeRegistries.ITEMS, new BLItemSubRegistryHelper(helper)));
+	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(ForgeRegistries.ITEMS, new BoatloadItemSubRegistryHelper(helper)));
 
 	public Boatload() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		MinecraftForge.EVENT_BUS.register(this);
 
 		REGISTRY_HELPER.register(bus);
-		BLEntityTypes.ENTITIES.register(bus);
-		BLRecipes.RECIPE_SERIALIZERS.register(bus);
+		BoatloadEntityTypes.ENTITIES.register(bus);
+		BoatloadRecipeSerializers.RECIPE_SERIALIZERS.register(bus);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::dataSetup);
@@ -63,16 +62,16 @@ public class Boatload {
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			for (RegistryObject<Item> item : REGISTRY_HELPER.getItemSubHelper().getDeferredRegister().getEntries()) {
-				BLBoatItem boatItem = (BLBoatItem) item.get();
+				BoatloadBoatItem boatItem = (BoatloadBoatItem) item.get();
 				if (boatItem instanceof ChestBoatItem) {
-					DispenserBlock.registerBehavior(boatItem, new DispenseChestBoatBehavior(boatItem.getType()));
+					DispenserBlock.registerBehavior(boatItem, new ChestBoatDispenseItemBehavior(boatItem.getType()));
 				} else if (boatItem instanceof FurnaceBoatItem) {
-					DispenserBlock.registerBehavior(boatItem, new DispenseFurnaceBoatBehavior(boatItem.getType()));
+					DispenserBlock.registerBehavior(boatItem, new FurnaceBoatDispenseItemBehavior(boatItem.getType()));
 				} else {
-					DispenserBlock.registerBehavior(boatItem, new DispenseLargeBoatBehavior(boatItem.getType()));
+					DispenserBlock.registerBehavior(boatItem, new LargeBoatDispenseItemBehavior(boatItem.getType()));
 				}
 			}
-			BLDataProcessors.registerTrackedData();
+			BoatloadDataProcessors.registerTrackedData();
 		});
 	}
 
@@ -81,27 +80,27 @@ public class Boatload {
 		ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
 		if (event.includeServer()) {
-			//generator.addProvider(new EBRecipeProvider(generator));
+			//generator.addProvider(new BoatloadRecipeProvider(generator));
 		}
 
 		if (event.includeClient()) {
-			generator.addProvider(new BLItemModelProvider(generator, fileHelper));
-			generator.addProvider(new BLLanguageProvider(generator));
+			generator.addProvider(new BoatloadItemModelProvider(generator, fileHelper));
+			generator.addProvider(new BoatloadLanguageProvider(generator));
 		}
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		for (ExtraBoatType boatType : ExtraBoatType.values().collect(Collectors.toList())) {
-			event.registerLayerDefinition(BLModelLayers.createBoatModelName(boatType), BoatModel::createBodyModel);
-			event.registerLayerDefinition(BLModelLayers.createLargeBoatModelName(boatType), LargeBoatModel::createBodyModel);
+		for (BoatloadBoatType boatType : BoatloadBoatType.values()) {
+			event.registerLayerDefinition(BoatloadModelLayers.createBoatModelName(boatType), BoatModel::createBodyModel);
+			event.registerLayerDefinition(BoatloadModelLayers.createLargeBoatModelName(boatType), LargeBoatModel::createBodyModel);
 		}
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(BLEntityTypes.CHEST_BOAT.get(), BLBoatRenderer::new);
-		event.registerEntityRenderer(BLEntityTypes.FURNACE_BOAT.get(), BLBoatRenderer::new);
-		event.registerEntityRenderer(BLEntityTypes.LARGE_BOAT.get(), LargeBoatRenderer::new);
+		event.registerEntityRenderer(BoatloadEntityTypes.CHEST_BOAT.get(), BoatloadBoatRenderer::new);
+		event.registerEntityRenderer(BoatloadEntityTypes.FURNACE_BOAT.get(), BoatloadBoatRenderer::new);
+		event.registerEntityRenderer(BoatloadEntityTypes.LARGE_BOAT.get(), LargeBoatRenderer::new);
 	}
 }

@@ -8,9 +8,8 @@ import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import com.teamabnormals.boatload.client.model.LargeBoatModel;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
-import com.teamabnormals.boatload.core.Boatload;
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
-import com.teamabnormals.boatload.core.other.BLModelLayers;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
+import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -25,12 +24,12 @@ import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
 public class LargeBoatRenderer extends EntityRenderer<LargeBoat> {
-	private final Map<ExtraBoatType, Pair<ResourceLocation, LargeBoatModel>> boatResources;
+	private final Map<BoatloadBoatType, Pair<ResourceLocation, LargeBoatModel>> boatResources;
 
 	public LargeBoatRenderer(EntityRendererProvider.Context context) {
 		super(context);
 		this.shadowRadius = 0.8F;
-		this.boatResources = ExtraBoatType.values().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(Boatload.MOD_ID, "textures/entity/large_boat/" + boatType.getName() + ".png"), new LargeBoatModel(context.bakeLayer(BLModelLayers.createLargeBoatModelName(boatType))))));
+		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.getRegistryName().getNamespace(), "textures/entity/boat/" + boatType.getRegistryName().getPath() + "_large.png"), new LargeBoatModel(context.bakeLayer(BoatloadModelLayers.createLargeBoatModelName(boatType))))));
 	}
 
 	public void render(LargeBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {

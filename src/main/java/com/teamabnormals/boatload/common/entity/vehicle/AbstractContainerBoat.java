@@ -34,7 +34,7 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 
 import javax.annotation.Nullable;
 
-public abstract class AbstractContainerBoat extends BLBoat implements Container, MenuProvider {
+public abstract class AbstractContainerBoat extends BoatloadBoat implements Container, MenuProvider {
 	private NonNullList<ItemStack> boatContainerItems = NonNullList.withSize(36, ItemStack.EMPTY);
 	private boolean dropContentsWhenDead = true;
 	@Nullable
@@ -239,7 +239,7 @@ public abstract class AbstractContainerBoat extends BLBoat implements Container,
 
 	@Override
 	public Item getItemDropBoat() {
-		return this.getExtraBoatType().getChestBoat();
+		return this.getExtraBoatType().getChestBoat().get();
 	}
 
 	@Override

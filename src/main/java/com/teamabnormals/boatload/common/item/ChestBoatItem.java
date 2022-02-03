@@ -1,8 +1,8 @@
 package com.teamabnormals.boatload.common.item;
 
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat;
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
+import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
 import com.teamabnormals.boatload.common.entity.vehicle.ChestBoat;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -21,9 +21,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 
-public class ChestBoatItem extends BLBoatItem {
+public class ChestBoatItem extends BoatloadBoatItem {
 
-	public ChestBoatItem(ExtraBoatType typeIn, Item.Properties properties) {
+	public ChestBoatItem(BoatloadBoatType typeIn) {
+		super(typeIn);
+	}
+
+	public ChestBoatItem(BoatloadBoatType typeIn, Item.Properties properties) {
 		super(typeIn, properties);
 	}
 
@@ -45,7 +49,7 @@ public class ChestBoatItem extends BLBoatItem {
 	}
 
 	@Override
-	protected BLBoat getBoatEntity(Level worldIn, HitResult raytraceresult, ItemStack itemStack) {
+	protected BoatloadBoat getBoatEntity(Level worldIn, HitResult raytraceresult, ItemStack itemStack) {
 		ChestBoat boatentity = new ChestBoat(worldIn, raytraceresult.getLocation().x, raytraceresult.getLocation().y, raytraceresult.getLocation().z);
 		boatentity.setChest(new ItemStack(getChest(itemStack)));
 		return boatentity;

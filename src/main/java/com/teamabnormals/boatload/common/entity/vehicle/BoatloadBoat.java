@@ -1,8 +1,8 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
-import com.teamabnormals.boatload.core.other.BLDataProcessors;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
+import com.teamabnormals.boatload.core.other.BoatloadDataProcessors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -23,38 +23,38 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
 
-public abstract class BLBoat extends Boat {
-	private static final EntityDataAccessor<String> BOAT_TYPE = SynchedEntityData.defineId(BLBoat.class, EntityDataSerializers.STRING);
+public abstract class BoatloadBoat extends Boat {
+	private static final EntityDataAccessor<String> BOAT_TYPE = SynchedEntityData.defineId(BoatloadBoat.class, EntityDataSerializers.STRING);
 
-	public BLBoat(EntityType<? extends Boat> entityType, Level worldIn) {
+	public BoatloadBoat(EntityType<? extends Boat> entityType, Level worldIn) {
 		super(entityType, worldIn);
 	}
 
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(BOAT_TYPE, ExtraBoatType.OAK.toString());
+		this.entityData.define(BOAT_TYPE, BoatloadBoatType.OAK.getRegistryName().toString());
 	}
 
-	public void setModBoatType(ExtraBoatType boatType) {
-		this.entityData.set(BOAT_TYPE, boatType.toString());
+	public void setModBoatType(BoatloadBoatType boatType) {
+		this.entityData.set(BOAT_TYPE, boatType.getRegistryName().toString());
 	}
 
-	public ExtraBoatType getExtraBoatType() {
-		return ExtraBoatType.getTypeFromString(this.entityData.get(BOAT_TYPE));
+	public BoatloadBoatType getExtraBoatType() {
+		return BoatloadBoatType.getTypeFromString(this.entityData.get(BOAT_TYPE));
 	}
 
 	@Override
 	protected void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putString("Type", this.getExtraBoatType().getName());
+		compound.putString("Type", this.getExtraBoatType().getRegistryName().getPath());
 	}
 
 	@Override
 	protected void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Type", 8)) {
-			this.setModBoatType(ExtraBoatType.getTypeFromString(compound.getString("Type")));
+			this.setModBoatType(BoatloadBoatType.getTypeFromString(compound.getString("Type")));
 		}
 	}
 
@@ -125,7 +125,7 @@ public abstract class BLBoat extends Boat {
 
 	public void killBoat() {
 		this.spawnAtLocation(this.getItemDropBoat());
-		this.spawnAtLocation(((IDataManager) this).getValue(BLDataProcessors.BANNER));
+		this.spawnAtLocation(((IDataManager) this).getValue(BoatloadDataProcessors.BANNER));
 	}
 
 	public BlockState getDisplayTile() {
@@ -137,7 +137,7 @@ public abstract class BLBoat extends Boat {
 	}
 
 	public Item getDropItem() {
-		return this.getExtraBoatType().getBoat();
+		return this.getExtraBoatType().getBoat().get();
 	}
 
 	@Override
@@ -146,6 +146,6 @@ public abstract class BLBoat extends Boat {
 	}
 
 	protected Item getPlanks() {
-		return this.getExtraBoatType().getPlanks();
+		return this.getExtraBoatType().getPlanks().get();
 	}
 }

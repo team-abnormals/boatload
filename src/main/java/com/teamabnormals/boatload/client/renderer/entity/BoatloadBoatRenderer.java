@@ -6,9 +6,9 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
-import com.teamabnormals.boatload.common.entity.vehicle.BLBoat;
-import com.teamabnormals.boatload.core.api.ExtraBoatType;
-import com.teamabnormals.boatload.core.other.BLModelLayers;
+import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
+import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -26,16 +26,16 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
-public class BLBoatRenderer extends EntityRenderer<BLBoat> {
-	private final Map<ExtraBoatType, Pair<ResourceLocation, BoatModel>> boatResources;
+public class BoatloadBoatRenderer extends EntityRenderer<BoatloadBoat> {
+	private final Map<BoatloadBoatType, Pair<ResourceLocation, BoatModel>> boatResources;
 
-	public BLBoatRenderer(EntityRendererProvider.Context context) {
+	public BoatloadBoatRenderer(EntityRendererProvider.Context context) {
 		super(context);
 		this.shadowRadius = 0.8F;
-		this.boatResources = ExtraBoatType.values().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.getModID(), "textures/entity/boat/" + boatType.getName() + ".png"), new BoatModel(context.bakeLayer(BLModelLayers.createBoatModelName(boatType))))));
+		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.getRegistryName().getNamespace(), "textures/entity/boat/" + boatType.getRegistryName().getPath() + ".png"), new BoatModel(context.bakeLayer(BoatloadModelLayers.createBoatModelName(boatType))))));
 	}
 
-	public void render(BLBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+	public void render(BoatloadBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
 		matrixStackIn.pushPose();
 		matrixStackIn.translate(0.0D, 0.375D, 0.0D);
 		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
@@ -81,11 +81,11 @@ public class BLBoatRenderer extends EntityRenderer<BLBoat> {
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(BLBoat boat) {
+	public ResourceLocation getTextureLocation(BoatloadBoat boat) {
 		return getModelWithLocation(boat).getFirst();
 	}
 
-	public Pair<ResourceLocation, BoatModel> getModelWithLocation(BLBoat boat) {
+	public Pair<ResourceLocation, BoatModel> getModelWithLocation(BoatloadBoat boat) {
 		return this.boatResources.get(boat.getExtraBoatType());
 	}
 }

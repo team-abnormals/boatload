@@ -112,4 +112,15 @@ publishing {
             artifact jar
         }
     }
+    repositories {
+        if (project.hasProperty("jacksonMavenUser") && project.hasProperty("jacksonMavenPass")) {
+            maven {
+                url "https://maven.jaackson.me"
+                credentials {
+                    username = project.properties.jacksonMavenUser
+                    password = project.properties.jacksonMavenPass
+                }
+            }
+        }
+    }
 }

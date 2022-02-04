@@ -42,7 +42,7 @@ public record BoatloadBoatType(ResourceLocation registryName, Supplier<Item> pla
 
 	public static BoatloadBoatType getTypeFromBoat(Item boat) {
 		for (BoatloadBoatType type : values()) {
-			if (type.boat() == boat) return type;
+			if (type.boat().get() == boat) return type;
 		}
 		return OAK;
 	}

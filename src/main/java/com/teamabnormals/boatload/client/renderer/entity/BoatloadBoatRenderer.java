@@ -86,6 +86,6 @@ public class BoatloadBoatRenderer extends EntityRenderer<BoatloadBoat> {
 	}
 
 	public Pair<ResourceLocation, BoatModel> getModelWithLocation(BoatloadBoat boat) {
-		return this.boatResources.get(boat.getExtraBoatType());
+		return this.boatResources.get(boat.getBoatloadBoatType());
 	}
 }

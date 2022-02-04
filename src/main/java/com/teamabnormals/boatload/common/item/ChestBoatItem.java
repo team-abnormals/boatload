@@ -1,13 +1,16 @@
 package com.teamabnormals.boatload.common.item;
 
+import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
 import com.teamabnormals.boatload.common.entity.vehicle.ChestBoat;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -22,6 +25,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 
 public class ChestBoatItem extends BoatloadBoatItem {
+	private final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> this.getType().boat().get());
 
 	public ChestBoatItem(BoatloadBoatType typeIn) {
 		super(typeIn);
@@ -70,5 +74,10 @@ public class ChestBoatItem extends BoatloadBoatItem {
 	@Override
 	public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
 		return 1500;
+	}
+
+	@Override
+	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
+		FILLER.fillItem(this, group, items);
 	}
 }

@@ -17,7 +17,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -172,13 +171,8 @@ public class FurnaceBoat extends BoatloadBoat {
 	}
 
 	@Override
-	public Item getDropItem() {
-		return this.getExtraBoatType().furnaceBoat().get();
-	}
-
-	@Override
-	public Item getItemDropBoat() {
-		return this.getExtraBoatType().boat().get();
+	public ItemStack getPickResult() {
+		return new ItemStack(this.getBoatloadBoatType().furnaceBoat().get());
 	}
 
 	@Override

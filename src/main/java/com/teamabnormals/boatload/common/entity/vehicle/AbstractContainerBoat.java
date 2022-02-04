@@ -19,7 +19,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
@@ -235,11 +234,6 @@ public abstract class AbstractContainerBoat extends BoatloadBoat implements Cont
 
 	public void dropContentsWhenDead(boolean value) {
 		this.dropContentsWhenDead = value;
-	}
-
-	@Override
-	public Item getItemDropBoat() {
-		return this.getExtraBoatType().chestBoat().get();
 	}
 
 	@Override

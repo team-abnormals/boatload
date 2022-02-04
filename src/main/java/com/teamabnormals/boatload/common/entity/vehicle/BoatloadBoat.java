@@ -40,14 +40,14 @@ public abstract class BoatloadBoat extends Boat {
 		this.entityData.set(BOAT_TYPE, boatType.registryName().toString());
 	}
 
-	public BoatloadBoatType getExtraBoatType() {
+	public BoatloadBoatType getBoatloadBoatType() {
 		return BoatloadBoatType.getTypeFromString(this.entityData.get(BOAT_TYPE));
 	}
 
 	@Override
 	protected void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putString("Type", this.getExtraBoatType().registryName().toString());
+		compound.putString("Type", this.getBoatloadBoatType().registryName().toString());
 	}
 
 	@Override
@@ -124,7 +124,7 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	public void killBoat() {
-		this.spawnAtLocation(this.getItemDropBoat());
+		this.spawnAtLocation(this.getDropItem());
 		this.spawnAtLocation(((IDataManager) this).getValue(BoatloadDataProcessors.BANNER));
 	}
 
@@ -132,12 +132,9 @@ public abstract class BoatloadBoat extends Boat {
 		return Blocks.AIR.defaultBlockState();
 	}
 
-	public Item getItemDropBoat() {
-		return this.getDropItem();
-	}
-
+	@Override
 	public Item getDropItem() {
-		return this.getExtraBoatType().boat().get();
+		return this.getBoatloadBoatType().boat().get();
 	}
 
 	@Override
@@ -146,6 +143,6 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	protected Item getPlanks() {
-		return this.getExtraBoatType().planks().get();
+		return this.getBoatloadBoatType().planks().get();
 	}
 }

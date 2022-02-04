@@ -7,7 +7,7 @@ import com.teamabnormals.boatload.core.Boatload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-public class BoatloadDataProcessors {
+public class BoatloadTrackedData {
 	public static final TrackedData<ItemStack> BANNER = TrackedData.Builder.create(DataProcessors.STACK, () -> ItemStack.EMPTY).enableSaving().build();
 
 	public static void registerTrackedData() {

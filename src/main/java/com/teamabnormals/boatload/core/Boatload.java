@@ -11,7 +11,7 @@ import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.data.client.BoatloadItemModelProvider;
 import com.teamabnormals.boatload.core.data.client.BoatloadLanguageProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
-import com.teamabnormals.boatload.core.other.BoatloadDataProcessors;
+import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
 import com.teamabnormals.boatload.core.other.BoatloadRecipeSerializers;
 import com.teamabnormals.boatload.core.other.BoatloadUtil;
@@ -56,11 +56,11 @@ public class Boatload {
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
+		BoatloadTrackedData.registerTrackedData();
 		event.enqueueWork(() -> {
 			BoatloadUtil.getChestBoats().forEach(item -> DispenserBlock.registerBehavior(item, new ChestBoatDispenseItemBehavior(item.getType())));
 			BoatloadUtil.getFurnaceBoats().forEach(item -> DispenserBlock.registerBehavior(item, new FurnaceBoatDispenseItemBehavior(item.getType())));
 			BoatloadUtil.getLargeBoats().forEach(item -> DispenserBlock.registerBehavior(item, new LargeBoatDispenseItemBehavior(item.getType())));
-			BoatloadDataProcessors.registerTrackedData();
 		});
 	}
 

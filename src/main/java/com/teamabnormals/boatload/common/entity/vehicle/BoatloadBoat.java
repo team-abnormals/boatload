@@ -2,7 +2,7 @@ package com.teamabnormals.boatload.common.entity.vehicle;
 
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
-import com.teamabnormals.boatload.core.other.BoatloadDataProcessors;
+import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -125,7 +125,7 @@ public abstract class BoatloadBoat extends Boat {
 
 	public void killBoat() {
 		this.spawnAtLocation(this.getDropItem());
-		this.spawnAtLocation(((IDataManager) this).getValue(BoatloadDataProcessors.BANNER));
+		this.spawnAtLocation(((IDataManager) this).getValue(BoatloadTrackedData.BANNER));
 	}
 
 	public BlockState getDisplayTile() {

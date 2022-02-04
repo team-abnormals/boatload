@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.core.mixin;
 
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
-import com.teamabnormals.boatload.core.other.BoatloadDataProcessors;
+import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.vehicle.Boat;
@@ -23,7 +23,7 @@ public abstract class EntityMixin {
 		if ((Object) this instanceof Boat) {
 			if (!this.level.isClientSide && !((Entity) (Object) this).isRemoved()) {
 				if (this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-					((Entity) (Object) this).spawnAtLocation(((IDataManager) this).getValue(BoatloadDataProcessors.BANNER));
+					((Entity) (Object) this).spawnAtLocation(((IDataManager) this).getValue(BoatloadTrackedData.BANNER));
 				}
 			}
 		}

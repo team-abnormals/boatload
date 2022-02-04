@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.core.mixin;
 
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
-import com.teamabnormals.boatload.core.other.BoatloadDataProcessors;
+import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -30,11 +30,11 @@ public abstract class BoatMixin extends Entity {
 	public abstract float getDamage();
 
 	public ItemStack getBanner() {
-		return ((IDataManager) this).getValue(BoatloadDataProcessors.BANNER);
+		return ((IDataManager) this).getValue(BoatloadTrackedData.BANNER);
 	}
 
 	public void setBanner(ItemStack itemStack) {
-		((IDataManager) this).setValue(BoatloadDataProcessors.BANNER, itemStack);
+		((IDataManager) this).setValue(BoatloadTrackedData.BANNER, itemStack);
 	}
 
 	@Inject(method = "interact", at = @At("HEAD"), cancellable = true)

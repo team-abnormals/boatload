@@ -1,10 +1,6 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.IllagerModel;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
@@ -127,16 +123,8 @@ public class LargeBoat extends BoatloadBoat {
 				}
 			} else if (this.getPassengers().size() > 3) {
 				int i = this.getPassengers().indexOf(passenger);
-
-				boolean flag = false;
-				Entity firstpassenger = this.getPassengers().get(0);
-				if (Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(firstpassenger) instanceof LivingEntityRenderer livingEntityRenderer) {
-					flag = livingEntityRenderer.getModel() instanceof HumanoidModel || livingEntityRenderer.getModel() instanceof IllagerModel;
-				}
-
-
 				if (i == 0) {
-					f = flag ? 0.875F : 1.0F;
+					f = 0.9375F;
 				} else {
 					if (i == 1) {
 						f = 0.2F;
@@ -146,7 +134,7 @@ public class LargeBoat extends BoatloadBoat {
 						f = -1.3F;
 					}
 
-					f += flag ? 0.0F : 0.05F;
+					f += 0.025F;
 				}
 			}
 

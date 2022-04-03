@@ -144,7 +144,7 @@ public class LargeBoat extends BoatloadBoat {
 
 			Vec3 vector3d = (new Vec3(f, 0.0D, 0.0D)).yRot(-this.getYRot() * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
 			passenger.setPos(this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
-			this.setYRot(this.getYRot() + this.deltaRotation);
+			passenger.setYRot(passenger.getYRot() + this.deltaRotation);
 			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);
 			this.clampRotation(passenger);
 			if (passenger instanceof Animal && this.getPassengers().size() > 1) {

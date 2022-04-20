@@ -125,14 +125,16 @@ public class FurnaceBoat extends BoatloadBoat {
 			this.setYRot(this.getYRot() + this.deltaRotation);
 			if (this.inputUp) {
 				f += 0.04F;
+				if (this.getFuel() > 0) {
+					f += 0.026F;
+				}
 			}
 
 			if (this.inputDown) {
-				f -= 0.021F;
-			}
-
-			if (this.getFuel() > 0) {
-				f += 0.026F;
+				f -= 0.005F;
+				if (this.getFuel() > 0) {
+					f -= 0.01F;
+				}
 			}
 
 			this.setDeltaMovement(this.getDeltaMovement().add(Mth.sin(-this.getYRot() * ((float) Math.PI / 180F)) * f, 0.0D, Mth.cos(this.getYRot() * ((float) Math.PI / 180F)) * f));

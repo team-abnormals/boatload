@@ -42,14 +42,14 @@ public abstract class BoatMixin extends Entity {
 		ItemStack itemstack = player.getItemInHand(hand);
 
 		if (this.getBanner().isEmpty() && itemstack.getItem() instanceof BannerItem) {
+			ItemStack itemstack1 = itemstack.copy();
+			itemstack1.setCount(1);
 			if (!player.getAbilities().instabuild) {
 				player.getItemInHand(hand).shrink(1);
 			}
-			ItemStack itemstack1 = itemstack.copy();
-			itemstack1.setCount(1);
 
 			this.setBanner(itemstack1);
-			info.setReturnValue(InteractionResult.sidedSuccess(level.isClientSide()));
+			info.setReturnValue(InteractionResult.sidedSuccess(this.level.isClientSide()));
 		}
 	}
 

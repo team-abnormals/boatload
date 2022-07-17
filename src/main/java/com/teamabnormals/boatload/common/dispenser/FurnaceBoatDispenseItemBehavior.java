@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.common.dispenser;
 
-import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.common.entity.vehicle.FurnaceBoat;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;

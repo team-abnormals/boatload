@@ -31,11 +31,13 @@ public class BoatloadLanguageProvider extends LanguageProvider {
 	}
 
 	private void addChestBoat(Item item) {
-		if (item.getRegistryName() != null) this.add(item, format(item.getRegistryName()).replace("Chest Boat", "Boat with Chest"));
+		if (item.getRegistryName() != null)
+			this.add(item, format(item.getRegistryName()).replace("Chest Boat", "Boat with Chest"));
 	}
 
 	private void addFurnaceBoat(Item item) {
-		if (item.getRegistryName() != null) this.add(item, format(item.getRegistryName()).replace("Furnace Boat", "Boat with Furnace"));
+		if (item.getRegistryName() != null)
+			this.add(item, format(item.getRegistryName()).replace("Furnace Boat", "Boat with Furnace"));
 	}
 
 	private String format(ResourceLocation registryName) {

@@ -35,11 +35,11 @@ public class BoatloadRecipeProvider extends RecipeProvider {
 		ShapedRecipeBuilder.shaped(item).define('#', type.planks().get()).define('B', type.boat().get()).pattern("#B#").pattern("###").group("large_boat").unlockedBy(getHasName(type.boat().get()), has(type.boat().get())).save(consumer);
 	}
 
-	private static String getHasName(ItemLike item) {
+	protected static String getHasName(ItemLike item) {
 		return "has_" + getItemName(item);
 	}
 
-	private static String getItemName(ItemLike item) {
+	protected static String getItemName(ItemLike item) {
 		return Registry.ITEM.getKey(item.asItem()).getPath();
 	}
 }

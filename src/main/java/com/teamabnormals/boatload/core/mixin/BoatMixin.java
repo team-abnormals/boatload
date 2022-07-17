@@ -26,9 +26,6 @@ public abstract class BoatMixin extends Entity {
 		super(entityTypeIn, worldIn);
 	}
 
-	@Shadow
-	public abstract float getDamage();
-
 	public ItemStack getBanner() {
 		return ((IDataManager) this).getValue(BoatloadTrackedData.BANNER);
 	}
@@ -56,7 +53,7 @@ public abstract class BoatMixin extends Entity {
 	@Inject(method = "hurt", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
 	private void dropBannerWhenBroken(DamageSource source, float amount, CallbackInfoReturnable<Boolean> info) {
 		boolean flag = source.getEntity() instanceof Player && ((Player) source.getEntity()).getAbilities().instabuild;
-		if (flag || this.getDamage() > 40.0F) {
+		if (flag || ((Boat) (Object) this).getDamage() > 40.0F) {
 			if (!flag && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
 				this.spawnAtLocation(this.getBanner());
 			}

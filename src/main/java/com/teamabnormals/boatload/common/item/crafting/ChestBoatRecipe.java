@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.common.item.crafting;
 
-import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.common.item.ChestBoatItem;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.inventory.CraftingContainer;

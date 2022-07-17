@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.core.other;
 
-import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.Boatload;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 

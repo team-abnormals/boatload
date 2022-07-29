@@ -2,7 +2,6 @@ package com.teamabnormals.boatload.core.other;
 
 import com.google.common.collect.Lists;
 import com.teamabnormals.boatload.common.item.BoatloadBoatItem;
-import com.teamabnormals.boatload.common.item.ChestBoatItem;
 import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
 import com.teamabnormals.boatload.common.item.LargeBoatItem;
 import com.teamabnormals.boatload.core.Boatload;
@@ -16,10 +15,6 @@ public class BoatloadUtil {
 		List<BoatloadBoatItem> items = Lists.newArrayList();
 		Boatload.REGISTRY_HELPER.getItemSubHelper().getDeferredRegister().getEntries().forEach(registryObject -> items.add((BoatloadBoatItem) registryObject.get()));
 		return items;
-	}
-
-	public static List<BoatloadBoatItem> getChestBoats() {
-		return getItems().stream().filter(item -> item instanceof ChestBoatItem).collect(Collectors.toList());
 	}
 
 	public static List<BoatloadBoatItem> getFurnaceBoats() {

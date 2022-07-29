@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public abstract class EntityMixin {
 
-	@Inject(method = "causeFallDamage", at = @At(value = "HEAD"), cancellable = true)
+	@Inject(method = "causeFallDamage", at = @At(value = "HEAD"))
 	private void dropBannerUponFalling(float distance, float damageMultiplier, DamageSource source, CallbackInfoReturnable<Boolean> info) {
 		if ((Object) this instanceof Boat boat) {
 			if (!boat.level.isClientSide && !((Entity) (Object) this).isRemoved()) {

@@ -11,6 +11,10 @@ public class BoatloadModelLayers {
 		return register("boat/" + boatType.registryName().getPath(), "main");
 	}
 
+	public static ModelLayerLocation createFurnaceBoatModelName(BoatloadBoatType boatType) {
+		return register("furnace_boat/" + boatType.registryName().getPath(), "main");
+	}
+
 	public static ModelLayerLocation createLargeBoatModelName(BoatloadBoatType boatType) {
 		return register("boat/" + boatType.registryName().getPath() + "_large", "main");
 	}

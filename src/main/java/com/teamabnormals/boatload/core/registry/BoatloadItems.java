@@ -11,27 +11,24 @@ import net.minecraftforge.registries.RegistryObject;
 public class BoatloadItems {
 	public static final BoatloadItemSubRegistryHelper HELPER = Boatload.REGISTRY_HELPER.getItemSubHelper();
 
-	public static RegistryObject<Item> OAK_CHEST_BOAT = HELPER.createChestBoat(BoatloadBoatType.OAK);
 	public static RegistryObject<Item> OAK_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.OAK);
 	public static RegistryObject<Item> LARGE_OAK_BOAT = HELPER.createLargeBoat(BoatloadBoatType.OAK);
 
-	public static RegistryObject<Item> SPRUCE_CHEST_BOAT = HELPER.createChestBoat(BoatloadBoatType.SPRUCE);
 	public static RegistryObject<Item> SPRUCE_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.SPRUCE);
 	public static RegistryObject<Item> LARGE_SPRUCE_BOAT = HELPER.createLargeBoat(BoatloadBoatType.SPRUCE);
 
-	public static RegistryObject<Item> BIRCH_CHEST_BOAT = HELPER.createChestBoat(BoatloadBoatType.BIRCH);
 	public static RegistryObject<Item> BIRCH_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.BIRCH);
 	public static RegistryObject<Item> LARGE_BIRCH_BOAT = HELPER.createLargeBoat(BoatloadBoatType.BIRCH);
 
-	public static RegistryObject<Item> JUNGLE_CHEST_BOAT = HELPER.createChestBoat(BoatloadBoatType.JUNGLE);
 	public static RegistryObject<Item> JUNGLE_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.JUNGLE);
 	public static RegistryObject<Item> LARGE_JUNGLE_BOAT = HELPER.createLargeBoat(BoatloadBoatType.JUNGLE);
 
-	public static RegistryObject<Item> ACACIA_CHEST_BOAT = HELPER.createChestBoat(BoatloadBoatType.ACACIA);
 	public static RegistryObject<Item> ACACIA_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.ACACIA);
 	public static RegistryObject<Item> LARGE_ACACIA_BOAT = HELPER.createLargeBoat(BoatloadBoatType.ACACIA);
 
-	public static RegistryObject<Item> DARK_OAK_CHEST_BOAT = HELPER.createChestBoat(BoatloadBoatType.DARK_OAK);
 	public static RegistryObject<Item> DARK_OAK_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.DARK_OAK);
 	public static RegistryObject<Item> LARGE_DARK_OAK_BOAT = HELPER.createLargeBoat(BoatloadBoatType.DARK_OAK);
+
+	public static RegistryObject<Item> MANGROVE_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.MANGROVE);
+	public static RegistryObject<Item> LARGE_MANGROVE_BOAT = HELPER.createLargeBoat(BoatloadBoatType.MANGROVE);
 }

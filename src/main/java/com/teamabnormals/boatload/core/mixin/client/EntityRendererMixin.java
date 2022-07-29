@@ -17,7 +17,7 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.BannerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.RenderProperties;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -62,13 +62,13 @@ public abstract class EntityRendererMixin<T extends Entity> {
 					matrixStackIn.scale(1.05F, 1.05F, 1.05F);
 					matrixStackIn.translate(0.5D, 3.0F / 16.0F, 33.0F / 16.0F);
 					matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
-					RenderProperties.get(banner).getItemStackRenderer().renderByItem(banner, ItemTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
+					IClientItemExtensions.of(banner).getCustomRenderer().renderByItem(banner, ItemTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
 					matrixStackIn.popPose();
 				} else {
 					matrixStackIn.pushPose();
 					matrixStackIn.translate(0.5D, 3.0F / 16.0F, 23.0F / 16.0F);
 					matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
-					RenderProperties.get(banner).getItemStackRenderer().renderByItem(banner, ItemTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
+					IClientItemExtensions.of(banner).getCustomRenderer().renderByItem(banner, ItemTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
 					matrixStackIn.popPose();
 				}
 			}

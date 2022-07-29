@@ -1,7 +1,6 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
-import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -17,13 +16,12 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FurnaceBlock;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 
@@ -59,12 +57,6 @@ public class FurnaceBoat extends BoatloadBoat {
 	@Override
 	protected void dropBreakItems() {
 		super.dropBreakItems();
-		this.spawnAtLocation(Blocks.FURNACE);
-	}
-
-	@Override
-	public void killBoat() {
-		super.killBoat();
 		this.spawnAtLocation(Blocks.FURNACE);
 	}
 
@@ -173,13 +165,13 @@ public class FurnaceBoat extends BoatloadBoat {
 	}
 
 	@Override
-	public ItemStack getPickResult() {
-		return new ItemStack(this.getBoatloadBoatType().furnaceBoat().get());
+	public Item getDropItem() {
+		return this.getBoatloadBoatType().furnaceBoat().get();
 	}
 
 	@Override
-	public BlockState getDisplayTile() {
-		return Blocks.FURNACE.defaultBlockState().setValue(FurnaceBlock.FACING, Direction.SOUTH).setValue(FurnaceBlock.LIT, this.getFuel() > 0);
+	public ItemStack getPickResult() {
+		return new ItemStack(this.getBoatloadBoatType().furnaceBoat().get());
 	}
 
 	@Override

@@ -19,7 +19,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
 
@@ -110,7 +109,7 @@ public abstract class BoatloadBoat extends Boat {
 				boolean flag = source.getEntity() instanceof Player && ((Player) source.getEntity()).getAbilities().instabuild;
 				if (flag || this.getDamage() > 40.0F) {
 					if (!flag && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-						this.killBoat();
+						this.destroy(source);
 					}
 
 					this.discard();
@@ -123,13 +122,10 @@ public abstract class BoatloadBoat extends Boat {
 		}
 	}
 
-	public void killBoat() {
+	@Override
+	public void destroy(DamageSource source) {
 		this.spawnAtLocation(this.getDropItem());
 		this.spawnAtLocation(((IDataManager) this).getValue(BoatloadTrackedData.BANNER));
-	}
-
-	public BlockState getDisplayTile() {
-		return Blocks.AIR.defaultBlockState();
 	}
 
 	@Override

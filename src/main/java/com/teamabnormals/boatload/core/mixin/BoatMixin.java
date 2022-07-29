@@ -14,7 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -50,7 +49,7 @@ public abstract class BoatMixin extends Entity {
 		}
 	}
 
-	@Inject(method = "hurt", at = @At(value = "RETURN", ordinal = 1), cancellable = true)
+	@Inject(method = "hurt", at = @At(value = "RETURN", ordinal = 1))
 	private void dropBannerWhenBroken(DamageSource source, float amount, CallbackInfoReturnable<Boolean> info) {
 		boolean flag = source.getEntity() instanceof Player && ((Player) source.getEntity()).getAbilities().instabuild;
 		if (flag || ((Boat) (Object) this).getDamage() > 40.0F) {

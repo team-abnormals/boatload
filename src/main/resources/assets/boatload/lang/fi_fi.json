@@ -1,115 +1,18 @@
 {
-  "itemGroup.boatload": "Extra Boats",
-  
-  "entity.boatload.chest_boat": "Arkullinen vene",
   "entity.boatload.furnace_boat": "Moottoroitu vene",
   "entity.boatload.large_boat": "Suuri vene",
-  
-  
-  "_comment": "Vanilla",
-  
-  "item.boatload.oak_chest_boat": "Arkullinen tammivene",
-  "item.boatload.spruce_chest_boat": "Arkullinen kuusivene",
-  "item.boatload.birch_chest_boat": "Arkullinen koivuvene",
-  "item.boatload.jungle_chest_boat": "Arkullinen viidakkopuuvene",
-  "item.boatload.acacia_chest_boat": "Arkullinen akaasiavene",
-  "item.boatload.dark_oak_chest_boat": "Arkullinen tumma tammivene",
-  
-  "item.boatload.oak_furnace_boat": "Moottoroitu tammivene",
-  "item.boatload.spruce_furnace_boat": "Moottoroitu kuusivene",
-  "item.boatload.birch_furnace_boat": "Moottoroitu koivuvene",
-  "item.boatload.jungle_furnace_boat": "Moottoroitu viidakkopuuvene",
   "item.boatload.acacia_furnace_boat": "Moottoroitu akaasiavene",
+  "item.boatload.birch_furnace_boat": "Moottoroitu koivuvene",
   "item.boatload.dark_oak_furnace_boat": "Moottoroitu tumma tammivene",
-  
+  "item.boatload.jungle_furnace_boat": "Moottoroitu viidakkopuuvene",
+  "item.boatload.large_acacia_boat": "Suuri akaasiavene",
+  "item.boatload.large_birch_boat": "Suuri koivuvene",
+  "item.boatload.large_dark_oak_boat": "Suuri tumma tammivene",
+  "item.boatload.large_jungle_boat": "Suuri viidakkopuuvene",
+  "item.boatload.large_mangrove_boat": "Suuri mangrovepuuvene",
   "item.boatload.large_oak_boat": "Suuri tammivene",
   "item.boatload.large_spruce_boat": "Suuri kuusivene",
-  "item.boatload.large_birch_boat": "Suuri koivuvene",
-  "item.boatload.large_jungle_boat": "Suuri viidakkopuuvene",
-  "item.boatload.large_acacia_boat": "Suuri akaasiavene",
-  "item.boatload.large_dark_oak_boat": "Suuri tumma tammivene",
-  
-  
-  "_comment": "Upgrade Aquatic",
-  
-  "item.boatload.driftwood_chest_boat": "Arkullinen ajopuuvene",
-  "item.boatload.river_chest_boat": "Arkullinen jokipuuvene",
-  
-  "item.boatload.driftwood_furnace_boat": "Moottoroitu ajopuuvene",
-  "item.boatload.river_furnace_boat": "Moottoroitu jokipuuvene",
-  
-  "item.boatload.large_driftwood_boat": "Suuri ajopuuvene",
-  "item.boatload.large_river_boat": "Suuri jokipuuvene",
-  
-  
-  "_comment": "Bamboo Blocks",
-  
-  "item.boatload.bamboo_chest_boat": "Arkullinen bambuvene",
-  "item.boatload.bamboo_furnace_boat": "Moottoroitu bambuvene",
-  "item.boatload.large_bamboo_boat": "Suuri bambuvene",
-  
-  
-  "_comment": "Endergetic Expansion",
-  
-  "item.boatload.poise_chest_boat": "Arkullinen kohopuuvene",
-  "item.boatload.poise_furnace_boat": "Moottoroitu kohopuuvene",
-  "item.boatload.large_poise_boat": "Suuri kohopuuvene",
-  
-  
-  "_comment": "Environmental",
-  
-  "item.boatload.wisteria_chest_boat": "Arkullinen sinisadevene",
-  "item.boatload.wisteria_furnace_boat": "Moottoroitu sinisadevene",
-  "item.boatload.large_wisteria_boat": "Suuri sinisadevene",
-  
-  "item.boatload.willow_chest_boat": "Arkullinen pajuvene",
-  "item.boatload.willow_furnace_boat": "Moottoroitu pajuvene",
-  "item.boatload.large_willow_boat": "Suuri pajuvene",
-  
-  "item.boatload.cherry_chest_boat": "Arkullinen kirsikkapuuvene",
-  "item.boatload.cherry_furnace_boat": "Moottoroitu kirsikkapuuvene",
-  "item.boatload.large_cherry_boat": "Suuri kirsikkapuuvene",
-  
-  
-  "_comment": "Atmospheric",
-  
-  "item.boatload.rosewood_chest_boat": "Arkullinen ruusupuuvene",
-  "item.boatload.morado_chest_boat": "Arkullinen kesalpiniavene",
-  "item.boatload.aspen_chest_boat": "Arkullinen haapavene",
-  "item.boatload.kousa_chest_boat": "Arkullinen kanukkavene",
-  "item.boatload.yucca_chest_boat": "Arkullinen jukkavene",
-  "item.boatload.grimwood_chest_boat": "Arkullinen synkkäpuuvene",
-  
-  "item.boatload.rosewood_furnace_boat": "Moottoroitu ruusupuuvene",
-  "item.boatload.morado_furnace_boat": "Moottoroitu kesalpiniavene",
-  "item.boatload.aspen_furnace_boat": "Moottoroitu haapavene",
-  "item.boatload.kousa_furnace_boat": "Moottoroitu kanukkavene",
-  "item.boatload.yucca_furnace_boat": "Moottoroitu jukkavene",
-  "item.boatload.grimwood_furnace_boat": "Moottoroitu synkkäpuuvene",
-  
-  "item.boatload.large_rosewood_boat": "Suuri ruusupuuvene",
-  "item.boatload.large_morado_boat": "Suuri kesalpiniavene",
-  "item.boatload.large_aspen_boat": "Suuri haapavene",
-  "item.boatload.large_kousa_boat": "Suuri kanukkavene",
-  "item.boatload.large_yucca_boat": "Suuri jukkavene",
-  "item.boatload.large_grimwood_boat": "Suuri synkkäpuuvene",
-  
-  
-  "_comment": "Autumnity",
-  
-  "item.boatload.maple_chest_boat": "Arkullinen vaahteravene",
-  "item.boatload.maple_furnace_boat": "Moottoroitu vaahteravene",
-  "item.boatload.large_maple_boat": "Suuri vaahteravene",
-
-
-  "_comment": "Nether Extension",
-
-  "item.boatload.crimson_chest_boat": "Arkullinen karmiinivene",
-  "item.boatload.warped_chest_boat": "Arkullinen kummavene",
-
-  "item.boatload.crimson_furnace_boat": "Moottoroitu karmiinivene",
-  "item.boatload.warped_furnace_boat": "Moottoroitu kummavene",
-  
-  "item.boatload.large_crimson_boat": "Suuri karmiinivene",
-  "item.boatload.large_warped_boat": "Suuri kummavene"
+  "item.boatload.mangrove_furnace_boat": "Moottoroitu mangrovepuuvene",
+  "item.boatload.oak_furnace_boat": "Moottoroitu tammivene",
+  "item.boatload.spruce_furnace_boat": "Moottoroitu kuusivene"
 }

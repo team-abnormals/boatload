@@ -8,12 +8,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 
 public class BoatloadItemModelProvider extends ItemModelProvider {
 
-	public BoatloadItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
-		super(generator, Boatload.MOD_ID, fileHelper);
+	public BoatloadItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+		super(generator, Boatload.MOD_ID, existingFileHelper);
 	}
 
 	@Override
@@ -26,6 +27,6 @@ public class BoatloadItemModelProvider extends ItemModelProvider {
 	}
 
 	private String name(ItemLike itemLike) {
-		return itemLike.asItem().getRegistryName().getPath();
+		return ForgeRegistries.ITEMS.getKey(itemLike.asItem()).getPath();
 	}
 }

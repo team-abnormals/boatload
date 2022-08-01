@@ -30,14 +30,14 @@ public class LargeBoatModel extends ListModel<LargeBoat> {
 	public static LayerDefinition createBodyModel() {
 		MeshDefinition mesh = new MeshDefinition();
 		PartDefinition root = mesh.getRoot();
-		root.addOrReplaceChild("bottom", CubeListBuilder.create().texOffs(0, 0).addBox(-24.0F, -10.0F, -3.0F, 48.0F, 18.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 3.0F, 1.0F, ((float) Math.PI / 2F), 0.0F, 0.0F));
-		root.addOrReplaceChild("back", CubeListBuilder.create().texOffs(0, 21).addBox(-14.0F, -7.0F, -1.0F, 20.0F, 6.0F, 2.0F), PartPose.offsetAndRotation(-25.0F, 4.0F, 4.0F, 0.0F, ((float) Math.PI * 1.5F), 0.0F));
-		root.addOrReplaceChild("front", CubeListBuilder.create().texOffs(0, 29).addBox(-8.0F, -7.0F, -1.0F, 18.0F, 6.0F, 2.0F), PartPose.offsetAndRotation(25.0F, 4.0F, 1.0F, 0.0F, ((float) Math.PI / 2F), 0.0F));
-		root.addOrReplaceChild("right", CubeListBuilder.create().texOffs(0, 37).addBox(-24.0F, -7.0F, -1.0F, 48.0F, 6.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 4.0F, -10.0F, 0.0F, (float) Math.PI, 0.0F));
-		root.addOrReplaceChild("left", CubeListBuilder.create().texOffs(0, 45).addBox(-24.0F, -7.0F, -1.0F, 48.0F, 6.0F, 2.0F), PartPose.offset(0.0F, 4.0F, 10.0F));
-		root.addOrReplaceChild("left_paddle", CubeListBuilder.create().texOffs(0, 53).addBox(-1.0F, 0.0F, -5.0F, 2.0F, 2.0F, 18.0F).addBox(-1.001F, -3.0F, 8.0F, 1.0F, 6.0F, 7.0F), PartPose.offsetAndRotation(3.0F, -5.0F, 10.0F, 0.0F, 0.0F, 0.19634955F));
-		root.addOrReplaceChild("right_paddle", CubeListBuilder.create().texOffs(0, 73).addBox(-1.0F, 0.0F, -5.0F, 2.0F, 2.0F, 18.0F).addBox(0.001F, -3.0F, 8.0F, 1.0F, 6.0F, 7.0F), PartPose.offsetAndRotation(3.0F, -5.0F, -10.0F, 0.0F, (float) Math.PI, 0.19634955F));
-		root.addOrReplaceChild("water_patch", CubeListBuilder.create().texOffs(0, 0).addBox(-24.0F, -10.0F, -3.0F, 48.0F, 18.0F, 3.0F), PartPose.offsetAndRotation(0.0F, -3.0F, 1.0F, ((float) Math.PI / 2F), 0.0F, 0.0F));
+		root.addOrReplaceChild("bottom", CubeListBuilder.create().texOffs(0, 0).addBox(-27.0F, -11.5F, -3.0F, 54.0F, 21.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 3.0F, 1.0F, ((float) Math.PI / 2F), 0.0F, 0.0F));
+		root.addOrReplaceChild("back", CubeListBuilder.create().texOffs(0, 24).addBox(-15.5F, -7.0F, -1.0F, 23.0F, 6.0F, 2.0F), PartPose.offsetAndRotation(-28.0F, 4.0F, 4.0F, 0.0F, ((float) Math.PI * 1.5F), 0.0F));
+		root.addOrReplaceChild("front", CubeListBuilder.create().texOffs(0, 32).addBox(-9.5F, -7.0F, -1.0F, 21.0F, 6.0F, 2.0F), PartPose.offsetAndRotation(28.0F, 4.0F, 1.0F, 0.0F, ((float) Math.PI / 2F), 0.0F));
+		root.addOrReplaceChild("right", CubeListBuilder.create().texOffs(0, 40).addBox(-27.0F, -7.0F, -1.0F, 54.0F, 6.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 4.0F, -11.5F, 0.0F, (float) Math.PI, 0.0F));
+		root.addOrReplaceChild("left", CubeListBuilder.create().texOffs(0, 48).addBox(-27.0F, -7.0F, -1.0F, 54.0F, 6.0F, 2.0F), PartPose.offset(0.0F, 4.0F, 11.5F));
+		root.addOrReplaceChild("left_paddle", CubeListBuilder.create().texOffs(0, 56).addBox(-1.0F, 0.0F, -5.0F, 2.0F, 2.0F, 18.0F).addBox(-1.001F, -3.0F, 8.0F, 1.0F, 6.0F, 7.0F), PartPose.offsetAndRotation(3.0F, -5.0F, 11.5F, 0.0F, 0.0F, 0.19634955F));
+		root.addOrReplaceChild("right_paddle", CubeListBuilder.create().texOffs(0, 76).addBox(-1.0F, 0.0F, -5.0F, 2.0F, 2.0F, 18.0F).addBox(0.001F, -3.0F, 8.0F, 1.0F, 6.0F, 7.0F), PartPose.offsetAndRotation(3.0F, -5.0F, -11.5F, 0.0F, (float) Math.PI, 0.19634955F));
+		root.addOrReplaceChild("water_patch", CubeListBuilder.create().texOffs(0, 0).addBox(-27.0F, -11.5F, -3.0F, 54.0F, 21.0F, 3.0F), PartPose.offsetAndRotation(0.0F, -3.0F, 1.0F, ((float) Math.PI / 2F), 0.0F, 0.0F));
 		return LayerDefinition.create(mesh, 128, 128);
 	}
 

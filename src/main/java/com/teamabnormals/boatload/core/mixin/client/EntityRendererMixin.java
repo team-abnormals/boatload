@@ -57,20 +57,12 @@ public abstract class EntityRendererMixin<T extends Entity> {
 					i = 15728880;
 				}
 
-				if (boat instanceof LargeBoat) {
-					matrixStackIn.pushPose();
-					matrixStackIn.scale(1.05F, 1.05F, 1.05F);
-					matrixStackIn.translate(0.5D, 3.0F / 16.0F, 33.0F / 16.0F);
-					matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
-					IClientItemExtensions.of(banner).getCustomRenderer().renderByItem(banner, ItemTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
-					matrixStackIn.popPose();
-				} else {
-					matrixStackIn.pushPose();
-					matrixStackIn.translate(0.5D, 3.0F / 16.0F, 23.0F / 16.0F);
-					matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
-					IClientItemExtensions.of(banner).getCustomRenderer().renderByItem(banner, ItemTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
-					matrixStackIn.popPose();
-				}
+				float f3 = boat instanceof LargeBoat ? 36.0F : 23.0F;
+				matrixStackIn.pushPose();
+				matrixStackIn.translate(0.5D, 3.0F / 16.0F, f3 / 16.0F);
+				matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F));
+				IClientItemExtensions.of(banner).getCustomRenderer().renderByItem(banner, ItemTransforms.TransformType.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
+				matrixStackIn.popPose();
 			}
 			matrixStackIn.popPose();
 		}

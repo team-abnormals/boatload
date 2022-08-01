@@ -28,8 +28,8 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoat> {
 
 	public LargeBoatRenderer(EntityRendererProvider.Context context) {
 		super(context);
-		this.shadowRadius = 0.8F;
-		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.registryName().getNamespace(), "textures/entity/boat/" + boatType.registryName().getPath() + "_large.png"), new LargeBoatModel(context.bakeLayer(BoatloadModelLayers.createLargeBoatModelName(boatType))))));
+		this.shadowRadius = 1.2F;
+		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.registryName().getNamespace(), "textures/entity/large_boat/" + boatType.registryName().getPath() + ".png"), new LargeBoatModel(context.bakeLayer(BoatloadModelLayers.createLargeBoatModelName(boatType))))));
 	}
 
 	public void render(LargeBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
@@ -54,7 +54,7 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoat> {
 		Pair<ResourceLocation, LargeBoatModel> pair = getModelWithLocation(entityIn);
 		ResourceLocation boatLocation = pair.getFirst();
 		LargeBoatModel boatModel = pair.getSecond();
-		matrixStackIn.scale(-1.05F, -1.05F, 1.05F);
+		matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
 		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(90.0F));
 		boatModel.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
 		VertexConsumer ivertexbuilder = bufferIn.getBuffer(boatModel.renderType(boatLocation));

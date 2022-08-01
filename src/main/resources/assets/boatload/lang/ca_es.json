@@ -1,0 +1,18 @@
+{
+  "entity.boatload.furnace_boat": "Barca amb forn",
+  "entity.boatload.large_boat": "Barca gran",
+
+  "item.boatload.oak_furnace_boat": "Barca de pomer amb forn",
+  "item.boatload.spruce_furnace_boat": "Barca de pi amb forn",
+  "item.boatload.birch_furnace_boat": "Barca de bedoll amb forn",
+  "item.boatload.jungle_furnace_boat": "Barca de jungla amb forn",
+  "item.boatload.acacia_furnace_boat": "Barca de acàcia amb forn",
+  "item.boatload.dark_oak_furnace_boat": "Barca de pomer fosc amb forn",
+
+  "item.boatload.large_oak_boat": "Barca de pomer gran",
+  "item.boatload.large_spruce_boat": "Barca de pi gran",
+  "item.boatload.large_birch_boat": "Barca de bedoll gran",
+  "item.boatload.large_jungle_boat": "Barca de jungla gran",
+  "item.boatload.large_acacia_boat": "Barca de acàcia gran",
+  "item.boatload.large_dark_oak_boat": "Barca de pomer fosc gran"
+}

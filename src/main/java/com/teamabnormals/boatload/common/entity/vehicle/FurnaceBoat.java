@@ -1,19 +1,19 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
+import javax.annotation.Nullable;
+
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
+
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
@@ -21,15 +21,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 
-import javax.annotation.Nullable;
-
 public class FurnaceBoat extends BoatloadBoat {
+	public static final Ingredient FUEL_ITEMS = Ingredient.of(Items.COAL, Items.CHARCOAL);
 	private static final EntityDataAccessor<Integer> FUEL = SynchedEntityData.defineId(FurnaceBoat.class, EntityDataSerializers.INT);
-	private static final Ingredient FUEL_ITEMS = Ingredient.of(Items.COAL, Items.CHARCOAL);
 
 	public FurnaceBoat(EntityType<? extends Boat> entityType, Level worldIn) {
 		super(entityType, worldIn);
@@ -48,6 +45,14 @@ public class FurnaceBoat extends BoatloadBoat {
 		super(BoatloadEntityTypes.FURNACE_BOAT.get(), worldIn);
 	}
 
+	protected float getSinglePassengerXOffset() {
+		return 0.15F;
+	}
+
+	protected int getMaxPassengers() {
+		return 1;
+	}
+
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
@@ -55,23 +60,35 @@ public class FurnaceBoat extends BoatloadBoat {
 	}
 
 	@Override
-	protected void dropBreakItems() {
-		super.dropBreakItems();
-		this.spawnAtLocation(Blocks.FURNACE);
+	protected void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("Fuel", this.getFuel());
+	}
+
+	@Override
+	protected void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		this.setFuel(compound.getInt("Fuel"));
+	}
+
+	public void setFuel(@Nullable int fuel) {
+		this.entityData.set(FUEL, fuel);
+	}
+
+	@Nullable
+	public int getFuel() {
+		return this.entityData.get(FUEL);
 	}
 
 	@Override
 	public InteractionResult interact(Player player, InteractionHand hand) {
-		if (player.isShiftKeyDown()) {
-			ItemStack itemstack = player.getItemInHand(hand);
-			if (FUEL_ITEMS.test(itemstack) && this.getFuel() + 3600 <= 32000) {
-				if (!player.getAbilities().instabuild) {
-					itemstack.shrink(1);
-				}
-
-				this.setFuel(this.getFuel() + 3600);
+		ItemStack itemstack = player.getItemInHand(hand);
+		if (FUEL_ITEMS.test(itemstack) && this.getFuel() + 3600 <= 32000) {
+			if (!player.getAbilities().instabuild) {
+				itemstack.shrink(1);
 			}
 
+			this.setFuel(this.getFuel() + 3600);
 			return InteractionResult.sidedSuccess(this.level.isClientSide);
 		} else {
 			return super.interact(player, hand);
@@ -144,27 +161,6 @@ public class FurnaceBoat extends BoatloadBoat {
 	}
 
 	@Override
-	protected void addAdditionalSaveData(CompoundTag compound) {
-		super.addAdditionalSaveData(compound);
-		compound.putInt("Fuel", this.getFuel());
-	}
-
-	@Override
-	protected void readAdditionalSaveData(CompoundTag compound) {
-		super.readAdditionalSaveData(compound);
-		this.setFuel(compound.getInt("Fuel"));
-	}
-
-	private void setFuel(@Nullable int fuel) {
-		this.entityData.set(FUEL, fuel);
-	}
-
-	@Nullable
-	public int getFuel() {
-		return this.entityData.get(FUEL);
-	}
-
-	@Override
 	public Item getDropItem() {
 		return this.getBoatloadBoatType().furnaceBoat().get();
 	}
@@ -172,29 +168,5 @@ public class FurnaceBoat extends BoatloadBoat {
 	@Override
 	public ItemStack getPickResult() {
 		return new ItemStack(this.getBoatloadBoatType().furnaceBoat().get());
-	}
-
-	@Override
-	public void positionRider(Entity passenger) {
-		if (this.hasPassenger(passenger)) {
-			float f = passenger instanceof Animal ? 0.4F : 0.2F;
-			float f1 = (float) ((this.isRemoved() ? (double) 0.01F : this.getPassengersRidingOffset()) + passenger.getMyRidingOffset());
-
-			Vec3 vector3d = (new Vec3(f, 0.0D, 0.0D)).yRot(-this.getYRot() * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
-			passenger.setPos(this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
-			passenger.setYRot(passenger.getYRot() + this.deltaRotation);
-			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);
-			this.clampRotation(passenger);
-			if (passenger instanceof Animal) {
-				int j = passenger.getId() % 2 == 0 ? 90 : 270;
-				passenger.setYBodyRot(((Animal) passenger).yBodyRot + (float) j);
-				passenger.setYHeadRot(passenger.getYHeadRot() + (float) j);
-			}
-		}
-	}
-
-	@Override
-	protected boolean canAddPassenger(Entity passenger) {
-		return !this.isVehicle() && !this.isEyeInFluid(FluidTags.WATER);
 	}
 }

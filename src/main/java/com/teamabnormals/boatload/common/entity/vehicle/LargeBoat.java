@@ -1,7 +1,9 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
+import java.util.List;
+
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
-import net.minecraft.tags.FluidTags;
+
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
@@ -16,8 +18,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
-
-import java.util.List;
 
 public class LargeBoat extends BoatloadBoat {
 	public LargeBoat(EntityType<? extends Boat> entityType, Level worldIn) {
@@ -35,6 +35,33 @@ public class LargeBoat extends BoatloadBoat {
 
 	public LargeBoat(PlayMessages.SpawnEntity packet, Level worldIn) {
 		super(BoatloadEntityTypes.LARGE_BOAT.get(), worldIn);
+	}
+
+	@Override
+	protected boolean canAddPassenger(Entity passenger) {
+		if (this.getPassengers().size() >= this.getMaxPassengers() - 1 && this.isPassengerBig(passenger)) {
+			return false;
+		} else {
+			return passenger.getBbWidth() < 1.8F && super.canAddPassenger(passenger);
+		}
+	}
+
+	@Override
+	protected int getMaxPassengers() {
+		return this.getBigPassengers() == 1 ? 3 : getBigPassengers() == 2 ? 2 : 4;
+	}
+
+	private boolean isPassengerBig(Entity passenger) {
+		return passenger.getBbWidth() >= 1.375F;
+	}
+
+	private int getBigPassengers() {
+		int i = 0;
+		for (Entity passenger : this.getPassengers()) {
+			if (this.isPassengerBig(passenger))
+				i += 1;
+		}
+		return i;
 	}
 
 	@Override
@@ -74,11 +101,11 @@ public class LargeBoat extends BoatloadBoat {
 		if (this.isVehicle()) {
 			float f = 0.0F;
 			if (this.inputLeft) {
-				--this.deltaRotation;
+				this.deltaRotation -= 0.75F;
 			}
 
 			if (this.inputRight) {
-				++this.deltaRotation;
+				this.deltaRotation += 0.75F;
 			}
 
 			if (this.inputRight != this.inputLeft && !this.inputUp && !this.inputDown) {
@@ -102,44 +129,60 @@ public class LargeBoat extends BoatloadBoat {
 	@Override
 	public void positionRider(Entity passenger) {
 		if (this.hasPassenger(passenger)) {
-			float f = 0.0F;
+			float f = -0.2F;
 			float f1 = (float) ((this.isRemoved() ? (double) 0.01F : this.getPassengersRidingOffset()) + passenger.getMyRidingOffset());
 
 			if (this.getPassengers().size() == 2) {
 				int i = this.getPassengers().indexOf(passenger);
-				if (i == 0) {
-					f = 0.4F;
+				int j = this.getBigPassengers();
+
+				if (j == 1) {
+					f = 0.5F - i * 1.4F;
+
+					if (this.isPassengerBig(this.getPassengers().get(0))) {
+						f -= 0.2F;
+					} else if (this.isPassengerBig(this.getPassengers().get(1))) {
+						f += 0.2F;
+					}
+				} else if (j == 2) {
+					f = 0.7F - i * 1.8F;
 				} else {
-					f = -0.8F;
+					f = 0.4F - i * 1.2F;
 				}
 			} else if (this.getPassengers().size() == 3) {
 				int i = this.getPassengers().indexOf(passenger);
-				if (i == 0) {
-					f = 0.8F;
-				} else if (i == 1) {
-					f = -0.1F;
-				} else {
-					f = -1.0F;
+				f = 0.8F - i * 1.0F;
+
+				if (this.isPassengerBig(this.getPassengers().get(0))) {
+					if (i == 1) {
+						f -= 0.1F;
+					} else if (i == 2) {
+						f += 0.1F;
+					}
+				} else if (this.isPassengerBig(this.getPassengers().get(1))) {
+					if (i == 1) {
+						f -= 0.2F;
+					} else if (i == 2) {
+						f -= 0.4F;
+					}
+					f += 0.2F;
+				} else if (this.isPassengerBig(this.getPassengers().get(2))) {
+					if (i == 1) {
+						f += 0.1F;
+					} else if (i == 2) {
+						f -= 0.1F;
+					}
+					f += 0.2F;
 				}
 			} else if (this.getPassengers().size() > 3) {
 				int i = this.getPassengers().indexOf(passenger);
-				if (i == 0) {
-					f = 0.9375F;
-				} else {
-					if (i == 1) {
-						f = 0.2F;
-					} else if (i == 2) {
-						f = -0.55F;
-					} else {
-						f = -1.3F;
-					}
-
-					f += 0.025F;
-				}
+				f = 1.0F - i * 0.8F;
 			}
 
-			if (passenger instanceof Animal) {
-				f = (float) ((double) f + 0.1D);
+			if (this.isPassengerBig(passenger)) {
+				f += 0.1F;
+			} else if (passenger instanceof Animal) {
+				f += 0.2F;
 			}
 
 			Vec3 vector3d = (new Vec3(f, 0.0D, 0.0D)).yRot(-this.getYRot() * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
@@ -147,7 +190,7 @@ public class LargeBoat extends BoatloadBoat {
 			passenger.setYRot(passenger.getYRot() + this.deltaRotation);
 			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);
 			this.clampRotation(passenger);
-			if (passenger instanceof Animal && this.getPassengers().size() > 1) {
+			if (passenger instanceof Animal && !this.isPassengerBig(passenger) && this.getPassengers().size() > 1) {
 				int j = passenger.getId() % 2 == 0 ? 90 : 270;
 				passenger.setYBodyRot(((Animal) passenger).yBodyRot + (float) j);
 				passenger.setYHeadRot(passenger.getYHeadRot() + (float) j);
@@ -158,10 +201,5 @@ public class LargeBoat extends BoatloadBoat {
 	@Override
 	public Item getDropItem() {
 		return this.getBoatloadBoatType().largeBoat().get();
-	}
-
-	@Override
-	protected boolean canAddPassenger(Entity passenger) {
-		return this.getPassengers().size() < 4 && passenger.getBbWidth() < 1.375F && !this.isEyeInFluid(FluidTags.WATER);
 	}
 }

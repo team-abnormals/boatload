@@ -1,10 +1,10 @@
 {
-  "entity.boatload.furnace_boat": "Лодка с печкой",
+  "entity.boatload.furnace_boat": "Самоходная лодка",
   "entity.boatload.large_boat": "Большая лодка",
-  "item.boatload.acacia_furnace_boat": "Акациевая лодка с печкой",
-  "item.boatload.birch_furnace_boat": "Берёзовая лодка с печкой",
-  "item.boatload.dark_oak_furnace_boat": "Лодка из тёмного дуба с печкой",
-  "item.boatload.jungle_furnace_boat": "Лодка из тропического дерева с печкой",
+  "item.boatload.acacia_furnace_boat": "Акациевая самоходная лодка",
+  "item.boatload.birch_furnace_boat": "Берёзовая самоходная лодкай",
+  "item.boatload.dark_oak_furnace_boat": "Самоходная лодка из тёмного дуба",
+  "item.boatload.jungle_furnace_boat": "Самоходная лодка из тропического дерева",
   "item.boatload.large_acacia_boat": "Большая акациевая лодка",
   "item.boatload.large_birch_boat": "Большая берёзовая лодка",
   "item.boatload.large_dark_oak_boat": "Большая лодка из тёмного дуба",
@@ -12,7 +12,7 @@
   "item.boatload.large_mangrove_boat": "Большая мангровая лодка",
   "item.boatload.large_oak_boat": "Большая дубовая лодка",
   "item.boatload.large_spruce_boat": "Большая еловая лодка",
-  "item.boatload.mangrove_furnace_boat": "Мангровая лодка с печкой",
-  "item.boatload.oak_furnace_boat": "Дубовая лодка с печкой",
-  "item.boatload.spruce_furnace_boat": "Еловая лодка с печкой"
+  "item.boatload.mangrove_furnace_boat": "Мангровая самоходная лодка",
+  "item.boatload.oak_furnace_boat": "Дубовая самоходная лодка",
+  "item.boatload.spruce_furnace_boat": "Еловая самоходная лодка"
 }

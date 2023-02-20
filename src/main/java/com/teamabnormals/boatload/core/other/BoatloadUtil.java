@@ -4,10 +4,12 @@ import com.google.common.collect.Lists;
 import com.teamabnormals.blueprint.common.entity.BlueprintBoat;
 import com.teamabnormals.blueprint.common.entity.BlueprintChestBoat;
 import com.teamabnormals.blueprint.core.registry.BoatTypeRegistry;
+import com.teamabnormals.blueprint.core.registry.BoatTypeRegistry.BoatTypeData;
 import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
 import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
 import com.teamabnormals.boatload.common.item.LargeBoatItem;
 import com.teamabnormals.boatload.core.Boatload;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 
@@ -31,15 +33,17 @@ public class BoatloadUtil {
 	}
 
 	public static boolean isNetherBoat(Entity entity) {
-		String type = null;
-		if (entity instanceof BlueprintBoat boat) {
-			type = BoatTypeRegistry.getNameForData(boat.getBoatTypeData());
-		} else if (entity instanceof BlueprintChestBoat boat) {
-			type = BoatTypeRegistry.getNameForData(boat.getBoatTypeData());
-		} else if (entity instanceof BoatloadBoat boat) {
-			type = boat.getBoatloadBoatType().registryName().toString();
+		if (entity instanceof BoatloadBoat boat) {
+			return boat.getBoatloadBoatType().fireproof();
 		}
 
-		return type.equals(Boatload.MOD_ID + ":crimson") || type.equals(Boatload.MOD_ID + ":warped");
+		BoatTypeData typeData = null;
+		if (entity instanceof BlueprintBoat boat) {
+			typeData = boat.getBoatTypeData();
+		} else if (entity instanceof BlueprintChestBoat boat) {
+			typeData = boat.getBoatTypeData();
+		}
+
+		return BoatloadBoatType.getTypeFromString(BoatTypeRegistry.getNameForData(typeData)).fireproof();
 	}
 }

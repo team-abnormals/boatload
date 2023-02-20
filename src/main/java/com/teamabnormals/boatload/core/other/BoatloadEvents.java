@@ -2,7 +2,6 @@ package com.teamabnormals.boatload.core.other;
 
 import com.teamabnormals.boatload.common.entity.vehicle.FurnaceBoat;
 import com.teamabnormals.boatload.core.Boatload;
-
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;

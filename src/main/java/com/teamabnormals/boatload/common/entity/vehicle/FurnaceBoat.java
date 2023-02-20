@@ -1,9 +1,6 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
-import javax.annotation.Nullable;
-
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
-
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -23,6 +20,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
+
+import javax.annotation.Nullable;
 
 public class FurnaceBoat extends BoatloadBoat {
 	public static final Ingredient FUEL_ITEMS = Ingredient.of(Items.COAL, Items.CHARCOAL);

@@ -8,8 +8,6 @@ import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
 import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
 import com.teamabnormals.boatload.common.item.LargeBoatItem;
 import com.teamabnormals.boatload.core.Boatload;
-import com.teamabnormals.boatload.core.api.BoatloadBoatType;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 
@@ -33,17 +31,15 @@ public class BoatloadUtil {
 	}
 
 	public static boolean isNetherBoat(Entity entity) {
-		ResourceLocation type = null;
+		String type = null;
 		if (entity instanceof BlueprintBoat boat) {
-			type = new ResourceLocation(BoatTypeRegistry.getNameForData(boat.getBoatTypeData()));
-			type = new ResourceLocation(type.getPath());
+			type = BoatTypeRegistry.getNameForData(boat.getBoatTypeData());
 		} else if (entity instanceof BlueprintChestBoat boat) {
-			type = new ResourceLocation(BoatTypeRegistry.getNameForData(boat.getBoatTypeData()));
-			type = new ResourceLocation(type.getPath());
+			type = BoatTypeRegistry.getNameForData(boat.getBoatTypeData());
 		} else if (entity instanceof BoatloadBoat boat) {
-			type = boat.getBoatloadBoatType().registryName();
+			type = boat.getBoatloadBoatType().registryName().toString();
 		}
 
-		return type != null && (type.equals(BoatloadBoatType.CRIMSON.registryName()) || type.equals(BoatloadBoatType.WARPED.registryName()));
+		return type.equals(Boatload.MOD_ID + ":crimson") || type.equals(Boatload.MOD_ID + ":warped");
 	}
 }

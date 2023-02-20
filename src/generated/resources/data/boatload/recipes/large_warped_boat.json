@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "large_boat",
+  "key": {
+    "#": {
+      "item": "minecraft:warped_planks"
+    },
+    "B": {
+      "item": "boatload:warped_boat"
+    }
+  },
+  "pattern": [
+    "#B#",
+    "###"
+  ],
+  "result": {
+    "item": "boatload:large_warped_boat"
+  }
+}

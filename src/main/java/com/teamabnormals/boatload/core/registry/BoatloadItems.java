@@ -1,9 +1,11 @@
 package com.teamabnormals.boatload.core.registry;
 
+import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.boatload.core.Boatload;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.registry.helper.BoatloadItemSubRegistryHelper;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -31,4 +33,16 @@ public class BoatloadItems {
 
 	public static RegistryObject<Item> MANGROVE_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.MANGROVE);
 	public static RegistryObject<Item> LARGE_MANGROVE_BOAT = HELPER.createLargeBoat(BoatloadBoatType.MANGROVE);
+
+	public static Pair<RegistryObject<Item>, RegistryObject<Item>> CRIMSON_BOATS = HELPER.createBoatAndChestBoatItem("crimson", Blocks.CRIMSON_PLANKS);
+	public static RegistryObject<Item> CRIMSON_BOAT = CRIMSON_BOATS.getFirst();
+	public static RegistryObject<Item> CRIMSON_CHEST_BOAT = CRIMSON_BOATS.getSecond();
+	public static RegistryObject<Item> CRIMSON_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.CRIMSON);
+	public static RegistryObject<Item> LARGE_CRIMSON_BOAT = HELPER.createLargeBoat(BoatloadBoatType.CRIMSON);
+
+	public static Pair<RegistryObject<Item>, RegistryObject<Item>> WARPED_BOATS = HELPER.createBoatAndChestBoatItem("warped", Blocks.WARPED_PLANKS);
+	public static RegistryObject<Item> WARPED_BOAT = WARPED_BOATS.getFirst();
+	public static RegistryObject<Item> WARPED_CHEST_BOAT = WARPED_BOATS.getSecond();
+	public static RegistryObject<Item> WARPED_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.WARPED);
+	public static RegistryObject<Item> LARGE_WARPED_BOAT = HELPER.createLargeBoat(BoatloadBoatType.WARPED);
 }

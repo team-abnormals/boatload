@@ -2,6 +2,7 @@ package com.teamabnormals.boatload.core.mixin;
 
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
+import com.teamabnormals.boatload.core.other.BoatloadUtil;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.vehicle.Boat;
@@ -22,6 +23,13 @@ public abstract class EntityMixin {
 					((Entity) (Object) this).spawnAtLocation(((IDataManager) this).getValue(BoatloadTrackedData.BANNER));
 				}
 			}
+		}
+	}
+
+	@Inject(method = "fireImmune", at = @At(value = "RETURN"), cancellable = true)
+	private void fireImmune(CallbackInfoReturnable<Boolean> cir) {
+		if (BoatloadUtil.isNetherBoat((Entity) (Object) this)) {
+			cir.setReturnValue(true);
 		}
 	}
 }

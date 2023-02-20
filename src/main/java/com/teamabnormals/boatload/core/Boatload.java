@@ -10,6 +10,7 @@ import com.teamabnormals.boatload.common.dispenser.LargeBoatDispenseItemBehavior
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.data.client.BoatloadItemModelProvider;
 import com.teamabnormals.boatload.core.data.client.BoatloadLanguageProvider;
+import com.teamabnormals.boatload.core.data.server.BoatloadItemTagsProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
 import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
 import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
@@ -63,13 +64,14 @@ public class Boatload {
 
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
+		generator.addProvider(includeServer, new BoatloadItemTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new BoatloadRecipeProvider(generator));
 
 		boolean includeClient = event.includeClient();
-		generator.addProvider(includeClient, new BoatloadItemModelProvider(generator, existingFileHelper));
+		generator.addProvider(includeClient, new BoatloadItemModelProvider(generator, helper));
 		generator.addProvider(includeClient, new BoatloadLanguageProvider(generator));
 	}
 

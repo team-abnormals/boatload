@@ -1,5 +1,5 @@
 {
-  "itemGroup.boatload": "Extra Boote",
+  "itemGroup.boatload": "Extraboote",
   
   
   "entity.boatload.chest_boat": "Güterboot",
@@ -91,9 +91,9 @@
   
   "_comment": "Endergetic Expansion",
   
-  "item.boatload.poise_chest_boat": "Fassungsholzgüterboot",
-  "item.boatload.poise_furnace_boat": "Fassungsholzantriebsboot",
-  "item.boatload.large_poise_boat": "Großes Fassungsholzboot",
+  "item.boatload.poise_chest_boat": "Schwebholzgüterboot",
+  "item.boatload.poise_furnace_boat": "Schwebholzantriebsboot",
+  "item.boatload.large_poise_boat": "Großes Schwebsholzboot",
   
   
   "_comment": "Environmental",

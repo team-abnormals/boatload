@@ -8,29 +8,23 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 
 public class FurnaceBoatItem extends BoatloadBoatItem {
 	private final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> this.getType().chestBoat().get());
 
-	public FurnaceBoatItem(BoatloadBoatType typeIn) {
-		super(typeIn);
+	public FurnaceBoatItem(BoatloadBoatType type) {
+		super(type);
 	}
 
-	public FurnaceBoatItem(BoatloadBoatType typeIn, Item.Properties properties) {
-		super(typeIn, properties);
-	}
-
-	@Override
-	protected BoatloadBoat getBoatEntity(Level worldIn, HitResult result, ItemStack itemStack) {
-		return new FurnaceBoat(worldIn, result.getLocation().x, result.getLocation().y, result.getLocation().z);
+	public FurnaceBoatItem(BoatloadBoatType type, Item.Properties properties) {
+		super(type, properties);
 	}
 
 	@Override
-	public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
-		return 1200;
+	protected BoatloadBoat getBoatEntity(Level level, HitResult result, ItemStack stack) {
+		return new FurnaceBoat(level, result.getLocation().x, result.getLocation().y, result.getLocation().z);
 	}
 
 	@Override

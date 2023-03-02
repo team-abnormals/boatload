@@ -44,6 +44,6 @@ public class BoatloadUtil {
 			typeData = boat.getBoatTypeData();
 		}
 
-		return BoatloadBoatType.getTypeFromString(BoatTypeRegistry.getNameForData(typeData)).fireproof();
+		return typeData != null && BoatloadBoatType.getTypeFromString(BoatTypeRegistry.getNameForData(typeData)).fireproof();
 	}
 }

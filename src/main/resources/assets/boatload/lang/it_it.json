@@ -1,176 +1,22 @@
 {
-  "itemGroup.boatload": "Extra Boats",
-  
-  "entity.boatload.chest_boat": "Barca con baule",
   "entity.boatload.furnace_boat": "Barca con fornace",
   "entity.boatload.large_boat": "Barca grande",
-  
-  
-  "_comment": "Vanilla",
-  
-  "item.boatload.oak_chest_boat": "Barca di quercia con baule",
-  "item.boatload.spruce_chest_boat": "Barca di abete con baule",
-  "item.boatload.birch_chest_boat": "Barca di betulla con baule",
-  "item.boatload.jungle_chest_boat": "Barca della giungla con baule",
-  "item.boatload.acacia_chest_boat": "Barca di acacia con baule",
-  "item.boatload.dark_oak_chest_boat": "Barca di quercia scura con baule",
-  
   "item.boatload.oak_furnace_boat": "Barca di quercia con fornace",
   "item.boatload.spruce_furnace_boat": "Barca di abete con fornace",
   "item.boatload.birch_furnace_boat": "Barca di betulla con fornace",
   "item.boatload.jungle_furnace_boat": "Barca della giungla con fornace",
   "item.boatload.acacia_furnace_boat": "Barca di acacia con fornace",
   "item.boatload.dark_oak_furnace_boat": "Barca di quercia scura con fornace",
-  
   "item.boatload.large_oak_boat": "Barca di quercia grande",
   "item.boatload.large_spruce_boat": "Barca di abete grande",
   "item.boatload.large_birch_boat": "Barca di betulla grande",
   "item.boatload.large_jungle_boat": "Barca della giungla grande",
   "item.boatload.large_acacia_boat": "Barca di acacia grande",
   "item.boatload.large_dark_oak_boat": "Barca di quercia scura grande",
-  
-  
-  "_comment": "Biomes O' Plenty",
-  
-  "item.boatload.cherry_chest_boat": "Barca di ciliegio con baule",
-  "item.boatload.dead_chest_boat": "Barca morta con baule",
-  "item.boatload.fir_chest_boat": "Barca di abete chiaro con baule",
-  "item.boatload.hellbark_chest_boat": "Barca di corteccia infernale con baule",
-  "item.boatload.jacaranda_chest_boat": "Barca di jacaranda con baule",
-  "item.boatload.magic_chest_boat": "Barca magica con baule",
-  "item.boatload.mahogany_chest_boat": "Barca di mogano con baule",
-  "item.boatload.palm_chest_boat": "Barca di palma con baule",
-  "item.boatload.redwood_chest_boat": "Barca di sequoia con baule",
-  "item.boatload.umbran_chest_boat": "Barca ombra con baule",
-  "item.boatload.willow_chest_boat": "Barca di salice con baule",
-  
-  "item.boatload.cherry_furnace_boat": "Barca di ciliegio con fornace",
-  "item.boatload.dead_furnace_boat": "Barca morta con fornace",
-  "item.boatload.fir_furnace_boat": "Barca di abete chiaro con fornace",
-  "item.boatload.hellbark_furnace_boat": "Barca di corteccia infernale con fornace",
-  "item.boatload.jacaranda_furnace_boat": "Barca di jacaranda con fornace",
-  "item.boatload.magic_furnace_boat": "Barca magica con fornace",
-  "item.boatload.mahogany_furnace_boat": "Barca di mogano con fornace",
-  "item.boatload.palm_furnace_boat": "Barca di palma con fornace",
-  "item.boatload.redwood_furnace_boat": "Barca di sequoia con fornace",
-  "item.boatload.umbran_furnace_boat": "Barca ombra con fornace",
-  "item.boatload.willow_furnace_boat": "Barca di salice con fornace",
-  
-  "item.boatload.large_cherry_boat": "Barca grande di ciliegio",
-  "item.boatload.large_dead_boat": "Barca grande morta",
-  "item.boatload.large_fir_boat": "Barca grande di abete chiaro",
-  "item.boatload.large_hellbark_boat": "Barca grande di corteccia infernale",
-  "item.boatload.large_jacaranda_boat": "Barca grande di jacaranda",
-  "item.boatload.large_magic_boat": "Barca grande magica",
-  "item.boatload.large_mahogany_boat": "Barca grande di mogano",
-  "item.boatload.large_palm_boat": "Barca grande di palma",
-  "item.boatload.large_redwood_boat": "Barca grande di sequoia",
-  "item.boatload.large_umbran_boat": "Barca grande ombra",
-  "item.boatload.large_willow_boat": "Barca grande di salice",
-  
-  
-  "_comment": "Upgrade Aquatic",
-  
-  "item.boatload.driftwood_chest_boat": "Barca di legno alla deriva con baule",
-  "item.boatload.river_chest_boat": "Barca del fiume con baule",
-  
-  "item.boatload.driftwood_furnace_boat": "Barca di legno alla deriva con fornace",
-  "item.boatload.river_furnace_boat": "Barca del fiume con fornace",
-  
-  "item.boatload.large_driftwood_boat": "Barca grande di legno alla deriva",
-  "item.boatload.large_river_boat": "Barca grande del fiume",
-  
-  
-  "_comment": "Bamboo Blocks",
-  
-  "item.boatload.bamboo_chest_boat": "Barca di bambù con baule",
-  "item.boatload.bamboo_furnace_boat": "Barca di bambù con fornace",
-  "item.boatload.large_bamboo_boat": "Barca di bambù grande",
-  
-  
-  "_comment": "Endergetic Expansion",
-  
-  "item.boatload.poise_chest_boat": "Barca sospesa con baule",
-  "item.boatload.poise_furnace_boat": "Barca sospesa con fornace",
-  "item.boatload.large_poise_boat": "Barca sospesa grande",
-  
-  
-  "_comment": "Environmental",
-  
-  "item.boatload.wisteria_chest_boat": "Barca di glicine con baule",
-  "item.boatload.wisteria_furnace_boat": "Barca di glicine con fornace",
-  "item.boatload.large_wisteria_boat": "Barca grande di glicine",
-  
-  "item.boatload.willow_chest_boat": "Barca di salice con baule",
-  "item.boatload.willow_furnace_boat": "Barca di salice con fornace",
-  "item.boatload.large_willow_boat": "Barca grande di salice",
-  
-  "item.boatload.cherry_chest_boat": "Barca di ciliegio con baule",
-  "item.boatload.cherry_furnace_boat": "Barca di ciliegio con fornace",
-  "item.boatload.large_cherry_boat": "Barca grande di ciliegio",
-  
-  
-  "_comment": "Atmospheric",
-  
-  "item.boatload.rosewood_chest_boat": "Barca di palissandro con baule",
-  "item.boatload.morado_chest_boat": "Barca di leopardo con baule",
-  "item.boatload.aspen_chest_boat": "Barca di aspen con baule",
-  "item.boatload.kousa_chest_boat": "Barca di kousa con baule",
-  "item.boatload.yucca_chest_boat": "Barca di yucca con baule",
-  "item.boatload.grimwood_chest_boat": "Barca cupa con baule",
-  
-  "item.boatload.rosewood_furnace_boat": "Barca di palissandro con fornace",
-  "item.boatload.morado_furnace_boat": "Barca di leopardo con fornace",
-  "item.boatload.aspen_furnace_boat": "Barca di aspen con fornace",
-  "item.boatload.kousa_furnace_boat": "Barca di kousa con fornace",
-  "item.boatload.yucca_furnace_boat": "Barca di yucca con fornace",
-  "item.boatload.grimwood_furnace_boat": "Barca cupa con fornace",
-  
-  "item.boatload.large_rosewood_boat": "Barca grande di palissandro",
-  "item.boatload.large_morado_boat": "Barca grande di leopardo",
-  "item.boatload.large_aspen_boat": "Barca grande di aspen",
-  "item.boatload.large_kousa_boat": "Barca grande di kousa",
-  "item.boatload.large_yucca_boat": "Barca grande di yucca",
-  "item.boatload.large_grimwood_boat": "Barca grande cupa",
-  
-  
-  "_comment": "Autumnity",
-  
-  "item.boatload.maple_chest_boat": "Barca d'acero con baule",
-  "item.boatload.maple_furnace_boat": "Barca d'acero con fornace",
-  "item.boatload.large_maple_boat": "Barca d'acero grande",
-
-
-  "_comment": "Enhanced Mushrooms",
-
-  "item.boatload.red_mushroom_chest_boat": "Barca di fungo rosso con baule",
-  "item.boatload.brown_mushroom_chest_boat": "Barca di fungo marrone con baule",
-  "item.boatload.glowshroom_chest_boat": "Barca di fungo bioluminescente con baule",
-
-  "item.boatload.red_mushroom_furnace_boat": "Barca di fungo rosso con fornace",
-  "item.boatload.brown_mushroom_furnace_boat": "Barca di fungo marrone con fornace",
-  "item.boatload.glowshroom_furnace_boat": "Barca di fungo bioluminescente con fornace",
-
-  "item.boatload.large_red_mushroom_boat": "Barca grande di fungo rosso",
-  "item.boatload.large_brown_mushroom_boat": "Barca grande di fungo marrone",
-  "item.boatload.large_glowshroom_boat": "Barca grande di fungo bioluminescente",
-
-
-  "_comment": "Hanami",
-
-  "item.boatload.sakura_chest_boat": "Barca di sakura con baule",
-  "item.boatload.sakura_furnace_boat": "Barca di sakura con fornace",
-  "item.boatload.large_sakura_boat": "Barca grande di sakura",
-
-
-  "_comment": "Nether Extension",
-
   "item.boatload.crimson_chest_boat": "Barca cremisi con baule",
   "item.boatload.warped_chest_boat": "Barca distorta con baule",
-
   "item.boatload.crimson_furnace_boat": "Barca cremisi con fornace",
   "item.boatload.warped_furnace_boat": "Barca distorta con fornace",
-  
   "item.boatload.large_crimson_boat": "Barca grande cremisi",
   "item.boatload.large_warped_boat": "Barca grande distorta"
 }

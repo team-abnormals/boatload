@@ -1,29 +1,16 @@
 {
-  "entity.boatload.chest_boat": "Loď s Truhlou",
   "entity.boatload.furnace_boat": "Loď s Pecí",
   "entity.boatload.large_boat": "Velká Loď",
-  
-  "item.boatload.oak_chest_boat": "Dubová Loď s Truhlou",
-  "item.boatload.spruce_chest_boat": "Smrková Loď s Truhlou",
-  "item.boatload.birch_chest_boat": "Břízová Loď s Truhlou",
-  "item.boatload.jungle_chest_boat": "Sekvojová Loď s Truhlou",
-  "item.boatload.acacia_chest_boat": "Akáciová Loď s Truhlou",
-  "item.boatload.dark_oak_chest_boat": "Tmavo Dubová Loď s Truhlou",
-  
   "item.boatload.oak_furnace_boat": "Dubová Loď s Pecí",
   "item.boatload.spruce_furnace_boat": "Smrková Loď s Pecí",
   "item.boatload.birch_furnace_boat": "Břízová Loď s Pecí",
   "item.boatload.jungle_furnace_boat": "Sekvojová Loď s Pecí",
   "item.boatload.acacia_furnace_boat": "Akáciová Loď s Pecí",
   "item.boatload.dark_oak_furnace_boat": "Tmavo Dubová Loď s Pecí",
-  
   "item.boatload.large_oak_boat": "Velká Dubová Loď",
   "item.boatload.large_spruce_boat": "Velká Smrková Loď",
   "item.boatload.large_birch_boat": "Velká Břízová Loď",
   "item.boatload.large_jungle_boat": "Velká Sekvojová Loď",
   "item.boatload.large_acacia_boat": "Velká Akáciová Loď",
-  "item.boatload.large_dark_oak_boat": "Velká Tmavo Dubová Loď",
-  
-  "advancements.adventure.get_in_the_boat.title": "Naskoč do lodi!",
-  "advancements.adventure.get_in_the_boat.description": "Kormidluj velkou loď s třemi vesničany"
+  "item.boatload.large_dark_oak_boat": "Velká Tmavo Dubová Loď"
 }

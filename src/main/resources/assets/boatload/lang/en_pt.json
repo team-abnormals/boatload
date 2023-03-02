@@ -1,7 +1,6 @@
 {
   "entity.boatload.furnace_boat": "Oven in a Vessel",
   "entity.boatload.large_boat": "Galleon",
-
   "item.boatload.oak_furnace_boat": "Oven in a Oak'n Vessel",
   "item.boatload.spruce_furnace_boat": "Oven in a Vessel o' Spruce Timber",
   "item.boatload.birch_furnace_boat": "Oven in a Vessel o' Birch Timber",
@@ -9,7 +8,6 @@
   "item.boatload.acacia_furnace_boat": "Oven in a Vessel o' Acacia Timber",
   "item.boatload.dark_oak_furnace_boat": "Oven in a Vessel o' Dusky Oak Timber",
   "item.boatload.mangrove_furnace_boat": "Oven in a Vessel o' Mangrove Timber",
-
   "item.boatload.large_oak_boat": "Oak'n Galleon",
   "item.boatload.large_spruce_boat": "Jolly Roger",
   "item.boatload.large_birch_boat": "Galleon o' Birch Timber",

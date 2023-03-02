@@ -1,177 +1,22 @@
 {
-  "itemGroup.boatload": "Extraboote",
-  
-  
-  "entity.boatload.chest_boat": "Güterboot",
   "entity.boatload.furnace_boat": "Antriebsboot",
   "entity.boatload.large_boat": "Großes Boot",
-  
-  
-  "_comment": "Vanilla",
-  
-  "item.boatload.oak_chest_boat": "Eichenholzgüterboot",
-  "item.boatload.spruce_chest_boat": "Fichtenholzgüterboot",
-  "item.boatload.birch_chest_boat": "Birkenholzgüterboot",
-  "item.boatload.jungle_chest_boat": "Tropenholzgüterboot",
-  "item.boatload.acacia_chest_boat": "Akazienholzgüterboot",
-  "item.boatload.dark_oak_chest_boat": "Schwarzeichenholzgüterboot",
-  
   "item.boatload.oak_furnace_boat": "Eichenholzantriebsboot",
   "item.boatload.spruce_furnace_boat": "Fichtenholzantriebsboot",
   "item.boatload.birch_furnace_boat": "Birkenholzantriebsboot",
   "item.boatload.jungle_furnace_boat": "Tropenholzantriebsboot",
   "item.boatload.acacia_furnace_boat": "Akazienholzantriebsboot",
   "item.boatload.dark_oak_furnace_boat": "Schwarzeichenholzantriebsboot",
-  
   "item.boatload.large_oak_boat": "Großes Eichenholzboot",
   "item.boatload.large_spruce_boat": "Großes Fichtenholzboot",
   "item.boatload.large_birch_boat": "Großes Birkenholzboot",
   "item.boatload.large_jungle_boat": "Großes Tropenholzboot",
   "item.boatload.large_acacia_boat": "Großes Akazienholzboot",
   "item.boatload.large_dark_oak_boat": "Großes Schwarzeichenholzboot",
-  
-  
-  "_comment": "Biomes O' Plenty",
-  
-  "item.boatload.cherry_chest_boat": "Kirschholzgüterboot",
-  "item.boatload.dead_chest_boat": "Totenholzgüterboot",
-  "item.boatload.fir_chest_boat": "Tannenholzgüterboot",
-  "item.boatload.hellbark_chest_boat": "Höllenborkenholzgüterboot",
-  "item.boatload.jacaranda_chest_boat": "Jakarandaholzgüterboot",
-  "item.boatload.magic_chest_boat": "Zauberholzgüterboot",
-  "item.boatload.mahogany_chest_boat": "Mahagoniholzgüterboot",
-  "item.boatload.palm_chest_boat": "Palmholzgüterboot",
-  "item.boatload.redwood_chest_boat": "Rotholzgüterboot",
-  "item.boatload.umbran_chest_boat": "Umbraholzgüterboot",
-  "item.boatload.willow_chest_boat": "Weidenholzgüterboot",
-  
-  "item.boatload.cherry_furnace_boat": "Kirschholzantriebsboot",
-  "item.boatload.dead_furnace_boat": "Totenholzantriebsboot",
-  "item.boatload.fir_furnace_boat": "Tannenholzantriebsboot",
-  "item.boatload.hellbark_furnace_boat": "Höllenborkenholzantriebsboot",
-  "item.boatload.jacaranda_furnace_boat": "Jakarandaholzantriebsboot",
-  "item.boatload.magic_furnace_boat": "Zauberholzantriebsboot",
-  "item.boatload.mahogany_furnace_boat": "Mahagoniholzantriebsboot",
-  "item.boatload.palm_furnace_boat": "Palmholzantriebsboot",
-  "item.boatload.redwood_furnace_boat": "Rotholzantriebsboot",
-  "item.boatload.umbran_furnace_boat": "Umbraholzantriebsboot",
-  "item.boatload.willow_furnace_boat": "Weidenholzantriebsboot",
-  
-  "item.boatload.large_cherry_boat": "Großes Kirschholzboot",
-  "item.boatload.large_dead_boat": "Großes Totenholzboot",
-  "item.boatload.large_fir_boat": "Großes Tannenholzboot",
-  "item.boatload.large_hellbark_boat": "Großes Höllenborkenholzboot",
-  "item.boatload.large_jacaranda_boat": "Großes Jakarandaholzboot",
-  "item.boatload.large_magic_boat": "Großes Zauberholzboot",
-  "item.boatload.large_mahogany_boat": "Großes Mahagoniholzboot",
-  "item.boatload.large_palm_boat": "Großes Palmholzboot",
-  "item.boatload.large_redwood_boat": "Großes Rotholzboot",
-  "item.boatload.large_umbran_boat": "Großes Umbraholzboot",
-  "item.boatload.large_willow_boat": "Großes Weidenholzboot",
-  
-  
-  "_comment": "Upgrade Aquatic",
-  
-  "item.boatload.driftwood_chest_boat": "Treibholzgüterboot",
-  "item.boatload.river_chest_boat": "Flussholzgüterboot",
-  
-  "item.boatload.driftwood_furnace_boat": "Treibholzantriebsboot",
-  "item.boatload.river_furnace_boat": "Flussholzantriebsboot",
-  
-  "item.boatload.large_driftwood_boat": "Großes Treibholzboot",
-  "item.boatload.large_river_boat": "Großes Flussholzboot",
-  
-  
-  "_comment": "Bamboo Blocks",
-  
-  "item.boatload.bamboo_chest_boat": "Bambusgüterboot",
-  "item.boatload.bamboo_furnace_boat": "Bambusantriebsboot",
-  "item.boatload.large_bamboo_boat": "Großes Bambusboot",
-  
-  
-  "_comment": "Endergetic Expansion",
-  
-  "item.boatload.poise_chest_boat": "Schwebholzgüterboot",
-  "item.boatload.poise_furnace_boat": "Schwebholzantriebsboot",
-  "item.boatload.large_poise_boat": "Großes Schwebsholzboot",
-  
-  
-  "_comment": "Environmental",
-  
-  "item.boatload.wisteria_chest_boat": "Glyzinenholzgüterboot",
-  "item.boatload.wisteria_furnace_boat": "Glyzinenholzantriebsboot",
-  "item.boatload.large_wisteria_boat": "Großes Glyzinenholzboot",
-  
-  "item.boatload.willow_chest_boat": "Weidenholzgüterboot",
-  "item.boatload.willow_furnace_boat": "Weidenholzantriebsboot",
-  "item.boatload.large_willow_boat": "Großes Weidenholzboot",
-  
-  "item.boatload.cherry_chest_boat": "Kirschholzgüterboot",
-  "item.boatload.cherry_furnace_boat": "Kirschholzantriebsboot",
-  "item.boatload.large_cherry_boat": "Großes Kirschholzboot",
-  
-  
-  "_comment": "Atmospheric",
-  
-  "item.boatload.rosewood_chest_boat": "Palisanderholzgüterboot",
-  "item.boatload.morado_chest_boat": "Eisenholzgüterboot",
-  "item.boatload.aspen_chest_boat": "Espenholzgüterboot",
-  "item.boatload.kousa_chest_boat": "Hartriegelholzgüterboot",
-  "item.boatload.yucca_chest_boat": "Yuccaholzgüterboot",
-  "item.boatload.grimwood_chest_boat": "Grimmholzgüterboot",
-  
-  "item.boatload.rosewood_furnace_boat": "Palisanderholzantriebsboot",
-  "item.boatload.morado_furnace_boat": "Eisenholzantriebsboot",
-  "item.boatload.aspen_furnace_boat": "Espenholzantriebsboot",
-  "item.boatload.kousa_furnace_boat": "Hartriegelholzantriebsboot",
-  "item.boatload.yucca_furnace_boat": "Yuccaholzantriebsboot",
-  "item.boatload.grimwood_furnace_boat": "Grimmholzantriebsboot",
-  
-  "item.boatload.large_rosewood_boat": "Großes Palisanderholzboot",
-  "item.boatload.large_morado_boat": "Großes Eisenholzboot",
-  "item.boatload.large_aspen_boat": "Großes Espenholzboot",
-  "item.boatload.large_kousa_boat": "Großes Hartriegelholzboot",
-  "item.boatload.large_yucca_boat": "Großes Yuccaholzboot",
-  "item.boatload.large_grimwood_boat": "Großes Grimmholzboot",
-  
-  
-  "_comment": "Autumnity",
-  
-  "item.boatload.maple_chest_boat": "Ahornholzgüterboot",
-  "item.boatload.maple_furnace_boat": "Ahornholzantriebsboot",
-  "item.boatload.large_maple_boat": "Großes Ahornholzboot",
-
-
-  "_comment": "Enhanced Mushrooms",
-
-  "item.boatload.red_mushroom_chest_boat": "Rotes Pilzgüterboot",
-  "item.boatload.brown_mushroom_chest_boat": "Braunes Pilzgüterboot",
-  "item.boatload.glowshroom_chest_boat": "Glühpilzgüterboot",
-
-  "item.boatload.red_mushroom_furnace_boat": "Rotes Pilzantriebsboot",
-  "item.boatload.brown_mushroom_furnace_boat": "Braunes Pilzantriebsboot",
-  "item.boatload.glowshroom_furnace_boat": "Glühpilzantriebsboot",
-
-  "item.boatload.large_red_mushroom_boat": "Großes rotes Pilzboot",
-  "item.boatload.large_brown_mushroom_boat": "Großes braunes Pilzboot",
-  "item.boatload.large_glowshroom_boat": "Großes Glühpilzboot",
-
-
-  "_comment": "Hanami",
-
-  "item.boatload.sakura_chest_boat": "Sakuraholzgüterboot",
-  "item.boatload.sakura_furnace_boat": "Sakuraholzantriebsboot",
-  "item.boatload.large_sakura_boat": "Großes Sakuraholzboot",
-
-
-  "_comment": "Nether Extension",
-
   "item.boatload.crimson_chest_boat": "Karmesingüterboot",
   "item.boatload.warped_chest_boat": "Wirrgüterboot",
-
   "item.boatload.crimson_furnace_boat": "Karmesinantriebsboot",
   "item.boatload.warped_furnace_boat": "Wirrantriebsboot",
-
   "item.boatload.large_crimson_boat": "Großes Karmesinboot",
   "item.boatload.large_warped_boat": "Großes Wirrboot"
 }

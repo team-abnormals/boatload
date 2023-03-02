@@ -1,176 +1,22 @@
 {
-  "itemGroup.boatload": "Extra Boats",
-  
-  "entity.boatload.chest_boat": "상자가 실린 보트",
   "entity.boatload.furnace_boat": "화로가 실린 보트",
   "entity.boatload.large_boat": "큰 보트",
-  
-  
-  "_comment": "Vanilla",
-  
-  "item.boatload.oak_chest_boat": "상자가 실린 참나무 보트",
-  "item.boatload.spruce_chest_boat": "상자가 실린 가문비나무 보트",
-  "item.boatload.birch_chest_boat": "상자가 실린 자작나무 보트",
-  "item.boatload.jungle_chest_boat": "상자가 실린 정글 나무 보트",
-  "item.boatload.acacia_chest_boat": "상자가 실린 아카시아나무 보트",
-  "item.boatload.dark_oak_chest_boat": "상자가 실린 짙은 참나무 보트",
-  
   "item.boatload.oak_furnace_boat": "화로가 실린 참나무 보트",
   "item.boatload.spruce_furnace_boat": "화로가 실린 가문비나무 보트",
   "item.boatload.birch_furnace_boat": "화로가 실린 자작나무 보트",
   "item.boatload.jungle_furnace_boat": "화로가 실린 정글 나무 보트",
   "item.boatload.acacia_furnace_boat": "화로가 실린 아카시아나무 보트",
   "item.boatload.dark_oak_furnace_boat": "화로가 실린 짙은 참나무 보트",
-  
   "item.boatload.large_oak_boat": "큰 참나무 보트",
   "item.boatload.large_spruce_boat": "큰 가문비나무 보트",
   "item.boatload.large_birch_boat": "큰 자작나무 보트",
   "item.boatload.large_jungle_boat": "큰 정글 나무 보트",
   "item.boatload.large_acacia_boat": "큰 아카시아나무 보트",
   "item.boatload.large_dark_oak_boat": "큰 짙은 참나무 보트",
-  
-  
-  "_comment": "Biomes O' Plenty",
-  
-  "item.boatload.cherry_chest_boat": "상자가 실린 벚나무 보트",
-  "item.boatload.dead_chest_boat": "상자가 실린 죽은 나무 보트",
-  "item.boatload.fir_chest_boat": "상자가 실린 전나무 보트",
-  "item.boatload.hellbark_chest_boat": "상자가 실린 지옥껍질나무 보트",
-  "item.boatload.jacaranda_chest_boat": "상자가 실린 자카란다나무 보트",
-  "item.boatload.magic_chest_boat": "상자가 실린 마법나무 보트",
-  "item.boatload.mahogany_chest_boat": "상자가 실린 마호가니 보트",
-  "item.boatload.palm_chest_boat": "상자가 실린 야자나무 보트",
-  "item.boatload.redwood_chest_boat": "상자가 실린 삼나무 보트",
-  "item.boatload.umbran_chest_boat": "상자가 실린 엄브란나무 보트",
-  "item.boatload.willow_chest_boat": "상자가 실린 버드나무 보트",
-  
-  "item.boatload.cherry_furnace_boat": "화로가 실린 벚나무 보트",
-  "item.boatload.dead_furnace_boat": "화로가 실린 죽은 나무 보트",
-  "item.boatload.fir_furnace_boat": "화로가 실린 전나무 보트",
-  "item.boatload.hellbark_furnace_boat": "화로가 실린 지옥껍질나무 보트",
-  "item.boatload.jacaranda_furnace_boat": "화로가 실린 자카란다나무 보트",
-  "item.boatload.magic_furnace_boat": "화로가 실린 마법나무 보트",
-  "item.boatload.mahogany_furnace_boat": "화로가 실린 마호가니 보트",
-  "item.boatload.palm_furnace_boat": "화로가 실린 야자나무 보트",
-  "item.boatload.redwood_furnace_boat": "화로가 실린 삼나무 보트",
-  "item.boatload.umbran_furnace_boat": "화로가 실린 엄브란나무 보트",
-  "item.boatload.willow_furnace_boat": "화로가 실린 버드나무 보트",
-  
-  "item.boatload.large_cherry_boat": "큰 벚나무 보트",
-  "item.boatload.large_dead_boat": "큰 죽은 나무 보트",
-  "item.boatload.large_fir_boat": "큰 전나무 보트",
-  "item.boatload.large_hellbark_boat": "큰 지옥껍질나무 보트",
-  "item.boatload.large_jacaranda_boat": "큰 자카란다나무 보트",
-  "item.boatload.large_magic_boat": "큰 마법나무 보트",
-  "item.boatload.large_mahogany_boat": "큰 마호가니 보트",
-  "item.boatload.large_palm_boat": "큰 야자나무 보트",
-  "item.boatload.large_redwood_boat": "큰 삼나무 보트",
-  "item.boatload.large_umbran_boat": "큰 엄브란나무 보트",
-  "item.boatload.large_willow_boat": "큰 버드나무 보트",
-  
-  
-  "_comment": "Upgrade Aquatic",
-  
-  "item.boatload.driftwood_chest_boat": "상자가 실린 유목 보트",
-  "item.boatload.river_chest_boat": "상자가 실린 강가 나무 보트",
-  
-  "item.boatload.driftwood_furnace_boat": "화로가 실린 유목 보트",
-  "item.boatload.river_furnace_boat": "화로가 실린 강가 나무 보트",
-  
-  "item.boatload.large_driftwood_boat": "큰 유목 보트",
-  "item.boatload.large_river_boat": "큰 강가 나무 보트",
-  
-  
-  "_comment": "Bamboo Blocks",
-  
-  "item.boatload.bamboo_chest_boat": "상자가 실린 대나무 보트",
-  "item.boatload.bamboo_furnace_boat": "화로가 실린 대나무 보트",
-  "item.boatload.large_bamboo_boat": "큰 대나무 보트",
-  
-  
-  "_comment": "Endergetic Expansion",
-  
-  "item.boatload.poise_chest_boat": "상자가 실린 포이즈 보트",
-  "item.boatload.poise_furnace_boat": "화로가 실린 포이즈 보트",
-  "item.boatload.large_poise_boat": "큰 포이즈 보트",
-  
-  
-  "_comment": "Environmental",
-  
-  "item.boatload.wisteria_chest_boat": "상자가 실린 등나무 보트",
-  "item.boatload.wisteria_furnace_boat": "화로가 실린 등나무 보트",
-  "item.boatload.large_wisteria_boat": "큰 등나무 보트",
-  
-  "item.boatload.willow_chest_boat": "상자가 실린 버드나무 보트",
-  "item.boatload.willow_furnace_boat": "화로가 실린 버드나무 보트",
-  "item.boatload.large_willow_boat": "큰 버드나무 보트",
-  
-  "item.boatload.cherry_chest_boat": "상자가 실린 벚나무 보트",
-  "item.boatload.cherry_furnace_boat": "화로가 실린 벚나무 보트",
-  "item.boatload.large_cherry_boat": "큰 벚나무 보트",
-  
-  
-  "_comment": "Atmospheric",
-  
-  "item.boatload.rosewood_chest_boat": "상자가 실린 자단나무 보트",
-  "item.boatload.morado_chest_boat": "상자가 실린 모라도나무 보트",
-  "item.boatload.aspen_chest_boat": "상자가 실린 사시나무 보트",
-  "item.boatload.kousa_chest_boat": "상자가 실린 산딸나무 보트",
-  "item.boatload.yucca_chest_boat": "상자가 실린 유카나무 보트",
-  "item.boatload.grimwood_chest_boat": "상자가 실린 그림우드 보트",
-  
-  "item.boatload.rosewood_furnace_boat": "상자가 실린 자단나무 보트",
-  "item.boatload.morado_furnace_boat": "상자가 실린 모라도나무 보트",
-  "item.boatload.aspen_furnace_boat": "상자가 실린 사시나무 보트",
-  "item.boatload.kousa_furnace_boat": "상자가 실린 산딸나무 보트",
-  "item.boatload.yucca_furnace_boat": "상자가 실린 유카나무 보트",
-  "item.boatload.grimwood_furnace_boat": "상자가 실린 그림우드 보트",
-  
-  "item.boatload.large_rosewood_boat": "큰 자단나무 보트",
-  "item.boatload.large_morado_boat": "큰 모라도나무 보트",
-  "item.boatload.large_aspen_boat": "큰 사시나무 보트",
-  "item.boatload.large_kousa_boat": "큰 산딸나무 보트",
-  "item.boatload.large_yucca_boat": "큰 유카나무 보트",
-  "item.boatload.large_grimwood_boat": "큰 그림우드 보트",
-  
-  
-  "_comment": "Autumnity",
-  
-  "item.boatload.maple_chest_boat": "상자가 실린 단풍나무 보트",
-  "item.boatload.maple_furnace_boat": "화로가 실린 단풍나무 보트",
-  "item.boatload.large_maple_boat": "큰 단풍나무 보트",
-
-
-  "_comment": "Enhanced Mushrooms",
-
-  "item.boatload.red_mushroom_chest_boat": "상자가 실린 빨간색 버섯 보트",
-  "item.boatload.brown_mushroom_chest_boat": "상자가 실린 갈색 버섯 보트",
-  "item.boatload.glowshroom_chest_boat": "상자가 실린 발광버섯 보트",
-
-  "item.boatload.red_mushroom_furnace_boat": "화로가 실린 빨간색 버섯 보트",
-  "item.boatload.brown_mushroom_furnace_boat": "화로가 실린 갈색 버섯 보트",
-  "item.boatload.glowshroom_furnace_boat": "화로가 실린 발광버섯 보트",
-
-  "item.boatload.large_red_mushroom_boat": "큰 빨간색 버섯 보트",
-  "item.boatload.large_brown_mushroom_boat": "큰 갈색 버섯 보트",
-  "item.boatload.large_glowshroom_boat": "큰 발광버섯 보트",
-
-
-  "_comment": "Hanami",
-
-  "item.boatload.sakura_chest_boat": "상자가 실린 벚나무 보트",
-  "item.boatload.sakura_furnace_boat": "화로가 실린 벚나무 보트",
-  "item.boatload.large_sakura_boat": "큰 벚나무 보트",
-
-
-  "_comment": "Nether Extension",
-
   "item.boatload.crimson_chest_boat": "상자가 실린 진홍빛 보트",
   "item.boatload.warped_chest_boat": "상자가 실린 뒤틀린 보트",
-
   "item.boatload.crimson_furnace_boat": "화로가 실린 진홍빛 보트",
   "item.boatload.warped_furnace_boat": "화로가 실린 뒤틀린 보트",
-  
   "item.boatload.large_crimson_boat": "큰 진홍빛 보트",
   "item.boatload.large_warped_boat": "큰 뒤틀린 보트"
 }

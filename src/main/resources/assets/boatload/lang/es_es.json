@@ -1,176 +1,22 @@
 {
-  "itemGroup.boatload": "Extra Boats",
-  
-  "entity.boatload.chest_boat": "Barca con cofre",
   "entity.boatload.furnace_boat": "Barca con horno",
   "entity.boatload.large_boat": "Barca grande",
-  
-  
-  "_comment": "Vanilla",
-  
-  "item.boatload.oak_chest_boat": "Barca de roble con cofre",
-  "item.boatload.spruce_chest_boat": "Barca de abeto con cofre",
-  "item.boatload.birch_chest_boat": "Barca de abedul con cofre",
-  "item.boatload.jungle_chest_boat": "Barca de jungla con cofre",
-  "item.boatload.acacia_chest_boat": "Barca de acacia con cofre",
-  "item.boatload.dark_oak_chest_boat": "Barca de roble oscuro con cofre",
-  
   "item.boatload.oak_furnace_boat": "Barca de roble con horno",
   "item.boatload.spruce_furnace_boat": "Barca de abeto con horno",
   "item.boatload.birch_furnace_boat": "Barca de abedul con horno",
   "item.boatload.jungle_furnace_boat": "Barca de jungla con horno",
   "item.boatload.acacia_furnace_boat": "Barca de acacia con horno",
   "item.boatload.dark_oak_furnace_boat": "Barca de roble oscuro con horno",
-  
   "item.boatload.large_oak_boat": "Barca de roble grande",
   "item.boatload.large_spruce_boat": "Barca de abeto grande",
   "item.boatload.large_birch_boat": "Barca de abedul grande",
   "item.boatload.large_jungle_boat": "Barca de jungla grande",
   "item.boatload.large_acacia_boat": "Barca de acacia grande",
   "item.boatload.large_dark_oak_boat": "Barca de roble oscuro grande",
-  
-  
-  "_comment": "Biomes O' Plenty",
-  
-  "item.boatload.cherry_chest_boat": "Barca de cerezo con cofre",
-  "item.boatload.dead_chest_boat": "Barca muerta con cofre",
-  "item.boatload.fir_chest_boat": "Barca de abeto blanco con cofre",
-  "item.boatload.hellbark_chest_boat": "Barca de corteza infernal con cofre",
-  "item.boatload.jacaranda_chest_boat": "Barca de jacarandá con cofre",
-  "item.boatload.magic_chest_boat": "Barca mágica con cofre",
-  "item.boatload.mahogany_chest_boat": "Barca de caoba con cofre",
-  "item.boatload.palm_chest_boat": "Barca de palmera con cofre",
-  "item.boatload.redwood_chest_boat": "Barca de secoya con cofre",
-  "item.boatload.umbran_chest_boat": "Barca sombría con cofre",
-  "item.boatload.willow_chest_boat": "Barca de sauce con cofre",
-  
-  "item.boatload.cherry_furnace_boat": "Barca de cerezo con horno",
-  "item.boatload.dead_furnace_boat": "Barca muerta con horno",
-  "item.boatload.fir_furnace_boat": "Barca de abeto blanco con horno",
-  "item.boatload.hellbark_furnace_boat": "Barca de corteza infernal con horno",
-  "item.boatload.jacaranda_furnace_boat": "Barca de jacarandá con horno",
-  "item.boatload.magic_furnace_boat": "Barca mágica con horno",
-  "item.boatload.mahogany_furnace_boat": "Barca de caoba con horno",
-  "item.boatload.palm_furnace_boat": "Barca de palmera con horno",
-  "item.boatload.redwood_furnace_boat": "Barca de secoya con horno",
-  "item.boatload.umbran_furnace_boat": "Barca sombría con horno",
-  "item.boatload.willow_furnace_boat": "Barca de sauce con horno",
-  
-  "item.boatload.large_cherry_boat": "Barca de cerezo grande",
-  "item.boatload.large_dead_boat": "Barca muerta grande",
-  "item.boatload.large_fir_boat": "Barca de abeto blanco grande",
-  "item.boatload.large_hellbark_boat": "Barca de corteza infernal grande",
-  "item.boatload.large_jacaranda_boat": "Barca de jacarandá grande",
-  "item.boatload.large_magic_boat": "Barca mágica grande",
-  "item.boatload.large_mahogany_boat": "Barca de caoba grande",
-  "item.boatload.large_palm_boat": "Barca de palmera grande",
-  "item.boatload.large_redwood_boat": "Barca de secoya grande",
-  "item.boatload.large_umbran_boat": "Barca sombría grande",
-  "item.boatload.large_willow_boat": "Barca de sauce grande",
-  
-  
-  "_comment": "Upgrade Aquatic",
-  
-  "item.boatload.driftwood_chest_boat": "Barca de deriva con cofre",
-  "item.boatload.river_chest_boat": "Barca ribereña con cofre",
-  
-  "item.boatload.driftwood_furnace_boat": "Barca de deriva con horno",
-  "item.boatload.river_furnace_boat": "Barca ribereña con horno",
-  
-  "item.boatload.large_driftwood_boat": "Barca de deriva grande",
-  "item.boatload.large_river_boat": "Barca ribereña grande",
-  
-  
-  "_comment": "Bamboo Blocks",
-  
-  "item.boatload.bamboo_chest_boat": "Barca de bambú con cofre",
-  "item.boatload.bamboo_furnace_boat": "Barca de bambú con horno",
-  "item.boatload.large_bamboo_boat": "Barca de bambú grande",
-  
-  
-  "_comment": "Endergetic Expansion",
-  
-  "item.boatload.poise_chest_boat": "Barca equilibrada con cofre",
-  "item.boatload.poise_furnace_boat": "Barca equilibrada con horno",
-  "item.boatload.large_poise_boat": "Barca equilibrada grande",
-  
-  
-  "_comment": "Environmental",
-  
-  "item.boatload.wisteria_chest_boat": "Barca de glicina con cofre",
-  "item.boatload.wisteria_furnace_boat": "Barca de glicina con horno",
-  "item.boatload.large_wisteria_boat": "Barca de glicina grande",
-
-  "item.boatload.willow_chest_boat": "Barca de sauce con cofre",
-  "item.boatload.willow_furnace_boat": "Barca de sauce con horno",
-  "item.boatload.large_willow_boat": "Barca de sauce grande",
-  
-  "item.boatload.cherry_chest_boat": "Barca de cerezo con cofre",
-  "item.boatload.cherry_furnace_boat": "Barca de cerezo con horno",
-  "item.boatload.large_cherry_boat": "Barca de cerezo grande",
-  
-  
-  "_comment": "Atmospheric",
-  
-  "item.boatload.rosewood_chest_boat": "Barca de palisandro con cofre",
-  "item.boatload.morado_chest_boat": "Barca de palo de hierro con cofre",
-  "item.boatload.aspen_chest_boat": "Barca de álamo con cofre",
-  "item.boatload.kousa_chest_boat": "Barca de kousa con cofre",
-  "item.boatload.yucca_chest_boat": "Barca de yuca con cofre",
-  "item.boatload.grimwood_chest_boat": "Barca siniestra con cofre",
-  
-  "item.boatload.rosewood_furnace_boat": "Barca de palisandro con horno",
-  "item.boatload.morado_furnace_boat": "Barca de palo de hierro con horno",
-  "item.boatload.aspen_furnace_boat": "Barca de álamo con horno",
-  "item.boatload.kousa_furnace_boat": "Barca de kousa con horno",
-  "item.boatload.yucca_furnace_boat": "Barca de yuca con horno",
-  "item.boatload.grimwood_furnace_boat": "Barca siniestra con horno",
-  
-  "item.boatload.large_rosewood_boat": "Barca de palisandro grande",
-  "item.boatload.large_morado_boat": "Barca de palo de hierro grande",
-  "item.boatload.large_aspen_boat": "Barca de álamo grande",
-  "item.boatload.large_kousa_boat": "Barca de kousa grande",
-  "item.boatload.large_yucca_boat": "Barca de yuca grande",
-  "item.boatload.large_grimwood_boat": "Barca siniestra grande",
-  
-  
-  "_comment": "Autumnity",
-  
-  "item.boatload.maple_chest_boat": "Barca de arce con cofre",
-  "item.boatload.maple_furnace_boat": "Barca de arce con horno",
-  "item.boatload.large_maple_boat": "Barca de arce grande",
-
-
-  "_comment": "Enhanced Mushrooms",
-
-  "item.boatload.red_mushroom_chest_boat": "Barca de champiñón rojo con cofre",
-  "item.boatload.brown_mushroom_chest_boat": "Barca de champiñón marrón con cofre",
-  "item.boatload.glowshroom_chest_boat": "Barca de champiluz con cofre",
-
-  "item.boatload.red_mushroom_furnace_boat": "Barca de champiñón rojo con horno",
-  "item.boatload.brown_mushroom_furnace_boat": "Barca de champiñón marrón con horno",
-  "item.boatload.glowshroom_furnace_boat": "Barca de champiluz con horno",
-
-  "item.boatload.large_red_mushroom_boat": "Barca de champiñón rojo grande",
-  "item.boatload.large_brown_mushroom_boat": "Barca de champiñón marrón grande",
-  "item.boatload.large_glowshroom_boat": "Barca de champiluz grande",
-
-
-  "_comment": "Hanami",
-
-  "item.boatload.sakura_chest_boat": "Barca de sakura con cofre",
-  "item.boatload.sakura_furnace_boat": "Barca de sakura con horno",
-  "item.boatload.large_sakura_boat": "Barca de sakura grande",
-
-
-  "_comment": "Nether Extension",
-
   "item.boatload.crimson_chest_boat": "Barca carmesí con cofre",
   "item.boatload.warped_chest_boat": "Barca distorsionada con cofre",
-
   "item.boatload.crimson_furnace_boat": "Barca carmesí con horno",
   "item.boatload.warped_furnace_boat": "Barca distorsionada con horno",
-
   "item.boatload.large_crimson_boat": "Barca carmesí grande",
   "item.boatload.large_warped_boat": "Barca distorsionada grande"
 }

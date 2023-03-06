@@ -11,7 +11,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.HitResult;
 
 public class LargeBoatItem extends BoatloadBoatItem {
 	private final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(() -> this.getType().furnaceBoat().get());
@@ -25,8 +24,8 @@ public class LargeBoatItem extends BoatloadBoatItem {
 	}
 
 	@Override
-	protected BoatloadBoat getBoatEntity(Level level, HitResult result, ItemStack stack) {
-		return new LargeBoat(level, result.getLocation().x, result.getLocation().y, result.getLocation().z);
+	protected BoatloadBoat getBoatEntity(Level level, double x, double y, double z, ItemStack stack) {
+		return new LargeBoat(level, x, y, z);
 	}
 
 	@Override

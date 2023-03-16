@@ -1,7 +1,7 @@
 package com.teamabnormals.boatload.core.data.server;
 
+import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import com.teamabnormals.boatload.core.Boatload;
-import com.teamabnormals.boatload.core.other.BoatloadItemTags;
 import com.teamabnormals.boatload.core.other.BoatloadUtil;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -20,9 +20,9 @@ public class BoatloadItemTagsProvider extends ItemTagsProvider {
 	@Override
 	protected void addTags() {
 		this.tag(ItemTags.NON_FLAMMABLE_WOOD).add(CRIMSON_BOAT.get(), CRIMSON_CHEST_BOAT.get(), CRIMSON_FURNACE_BOAT.get(), LARGE_CRIMSON_BOAT.get(), WARPED_BOAT.get(), WARPED_CHEST_BOAT.get(), WARPED_FURNACE_BOAT.get(), LARGE_WARPED_BOAT.get());
-		this.tag(ItemTags.BOATS).add(CRIMSON_BOAT.get(), WARPED_BOAT.get()).addTag(BoatloadItemTags.FURNACE_BOATS).addTag(BoatloadItemTags.LARGE_BOATS);
+		this.tag(ItemTags.BOATS).add(CRIMSON_BOAT.get(), WARPED_BOAT.get()).addTag(BlueprintItemTags.FURNACE_BOATS).addTag(BlueprintItemTags.LARGE_BOATS);
 		this.tag(ItemTags.CHEST_BOATS).add(CRIMSON_CHEST_BOAT.get(), WARPED_CHEST_BOAT.get());
-		BoatloadUtil.getFurnaceBoats().forEach(boat -> this.tag(BoatloadItemTags.FURNACE_BOATS).add(boat));
-		BoatloadUtil.getLargeBoats().forEach(boat -> this.tag(BoatloadItemTags.LARGE_BOATS).add(boat));
+		BoatloadUtil.getFurnaceBoats().forEach(boat -> this.tag(BlueprintItemTags.FURNACE_BOATS).add(boat));
+		BoatloadUtil.getLargeBoats().forEach(boat -> this.tag(BlueprintItemTags.LARGE_BOATS).add(boat));
 	}
 }

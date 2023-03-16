@@ -9,7 +9,9 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
@@ -29,11 +31,15 @@ public class BoatloadRecipeProvider extends RecipeProvider {
 		BoatloadUtil.getLargeBoats().forEach(item -> largeBoat(consumer, item));
 	}
 
-	private void furnaceBoat(Consumer<FinishedRecipe> consumer, BoatloadBoatItem item) {
-		ShapelessRecipeBuilder.shapeless(item).requires(Blocks.FURNACE).requires(item.getType().boat().get()).group("furnace_boat").unlockedBy("has_boat", has(ItemTags.BOATS)).save(consumer);
+	protected static void chestBoat(Consumer<FinishedRecipe> consumer, ItemLike chestBoat, ItemLike boat) {
+		ShapelessRecipeBuilder.shapeless(chestBoat).requires(Tags.Items.CHESTS_WOODEN).requires(boat).group("chest_boat").unlockedBy("has_boat", has(ItemTags.BOATS)).save(consumer);
 	}
 
-	private void largeBoat(Consumer<FinishedRecipe> consumer, BoatloadBoatItem item) {
-		ShapedRecipeBuilder.shaped(item).define('#', item.getType().planks().get()).define('B', item.getType().boat().get()).pattern("#B#").pattern("###").group("large_boat").unlockedBy("has_boat", has(ItemTags.BOATS)).save(consumer);
+	private static void furnaceBoat(Consumer<FinishedRecipe> consumer, BoatloadBoatItem furnaceBoat) {
+		ShapelessRecipeBuilder.shapeless(furnaceBoat).requires(Blocks.FURNACE).requires(furnaceBoat.getType().boat().get()).group("furnace_boat").unlockedBy("has_boat", has(ItemTags.BOATS)).save(consumer);
+	}
+
+	private static void largeBoat(Consumer<FinishedRecipe> consumer, BoatloadBoatItem largeBoat) {
+		ShapedRecipeBuilder.shaped(largeBoat).define('#', largeBoat.getType().planks().get()).define('B', largeBoat.getType().boat().get()).pattern("#B#").pattern("###").group("large_boat").unlockedBy("has_boat", has(ItemTags.BOATS)).save(consumer);
 	}
 }

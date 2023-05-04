@@ -13,10 +13,14 @@
   "item.boatload.large_jungle_boat": "Bote de jungla grande",
   "item.boatload.large_acacia_boat": "Bote de acacia grande",
   "item.boatload.large_dark_oak_boat": "Bote de roble oscuro grande",
+  "item.boatload.crimson_boat": "Bote carmesí",
   "item.boatload.crimson_chest_boat": "Bote carmesí con cofre",
-  "item.boatload.warped_chest_boat": "Bote distorsionado con cofre",
   "item.boatload.crimson_furnace_boat": "Bote carmesí con horno",
-  "item.boatload.warped_furnace_boat": "Bote distorsionado con horno",
   "item.boatload.large_crimson_boat": "Bote carmesí grande",
-  "item.boatload.large_warped_boat": "Bote distorsionado grande"
+  "item.boatload.warped_boat": "Bote distorsionado",
+  "item.boatload.warped_furnace_boat": "Bote distorsionado con horno",
+  "item.boatload.large_warped_boat": "Bote distorsionado grande",
+  "item.boatload.warped_chest_boat": "Bote distorsionado con cofre",
+  "item.boatload.mangrove_furnace_boat": "Bote de mangle con horno",
+  "item.boatload.large_mangrove_boat": "Bote de mangle grande"
 }

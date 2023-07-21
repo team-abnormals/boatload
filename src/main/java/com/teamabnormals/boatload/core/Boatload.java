@@ -71,7 +71,7 @@ public class Boatload {
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
-		//generator.addProvider(includeServer, new BoatloadItemTagsProvider(output, helper));
+		generator.addProvider(includeServer, new BoatloadItemTagsProvider(output, event.getLookupProvider(), helper));
 		generator.addProvider(includeServer, new BoatloadRecipeProvider(output));
 
 		boolean includeClient = event.includeClient();

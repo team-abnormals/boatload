@@ -6,18 +6,20 @@ import com.teamabnormals.boatload.core.other.BoatloadUtil;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import static com.teamabnormals.boatload.core.registry.BoatloadItems.*;
 
-public class BoatloadItemTagsProvider extends ItemTagsProvider {
+import java.util.concurrent.CompletableFuture;
 
-	//TODO: Update this code for 1.20.1.
-	public BoatloadItemTagsProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
-		super(generator, null, null, Boatload.MOD_ID, existingFileHelper);
-		//super(generator, new BlockTagsProvider(generator, Boatload.MOD_ID, existingFileHelper), Boatload.MOD_ID, existingFileHelper);
+public class BoatloadItemTagsProvider extends IntrinsicHolderTagsProvider<Item> {
+
+	public BoatloadItemTagsProvider(PackOutput generator, CompletableFuture<Provider> provider, ExistingFileHelper existingFileHelper) {
+		super(generator, ForgeRegistries.Keys.ITEMS, provider, lookup -> ForgeRegistries.ITEMS.getResourceKey(lookup).get(), Boatload.MOD_ID, existingFileHelper);
 	}
 
 	@Override

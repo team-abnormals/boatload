@@ -4,8 +4,16 @@ import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.boatload.core.Boatload;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.registry.helper.BoatloadItemSubRegistryHelper;
+
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.util.MutableHashedLinkedMap;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -45,4 +53,32 @@ public class BoatloadItems {
 	public static RegistryObject<Item> WARPED_CHEST_BOAT = WARPED_BOATS.getSecond();
 	public static RegistryObject<Item> WARPED_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.WARPED);
 	public static RegistryObject<Item> LARGE_WARPED_BOAT = HELPER.createLargeBoat(BoatloadBoatType.WARPED);
+	
+	@SubscribeEvent
+	public static void addItemsToTabs(BuildCreativeModeTabContentsEvent event) {
+		MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> map = event.getEntries();
+		if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+			expandVanillaBoatItems(map, Items.OAK_CHEST_BOAT, OAK_FURNACE_BOAT.get(), LARGE_OAK_BOAT.get());
+			expandVanillaBoatItems(map, Items.SPRUCE_CHEST_BOAT, SPRUCE_FURNACE_BOAT.get(), LARGE_SPRUCE_BOAT.get());
+			expandVanillaBoatItems(map, Items.BIRCH_CHEST_BOAT, BIRCH_FURNACE_BOAT.get(), LARGE_BIRCH_BOAT.get());
+			expandVanillaBoatItems(map, Items.JUNGLE_CHEST_BOAT, JUNGLE_FURNACE_BOAT.get(), LARGE_JUNGLE_BOAT.get());
+			expandVanillaBoatItems(map, Items.ACACIA_CHEST_BOAT, ACACIA_FURNACE_BOAT.get(), LARGE_ACACIA_BOAT.get());
+			expandVanillaBoatItems(map, Items.DARK_OAK_CHEST_BOAT, DARK_OAK_FURNACE_BOAT.get(), LARGE_DARK_OAK_BOAT.get());
+			expandVanillaBoatItems(map, Items.MANGROVE_CHEST_BOAT, MANGROVE_FURNACE_BOAT.get(), LARGE_MANGROVE_BOAT.get());
+			addBoatItems(map, Items.CHERRY_CHEST_BOAT, CRIMSON_BOAT.get(), CRIMSON_CHEST_BOAT.get(), CRIMSON_FURNACE_BOAT.get(), LARGE_CRIMSON_BOAT.get());
+			addBoatItems(map, LARGE_CRIMSON_BOAT.get(), WARPED_BOAT.get(), WARPED_CHEST_BOAT.get(), WARPED_FURNACE_BOAT.get(), LARGE_WARPED_BOAT.get());
+		}
+	}
+	
+	public static void expandVanillaBoatItems(MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> map, Item originalItem, Item furnaceBoatItem, Item largeBoatItem) {
+		map.putAfter(originalItem.getDefaultInstance(), furnaceBoatItem.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+		map.putAfter(furnaceBoatItem.getDefaultInstance(), largeBoatItem.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+	}
+	
+	public static void addBoatItems(MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> map, Item appendAfterItem, Item baseBoatItem, Item chestBoatItem, Item furnaceBoatItem, Item largeBoatItem) {
+		map.putAfter(appendAfterItem.getDefaultInstance(), baseBoatItem.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+		map.putAfter(baseBoatItem.getDefaultInstance(), chestBoatItem.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+		map.putAfter(chestBoatItem.getDefaultInstance(), furnaceBoatItem.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+		map.putAfter(furnaceBoatItem.getDefaultInstance(), largeBoatItem.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+	}
 }

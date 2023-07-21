@@ -22,17 +22,17 @@ public class BoatloadItemSubRegistryHelper extends ItemSubRegistryHelper {
 
 	public Pair<RegistryObject<Item>, RegistryObject<Item>> createBoatAndChestBoatItem(String wood, Block block, boolean raft) {
 		ResourceLocation type = new ResourceLocation(this.parent.getModId() + ":" + wood);
-		RegistryObject<Item> boat = this.deferredRegister.register(wood + "_boat", () -> new BlueprintBoatItem(false, type, createSimpleItemProperty(1)));
-		RegistryObject<Item> chestBoat = this.deferredRegister.register(wood + "_chest_boat", () -> new BlueprintBoatItem(true, type, createSimpleItemProperty(1)));
+		RegistryObject<Item> boat = this.deferredRegister.register(wood + "_" + (raft ? "raft" : "boat"), () -> new BlueprintBoatItem(false, type, createSimpleItemProperty(1)));
+		RegistryObject<Item> chestBoat = this.deferredRegister.register(wood + "_chest_" + (raft ? "raft" : "boat"), () -> new BlueprintBoatItem(true, type, createSimpleItemProperty(1)));
 		BlueprintBoatTypes.registerType(type, () -> { return boat.get(); } , () -> { return chestBoat.get(); } , () -> block, raft);
 		return Pair.of(boat, chestBoat);
 	}
 
 	public RegistryObject<Item> createFurnaceBoat(BoatloadBoatType type) {
-		return this.deferredRegister.register(type.registryName().getPath() + "_furnace_boat", () -> new FurnaceBoatItem(type));
+		return this.deferredRegister.register(type.registryName().getPath() + "_furnace_" + (type.raft() ? "raft" : "boat"), () -> new FurnaceBoatItem(type));
 	}
 
 	public RegistryObject<Item> createLargeBoat(BoatloadBoatType type) {
-		return this.deferredRegister.register("large_" + type.registryName().getPath() + "_boat", () -> new LargeBoatItem(type));
+		return this.deferredRegister.register("large_" + type.registryName().getPath() + "_" + (type.raft() ? "raft" : "boat"), () -> new LargeBoatItem(type));
 	}
 }

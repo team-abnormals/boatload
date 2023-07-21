@@ -6,10 +6,16 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.math.Axis;
 import com.teamabnormals.boatload.client.model.FurnaceBoatModel;
+import com.teamabnormals.boatload.client.model.FurnaceRaftModel;
 import com.teamabnormals.boatload.common.entity.vehicle.FurnaceBoat;
+import com.teamabnormals.boatload.core.Boatload;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
-import net.minecraft.client.model.BoatModel;
+
+import net.minecraft.client.model.ListModel;
+import net.minecraft.client.model.WaterPatchModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -17,23 +23,41 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Map;
-
 import org.joml.Quaternionf;
 
 @OnlyIn(Dist.CLIENT)
 public class FurnaceBoatRenderer extends EntityRenderer<FurnaceBoat> {
-	private final Map<BoatloadBoatType, Pair<ResourceLocation, FurnaceBoatModel>> boatResources;
+	private final Map<BoatloadBoatType, Pair<ResourceLocation, ListModel<Boat>>> boatResources;
 
 	public FurnaceBoatRenderer(EntityRendererProvider.Context context) {
 		super(context);
 		this.shadowRadius = 0.8F;
-		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.registryName().getNamespace(), "textures/entity/furnace_boat/" + boatType.registryName().getPath()), new FurnaceBoatModel(context.bakeLayer(BoatloadModelLayers.createFurnaceBoatModelName(boatType))))));
+		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((temp) -> {
+			return temp;
+		}, (boattype) -> {
+			return Pair.of(new ResourceLocation(Boatload.MOD_ID, getTextureLocation(boattype)), this.createFurnaceBoatModel(context, boattype));
+		}));
 	}
 
+	private static String getTextureLocation(BoatloadBoatType boattype) {
+		return "textures/entity/furnace_boat/" + boattype.registryName().getPath();
+	}
+	
+	private ListModel<Boat> createFurnaceBoatModel(EntityRendererProvider.Context context, BoatloadBoatType boattype) {
+		ModelLayerLocation modellayerlocation = BoatloadModelLayers.createFurnaceBoatModelName(boattype);
+		ModelPart modelpart = context.bakeLayer(modellayerlocation);
+		if (boattype.raft()) {
+			return (ListModel<Boat>) new FurnaceRaftModel(modelpart);
+		} else {
+			return (ListModel<Boat>) new FurnaceBoatModel(modelpart);
+		}
+	}
+	
 	@Override
 	public void render(FurnaceBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
 		matrixStackIn.pushPose();
@@ -54,17 +78,20 @@ public class FurnaceBoatRenderer extends EntityRenderer<FurnaceBoat> {
 			matrixStackIn.mulPose((new Quaternionf()).setAngleAxis(entityIn.getBubbleAngle(partialTicks) * ((float)Math.PI / 180F), 1.0F, 0.0F, 1.0F));
 		}
 
-		Pair<ResourceLocation, FurnaceBoatModel> pair = getModelWithLocation(entityIn);
+		Pair<ResourceLocation, ListModel<Boat>> pair = getModelWithLocation(entityIn.getBoatloadBoatType());
 		ResourceLocation boatLocation = this.getTextureLocation(entityIn);
-		BoatModel boatModel = pair.getSecond();
+		ListModel<Boat> listmodel = pair.getSecond();
 		matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
 		matrixStackIn.mulPose(Axis.YP.rotationDegrees(90.0F));
-		boatModel.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
-		VertexConsumer ivertexbuilder = bufferIn.getBuffer(boatModel.renderType(boatLocation));
-		boatModel.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+		listmodel.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
+		VertexConsumer ivertexbuilder = bufferIn.getBuffer(listmodel.renderType(boatLocation));
+		listmodel.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 		if (!entityIn.isUnderWater()) {
-			VertexConsumer ivertexbuilder1 = bufferIn.getBuffer(RenderType.waterMask());
-			boatModel.waterPatch().render(matrixStackIn, ivertexbuilder1, packedLightIn, OverlayTexture.NO_OVERLAY);
+			VertexConsumer vertexconsumer1 = bufferIn.getBuffer(RenderType.waterMask());
+			if (listmodel instanceof WaterPatchModel) {
+				WaterPatchModel waterpatchmodel = (WaterPatchModel) listmodel;
+				waterpatchmodel.waterPatch().render(matrixStackIn, vertexconsumer1, packedLightIn, OverlayTexture.NO_OVERLAY);
+			}
 		}
 		matrixStackIn.popPose();
 		super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
@@ -72,13 +99,13 @@ public class FurnaceBoatRenderer extends EntityRenderer<FurnaceBoat> {
 
 	@Override
 	public ResourceLocation getTextureLocation(FurnaceBoat boat) {
-		String name = this.getModelWithLocation(boat).getFirst().toString();
+		String name = this.getModelWithLocation(boat.getBoatloadBoatType()).getFirst().toString();
 		if (boat.getFuel() > 0)
 			name += "_on";
 		return new ResourceLocation(name + ".png");
 	}
-
-	public Pair<ResourceLocation, FurnaceBoatModel> getModelWithLocation(FurnaceBoat boat) {
-		return this.boatResources.get(boat.getBoatloadBoatType());
+	
+	public Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(BoatloadBoatType boat) {
+		return this.boatResources.get(boat);
 	}
 }

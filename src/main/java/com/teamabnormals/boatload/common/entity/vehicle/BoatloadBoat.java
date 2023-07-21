@@ -6,12 +6,12 @@ import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
@@ -68,17 +68,17 @@ public abstract class BoatloadBoat extends Boat {
 						return;
 					}
 
-					this.causeFallDamage(this.fallDistance, 1.0F, DamageSource.FALL);
-					if (!this.level.isClientSide && !this.isRemoved()) {
+					this.causeFallDamage(this.fallDistance, 1.0F, this.damageSources().fall());
+					if (!this.level().isClientSide() && !this.isRemoved()) {
 						this.discard();
-						if (this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+						if (this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
 							this.dropBreakItems();
 						}
 					}
 				}
 
 				this.fallDistance = 0.0F;
-			} else if (!this.level.getFluidState(this.blockPosition().below()).is(FluidTags.WATER) && y < 0.0D) {
+			} else if (!this.level().getFluidState(this.blockPosition().below()).is(FluidTags.WATER) && y < 0.0D) {
 				this.fallDistance = (float) ((double) this.fallDistance - y);
 			}
 		}
@@ -98,25 +98,21 @@ public abstract class BoatloadBoat extends Boat {
 	public boolean hurt(DamageSource source, float amount) {
 		if (this.isInvulnerableTo(source)) {
 			return false;
-		} else if (!this.level.isClientSide && !this.isRemoved()) {
-			if (source instanceof IndirectEntityDamageSource && source.getEntity() != null && this.hasPassenger(source.getEntity())) {
-				return false;
-			} else {
-				this.setHurtDir(-this.getHurtDir());
-				this.setHurtTime(10);
-				this.setDamage(this.getDamage() + amount * 10.0F);
-				this.markHurt();
-				boolean flag = source.getEntity() instanceof Player && ((Player) source.getEntity()).getAbilities().instabuild;
-				if (flag || this.getDamage() > 40.0F) {
-					if (!flag && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-						this.destroy(source);
-					}
-
-					this.discard();
+		} else if (!this.level().isClientSide() && !this.isRemoved()) {
+			this.setHurtDir(-this.getHurtDir());
+			this.setHurtTime(10);
+			this.setDamage(this.getDamage() + amount * 10.0F);
+			this.markHurt();
+			boolean flag = source.getEntity() instanceof Player && ((Player) source.getEntity()).getAbilities().instabuild;
+			if (flag || this.getDamage() > 40.0F) {
+				if (!flag && this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+					this.destroy(source);
 				}
 
-				return true;
+				this.discard();
 			}
+
+			return true;
 		} else {
 			return true;
 		}
@@ -134,7 +130,7 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	@Override
-	public Packet<?> getAddEntityPacket() {
+	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 

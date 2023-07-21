@@ -4,7 +4,7 @@ import com.teamabnormals.boatload.core.Boatload;
 import com.teamabnormals.boatload.core.other.BoatloadUtil;
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
 import com.teamabnormals.boatload.core.registry.BoatloadItems;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -13,7 +13,7 @@ import org.apache.commons.lang3.text.WordUtils;
 
 public class BoatloadLanguageProvider extends LanguageProvider {
 
-	public BoatloadLanguageProvider(DataGenerator generator) {
+	public BoatloadLanguageProvider(PackOutput generator) {
 		super(generator, Boatload.MOD_ID, "en_us");
 	}
 

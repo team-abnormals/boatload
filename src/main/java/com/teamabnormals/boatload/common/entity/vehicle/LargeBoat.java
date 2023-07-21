@@ -79,9 +79,9 @@ public class LargeBoat extends BoatloadBoat {
 	public void tick() {
 		super.tick();
 
-		List<Entity> list = this.level.getEntities(this, this.getBoundingBox().inflate(0.2F, -0.01F, 0.2F), EntitySelector.pushableBy(this));
+		List<Entity> list = this.level().getEntities(this, this.getBoundingBox().inflate(0.2F, -0.01F, 0.2F), EntitySelector.pushableBy(this));
 		if (!list.isEmpty()) {
-			boolean flag = !this.level.isClientSide && !(this.getControllingPassenger() instanceof Player);
+			boolean flag = !this.level().isClientSide() && !(this.getControllingPassenger() instanceof Player);
 
 			for (Entity entity : list) {
 				if (!entity.hasPassenger(this)) {
@@ -126,7 +126,7 @@ public class LargeBoat extends BoatloadBoat {
 	}
 
 	@Override
-	public void positionRider(Entity passenger) {
+	public void positionRider(Entity passenger, Entity.MoveFunction func) {
 		if (this.hasPassenger(passenger)) {
 			float f = -0.2F;
 			float f1 = (float) ((this.isRemoved() ? (double) 0.01F : this.getPassengersRidingOffset()) + passenger.getMyRidingOffset());
@@ -185,7 +185,7 @@ public class LargeBoat extends BoatloadBoat {
 			}
 
 			Vec3 vector3d = (new Vec3(f, 0.0D, 0.0D)).yRot(-this.getYRot() * ((float) Math.PI / 180F) - ((float) Math.PI / 2F));
-			passenger.setPos(this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
+			func.accept(passenger, this.getX() + vector3d.x, this.getY() + (double) f1, this.getZ() + vector3d.z);
 			passenger.setYRot(passenger.getYRot() + this.deltaRotation);
 			passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);
 			this.clampRotation(passenger);

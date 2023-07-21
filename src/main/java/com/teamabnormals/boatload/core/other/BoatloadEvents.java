@@ -26,7 +26,7 @@ public class BoatloadEvents {
 
 				boat.setFuel(boat.getFuel() + 3600);
 				event.setCanceled(true);
-				event.setCancellationResult(InteractionResult.sidedSuccess(player.level.isClientSide()));
+				event.setCancellationResult(InteractionResult.sidedSuccess(player.level().isClientSide()));
 			}
 		}
 	}

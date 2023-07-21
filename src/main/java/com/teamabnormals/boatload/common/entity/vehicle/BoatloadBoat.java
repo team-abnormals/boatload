@@ -94,6 +94,10 @@ public abstract class BoatloadBoat extends Boat {
 		}
 	}
 
+	public double getPassengersRidingOffset() {
+		return this.getBoatloadBoatType().raft() ? 0.25D : -0.1D;
+	}
+	
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		if (this.isInvulnerableTo(source)) {

@@ -42,6 +42,12 @@ public class BoatloadItems {
 	public static RegistryObject<Item> MANGROVE_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.MANGROVE);
 	public static RegistryObject<Item> LARGE_MANGROVE_BOAT = HELPER.createLargeBoat(BoatloadBoatType.MANGROVE);
 
+	public static RegistryObject<Item> CHERRY_FURNACE_BOAT = HELPER.createFurnaceBoat(BoatloadBoatType.CHERRY);
+	public static RegistryObject<Item> LARGE_CHERRY_BOAT = HELPER.createLargeBoat(BoatloadBoatType.CHERRY);
+	
+	public static RegistryObject<Item> BAMBOO_FURNACE_RAFT = HELPER.createFurnaceBoat(BoatloadBoatType.BAMBOO);
+	public static RegistryObject<Item> LARGE_BAMBOO_RAFT = HELPER.createLargeBoat(BoatloadBoatType.BAMBOO);
+
 	public static Pair<RegistryObject<Item>, RegistryObject<Item>> CRIMSON_BOATS = HELPER.createBoatAndChestBoatItem("crimson", Blocks.CRIMSON_PLANKS, false);
 	public static RegistryObject<Item> CRIMSON_BOAT = CRIMSON_BOATS.getFirst();
 	public static RegistryObject<Item> CRIMSON_CHEST_BOAT = CRIMSON_BOATS.getSecond();
@@ -65,7 +71,9 @@ public class BoatloadItems {
 			expandVanillaBoatItems(map, Items.ACACIA_CHEST_BOAT, ACACIA_FURNACE_BOAT.get(), LARGE_ACACIA_BOAT.get());
 			expandVanillaBoatItems(map, Items.DARK_OAK_CHEST_BOAT, DARK_OAK_FURNACE_BOAT.get(), LARGE_DARK_OAK_BOAT.get());
 			expandVanillaBoatItems(map, Items.MANGROVE_CHEST_BOAT, MANGROVE_FURNACE_BOAT.get(), LARGE_MANGROVE_BOAT.get());
-			addBoatItems(map, Items.CHERRY_CHEST_BOAT, CRIMSON_BOAT.get(), CRIMSON_CHEST_BOAT.get(), CRIMSON_FURNACE_BOAT.get(), LARGE_CRIMSON_BOAT.get());
+			expandVanillaBoatItems(map, Items.CHERRY_CHEST_BOAT, CHERRY_FURNACE_BOAT.get(), LARGE_CHERRY_BOAT.get());
+			expandVanillaBoatItems(map, Items.BAMBOO_CHEST_RAFT, BAMBOO_FURNACE_RAFT.get(), LARGE_BAMBOO_RAFT.get());
+			addBoatItems(map, LARGE_BAMBOO_RAFT.get(), CRIMSON_BOAT.get(), CRIMSON_CHEST_BOAT.get(), CRIMSON_FURNACE_BOAT.get(), LARGE_CRIMSON_BOAT.get());
 			addBoatItems(map, LARGE_CRIMSON_BOAT.get(), WARPED_BOAT.get(), WARPED_CHEST_BOAT.get(), WARPED_FURNACE_BOAT.get(), LARGE_WARPED_BOAT.get());
 		}
 	}

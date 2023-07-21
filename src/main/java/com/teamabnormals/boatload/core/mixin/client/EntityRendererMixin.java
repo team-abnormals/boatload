@@ -2,7 +2,9 @@ package com.teamabnormals.boatload.core.mixin.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import com.teamabnormals.blueprint.common.entity.BlueprintBoat;
 import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
+import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
 import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import net.minecraft.client.renderer.LevelRenderer;
@@ -57,15 +59,44 @@ public abstract class EntityRendererMixin<T extends Entity> {
 				} else {
 					i = 15728880;
 				}
+				float xoffset = 0;
+				float yoffset = 0;
+				float zoffset = 0;
+				float angle = 180.0F;
+				if (isBoatRaft(boat)) {
+					xoffset = 1.0F;
+					yoffset = 2.0F;
+					zoffset = 17.0F;
+					angle = 0;
+				}
 
 				float f3 = boat instanceof LargeBoat ? 36.0F : 23.0F;
 				matrixStackIn.pushPose();
-				matrixStackIn.translate(0.5D, 3.0F / 16.0F, f3 / 16.0F);
-				matrixStackIn.mulPose(Axis.YP.rotationDegrees(180.0F));
+				matrixStackIn.translate((0.5D - xoffset), (3.0F - yoffset) / 16.0F, (f3 - zoffset) / 16.0F);
+				matrixStackIn.mulPose(Axis.YP.rotationDegrees(angle));
 				IClientItemExtensions.of(banner).getCustomRenderer().renderByItem(banner, ItemDisplayContext.GROUND, matrixStackIn, bufferIn, i, OverlayTexture.NO_OVERLAY);
 				matrixStackIn.popPose();
 			}
 			matrixStackIn.popPose();
 		}
+	}
+	
+	private boolean isBoatRaft(Boat boat) {
+		if (boat instanceof BoatloadBoat) {
+			if (((BoatloadBoat)boat).getBoatloadBoatType().raft()) {
+				return true;
+			}
+		}
+		else if (boat instanceof BlueprintBoat) {
+			if (((BlueprintBoat)boat).getBoatType().isRaft()) {
+				return true;
+			}
+		}
+		else {
+			if (((Boat)boat).getVariant() == Boat.Type.BAMBOO) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

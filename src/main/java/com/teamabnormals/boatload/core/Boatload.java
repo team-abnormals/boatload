@@ -10,20 +10,25 @@ import com.teamabnormals.boatload.common.dispenser.LargeBoatDispenseItemBehavior
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.data.client.BoatloadItemModelProvider;
 import com.teamabnormals.boatload.core.data.client.BoatloadLanguageProvider;
+import com.teamabnormals.boatload.core.data.server.BoatloadBlockTagsProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadItemTagsProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
 import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
 import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import com.teamabnormals.boatload.core.other.BoatloadUtil;
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
+import com.teamabnormals.boatload.core.registry.BoatloadItems;
 import com.teamabnormals.boatload.core.registry.helper.BoatloadItemSubRegistryHelper;
 import net.minecraft.client.model.BoatModel;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,6 +37,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.concurrent.CompletableFuture;
 
 @Mod(Boatload.MOD_ID)
 public class Boatload {
@@ -51,6 +58,7 @@ public class Boatload {
 		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
 			bus.addListener(this::registerLayerDefinitions);
 			bus.addListener(this::registerRenderers);
+			BoatloadItems.setupTabEditors();
 		});
 	}
 
@@ -64,21 +72,25 @@ public class Boatload {
 
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
+		PackOutput output = generator.getPackOutput();
+		CompletableFuture<Provider> lookupProvider = event.getLookupProvider();
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
-		generator.addProvider(includeServer, new BoatloadItemTagsProvider(generator, helper));
-		generator.addProvider(includeServer, new BoatloadRecipeProvider(generator));
+		BlockTagsProvider blockTags = new BoatloadBlockTagsProvider(output, lookupProvider, helper);
+		generator.addProvider(includeServer, blockTags);
+		generator.addProvider(includeServer, new BoatloadItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), helper));
+		generator.addProvider(includeServer, new BoatloadRecipeProvider(output));
 
 		boolean includeClient = event.includeClient();
-		generator.addProvider(includeClient, new BoatloadItemModelProvider(generator, helper));
-		generator.addProvider(includeClient, new BoatloadLanguageProvider(generator));
+		generator.addProvider(includeClient, new BoatloadItemModelProvider(output, helper));
+		generator.addProvider(includeClient, new BoatloadLanguageProvider(output));
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		for (BoatloadBoatType boatType : BoatloadBoatType.values()) {
-			event.registerLayerDefinition(BoatloadModelLayers.createBoatModelName(boatType), () -> BoatModel.createBodyModel(false));
+			event.registerLayerDefinition(BoatloadModelLayers.createBoatModelName(boatType), BoatModel::createBodyModel);
 			event.registerLayerDefinition(BoatloadModelLayers.createFurnaceBoatModelName(boatType), FurnaceBoatModel::createFurnaceBoatBodyModel);
 			event.registerLayerDefinition(BoatloadModelLayers.createLargeBoatModelName(boatType), LargeBoatModel::createBodyModel);
 		}

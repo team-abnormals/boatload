@@ -21,6 +21,7 @@ public record BoatloadBoatType(ResourceLocation registryName, Supplier<Item> pla
 	public static final BoatloadBoatType ACACIA = register(create(new ResourceLocation(Boatload.MOD_ID, "acacia"), () -> Items.ACACIA_PLANKS, () -> Items.ACACIA_BOAT, () -> Items.ACACIA_CHEST_BOAT, () -> BoatloadItems.ACACIA_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_ACACIA_BOAT.get()));
 	public static final BoatloadBoatType DARK_OAK = register(create(new ResourceLocation(Boatload.MOD_ID, "dark_oak"), () -> Items.DARK_OAK_PLANKS, () -> Items.DARK_OAK_BOAT, () -> Items.DARK_OAK_CHEST_BOAT, () -> BoatloadItems.DARK_OAK_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_DARK_OAK_BOAT.get()));
 	public static final BoatloadBoatType MANGROVE = register(create(new ResourceLocation(Boatload.MOD_ID, "mangrove"), () -> Items.MANGROVE_PLANKS, () -> Items.MANGROVE_BOAT, () -> Items.MANGROVE_CHEST_BOAT, () -> BoatloadItems.MANGROVE_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_MANGROVE_BOAT.get()));
+	public static final BoatloadBoatType CHERRY = register(create(new ResourceLocation(Boatload.MOD_ID, "cherry"), () -> Items.CHERRY_PLANKS, () -> Items.CHERRY_BOAT, () -> Items.CHERRY_CHEST_BOAT, () -> BoatloadItems.CHERRY_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_CHERRY_BOAT.get()));
 	public static final BoatloadBoatType CRIMSON = register(create(new ResourceLocation(Boatload.MOD_ID, "crimson"), () -> Items.CRIMSON_PLANKS, () -> BoatloadItems.CRIMSON_BOAT.get(), () -> BoatloadItems.CRIMSON_CHEST_BOAT.get(), () -> BoatloadItems.CRIMSON_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_CRIMSON_BOAT.get(), true));
 	public static final BoatloadBoatType WARPED = register(create(new ResourceLocation(Boatload.MOD_ID, "warped"), () -> Items.WARPED_PLANKS, () -> BoatloadItems.WARPED_BOAT.get(), () -> BoatloadItems.WARPED_CHEST_BOAT.get(), () -> BoatloadItems.WARPED_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_WARPED_BOAT.get(), true));
 
@@ -41,17 +42,11 @@ public record BoatloadBoatType(ResourceLocation registryName, Supplier<Item> pla
 		return ImmutableList.copyOf(BOAT_TYPES);
 	}
 
-	public static BoatloadBoatType getTypeFromString(String name) {
+	public static BoatloadBoatType getType(ResourceLocation name) {
 		for (BoatloadBoatType type : values()) {
-			if (type.registryName().toString().equals(name)) return type;
+			if (type.registryName().equals(name)) return type;
 		}
 		return OAK;
 	}
 
-	public static BoatloadBoatType getTypeFromBoat(Item boat) {
-		for (BoatloadBoatType type : values()) {
-			if (type.boat().get() == boat) return type;
-		}
-		return OAK;
-	}
 }

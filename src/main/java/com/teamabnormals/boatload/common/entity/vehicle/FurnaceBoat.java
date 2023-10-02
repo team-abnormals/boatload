@@ -88,7 +88,7 @@ public class FurnaceBoat extends BoatloadBoat {
 			}
 
 			this.setFuel(this.getFuel() + 3600);
-			return InteractionResult.sidedSuccess(this.level.isClientSide);
+			return InteractionResult.sidedSuccess(this.level().isClientSide);
 		} else {
 			return super.interact(player, hand);
 		}
@@ -104,12 +104,12 @@ public class FurnaceBoat extends BoatloadBoat {
 			float f1 = Mth.cos(f);
 			float f2 = Mth.sin(f);
 
-			if (this.level.isClientSide && this.random.nextInt(4) == 0) {
-				this.level.addParticle(ParticleTypes.LARGE_SMOKE, this.getX() + (double) f1 * 0.5D, this.getY() + 1.0D, this.getZ() + (double) f2 * 0.5D, 0.0D, 0.0D, 0.0D);
+			if (this.level().isClientSide && this.random.nextInt(4) == 0) {
+				this.level().addParticle(ParticleTypes.LARGE_SMOKE, this.getX() + (double) f1 * 0.5D, this.getY() + 1.0D, this.getZ() + (double) f2 * 0.5D, 0.0D, 0.0D, 0.0D);
 			}
 
 			if (this.random.nextInt(40) == 0) {
-				this.level.playLocalSound(this.getX() + (double) f1 * 0.5D, this.getY(), this.getZ() + (double) f2 * 0.5D, SoundEvents.FURNACE_FIRE_CRACKLE, this.getSoundSource(), 1.0F, 1.0F, false);
+				this.level().playLocalSound(this.getX() + (double) f1 * 0.5D, this.getY(), this.getZ() + (double) f2 * 0.5D, SoundEvents.FURNACE_FIRE_CRACKLE, this.getSoundSource(), 1.0F, 1.0F, false);
 			}
 		}
 	}
@@ -153,7 +153,7 @@ public class FurnaceBoat extends BoatloadBoat {
 				float f2 = Mth.cos(f1);
 				float f3 = Mth.sin(f1);
 				for (int i = 0; i < 10; ++i) {
-					this.level.addParticle(ParticleTypes.SPLASH, this.getX() + (double) f2 * 0.8D + (this.random.nextDouble() - 0.5D), this.getY() + 0.2F, this.getZ() + (double) f3 * 0.8D + (this.random.nextDouble() - 0.5D), 0.0D, 0.05D, 0.0D);
+					this.level().addParticle(ParticleTypes.SPLASH, this.getX() + (double) f2 * 0.8D + (this.random.nextDouble() - 0.5D), this.getY() + 0.2F, this.getZ() + (double) f3 * 0.8D + (this.random.nextDouble() - 0.5D), 0.0D, 0.05D, 0.0D);
 				}
 			}
 		}

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "large_boat",
   "key": {
     "#": {
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "boatload:large_dark_oak_boat"
-  }
+  },
+  "show_notification": true
 }

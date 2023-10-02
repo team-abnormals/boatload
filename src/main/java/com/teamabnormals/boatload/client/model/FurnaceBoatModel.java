@@ -21,7 +21,7 @@ public class FurnaceBoatModel extends BoatModel {
 	private final ImmutableList<ModelPart> furnaceBoatParts;
 
 	public FurnaceBoatModel(ModelPart modelPart) {
-		super(modelPart, false);
+		super(modelPart);
 		this.leftPaddle = modelPart.getChild("left_paddle");
 		this.rightPaddle = modelPart.getChild("right_paddle");
 		this.waterPatch = modelPart.getChild("water_patch");

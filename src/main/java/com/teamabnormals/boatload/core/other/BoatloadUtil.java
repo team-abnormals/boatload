@@ -3,8 +3,7 @@ package com.teamabnormals.boatload.core.other;
 import com.google.common.collect.Lists;
 import com.teamabnormals.blueprint.common.entity.BlueprintBoat;
 import com.teamabnormals.blueprint.common.entity.BlueprintChestBoat;
-import com.teamabnormals.blueprint.core.registry.BoatTypeRegistry;
-import com.teamabnormals.blueprint.core.registry.BoatTypeRegistry.BoatTypeData;
+import com.teamabnormals.blueprint.core.registry.BlueprintBoatTypes.BlueprintBoatType;
 import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
 import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
 import com.teamabnormals.boatload.common.item.LargeBoatItem;
@@ -37,13 +36,13 @@ public class BoatloadUtil {
 			return boat.getBoatloadBoatType().fireproof();
 		}
 
-		BoatTypeData typeData = null;
+		BlueprintBoatType typeData = null;
 		if (entity instanceof BlueprintBoat boat) {
-			typeData = boat.getBoatTypeData();
+			typeData = boat.getBoatType();
 		} else if (entity instanceof BlueprintChestBoat boat) {
-			typeData = boat.getBoatTypeData();
+			typeData = boat.getBoatType();
 		}
 
-		return typeData != null && BoatloadBoatType.getTypeFromString(BoatTypeRegistry.getNameForData(typeData)).fireproof();
+		return typeData != null && BoatloadBoatType.getType(typeData.getName()).fireproof();
 	}
 }

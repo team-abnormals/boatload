@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "large_boat",
+  "key": {
+    "#": {
+      "item": "minecraft:cherry_planks"
+    },
+    "B": {
+      "item": "minecraft:cherry_boat"
+    }
+  },
+  "pattern": [
+    "#B#",
+    "###"
+  ],
+  "result": {
+    "item": "boatload:large_cherry_boat"
+  },
+  "show_notification": true
+}

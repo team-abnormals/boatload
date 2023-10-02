@@ -13,7 +13,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
@@ -31,7 +30,7 @@ public class BoatloadBoatItem extends Item {
 	private final BoatloadBoatType type;
 
 	public BoatloadBoatItem(BoatloadBoatType typeIn) {
-		this(typeIn, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION));
+		this(typeIn, new Item.Properties().stacksTo(1));
 	}
 
 	public BoatloadBoatItem(BoatloadBoatType typeIn, Item.Properties properties) {

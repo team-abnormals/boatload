@@ -17,8 +17,7 @@ public class BoatloadEvents {
 		ItemStack itemstack = event.getItemStack();
 		Player player = event.getEntity();
 
-		if (player.getVehicle() instanceof FurnaceBoat && FurnaceBoat.FUEL_ITEMS.test(itemstack)) {
-			FurnaceBoat boat = (FurnaceBoat) player.getVehicle();
+		if (player.getVehicle() instanceof FurnaceBoat boat && FurnaceBoat.FUEL_ITEMS.test(itemstack)) {
 			if (boat.getFuel() + 3600 <= 32000) {
 				if (!player.getAbilities().instabuild) {
 					itemstack.shrink(1);
@@ -26,7 +25,7 @@ public class BoatloadEvents {
 
 				boat.setFuel(boat.getFuel() + 3600);
 				event.setCanceled(true);
-				event.setCancellationResult(InteractionResult.sidedSuccess(player.level.isClientSide()));
+				event.setCancellationResult(InteractionResult.sidedSuccess(player.level().isClientSide()));
 			}
 		}
 	}

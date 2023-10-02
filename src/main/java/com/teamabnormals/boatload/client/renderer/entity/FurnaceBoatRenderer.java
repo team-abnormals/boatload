@@ -4,8 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.datafixers.util.Pair;
-import com.mojang.math.Quaternion;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import com.teamabnormals.boatload.client.model.FurnaceBoatModel;
 import com.teamabnormals.boatload.common.entity.vehicle.FurnaceBoat;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
@@ -20,6 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.joml.Quaternionf;
 
 import java.util.Map;
 
@@ -37,7 +37,7 @@ public class FurnaceBoatRenderer extends EntityRenderer<FurnaceBoat> {
 	public void render(FurnaceBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
 		matrixStackIn.pushPose();
 		matrixStackIn.translate(0.0D, 0.375D, 0.0D);
-		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
+		matrixStackIn.mulPose(Axis.YP.rotationDegrees(180.0F - entityYaw));
 		float f = (float) entityIn.getHurtTime() - partialTicks;
 		float f1 = entityIn.getDamage() - partialTicks;
 		if (f1 < 0.0F) {
@@ -45,19 +45,19 @@ public class FurnaceBoatRenderer extends EntityRenderer<FurnaceBoat> {
 		}
 
 		if (f > 0.0F) {
-			matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(Mth.sin(f) * f * f1 / 10.0F * (float) entityIn.getHurtDir()));
+			matrixStackIn.mulPose(Axis.XP.rotationDegrees(Mth.sin(f) * f * f1 / 10.0F * (float) entityIn.getHurtDir()));
 		}
 
 		float f2 = entityIn.getBubbleAngle(partialTicks);
 		if (!Mth.equal(f2, 0.0F)) {
-			matrixStackIn.mulPose(new Quaternion(new Vector3f(1.0F, 0.0F, 1.0F), entityIn.getBubbleAngle(partialTicks), true));
+			matrixStackIn.mulPose((new Quaternionf()).setAngleAxis(entityIn.getBubbleAngle(partialTicks) * ((float) Math.PI / 180F), 1.0F, 0.0F, 1.0F));
 		}
 
 		Pair<ResourceLocation, FurnaceBoatModel> pair = getModelWithLocation(entityIn);
 		ResourceLocation boatLocation = this.getTextureLocation(entityIn);
 		BoatModel boatModel = pair.getSecond();
 		matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
-		matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(90.0F));
+		matrixStackIn.mulPose(Axis.YP.rotationDegrees(90.0F));
 		boatModel.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
 		VertexConsumer ivertexbuilder = bufferIn.getBuffer(boatModel.renderType(boatLocation));
 		boatModel.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);

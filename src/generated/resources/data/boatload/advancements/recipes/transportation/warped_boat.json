@@ -24,5 +24,6 @@
     "recipes": [
       "boatload:warped_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -6,9 +6,13 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.math.Axis;
 import com.teamabnormals.boatload.client.model.LargeBoatModel;
+import com.teamabnormals.boatload.client.model.WideRaftModel;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
+import net.minecraft.client.model.ListModel;
+import net.minecraft.client.model.WaterPatchModel;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -24,12 +28,21 @@ import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
 public class LargeBoatRenderer extends EntityRenderer<LargeBoat> {
-	private final Map<BoatloadBoatType, Pair<ResourceLocation, LargeBoatModel>> boatResources;
+	private final Map<BoatloadBoatType, Pair<ResourceLocation, ListModel<LargeBoat>>> boatResources;
 
 	public LargeBoatRenderer(EntityRendererProvider.Context context) {
 		super(context);
 		this.shadowRadius = 1.2F;
-		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap((type) -> type, (boatType) -> Pair.of(new ResourceLocation(boatType.registryName().getNamespace(), "textures/entity/large_boat/" + boatType.registryName().getPath() + ".png"), new LargeBoatModel(context.bakeLayer(BoatloadModelLayers.createLargeBoatModelName(boatType))))));
+		this.boatResources = BoatloadBoatType.values().stream().collect(ImmutableMap.toImmutableMap(type -> type, boatType -> Pair.of(new ResourceLocation(boatType.registryName().getNamespace(), "textures/entity/large_boat/" + boatType.registryName().getPath() + ".png"), this.getLargeBoatModel(context, boatType))));
+	}
+
+	private ListModel<LargeBoat> getLargeBoatModel(EntityRendererProvider.Context context, BoatloadBoatType boatType) {
+		ModelPart model = context.bakeLayer(BoatloadModelLayers.createLargeBoatModelName(boatType));
+		if (boatType.raft()) {
+			return new WideRaftModel(model);
+		} else {
+			return new LargeBoatModel(model);
+		}
 	}
 
 	public void render(LargeBoat entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
@@ -51,17 +64,19 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoat> {
 			matrixStackIn.mulPose((new Quaternionf()).setAngleAxis(entityIn.getBubbleAngle(partialTicks) * ((float) Math.PI / 180F), 1.0F, 0.0F, 1.0F));
 		}
 
-		Pair<ResourceLocation, LargeBoatModel> pair = getModelWithLocation(entityIn);
+		Pair<ResourceLocation, ListModel<LargeBoat>> pair = getModelWithLocation(entityIn);
 		ResourceLocation boatLocation = pair.getFirst();
-		LargeBoatModel boatModel = pair.getSecond();
+		ListModel<LargeBoat> boatModel = pair.getSecond();
 		matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
 		matrixStackIn.mulPose(Axis.YP.rotationDegrees(90.0F));
 		boatModel.setupAnim(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
 		VertexConsumer ivertexbuilder = bufferIn.getBuffer(boatModel.renderType(boatLocation));
 		boatModel.renderToBuffer(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 		if (!entityIn.isUnderWater()) {
-			VertexConsumer ivertexbuilder1 = bufferIn.getBuffer(RenderType.waterMask());
-			boatModel.waterPatch().render(matrixStackIn, ivertexbuilder1, packedLightIn, OverlayTexture.NO_OVERLAY);
+			VertexConsumer vertexconsumer1 = bufferIn.getBuffer(RenderType.waterMask());
+			if (boatModel instanceof WaterPatchModel waterpatchmodel) {
+				waterpatchmodel.waterPatch().render(matrixStackIn, vertexconsumer1, packedLightIn, OverlayTexture.NO_OVERLAY);
+			}
 		}
 		matrixStackIn.popPose();
 		super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
@@ -72,7 +87,7 @@ public class LargeBoatRenderer extends EntityRenderer<LargeBoat> {
 		return getModelWithLocation(boat).getFirst();
 	}
 
-	public Pair<ResourceLocation, LargeBoatModel> getModelWithLocation(LargeBoat boat) {
+	public Pair<ResourceLocation, ListModel<LargeBoat>> getModelWithLocation(LargeBoat boat) {
 		return this.boatResources.get(boat.getBoatloadBoatType());
 	}
 }

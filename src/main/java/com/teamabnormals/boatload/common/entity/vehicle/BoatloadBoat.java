@@ -14,7 +14,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -87,7 +86,7 @@ public abstract class BoatloadBoat extends Boat {
 
 	protected void dropBreakItems() {
 		for (int i = 0; i < 3; ++i) {
-			this.spawnAtLocation(this.getPlanks());
+			this.spawnAtLocation(this.getBoatloadBoatType().planks().get());
 		}
 
 		for (int j = 0; j < 2; ++j) {
@@ -96,27 +95,8 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
-		if (this.isInvulnerableTo(source)) {
-			return false;
-		} else if (!this.level().isClientSide && !this.isRemoved()) {
-			this.setHurtDir(-this.getHurtDir());
-			this.setHurtTime(10);
-			this.setDamage(this.getDamage() + amount * 10.0F);
-			this.markHurt();
-			boolean flag = source.getEntity() instanceof Player && ((Player) source.getEntity()).getAbilities().instabuild;
-			if (flag || this.getDamage() > 40.0F) {
-				if (!flag && this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-					this.destroy(source);
-				}
-
-				this.discard();
-			}
-
-			return true;
-		} else {
-			return true;
-		}
+	public Item getDropItem() {
+		return this.getBoatloadBoatType().boat().get();
 	}
 
 	@Override
@@ -126,16 +106,12 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	@Override
-	public Item getDropItem() {
-		return this.getBoatloadBoatType().boat().get();
+	public double getPassengersRidingOffset() {
+		return this.getBoatloadBoatType().raft() ? 0.25D : -0.1D;
 	}
 
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
-	}
-
-	protected Item getPlanks() {
-		return this.getBoatloadBoatType().planks().get();
 	}
 }

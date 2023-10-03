@@ -3,6 +3,7 @@ package com.teamabnormals.boatload.client.model;
 import com.google.common.collect.ImmutableList;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;
 import net.minecraft.client.model.ListModel;
+import net.minecraft.client.model.WaterPatchModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
@@ -14,7 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class LargeBoatModel extends ListModel<LargeBoat> {
+public class LargeBoatModel extends ListModel<LargeBoat> implements WaterPatchModel {
 	private final ModelPart leftPaddle;
 	private final ModelPart rightPaddle;
 	private final ModelPart waterPatch;

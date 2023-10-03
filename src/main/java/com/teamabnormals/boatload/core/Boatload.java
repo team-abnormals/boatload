@@ -2,7 +2,9 @@ package com.teamabnormals.boatload.core;
 
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import com.teamabnormals.boatload.client.model.FurnaceBoatModel;
+import com.teamabnormals.boatload.client.model.FurnaceRaftModel;
 import com.teamabnormals.boatload.client.model.LargeBoatModel;
+import com.teamabnormals.boatload.client.model.WideRaftModel;
 import com.teamabnormals.boatload.client.renderer.entity.FurnaceBoatRenderer;
 import com.teamabnormals.boatload.client.renderer.entity.LargeBoatRenderer;
 import com.teamabnormals.boatload.common.dispenser.FurnaceBoatDispenseItemBehavior;
@@ -91,8 +93,8 @@ public class Boatload {
 	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		for (BoatloadBoatType boatType : BoatloadBoatType.values()) {
 			event.registerLayerDefinition(BoatloadModelLayers.createBoatModelName(boatType), BoatModel::createBodyModel);
-			event.registerLayerDefinition(BoatloadModelLayers.createFurnaceBoatModelName(boatType), FurnaceBoatModel::createFurnaceBoatBodyModel);
-			event.registerLayerDefinition(BoatloadModelLayers.createLargeBoatModelName(boatType), LargeBoatModel::createBodyModel);
+			event.registerLayerDefinition(BoatloadModelLayers.createFurnaceBoatModelName(boatType), boatType.raft() ? FurnaceRaftModel::createBodyModel : FurnaceBoatModel::createFurnaceBoatBodyModel);
+			event.registerLayerDefinition(BoatloadModelLayers.createLargeBoatModelName(boatType), boatType.raft() ? WideRaftModel::createBodyModel : LargeBoatModel::createBodyModel);
 		}
 	}
 

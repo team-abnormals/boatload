@@ -44,10 +44,12 @@ public class FurnaceBoat extends BoatloadBoat {
 		super(BoatloadEntityTypes.FURNACE_BOAT.get(), worldIn);
 	}
 
+	@Override
 	protected float getSinglePassengerXOffset() {
 		return 0.15F;
 	}
 
+	@Override
 	protected int getMaxPassengers() {
 		return 1;
 	}

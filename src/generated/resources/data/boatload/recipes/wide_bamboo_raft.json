@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "large_boat",
+  "key": {
+    "#": {
+      "item": "minecraft:bamboo_planks"
+    },
+    "B": {
+      "item": "minecraft:bamboo_raft"
+    }
+  },
+  "pattern": [
+    "#B#",
+    "###"
+  ],
+  "result": {
+    "item": "boatload:wide_bamboo_raft"
+  },
+  "show_notification": true
+}

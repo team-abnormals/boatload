@@ -11,7 +11,7 @@ import net.minecraft.world.item.Items;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public record BoatloadBoatType(ResourceLocation registryName, Supplier<Item> planks, Supplier<Item> boat, Supplier<Item> chestBoat, Supplier<Item> furnaceBoat, Supplier<Item> largeBoat, boolean fireproof) {
+public record BoatloadBoatType(ResourceLocation registryName, Supplier<Item> planks, Supplier<Item> boat, Supplier<Item> chestBoat, Supplier<Item> furnaceBoat, Supplier<Item> largeBoat, boolean fireproof, boolean raft) {
 	private static final Set<BoatloadBoatType> BOAT_TYPES = new ObjectArraySet<>();
 
 	public static final BoatloadBoatType OAK = register(create(new ResourceLocation(Boatload.MOD_ID, "oak"), () -> Items.OAK_PLANKS, () -> Items.OAK_BOAT, () -> Items.OAK_CHEST_BOAT, () -> BoatloadItems.OAK_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_OAK_BOAT.get()));
@@ -22,15 +22,16 @@ public record BoatloadBoatType(ResourceLocation registryName, Supplier<Item> pla
 	public static final BoatloadBoatType DARK_OAK = register(create(new ResourceLocation(Boatload.MOD_ID, "dark_oak"), () -> Items.DARK_OAK_PLANKS, () -> Items.DARK_OAK_BOAT, () -> Items.DARK_OAK_CHEST_BOAT, () -> BoatloadItems.DARK_OAK_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_DARK_OAK_BOAT.get()));
 	public static final BoatloadBoatType MANGROVE = register(create(new ResourceLocation(Boatload.MOD_ID, "mangrove"), () -> Items.MANGROVE_PLANKS, () -> Items.MANGROVE_BOAT, () -> Items.MANGROVE_CHEST_BOAT, () -> BoatloadItems.MANGROVE_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_MANGROVE_BOAT.get()));
 	public static final BoatloadBoatType CHERRY = register(create(new ResourceLocation(Boatload.MOD_ID, "cherry"), () -> Items.CHERRY_PLANKS, () -> Items.CHERRY_BOAT, () -> Items.CHERRY_CHEST_BOAT, () -> BoatloadItems.CHERRY_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_CHERRY_BOAT.get()));
-	public static final BoatloadBoatType CRIMSON = register(create(new ResourceLocation(Boatload.MOD_ID, "crimson"), () -> Items.CRIMSON_PLANKS, () -> BoatloadItems.CRIMSON_BOAT.get(), () -> BoatloadItems.CRIMSON_CHEST_BOAT.get(), () -> BoatloadItems.CRIMSON_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_CRIMSON_BOAT.get(), true));
-	public static final BoatloadBoatType WARPED = register(create(new ResourceLocation(Boatload.MOD_ID, "warped"), () -> Items.WARPED_PLANKS, () -> BoatloadItems.WARPED_BOAT.get(), () -> BoatloadItems.WARPED_CHEST_BOAT.get(), () -> BoatloadItems.WARPED_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_WARPED_BOAT.get(), true));
+	public static final BoatloadBoatType BAMBOO = register(create(new ResourceLocation(Boatload.MOD_ID, "bamboo"), () -> Items.BAMBOO_PLANKS, () -> Items.BAMBOO_RAFT, () -> Items.BAMBOO_CHEST_RAFT, () -> BoatloadItems.BAMBOO_FURNACE_RAFT.get(), () -> BoatloadItems.WIDE_BAMBOO_RAFT.get(), false, true));
+	public static final BoatloadBoatType CRIMSON = register(create(new ResourceLocation(Boatload.MOD_ID, "crimson"), () -> Items.CRIMSON_PLANKS, () -> BoatloadItems.CRIMSON_BOAT.get(), () -> BoatloadItems.CRIMSON_CHEST_BOAT.get(), () -> BoatloadItems.CRIMSON_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_CRIMSON_BOAT.get(), true, false));
+	public static final BoatloadBoatType WARPED = register(create(new ResourceLocation(Boatload.MOD_ID, "warped"), () -> Items.WARPED_PLANKS, () -> BoatloadItems.WARPED_BOAT.get(), () -> BoatloadItems.WARPED_CHEST_BOAT.get(), () -> BoatloadItems.WARPED_FURNACE_BOAT.get(), () -> BoatloadItems.LARGE_WARPED_BOAT.get(), true, false));
 
-	public static BoatloadBoatType create(ResourceLocation registryName, Supplier<Item> planks, Supplier<Item> boat, Supplier<Item> chestBoat, Supplier<Item> furnaceBoat, Supplier<Item> largeBoat, boolean fireproof) {
-		return new BoatloadBoatType(registryName, planks, boat, chestBoat, furnaceBoat, largeBoat, fireproof);
+	public static BoatloadBoatType create(ResourceLocation registryName, Supplier<Item> planks, Supplier<Item> boat, Supplier<Item> chestBoat, Supplier<Item> furnaceBoat, Supplier<Item> largeBoat, boolean fireproof, boolean raft) {
+		return new BoatloadBoatType(registryName, planks, boat, chestBoat, furnaceBoat, largeBoat, fireproof, raft);
 	}
 
 	public static BoatloadBoatType create(ResourceLocation registryName, Supplier<Item> planks, Supplier<Item> boat, Supplier<Item> chestBoat, Supplier<Item> furnaceBoat, Supplier<Item> largeBoat) {
-		return create(registryName, planks, boat, chestBoat, furnaceBoat, largeBoat, false);
+		return create(registryName, planks, boat, chestBoat, furnaceBoat, largeBoat, false, false);
 	}
 
 	public static synchronized BoatloadBoatType register(BoatloadBoatType type) {

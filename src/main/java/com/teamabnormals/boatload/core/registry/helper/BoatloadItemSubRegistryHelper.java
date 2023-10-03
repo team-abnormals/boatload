@@ -27,11 +27,19 @@ public class BoatloadItemSubRegistryHelper extends ItemSubRegistryHelper {
 		return Pair.of(boat, chestBoat);
 	}
 
+	public RegistryObject<Item> createFurnaceBoat(String name, BoatloadBoatType type) {
+		return this.deferredRegister.register(name, () -> new FurnaceBoatItem(type));
+	}
+
 	public RegistryObject<Item> createFurnaceBoat(BoatloadBoatType type) {
-		return this.deferredRegister.register(type.registryName().getPath() + "_furnace_boat", () -> new FurnaceBoatItem(type));
+		return this.createFurnaceBoat(type.registryName().getPath() + "_furnace_boat", type);
+	}
+
+	public RegistryObject<Item> createLargeBoat(String name, BoatloadBoatType type) {
+		return this.deferredRegister.register(name, () -> new LargeBoatItem(type));
 	}
 
 	public RegistryObject<Item> createLargeBoat(BoatloadBoatType type) {
-		return this.deferredRegister.register("large_" + type.registryName().getPath() + "_boat", () -> new LargeBoatItem(type));
+		return this.createLargeBoat("large_" + type.registryName().getPath() + "_boat", type);
 	}
 }

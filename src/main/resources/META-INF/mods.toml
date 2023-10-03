@@ -27,13 +27,13 @@ license = "https://github.com/team-abnormals/boatload/blob/main/LICENSE.txt"
 [[dependencies.boatload]]
     modId = "forge"
     mandatory = true
-    versionRange = "[47.1.0,)"
+    versionRange = "[47.1.20,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.boatload]]
     modId = "blueprint"
     mandatory = true
-    versionRange = "[7.0.0,)"
+    versionRange = "[7.0.1,)"
     ordering = "AFTER"
     side = "BOTH"

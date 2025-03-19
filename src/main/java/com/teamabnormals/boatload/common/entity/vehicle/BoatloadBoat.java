@@ -1,26 +1,23 @@
 package com.teamabnormals.boatload.common.entity.vehicle;
 
-import com.teamabnormals.blueprint.common.world.storage.tracking.IDataManager;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
-import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.network.NetworkHooks;
+import net.minecraft.world.phys.Vec3;
 
 public abstract class BoatloadBoat extends Boat {
 	private static final EntityDataAccessor<String> BOAT_TYPE = SynchedEntityData.defineId(BoatloadBoat.class, EntityDataSerializers.STRING);
@@ -30,9 +27,9 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(BOAT_TYPE, BoatloadBoatType.OAK.registryName().toString());
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(BOAT_TYPE, BoatloadBoatType.OAK.registryName().toString());
 	}
 
 	public void setBoatloadBoatType(BoatloadBoatType boatType) {
@@ -40,7 +37,7 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	public BoatloadBoatType getBoatloadBoatType() {
-		return BoatloadBoatType.getType(new ResourceLocation(this.entityData.get(BOAT_TYPE)));
+		return BoatloadBoatType.getType(ResourceLocation.parse(this.entityData.get(BOAT_TYPE)));
 	}
 
 	@Override
@@ -53,7 +50,7 @@ public abstract class BoatloadBoat extends Boat {
 	protected void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Type", 8)) {
-			this.setBoatloadBoatType(BoatloadBoatType.getType(new ResourceLocation(compound.getString("Type"))));
+			this.setBoatloadBoatType(BoatloadBoatType.getType(ResourceLocation.parse(compound.getString("Type"))));
 		}
 	}
 
@@ -70,16 +67,16 @@ public abstract class BoatloadBoat extends Boat {
 
 					this.causeFallDamage(this.fallDistance, 1.0F, this.damageSources().fall());
 					if (!this.level().isClientSide && !this.isRemoved()) {
-						this.discard();
+						this.kill();
 						if (this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
 							this.dropBreakItems();
 						}
 					}
 				}
 
-				this.fallDistance = 0.0F;
-			} else if (!this.level().getFluidState(this.blockPosition().below()).is(FluidTags.WATER) && y < 0.0D) {
-				this.fallDistance = (float) ((double) this.fallDistance - y);
+				this.resetFallDistance();
+			} else if (!this.canBoatInFluid(this.level().getFluidState(this.blockPosition().below())) && y < 0.0D) {
+				this.fallDistance -= (float) y;
 			}
 		}
 	}
@@ -100,18 +97,21 @@ public abstract class BoatloadBoat extends Boat {
 	}
 
 	@Override
-	public void destroy(DamageSource source) {
-		this.spawnAtLocation(this.getDropItem());
-		this.spawnAtLocation(((IDataManager) this).getValue(BoatloadTrackedData.BANNER));
-	}
+	protected Vec3 getPassengerAttachmentPoint(Entity entity, EntityDimensions dimensions, float partialTick) {
+		float f = this.getSinglePassengerXOffset();
+		if (this.getPassengers().size() > 1) {
+			int i = this.getPassengers().indexOf(entity);
+			if (i == 0) {
+				f = 0.2F;
+			} else {
+				f = -0.6F;
+			}
 
-	@Override
-	public double getPassengersRidingOffset() {
-		return this.getBoatloadBoatType().raft() ? 0.25D : -0.1D;
-	}
+			if (entity instanceof Animal) {
+				f += 0.2F;
+			}
+		}
 
-	@Override
-	public Packet<ClientGamePacketListener> getAddEntityPacket() {
-		return NetworkHooks.getEntitySpawningPacket(this);
+		return new Vec3(0.0, this.getBoatloadBoatType().raft() ? (double) (dimensions.height() * 0.8888889F) : (double) (dimensions.height() / 3.0F), f).yRot(-this.getYRot() * (float) (Math.PI / 180.0));
 	}
 }

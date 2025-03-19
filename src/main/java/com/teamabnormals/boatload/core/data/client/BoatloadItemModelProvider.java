@@ -3,7 +3,7 @@ package com.teamabnormals.boatload.core.data.client;
 import com.teamabnormals.blueprint.core.data.client.BlueprintItemModelProvider;
 import com.teamabnormals.boatload.core.Boatload;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 
 public class BoatloadItemModelProvider extends BlueprintItemModelProvider {

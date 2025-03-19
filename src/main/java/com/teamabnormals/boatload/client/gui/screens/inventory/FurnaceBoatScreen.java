@@ -7,15 +7,21 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class FurnaceBoatScreen extends AbstractContainerScreen<FurnaceBoatMenu> {
-	private static final ResourceLocation FURNACE_BOAT_GUI_TEXTURE = new ResourceLocation(Boatload.MOD_ID, "textures/gui/container/furnace_boat.png");
+	private static final ResourceLocation FURNACE_BOAT_GUI_TEXTURE = Boatload.location("textures/gui/container/furnace_boat.png");
 
 	public FurnaceBoatScreen(FurnaceBoatMenu menu, Inventory inventory, Component title) {
 		super(menu, inventory, title);
+	}
+
+	@Override
+	public void render(GuiGraphics guiGraphics, int partialTick, int mouseX, float mouseY) {
+		super.render(guiGraphics, partialTick, mouseX, mouseY);
+		this.renderTooltip(guiGraphics, partialTick, mouseX);
 	}
 
 	@Override
@@ -27,12 +33,5 @@ public class FurnaceBoatScreen extends AbstractContainerScreen<FurnaceBoatMenu> 
 			int k = this.menu.getLitProgress();
 			guiGraphics.blit(FURNACE_BOAT_GUI_TEXTURE, x + 81, y + 19 + 12 - k, 176, 12 - k, 14, k + 1);
 		}
-	}
-
-	@Override
-	public void render(GuiGraphics guiGraphics, int partialTick, int mouseX, float mouseY) {
-		this.renderBackground(guiGraphics);
-		super.render(guiGraphics, partialTick, mouseX, mouseY);
-		this.renderTooltip(guiGraphics, partialTick, mouseX);
 	}
 }

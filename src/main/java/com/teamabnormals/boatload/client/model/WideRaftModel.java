@@ -1,7 +1,4 @@
-package com.teamabnormals.boatload.client.model;// Made with Blockbench 4.8.3
-// Exported for Minecraft version 1.17 or later with Mojang mappings
-// Paste this class into your mod and generate all required imports
-
+package com.teamabnormals.boatload.client.model;
 
 import com.google.common.collect.ImmutableList;
 import com.teamabnormals.boatload.common.entity.vehicle.LargeBoat;

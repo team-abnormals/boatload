@@ -11,7 +11,6 @@ import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraftforge.common.ForgeHooks;
 
 public class FurnaceBoatMenu extends AbstractContainerMenu {
 	private final Container container;
@@ -94,6 +93,6 @@ public class FurnaceBoatMenu extends AbstractContainerMenu {
 	}
 
 	protected boolean isFuel(ItemStack stack) {
-		return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
+		return stack.getBurnTime(RecipeType.SMELTING) > 0;
 	}
 }

@@ -27,8 +27,6 @@ import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.Nullable;
 
 public class FurnaceBoat extends BoatloadBoat implements HasCustomInventoryScreen, Container, MenuProvider {
@@ -37,14 +35,11 @@ public class FurnaceBoat extends BoatloadBoat implements HasCustomInventoryScree
 	private NonNullList<ItemStack> itemStacks = NonNullList.withSize(1, ItemStack.EMPTY);
 	private final ContainerData dataAccess = new ContainerData() {
 		public int get(int index) {
-			switch (index) {
-				case 0:
-					return FurnaceBoat.this.getBurnTime();
-				case 1:
-					return FurnaceBoat.this.burnDuration;
-				default:
-					return 0;
-			}
+			return switch (index) {
+				case 0 -> FurnaceBoat.this.getBurnTime();
+				case 1 -> FurnaceBoat.this.burnDuration;
+				default -> 0;
+			};
 		}
 
 		public void set(int index, int value) {
@@ -76,10 +71,6 @@ public class FurnaceBoat extends BoatloadBoat implements HasCustomInventoryScree
 		this.zo = z;
 	}
 
-	public FurnaceBoat(PlayMessages.SpawnEntity packet, Level level) {
-		super(BoatloadEntityTypes.FURNACE_BOAT.get(), level);
-	}
-
 	@Override
 	protected float getSinglePassengerXOffset() {
 		return 0.15F;
@@ -91,9 +82,9 @@ public class FurnaceBoat extends BoatloadBoat implements HasCustomInventoryScree
 	}
 
 	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(BURN_TIME, 0);
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(BURN_TIME, 0);
 	}
 
 	@Override
@@ -101,7 +92,7 @@ public class FurnaceBoat extends BoatloadBoat implements HasCustomInventoryScree
 		super.addAdditionalSaveData(compound);
 		compound.putInt("BurnTime", this.getBurnTime());
 		compound.putInt("BurnDuration", this.burnDuration);
-		ContainerHelper.saveAllItems(compound, this.itemStacks);
+		ContainerHelper.saveAllItems(compound, this.itemStacks, this.registryAccess());
 	}
 
 	@Override
@@ -109,7 +100,7 @@ public class FurnaceBoat extends BoatloadBoat implements HasCustomInventoryScree
 		super.readAdditionalSaveData(compound);
 		this.setBurnTime(compound.getInt("BurnTime"));
 		this.burnDuration = compound.getInt("BurnDuration");
-		ContainerHelper.loadAllItems(compound, this.itemStacks);
+		ContainerHelper.loadAllItems(compound, this.itemStacks, this.registryAccess());
 	}
 
 	public void setBurnTime(int time) {
@@ -139,7 +130,7 @@ public class FurnaceBoat extends BoatloadBoat implements HasCustomInventoryScree
 		if (stack.isEmpty())
 			return 0;
 		else
-			return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
+			return stack.getBurnTime(RecipeType.SMELTING);
 	}
 
 	@Override
@@ -247,7 +238,7 @@ public class FurnaceBoat extends BoatloadBoat implements HasCustomInventoryScree
 
 	@Override
 	public boolean isEmpty() {
-		for(ItemStack itemstack : this.itemStacks) {
+		for (ItemStack itemstack : this.itemStacks) {
 			if (!itemstack.isEmpty())
 				return false;
 		}

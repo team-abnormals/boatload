@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "large_boat",
+  "key": {
+    "#": {
+      "item": "minecraft:acacia_planks"
+    },
+    "B": {
+      "item": "minecraft:acacia_boat"
+    }
+  },
+  "pattern": [
+    "#B#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "boatload:large_acacia_boat"
+  }
+}

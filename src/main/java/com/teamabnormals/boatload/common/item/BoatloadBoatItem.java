@@ -1,13 +1,9 @@
 package com.teamabnormals.boatload.common.item;
 
+import com.teamabnormals.boatload.common.dispenser.BoatloadBoatDispenseItemBehavior;
 import com.teamabnormals.boatload.common.entity.vehicle.BoatloadBoat;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockSource;
-import net.minecraft.core.Direction;
-import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -36,7 +32,7 @@ public class BoatloadBoatItem extends Item {
 	public BoatloadBoatItem(BoatloadBoatType typeIn, Item.Properties properties) {
 		super(properties);
 		this.type = typeIn;
-		DispenserBlock.registerBehavior(this, new BoatloadBoatDispenseItemBehavior());
+		DispenserBlock.registerBehavior(this, new BoatloadBoatDispenseItemBehavior(type, this instanceof LargeBoatItem));
 	}
 
 	@Override
@@ -92,38 +88,5 @@ public class BoatloadBoatItem extends Item {
 
 	public BoatloadBoatType getType() {
 		return this.type;
-	}
-
-	public static class BoatloadBoatDispenseItemBehavior extends DefaultDispenseItemBehavior {
-		private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
-
-		public ItemStack execute(BlockSource source, ItemStack stack) {
-			Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
-			Level level = source.getLevel();
-			double x = source.x() + (double) ((float) direction.getStepX() * 1.125f);
-			double y = source.y() + (double) ((float) direction.getStepY() * 1.125f);
-			double z = source.z() + (double) ((float) direction.getStepZ() * 1.125f);
-			BlockPos pos = source.getPos().relative(direction);
-			double adjustY;
-			if (level.getFluidState(pos).is(FluidTags.WATER)) {
-				adjustY = 1d;
-			} else {
-				if (!level.getBlockState(pos).isAir() || !level.getFluidState(pos.below()).is(FluidTags.WATER)) {
-					return this.defaultDispenseItemBehavior.dispense(source, stack);
-				}
-				adjustY = 0d;
-			}
-			BoatloadBoatItem item = ((BoatloadBoatItem) stack.getItem());
-			BoatloadBoat boat = item.getBoatEntity(level, x, y + adjustY, z, stack);
-			boat.setBoatloadBoatType(item.type);
-			boat.setYRot(direction.toYRot());
-			level.addFreshEntity(boat);
-			stack.shrink(1);
-			return stack;
-		}
-
-		protected void playSound(BlockSource source) {
-			source.getLevel().levelEvent(1000, source.getPos(), 0);
-		}
 	}
 }

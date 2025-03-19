@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "furnace_boat",
+  "ingredients": [
+    {
+      "item": "minecraft:furnace"
+    },
+    {
+      "item": "minecraft:cherry_boat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "boatload:cherry_furnace_boat"
+  }
+}

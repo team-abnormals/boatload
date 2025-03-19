@@ -5,10 +5,10 @@ import com.teamabnormals.boatload.core.Boatload;
 import com.teamabnormals.boatload.core.other.BoatloadUtil;
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
 import com.teamabnormals.boatload.core.registry.BoatloadItems;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class BoatloadLanguageProvider extends BlueprintLanguageProvider {
 
@@ -31,14 +31,12 @@ public class BoatloadLanguageProvider extends BlueprintLanguageProvider {
 	}
 
 	private void addChestBoat(Item item) {
-		ResourceLocation name = ForgeRegistries.ITEMS.getKey(item);
-		if (name != null)
-			this.add(item, format(name).replace("Chest Boat", "Boat with Chest"));
+		ResourceLocation name = BuiltInRegistries.ITEM.getKey(item);
+		this.add(item, format(name).replace("Chest Boat", "Boat with Chest"));
 	}
 
 	private void addFurnaceBoat(Item item) {
-		ResourceLocation name = ForgeRegistries.ITEMS.getKey(item);
-		if (name != null)
-			this.add(item, format(name).replace("Furnace Boat", "Boat with Furnace"));
+		ResourceLocation name = BuiltInRegistries.ITEM.getKey(item);
+		this.add(item, format(name).replace("Furnace Boat", "Boat with Furnace"));
 	}
 }

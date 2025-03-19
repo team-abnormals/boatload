@@ -81,7 +81,7 @@ public class BoatloadUtil {
 		}
 
 		ItemStack banner = ((IDataManager) boat).getValue(BoatloadTrackedData.BANNER);
-		if (banner != null && banner.getItem() instanceof BannerItem) {
+		if (banner != null && !banner.isEmpty() && banner.getItem() instanceof BannerItem) {
 			Level level = boat.getCommandSenderWorld();
 			int i;
 			if (level != null) {

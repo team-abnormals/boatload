@@ -6,6 +6,7 @@ import com.teamabnormals.boatload.core.other.BoatloadUtil;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,9 +19,10 @@ public abstract class EntityMixin {
 	@Inject(method = "causeFallDamage", at = @At(value = "HEAD"))
 	private void dropBannerUponFalling(float distance, float damageMultiplier, DamageSource source, CallbackInfoReturnable<Boolean> info) {
 		if ((Object) this instanceof Boat boat) {
-			if (!boat.level().isClientSide && !((Entity) (Object) this).isRemoved()) {
-				if (boat.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
-					((Entity) (Object) this).spawnAtLocation(((IDataManager) this).getValue(BoatloadTrackedData.BANNER));
+			if (!boat.level().isClientSide && !boat.isRemoved()) {
+				ItemStack banner = ((IDataManager) this).getValue(BoatloadTrackedData.BANNER);
+				if (banner != null && !banner.isEmpty() && boat.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+					boat.spawnAtLocation(banner);
 				}
 			}
 		}

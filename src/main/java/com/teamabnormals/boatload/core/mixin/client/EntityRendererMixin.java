@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,7 +19,8 @@ public abstract class EntityRendererMixin<T extends Entity> {
 
 	@Inject(method = "render", at = @At("HEAD"))
 	private void renderBanner(T entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight, CallbackInfo info) {
-		if (entity instanceof Boat boat && !((IDataManager) entity).getValue(BoatloadTrackedData.BANNER).isEmpty()) {
+		ItemStack banner = ((IDataManager) entity).getValue(BoatloadTrackedData.BANNER);
+		if (entity instanceof Boat boat && !banner.isEmpty()) {
 			BoatloadUtil.renderBanner(boat, entityYaw, partialTicks, poseStack, buffer, packedLight);
 		}
 	}

@@ -1,40 +1,25 @@
 package com.teamabnormals.boatload.core;
 
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
-import com.teamabnormals.boatload.client.gui.screens.inventory.FurnaceBoatScreen;
-import com.teamabnormals.boatload.client.model.FurnaceBoatModel;
-import com.teamabnormals.boatload.client.model.FurnaceRaftModel;
-import com.teamabnormals.boatload.client.model.LargeBoatModel;
-import com.teamabnormals.boatload.client.model.WideRaftModel;
-import com.teamabnormals.boatload.client.renderer.entity.FurnaceBoatRenderer;
-import com.teamabnormals.boatload.client.renderer.entity.LargeBoatRenderer;
-import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.boatload.core.data.client.BoatloadItemModelProvider;
 import com.teamabnormals.boatload.core.data.client.BoatloadLanguageProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadBlockTagsProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadItemTagsProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
-import com.teamabnormals.boatload.core.other.BoatloadModelLayers;
 import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
 import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
 import com.teamabnormals.boatload.core.registry.BoatloadItems;
 import com.teamabnormals.boatload.core.registry.BoatloadMenuTypes;
 import com.teamabnormals.boatload.core.registry.helper.BoatloadItemSubRegistryHelper;
-import net.minecraft.client.model.BoatModel;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.loading.FMLEnvironment;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -54,13 +39,6 @@ public class Boatload {
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
 		bus.addListener(this::dataSetup);
-
-		if (FMLEnvironment.dist == Dist.CLIENT) {
-			bus.addListener(this::registerLayerDefinitions);
-			bus.addListener(this::registerRenderers);
-			bus.addListener(this::registerScreens);
-			BoatloadItems.setupTabEditors();
-		}
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
@@ -68,8 +46,7 @@ public class Boatload {
 	}
 
 	private void clientSetup(FMLClientSetupEvent event) {
-		event.enqueueWork(() -> {
-		});
+		BoatloadItems.setupTabEditors();
 	}
 
 	private void dataSetup(GatherDataEvent event) {
@@ -87,25 +64,6 @@ public class Boatload {
 		boolean client = event.includeClient();
 		generator.addProvider(client, new BoatloadItemModelProvider(output, helper));
 		generator.addProvider(client, new BoatloadLanguageProvider(output));
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	private void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		for (BoatloadBoatType boatType : BoatloadBoatType.values()) {
-			event.registerLayerDefinition(BoatloadModelLayers.createBoatModelName(boatType), BoatModel::createBodyModel);
-			event.registerLayerDefinition(BoatloadModelLayers.createFurnaceBoatModelName(boatType), boatType.raft() ? FurnaceRaftModel::createBodyModel : FurnaceBoatModel::createFurnaceBoatBodyModel);
-			event.registerLayerDefinition(BoatloadModelLayers.createLargeBoatModelName(boatType), boatType.raft() ? WideRaftModel::createBodyModel : LargeBoatModel::createBodyModel);
-		}
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(BoatloadEntityTypes.FURNACE_BOAT.get(), FurnaceBoatRenderer::new);
-		event.registerEntityRenderer(BoatloadEntityTypes.LARGE_BOAT.get(), LargeBoatRenderer::new);
-	}
-
-	private void registerScreens(RegisterMenuScreensEvent event) {
-		event.register(BoatloadMenuTypes.FURNACE_BOAT.get(), FurnaceBoatScreen::new);
 	}
 
 	public static ResourceLocation location(String path) {

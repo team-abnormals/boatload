@@ -17,6 +17,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.List;
 
 public class LargeBoat extends BoatloadBoat {
+
 	public LargeBoat(EntityType<? extends Boat> entityType, Level worldIn) {
 		super(entityType, worldIn);
 	}

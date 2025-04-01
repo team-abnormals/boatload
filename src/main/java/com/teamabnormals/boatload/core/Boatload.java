@@ -29,7 +29,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -47,8 +46,8 @@ public class Boatload {
 	public static final String MOD_ID = "boatload";
 	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(Registries.ITEM, new BoatloadItemSubRegistryHelper(helper)));
 
-	public Boatload(IEventBus bus, ModContainer container) {
-		REGISTRY_HELPER.register(bus);
+	public Boatload(IEventBus bus) {
+		BoatloadItems.ITEMS.register(bus);
 		BoatloadEntityTypes.ENTITY_TYPES.register(bus);
 		BoatloadMenuTypes.MENU_TYPES.register(bus);
 
@@ -79,15 +78,15 @@ public class Boatload {
 		CompletableFuture<Provider> provider = event.getLookupProvider();
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
-		boolean includeServer = event.includeServer();
+		boolean server = event.includeServer();
 		BlockTagsProvider blockTags = new BoatloadBlockTagsProvider(output, provider, helper);
-		generator.addProvider(includeServer, blockTags);
-		generator.addProvider(includeServer, new BoatloadItemTagsProvider(output, provider, blockTags.contentsGetter(), helper));
-		generator.addProvider(includeServer, new BoatloadRecipeProvider(output, provider));
+		generator.addProvider(server, blockTags);
+		generator.addProvider(server, new BoatloadItemTagsProvider(output, provider, blockTags.contentsGetter(), helper));
+		generator.addProvider(server, new BoatloadRecipeProvider(output, provider));
 
-		boolean includeClient = event.includeClient();
-		generator.addProvider(includeClient, new BoatloadItemModelProvider(output, helper));
-		generator.addProvider(includeClient, new BoatloadLanguageProvider(output));
+		boolean client = event.includeClient();
+		generator.addProvider(client, new BoatloadItemModelProvider(output, helper));
+		generator.addProvider(client, new BoatloadLanguageProvider(output));
 	}
 
 	@OnlyIn(Dist.CLIENT)
@@ -110,6 +109,6 @@ public class Boatload {
 	}
 
 	public static ResourceLocation location(String path) {
-		return ResourceLocation.fromNamespaceAndPath(Boatload.MOD_ID, path);
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
 	}
 }

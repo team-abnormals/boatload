@@ -6,7 +6,7 @@ import com.teamabnormals.boatload.core.Boatload;
 import net.minecraft.world.item.ItemStack;
 
 public class BoatloadTrackedData {
-	public static final TrackedData<ItemStack> BANNER = TrackedData.Builder.create(ItemStack.STREAM_CODEC, () -> ItemStack.EMPTY).enableSaving(ItemStack.OPTIONAL_CODEC.fieldOf("id").fieldOf("count").fieldOf("components")).build();
+	public static final TrackedData<ItemStack> BANNER = TrackedData.Builder.create(ItemStack.OPTIONAL_STREAM_CODEC, () -> ItemStack.EMPTY).enableSaving(ItemStack.OPTIONAL_CODEC.fieldOf("id").fieldOf("count").fieldOf("components")).build();
 
 	public static void registerTrackedData() {
 		TrackedDataManager.INSTANCE.registerData(Boatload.location("banner"), BANNER);

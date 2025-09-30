@@ -13,18 +13,22 @@ import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
 import com.teamabnormals.boatload.common.item.LargeBoatItem;
 import com.teamabnormals.boatload.core.Boatload;
 import com.teamabnormals.boatload.core.api.BoatloadBoatType;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.BannerItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.minecraft.world.level.block.BannerBlock;
+import net.minecraft.world.level.block.entity.BannerBlockEntity;
 import org.joml.Quaternionf;
 
 import java.util.List;
@@ -61,12 +65,12 @@ public class BoatloadUtil {
 		return typeData != null && BoatloadBoatType.getType(typeData.getName()).fireproof();
 	}
 
-	public static void renderBanner(Boat boat, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLightIn) {
+	public static void renderBanner(Boat boat, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLightIn) {
 		poseStack.pushPose();
 		poseStack.translate(0.0D, 0.375D, 0.0D);
 		poseStack.mulPose(Axis.YP.rotationDegrees(180.0F - entityYaw));
-		float f = (float) boat.getHurtTime() - partialTicks;
-		float f1 = boat.getDamage() - partialTicks;
+		float f = (float) boat.getHurtTime() - partialTick;
+		float f1 = boat.getDamage() - partialTick;
 		if (f1 < 0.0F) {
 			f1 = 0.0F;
 		}
@@ -75,9 +79,9 @@ public class BoatloadUtil {
 			poseStack.mulPose(Axis.XP.rotationDegrees(Mth.sin(f) * f * f1 / 10.0F * (float) boat.getHurtDir()));
 		}
 
-		float f2 = boat.getBubbleAngle(partialTicks);
+		float f2 = boat.getBubbleAngle(partialTick);
 		if (!Mth.equal(f2, 0.0F)) {
-			poseStack.mulPose((new Quaternionf()).setAngleAxis(boat.getBubbleAngle(partialTicks) * ((float) Math.PI / 180F), 1.0F, 0.0F, 1.0F));
+			poseStack.mulPose((new Quaternionf()).setAngleAxis(boat.getBubbleAngle(partialTick) * ((float) Math.PI / 180F), 1.0F, 0.0F, 1.0F));
 		}
 
 		ItemStack banner = ((IDataManager) boat).getValue(BoatloadTrackedData.BANNER);
@@ -95,7 +99,16 @@ public class BoatloadUtil {
 			poseStack.pushPose();
 			poseStack.translate(0.5D, (raft ? 2.0F : 3.0F) / 16.0F, f3 / 16.0F);
 			poseStack.mulPose(Axis.YP.rotationDegrees(180.0F));
-			IClientItemExtensions.of(banner).getCustomRenderer().renderByItem(banner, ItemDisplayContext.GROUND, poseStack, buffer, i, OverlayTexture.NO_OVERLAY);
+
+			BannerBlockEntity blockEntity = new BannerBlockEntity(BlockPos.ZERO, BannerBlock.byItem(banner.getItem()).defaultBlockState());
+			blockEntity.setLevel(level);
+			blockEntity.fromItem(banner, blockEntity.getBaseColor());
+			BlockEntityRenderDispatcher dispatcher = Minecraft.getInstance().getBlockEntityRenderDispatcher();
+			BlockEntityRenderer<BannerBlockEntity> renderer = dispatcher.getRenderer(blockEntity);
+			if (renderer != null) {
+				renderer.render(blockEntity, partialTick, poseStack, buffer, i, OverlayTexture.NO_OVERLAY);
+			}
+
 			poseStack.popPose();
 		}
 		poseStack.popPose();

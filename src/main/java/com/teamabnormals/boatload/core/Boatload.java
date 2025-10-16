@@ -32,6 +32,8 @@ public class Boatload {
 	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(Registries.ITEM, new BoatloadItemSubRegistryHelper(helper)));
 
 	public Boatload(IEventBus bus) {
+		BoatloadTrackedData.registerTrackedData();
+
 		BoatloadItems.ITEMS.register(bus);
 		BoatloadEntityTypes.ENTITY_TYPES.register(bus);
 		BoatloadMenuTypes.MENU_TYPES.register(bus);
@@ -42,7 +44,6 @@ public class Boatload {
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
-		BoatloadTrackedData.registerTrackedData();
 	}
 
 	private void clientSetup(FMLClientSetupEvent event) {

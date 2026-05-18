@@ -5,11 +5,16 @@
   "minVersion": "0.8",
   "refmap": "boatload.refmap.json",
   "mixins": [
+    "AbstractMinecartMixin",
     "BoatMixin",
     "EntityMixin",
+    "EntityTypeMixin",
+    "ShapelessRecipeMixin",
     "VehicleEntityMixin"
   ],
   "client": [
+    "client.BoatRendererMixin",
+    "client.ChestBoatModelMixin",
     "client.EntityRendererMixin"
   ],
   "injectors": {

@@ -7,9 +7,7 @@ import com.teamabnormals.boatload.core.data.server.BoatloadBlockTagsProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadItemTagsProvider;
 import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
 import com.teamabnormals.boatload.core.other.BoatloadTrackedData;
-import com.teamabnormals.boatload.core.registry.BoatloadEntityTypes;
-import com.teamabnormals.boatload.core.registry.BoatloadItems;
-import com.teamabnormals.boatload.core.registry.BoatloadMenuTypes;
+import com.teamabnormals.boatload.core.registry.*;
 import com.teamabnormals.boatload.core.registry.helper.BoatloadItemSubRegistryHelper;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
@@ -37,6 +35,7 @@ public class Boatload {
 		BoatloadItems.ITEMS.register(bus);
 		BoatloadEntityTypes.ENTITY_TYPES.register(bus);
 		BoatloadMenuTypes.MENU_TYPES.register(bus);
+		BoatloadDataComponents.DATA_COMPONENTS.register(bus);
 
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);

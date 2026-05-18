@@ -4,11 +4,14 @@ import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedData;
 import com.teamabnormals.blueprint.common.world.storage.tracking.TrackedDataManager;
 import com.teamabnormals.boatload.core.Boatload;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 public class BoatloadTrackedData {
+	public static final TrackedData<ItemStack> CHEST = TrackedData.Builder.create(ItemStack.OPTIONAL_STREAM_CODEC, () -> new ItemStack(Items.CHEST)).enableSaving(ItemStack.OPTIONAL_CODEC.fieldOf("id").fieldOf("count").fieldOf("components")).build();
 	public static final TrackedData<ItemStack> BANNER = TrackedData.Builder.create(ItemStack.OPTIONAL_STREAM_CODEC, () -> ItemStack.EMPTY).enableSaving(ItemStack.OPTIONAL_CODEC.fieldOf("id").fieldOf("count").fieldOf("components")).build();
 
 	public static void registerTrackedData() {
+		TrackedDataManager.INSTANCE.registerData(Boatload.location("chest"), CHEST);
 		TrackedDataManager.INSTANCE.registerData(Boatload.location("banner"), BANNER);
 	}
 }
